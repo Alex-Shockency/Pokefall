@@ -1,0 +1,27 @@
+<router-outlet>
+  <mat-toolbar style="background: firebrick;color: floralwhite;">
+    <div style="display: inline-flex;padding: 1em;">
+      <h1>Pokefall</h1>
+    </div>
+    <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+    
+    (click)="search()"
+  >
+    <mat-icon>search</mat-icon>
+  </button>
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="searchString"
+        (keydown.enter)="search()"
+        placeholder="Ex. Pikachu"
+      />
+     
+    </mat-form-field>
+  </mat-toolbar>
+  <app-search-results [searchLoading]="searchLoading" [searchResults]="searchResults"></app-search-results>
+</router-outlet>
