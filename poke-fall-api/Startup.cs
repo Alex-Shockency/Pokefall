@@ -1,6 +1,6 @@
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
-using poke_fall_api.Context;
+using poke_fall_api.Models;
 
 namespace poke_fall_api
 {
@@ -17,7 +17,7 @@ namespace poke_fall_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<PokefallContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("PokefallContext")));
+            services.AddDbContext<PokefallContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("Pokefall")));
             services.AddControllers();
             services.AddCors( options => 
             {

@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using poke_fall_api.Models;
 
-namespace poke_fall_api.Context
+namespace poke_fall_api.Models
 {
     public class PokefallContext : DbContext
     {
