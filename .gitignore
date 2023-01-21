@@ -29,3 +29,4 @@ poke-fall-api/bin/Debug/net7.0/poke-fall-api.pdb
 poke-fall/package-lock.json
 poke-fall-api/obj/Debug/*
 poke-fall-api/obj/Debug/net7.0/project.razor.json
+poke-fall-api/bin/Debug/net7.0/poke-fall-api.deps.json
