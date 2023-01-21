@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using poke_fall_api.Enums;
 
 namespace poke_fall_api.Models
@@ -41,17 +41,13 @@ namespace poke_fall_api.Models
         [Required]
         public int HatchStepMax { get; set; }
 
+        // Stored as cms and converted later
         [Required]
-        public string HeightImperial { get; set; }
+        public int HeightMetric { get; set; }
 
+        // Stored as gs and converted later
         [Required]
-        public string HeightMetric { get; set; }
-
-        [Required]
-        public string WeightImperial { get; set; }
-
-        [Required]
-        public string WeightMetric { get; set; }
+        public int WeightMetric { get; set; }
 
         [Required]
         public int BaseEXPYield { get; set; }
@@ -60,27 +56,32 @@ namespace poke_fall_api.Models
         public string LevelingRate { get; set; }
 
         [Required] 
-        public Array<int> EVYield { get; set; }
+        public Array EVYield { get; set; }
 
         [Required]
         public int BaseFriendship { get; set; }
 
         [Required]
-        public Array<int> BaseStats { get; set; }
+        public Array BaseStats { get; set; }
 
         [Required]
         public List<(string, int)> LevelUpMoves { get; set; }
 
         [Required]
-        public Array<string> TMMoves { get; set; }
+        public Array TMMoves { get; set; }
 
         [Required]
-        public Array<string> EggMoves { get; set; }
+        public Array EggMoves { get; set; }
 
         [Required]
-        public Array<string> TutorMoves { get; set; }
+        public Array TutorMoves { get; set; }
 
         [Required]
-        public string EvolutionDescription { get; set; }
+        public int EvolvesTo { get; set; }
+
+        [Required]
+        public int EvolvesFrom { get; set; }
+
+        public string? EvolutionDescription { get; set; }
     }
 }

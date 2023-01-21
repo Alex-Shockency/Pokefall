@@ -1,5 +1,5 @@
 namespace poke_fall_api.Enums;
-enum PokemonType
+public enum PokemonType
 {
     NORMAL,
     FIRE,
