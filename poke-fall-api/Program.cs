@@ -1,12 +1,16 @@
+
+using Microsoft.EntityFrameworkCore;
+using poke_fall_api.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<poke_fall_api.Models.PokefallContext>(opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("Pokefall")));
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

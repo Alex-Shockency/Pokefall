@@ -1,11 +1,12 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 using poke_fall_api.Enums;
 
 namespace poke_fall_api.Models
 {
-
     public class Pokemon
     {
+        [Key]
         [Required]
         public int PokemonId { get; set; }
 
@@ -30,7 +31,7 @@ namespace poke_fall_api.Models
         [Required]
         public int CatchRate { get; set; }
 
-        public List<(string,  int)> GenderRatio { get; set; }
+        public ICollection<GenderRatio> GenderRatio { get; set; }
 
         [Required]
         public PokemonEggGroup EggGroup { get; set; }
@@ -56,25 +57,25 @@ namespace poke_fall_api.Models
         public string LevelingRate { get; set; }
 
         [Required] 
-        public Array EVYield { get; set; }
+        public Stats EVYield { get; set; }
 
         [Required]
         public int BaseFriendship { get; set; }
 
         [Required]
-        public Array BaseStats { get; set; }
+        public Stats BaseStats { get; set; }
 
         [Required]
-        public List<(string, int)> LevelUpMoves { get; set; }
+        public ICollection<LevelUpMove> LevelUpMoves { get; set; }
 
         [Required]
-        public Array TMMoves { get; set; }
+        public ICollection<Move> TMMoves { get; set; }
 
         [Required]
-        public Array EggMoves { get; set; }
+        public ICollection<Move> EggMoves { get; set; }
 
         [Required]
-        public Array TutorMoves { get; set; }
+        public ICollection<Move> TutorMoves { get; set; }
 
         [Required]
         public int EvolvesTo { get; set; }

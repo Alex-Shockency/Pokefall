@@ -1,5 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using poke_fall_api.Models;
+
 namespace poke_fall_api.DTO
 {
+    [Keyless]
     public class PokemonDTO
     {
         public int PokemonId { get; set; }
@@ -11,7 +15,7 @@ namespace poke_fall_api.DTO
         public int Ability2Id { get; set; }
         public int HiddenAbilityId { get; set; }
         public int CatchRate { get; set; }
-        public List<(string,  int)> GenderRatio { get; set; }
+        public List<GenderRatio> GenderRatio { get; set; }
         public string EggGroup { get; set; }
         public int HatchStepsMin { get; set; }
         public int HatchStepMax { get; set; }
@@ -19,13 +23,13 @@ namespace poke_fall_api.DTO
         public int Weight { get; set; }
         public int BaseEXPYield { get; set; }
         public string LevelingRate { get; set; }
-        public Array EVYield { get; set; }
+        public Stats EVYield { get; set; }
         public int BaseFriendship { get; set; }
-        public Array BaseStats { get; set; }
-        public List<(string, int)> LevelUpMoves { get; set; }
-        public Array TMMoves { get; set; }
-        public Array EggMoves { get; set; }
-        public Array TutorMoves { get; set; }
+        public Stats BaseStats { get; set; }
+        public List<LevelUpMove> LevelUpMoves { get; set; }
+        public List<Move> TMMoves { get; set; }
+        public List<Move> EggMoves { get; set; }
+        public List<Move> TutorMoves { get; set; }
         public int EvolvesTo { get; set; }
         public int EvolvesFrom { get; set; }
         public string? EvolutionDescription { get; set; }

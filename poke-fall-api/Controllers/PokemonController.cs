@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using poke_fall_api.DTO;
 using poke_fall_api.Models;
+using System.Linq;
 
 namespace poke_fall_api.Controllers;
 
@@ -44,7 +45,7 @@ public class PokemonController : ControllerBase
             Ability2Id = item.Ability2Id,
             HiddenAbilityId = item.HiddenAbilityId,
             CatchRate = item.CatchRate,
-            GenderRatio = item.GenderRatio,
+            GenderRatio = item.GenderRatio.ToList(),
             EggGroup = item.EggGroup.ToString(),
             HatchStepsMin = item.HatchStepsMin,
             HatchStepMax = item.HatchStepMax,
@@ -55,14 +56,14 @@ public class PokemonController : ControllerBase
             EVYield = item.EVYield,
             BaseFriendship = item.BaseFriendship,
             BaseStats = item.BaseStats,
-            LevelUpMoves = item.LevelUpMoves,
-            TMMoves = item.TMMoves,
-            EggMoves = item.EggMoves,
-            TutorMoves = item.TutorMoves,
+            LevelUpMoves = item.LevelUpMoves.ToList(),
+            TMMoves = item.TMMoves.ToList(),
+            EggMoves = item.EggMoves.ToList(),
+            TutorMoves = item.TutorMoves.ToList(),
             EvolvesTo = item.EvolvesTo,
             EvolvesFrom = item.EvolvesFrom,
             EvolutionDescription = item.EvolutionDescription
-        };
+         };
     }
 
     private List<PokemonDTO> ListToDTO(List<Pokemon> items)
