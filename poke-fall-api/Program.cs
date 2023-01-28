@@ -4,7 +4,13 @@ using poke_fall_api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<poke_fall_api.Models.PokefallContext>(opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("Pokefall")));
+/** 
+* Process to update schema
+* 1) run 'dotnet ef migrations add <migration_name>'
+* 2) run 'dotnet ef database update'
+*/
+builder.Services.AddDbContext<poke_fall_api.Models.PokefallContext>(opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("Pokefall"), 
+                ));
 // Add services to the container.
 
 builder.Services.AddControllers();
