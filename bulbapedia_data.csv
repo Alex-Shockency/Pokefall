@@ -1,0 +1,1009 @@
+Dex No.,Name,Generation,Primary Type,Secondary Type,Ability1,Ability2,Hidden Ability,Gender Ratio Male,Gender Ratio Female,Health,Attack,Defense,Sp. Attack,Sp. Defense,Speed,BST
+#0668,Pyroar,Generation VI,Fire, Normal,Unnerve, Rivalry,Moxie,12.5,87.5,86,68,72,109,66,106,507
+#0606,Beheeyem,Generation V,Psychic, Unknown,Telepathy, Synchronize,Analytic,50.0,50.0,75,75,75,125,95,40,485
+#0265,Wurmple,Generation III,Bug, Unknown,Shield Dust,,Run Away,50.0,50.0,45,45,35,20,30,20,195
+#0757,Salandit,Generation VII,Poison, Fire,Corrosion,,Oblivious,87.5,12.5,48,44,40,71,40,77,320
+#0180,Flaaffy,Generation II,Electric, Unknown,Static,,Plus,50.0,50.0,70,55,55,80,60,45,365
+#0371,Bagon,Generation III,Dragon, Unknown,Rock Head,,Sheer Force,50.0,50.0,45,75,60,40,30,50,300
+#0801,Magearna,Generation VII,Steel, Fairy,Soul-Heart,,,0.0,0.0,80,95,115,130,115,65,600
+#0024,Arbok,Generation I,Poison, Unknown,Shed Skin, Intimidate,Unnerve,50.0,50.0,60,85,69,65,79,80,438
+#0752,Araquanid,Generation VII,Water, Bug,Water Bubble,,Water Absorb,50.0,50.0,68,70,92,50,132,42,454
+#0817,Drizzile,Generation VIII,Water, Unknown,Torrent,,Sniper,87.5,12.5,65,60,55,95,55,90,420
+#0692,Clauncher,Generation VI,Water, Unknown,Mega Launcher,,,50.0,50.0,50,53,62,58,63,44,330
+#0695,Heliolisk,Generation VI,Electric, Normal,Sand Veil, Dry Skin,Solar Power,50.0,50.0,62,55,52,109,94,109,481
+#0293,Whismur,Generation III,Normal, Unknown,Soundproof,,Rattled,50.0,50.0,64,51,23,51,23,28,240
+#0717,Yveltal,Generation VI,Dark, Flying,Dark Aura,,,0.0,0.0,126,131,95,131,98,99,680
+#0815,Cinderace,Generation VIII,Fire, Unknown,Blaze,,Libero,87.5,12.5,80,116,75,65,75,119,530
+#0262,Mightyena,Generation III,Dark, Unknown,Quick Feet, Intimidate,Moxie,50.0,50.0,70,90,70,60,60,70,420
+#0068,Machamp,Generation I,Fighting, Unknown,No Guard, Guts,Steadfast,75.0,25.0,90,130,80,65,85,55,505
+#0637,Volcarona,Generation V,Bug, Fire,Flame Body,,Swarm,50.0,50.0,85,60,65,135,105,100,550
+#0399,Bidoof,Generation IV,Normal, Unknown,Simple, Unaware,Moody,50.0,50.0,59,45,40,35,40,31,250
+#0159,Croconaw,Generation II,Water, Unknown,Torrent,,Sheer Force,87.5,12.5,65,80,80,59,63,58,405
+#0188,Skiploom,Generation II,Grass, Flying,Leaf Guard, Chlorophyll,Infiltrator,50.0,50.0,55,45,50,45,65,80,340
+#0616,Shelmet,Generation V,Bug, Unknown,Shell Armor, Hydration,Overcoat,50.0,50.0,50,40,85,40,65,25,305
+#0400,Bibarel,Generation IV,Normal, Water,Simple, Unaware,Moody,50.0,50.0,79,85,60,55,60,71,410
+#0647,Keldeo,Generation V,Water, Fighting,Justified,,,0.0,0.0,91,72,90,129,90,108,580
+#0413,Wormadam,Generation IV,Bug, Grass,Anticipation,,Overcoat,0.0,100.0,60,59,85,79,105,36,424
+#0725,Litten,Generation VII,Fire, Unknown,Blaze,,Intimidate,87.5,12.5,45,65,40,60,40,70,320
+#0379,Registeel,Generation III,Steel, Unknown,Clear Body,,Light Metal,0.0,0.0,80,75,150,75,150,50,580
+#0598,Ferrothorn,Generation V,Grass, Steel,Iron Barbs,,Anticipation,50.0,50.0,74,94,131,54,116,20,489
+#0004,Charmander,Generation I,Fire, Unknown,Blaze,,Solar Power,87.5,12.5,39,52,43,60,50,65,309
+#0816,Sobble,Generation VIII,Water, Unknown,Torrent,,Sniper,87.5,12.5,50,40,40,70,40,70,310
+#0968,Orthworm,On Smogon Pokédex,Steel, Unknown,Earth Eater,,Sand Veil,50.0,50.0,70,85,145,60,55,65,480
+#0104,Cubone,Generation I,Ground, Unknown,Lightning Rod, Rock Head,Battle Armor,50.0,50.0,50,50,95,40,50,35,320
+#0779,Bruxish,Generation VII,Water, Psychic,Dazzling, Strong Jaw,Wonder Skin,50.0,50.0,68,105,70,70,70,92,475
+#0324,Torkoal,Generation III,Fire, Unknown,Drought, White Smoke,Shell Armor,50.0,50.0,70,85,140,85,70,20,470
+#0594,Alomomola,Generation V,Water, Unknown,Healer, Hydration,Regenerator,50.0,50.0,165,75,80,40,45,65,470
+#0610,Axew,Generation V,Dragon, Unknown,Mold Breaker, Rivalry,Unnerve,50.0,50.0,46,87,60,30,40,57,320
+#0167,Spinarak,Generation II,Bug, Poison,Insomnia, Swarm,Sniper,50.0,50.0,40,60,40,40,40,30,250
+#0573,Cinccino,Generation V,Normal, Unknown,Technician, Cute Charm,Skill Link,25.0,75.0,75,95,60,65,60,115,470
+#0295,Exploud,Generation III,Normal, Unknown,Soundproof,,Scrappy,50.0,50.0,104,91,63,91,63,68,480
+#0261,Poochyena,Generation III,Dark, Unknown,Quick Feet, Run Away,Rattled,50.0,50.0,35,55,35,30,30,35,220
+#0101,Electrode,Generation I,Electric, Unknown,Static, Soundproof,Aftermath,0.0,0.0,60,50,70,80,80,140,480
+#0124,Jynx,Generation I,Ice, Psychic,Forewarn, Oblivious,Dry Skin,0.0,100.0,65,50,35,115,95,95,455
+#0444,Gabite,Generation IV,Dragon, Ground,Sand Veil,,Rough Skin,50.0,50.0,68,90,65,50,55,82,410
+#0054,Psyduck,Generation I,Water, Unknown,Cloud Nine, Damp,Swift Swim,50.0,50.0,50,52,48,65,50,55,320
+#0412,Burmy,Generation IV,Bug, Unknown,Shed Skin,,Overcoat,50.0,50.0,40,29,45,29,45,36,224
+#0323,Camerupt,Generation III,Fire, Ground,Solid Rock, Sheer Force,Anger Point,50.0,50.0,70,100,70,105,75,40,460
+#0311,Plusle,Generation III,Electric, Unknown,Plus,,Lightning Rod,50.0,50.0,60,50,40,85,75,95,405
+#0477,Dusknoir,Generation IV,Ghost, Unknown,Pressure,,Frisk,50.0,50.0,45,100,135,65,135,45,525
+#0230,Kingdra,Generation II,Water, Dragon,Swift Swim, Sniper,Damp,50.0,50.0,75,95,95,95,95,85,540
+#0354,Banette,Generation III,Ghost, Unknown,Insomnia, Frisk,Cursed Body,50.0,50.0,64,115,65,83,63,65,455
+#0481,Mesprit,Generation IV,Psychic, Unknown,Levitate,,,0.0,0.0,80,105,105,105,105,80,580
+#0591,Amoonguss,Generation V,Grass, Poison,Effect Spore,,Regenerator,50.0,50.0,114,85,70,85,80,30,464
+#0931,Squawkabilly,On Smogon Pokédex,Normal, Flying,Hustle, Intimidate,Sheer Force,50.0,50.0,82,96,51,45,51,92,417
+#0937,Ceruledge,On Smogon Pokédex,Fire, Ghost,Flash Fire,,Weak Armor,50.0,50.0,75,125,80,60,100,85,525
+#0314,Illumise,Generation III,Bug, Unknown,Tinted Lens, Oblivious,Prankster,0.0,100.0,65,47,55,73,75,85,400
+#0599,Klink,Generation V,Steel, Unknown,Minus, Plus,Clear Body,0.0,0.0,40,55,70,45,60,30,300
+#0967,Cyclizar,On Smogon Pokédex,Dragon, Normal,Shed Skin,,Regenerator,50.0,50.0,70,95,65,85,65,121,501
+#0867,Runerigus,Generation VIII,Ground, Ghost,Wandering Spirit,,,50.0,50.0,58,95,145,50,105,30,483
+#0650,Chespin,Generation VI,Grass, Unknown,Overgrow,,Bulletproof,87.5,12.5,56,61,65,48,45,38,313
+#0430,Honchkrow,Generation IV,Dark, Flying,Insomnia, Super Luck,Moxie,50.0,50.0,100,125,52,105,52,71,505
+#0487,Giratina,Generation IV,Ghost, Dragon,Pressure, Levitate,Telepathy,0.0,0.0,150,100,120,100,120,90,680
+#0588,Karrablast,Generation V,Bug, Unknown,Swarm, Shed Skin,No Guard,50.0,50.0,50,75,45,40,45,60,315
+#0163,Hoothoot,Generation II,Normal, Flying,Insomnia, Keen Eye,Tinted Lens,50.0,50.0,60,30,30,36,56,50,262
+#0577,Solosis,Generation V,Psychic, Unknown,Overcoat, Magic Guard,Regenerator,50.0,50.0,45,30,40,105,50,20,290
+#0854,Sinistea,Generation VIII,Ghost, Unknown,Weak Armor,,Cursed Body,0.0,0.0,40,45,45,74,54,50,308
+#0462,Magnezone,Generation IV,Electric, Steel,Sturdy, Magnet Pull,Analytic,0.0,0.0,70,70,115,130,90,60,535
+#0453,Croagunk,Generation IV,Poison, Fighting,Dry Skin, Anticipation,Poison Touch,50.0,50.0,48,61,40,61,40,50,300
+#0377,Regirock,Generation III,Rock, Unknown,Clear Body,,Sturdy,0.0,0.0,80,100,200,50,100,50,580
+#0746,Wishiwashi,Generation VII,Water, Unknown,Schooling,,,50.0,50.0,45,20,20,25,25,40,175
+#0814,Raboot,Generation VIII,Fire, Unknown,Blaze,,Libero,87.5,12.5,65,86,60,55,60,94,420
+#0553,Krookodile,Generation V,Ground, Dark,Moxie, Intimidate,Anger Point,50.0,50.0,95,117,70,65,70,92,509
+#0718,Zygarde,Generation VI,Dragon, Ground,Power Construct, Aura Break,,0.0,0.0,108,100,121,81,95,95,600
+#0955,Flittle,On Smogon Pokédex,Psychic, Unknown,Frisk, Anticipation,Speed Boost,50.0,50.0,30,35,30,55,30,75,255
+#0316,Gulpin,Generation III,Poison, Unknown,Liquid Ooze, Sticky Hold,Gluttony,50.0,50.0,70,43,53,43,53,40,302
+#0520,Tranquill,Generation V,Normal, Flying,Super Luck, Big Pecks,Rivalry,50.0,50.0,62,77,62,50,42,65,358
+#0990,Iron Treads,On Smogon Pokédex,Ground, Steel,Quark Drive,,,0.0,0.0,90,112,120,72,70,106,570
+#0502,Dewott,Generation V,Water, Unknown,Torrent,,Shell Armor,87.5,12.5,75,75,60,83,60,60,413
+#0845,Cramorant,Generation VIII,Flying, Water,Gulp Missile,,,50.0,50.0,70,85,55,85,95,85,475
+#0560,Scrafty,Generation V,Dark, Fighting,Shed Skin, Moxie,Intimidate,50.0,50.0,65,90,115,45,115,58,488
+#0552,Krokorok,Generation V,Ground, Dark,Moxie, Intimidate,Anger Point,50.0,50.0,60,82,45,45,45,74,351
+#0934,Garganacl,On Smogon Pokédex,Rock, Unknown,Purifying Salt, Sturdy,Clear Body,50.0,50.0,100,100,130,45,90,35,500
+#0319,Sharpedo,Generation III,Water, Dark,Strong Jaw, Rough Skin,Speed Boost,50.0,50.0,70,120,40,95,40,95,460
+#0076,Golem,Generation I,Rock, Ground,Magnet Pull, Rock Head,Galvanize,50.0,50.0,80,110,130,55,65,45,485
+#0696,Tyrunt,Generation VI,Rock, Dragon,Strong Jaw,,Sturdy,87.5,12.5,58,89,77,45,45,48,362
+#0184,Azumarill,Generation II,Water, Fairy,Huge Power, Thick Fat,Sap Sipper,50.0,50.0,100,50,80,50,80,50,410
+#0800,Necrozma,Generation VII,Psychic, Unknown,Neuroforce, Prism Armor,,0.0,0.0,97,107,101,127,89,79,600
+#0962,Bombirdier,On Smogon Pokédex,Flying, Dark,Keen Eye, Big Pecks,Rocky Payload,50.0,50.0,70,103,85,60,85,82,485
+#0995,Iron Thorns,On Smogon Pokédex,Rock, Electric,Quark Drive,,,0.0,0.0,100,134,110,70,84,72,570
+#0278,Wingull,Generation III,Water, Flying,Keen Eye, Hydration,Rain Dish,50.0,50.0,40,30,30,55,30,85,270
+#0639,Terrakion,Generation V,Rock, Fighting,Justified,,,0.0,0.0,91,129,90,72,90,108,580
+#0508,Stoutland,Generation V,Normal, Unknown,Sand Rush, Intimidate,Scrappy,50.0,50.0,85,100,90,45,90,80,490
+#0358,Chimecho,Generation III,Psychic, Unknown,Levitate,,,50.0,50.0,65,50,70,95,80,65,425
+#0484,Palkia,Generation IV,Water, Dragon,Pressure,,Telepathy,0.0,0.0,90,120,100,150,120,100,680
+#1001,Wo-Chien,On Smogon Pokédex,Dark, Grass,Tablets of Ruin,,,0.0,0.0,85,90,100,100,135,70,580
+#0843,Silicobra,Generation VIII,Ground, Unknown,Sand Spit, Shed Skin,Sand Veil,50.0,50.0,52,57,75,35,50,46,315
+#0483,Dialga,Generation IV,Steel, Dragon,Pressure,,Telepathy,0.0,0.0,100,120,120,150,100,90,680
+#0663,Talonflame,Generation VI,Fire, Flying,Flame Body,,Gale Wings,50.0,50.0,78,81,71,74,69,126,499
+#0087,Dewgong,Generation I,Water, Ice,Hydration, Thick Fat,Ice Body,50.0,50.0,90,70,80,70,95,70,475
+#0206,Dunsparce,Generation II,Normal, Unknown,Serene Grace, Run Away,Rattled,50.0,50.0,100,70,70,65,65,45,415
+#0097,Hypno,Generation I,Psychic, Unknown,Insomnia, Forewarn,Inner Focus,50.0,50.0,85,73,70,73,115,67,483
+#0528,Swoobat,Generation V,Psychic, Flying,Unaware, Klutz,Simple,50.0,50.0,67,57,55,77,55,114,425
+#0604,Eelektross,Generation V,Electric, Unknown,Levitate,,,50.0,50.0,85,115,80,105,80,50,515
+#0978,Tatsugiri,On Smogon Pokédex,Dragon, Water,Commander,,Storm Drain,50.0,50.0,68,50,60,120,95,82,475
+#0467,Magmortar,Generation IV,Fire, Unknown,Flame Body,,Vital Spirit,75.0,25.0,75,95,67,125,95,83,540
+#0392,Infernape,Generation IV,Fire, Fighting,Blaze,,Iron Fist,87.5,12.5,76,104,71,104,71,108,534
+#0306,Aggron,Generation III,Steel, Rock,Filter, Rock Head,Heavy Metal,50.0,50.0,70,110,180,60,60,50,530
+#0328,Trapinch,Generation III,Ground, Unknown,Arena Trap, Hyper Cutter,Sheer Force,50.0,50.0,45,100,45,45,45,10,290
+#0367,Huntail,Generation III,Water, Unknown,Swift Swim,,Water Veil,50.0,50.0,55,104,105,94,75,52,485
+#0083,Farfetch'd,Generation I,Normal, Flying,Steadfast, Keen Eye,Scrappy,50.0,50.0,52,65,55,58,62,60,352
+#0414,Mothim,Generation IV,Bug, Flying,Swarm,,Tinted Lens,100.0,0.0,70,94,50,94,50,66,424
+#0466,Electivire,Generation IV,Electric, Unknown,Motor Drive,,Vital Spirit,75.0,25.0,75,123,67,95,85,95,540
+#0732,Trumbeak,Generation VII,Normal, Flying,Skill Link, Keen Eye,Pickup,50.0,50.0,55,85,50,40,50,75,355
+#0786,Tapu Lele,Generation VII,Psychic, Fairy,Psychic Surge,,Telepathy,0.0,0.0,70,85,75,130,115,95,570
+#0609,Chandelure,Generation V,Ghost, Fire,Flash Fire, Flame Body,Shadow Tag,50.0,50.0,60,55,90,145,90,80,520
+#0091,Cloyster,Generation I,Water, Ice,Shell Armor, Skill Link,Overcoat,50.0,50.0,50,95,180,85,45,70,525
+#0549,Lilligant,Generation V,Grass, Unknown,Hustle, Chlorophyll,Leaf Guard,0.0,100.0,70,60,75,110,75,90,480
+#0079,Slowpoke,Generation I,Water, Psychic,Oblivious, Gluttony,Regenerator,50.0,50.0,90,65,65,40,40,15,315
+#0410,Shieldon,Generation IV,Rock, Steel,Sturdy,,Soundproof,87.5,12.5,30,42,118,42,88,30,350
+#0362,Glalie,Generation III,Ice, Unknown,Refrigerate, Ice Body,Moody,50.0,50.0,80,80,80,80,80,80,480
+#0301,Delcatty,Generation III,Normal, Unknown,Normalize, Cute Charm,Wonder Skin,25.0,75.0,70,65,65,55,55,70,380
+#0189,Jumpluff,Generation II,Grass, Flying,Leaf Guard, Chlorophyll,Infiltrator,50.0,50.0,75,55,70,55,85,110,450
+#0404,Luxio,Generation IV,Electric, Unknown,Rivalry, Intimidate,Guts,50.0,50.0,60,85,49,60,49,60,363
+#0966,Revavroom,On Smogon Pokédex,Steel, Poison,Overcoat,,Filter,50.0,50.0,80,119,90,54,67,90,500
+#0023,Ekans,Generation I,Poison, Unknown,Shed Skin, Intimidate,Unnerve,50.0,50.0,35,60,44,40,54,55,288
+#0737,Charjabug,Generation VII,Bug, Electric,Battery,,,50.0,50.0,57,82,95,55,75,36,400
+#0928,Smoliv,On Smogon Pokédex,Grass, Normal,Early Bird,,Harvest,50.0,50.0,41,35,45,58,51,30,260
+#0767,Wimpod,Generation VII,Bug, Water,Wimp Out,,,50.0,50.0,25,35,40,20,30,80,230
+#0406,Budew,Generation IV,Grass, Poison,Natural Cure, Poison Point,Leaf Guard,50.0,50.0,40,30,35,50,70,55,280
+#0652,Chesnaught,Generation VI,Grass, Fighting,Overgrow,,Bulletproof,87.5,12.5,88,107,122,74,75,64,530
+#0402,Kricketune,Generation IV,Bug, Unknown,Swarm,,Technician,50.0,50.0,77,85,51,55,51,65,384
+#0781,Dhelmise,Generation VII,Ghost, Grass,Steelworker,,,0.0,0.0,70,131,100,86,90,40,517
+#0137,Porygon,Generation I,Normal, Unknown,Trace, Download,Analytic,0.0,0.0,65,60,70,85,75,40,395
+#0271,Lombre,Generation III,Water, Grass,Swift Swim, Rain Dish,Own Tempo,50.0,50.0,60,50,50,60,70,50,340
+#0216,Teddiursa,Generation II,Normal, Unknown,Pickup, Quick Feet,Honey Gather,50.0,50.0,60,80,50,50,50,40,330
+#0839,Coalossal,Generation VIII,Rock, Fire,Flame Body, Steam Engine,Flash Fire,50.0,50.0,110,80,120,80,90,30,510
+#0980,Clodsire,On Smogon Pokédex,Poison, Ground,Water Absorb, Poison Point,Unaware,50.0,50.0,130,75,60,45,100,20,430
+#0027,Sandshrew,Generation I,Ground, Unknown,Sand Veil, Snow Cloak,Slush Rush,50.0,50.0,50,75,85,20,30,40,300
+#0422,Shellos,Generation IV,Water, Unknown,Storm Drain, Sticky Hold,Sand Force,50.0,50.0,76,48,48,57,62,34,325
+#0493,Arceus,Generation IV,Normal, Unknown,Multitype,,,0.0,0.0,120,120,120,120,120,120,720
+#0350,Milotic,Generation III,Water, Unknown,Marvel Scale, Competitive,Cute Charm,50.0,50.0,95,60,79,100,125,81,540
+#0372,Shelgon,Generation III,Dragon, Unknown,Rock Head,,Overcoat,50.0,50.0,65,95,100,60,50,50,420
+#0939,Bellibolt,On Smogon Pokédex,Electric, Unknown,Static, Electromorphosis,Damp,50.0,50.0,109,64,91,103,83,45,495
+#0755,Morelull,Generation VII,Grass, Fairy,Effect Spore, Illuminate,Rain Dish,50.0,50.0,40,35,55,65,75,15,285
+#0958,Tinkatuff,On Smogon Pokédex,Fairy, Steel,Mold Breaker, Own Tempo,Pickpocket,0.0,100.0,65,55,55,45,82,78,380
+#0207,Gligar,Generation II,Ground, Flying,Sand Veil, Hyper Cutter,Immunity,50.0,50.0,65,75,105,35,65,85,430
+#0600,Klang,Generation V,Steel, Unknown,Minus, Plus,Clear Body,0.0,0.0,60,80,95,70,85,50,440
+#0773,Silvally,Generation VII,Normal, Unknown,RKS System,,,0.0,0.0,95,95,95,95,95,95,570
+#0169,Crobat,Generation II,Poison, Flying,Inner Focus,,Infiltrator,50.0,50.0,85,90,80,70,80,130,535
+#0331,Cacnea,Generation III,Grass, Unknown,Sand Veil,,Water Absorb,50.0,50.0,50,85,40,85,40,35,335
+#0667,Litleo,Generation VI,Fire, Normal,Unnerve, Rivalry,Moxie,12.5,87.5,62,50,58,73,54,72,369
+#0745,Lycanroc,Generation VII,Rock, Unknown,Tough Claws, Own Tempo,No Guard,50.0,50.0,75,115,65,55,65,112,487
+#0105,Marowak,Generation I,Ground, Unknown,Cursed Body, Lightning Rod,Rock Head,50.0,50.0,60,80,110,50,80,45,425
+#0558,Crustle,Generation V,Bug, Rock,Shell Armor, Sturdy,Weak Armor,50.0,50.0,70,95,125,65,75,45,475
+#0632,Durant,Generation V,Bug, Steel,Hustle, Swarm,Truant,50.0,50.0,58,109,112,48,48,109,484
+#0310,Manectric,Generation III,Electric, Unknown,Static, Lightning Rod,Minus,50.0,50.0,70,75,60,105,60,105,475
+#0491,Darkrai,Generation IV,Dark, Unknown,Bad Dreams,,,0.0,0.0,70,90,90,135,90,125,600
+#0449,Hippopotas,Generation IV,Ground, Unknown,Sand Stream,,Sand Force,50.0,50.0,68,72,78,38,42,32,330
+#0017,Pidgeotto,Generation I,Normal, Flying,Tangled Feet, Keen Eye,Big Pecks,50.0,50.0,63,60,55,50,50,71,349
+#0837,Rolycoly,Generation VIII,Rock, Unknown,Heatproof, Steam Engine,Flash Fire,50.0,50.0,30,40,50,40,50,30,240
+#0131,Lapras,Generation I,Water, Ice,Shell Armor, Water Absorb,Hydration,50.0,50.0,130,85,80,85,95,60,535
+#0345,Lileep,Generation III,Rock, Grass,Suction Cups,,Storm Drain,87.5,12.5,66,41,77,61,87,23,355
+#0534,Conkeldurr,Generation V,Fighting, Unknown,Sheer Force, Guts,Iron Fist,75.0,25.0,105,140,95,55,65,45,505
+#0325,Spoink,Generation III,Psychic, Unknown,Own Tempo, Thick Fat,Gluttony,50.0,50.0,60,25,35,70,80,60,330
+#0874,Stonjourner,Generation VIII,Rock, Unknown,Power Spot,,,50.0,50.0,100,125,135,20,20,70,470
+#0704,Goomy,Generation VI,Dragon, Unknown,Sap Sipper, Hydration,Gooey,50.0,50.0,45,50,35,55,75,40,300
+#0611,Fraxure,Generation V,Dragon, Unknown,Mold Breaker, Rivalry,Unnerve,50.0,50.0,66,117,70,40,50,67,410
+#0353,Shuppet,Generation III,Ghost, Unknown,Insomnia, Frisk,Cursed Body,50.0,50.0,44,75,35,63,33,45,295
+#0910,Crocalor,On Smogon Pokédex,Fire, Unknown,Blaze,,Unaware,87.5,12.5,81,55,78,90,58,49,411
+#0146,Moltres,Generation I,Fire, Flying,Berserk, Pressure,Flame Body,0.0,0.0,90,100,90,125,85,90,580
+#0147,Dratini,Generation I,Dragon, Unknown,Shed Skin,,Marvel Scale,50.0,50.0,41,64,45,50,50,50,300
+#0179,Mareep,Generation II,Electric, Unknown,Static,,Plus,50.0,50.0,55,40,40,65,45,35,280
+#0211,Qwilfish,Generation II,Water, Poison,Swift Swim, Poison Point,Intimidate,50.0,50.0,65,95,75,55,55,85,430
+#0277,Swellow,Generation III,Normal, Flying,Guts,,Scrappy,50.0,50.0,60,85,60,50,50,125,430
+#0333,Swablu,Generation III,Normal, Flying,Natural Cure,,Cloud Nine,50.0,50.0,45,40,60,40,75,50,310
+#0069,Bellsprout,Generation I,Grass, Poison,Chlorophyll,,Gluttony,50.0,50.0,50,75,35,70,30,40,300
+#0703,Carbink,Generation VI,Rock, Fairy,Clear Body,,Sturdy,0.0,0.0,50,50,150,50,150,50,500
+#0471,Glaceon,Generation IV,Ice, Unknown,Snow Cloak,,Ice Body,87.5,12.5,65,60,110,130,95,65,525
+#0231,Phanpy,Generation II,Ground, Unknown,Pickup,,Sand Veil,50.0,50.0,90,60,60,40,40,40,330
+#0906,Sprigatito,On Smogon Pokédex,Grass, Unknown,Overgrow,,Protean,87.5,12.5,40,61,54,45,45,65,310
+#0907,Floragato,On Smogon Pokédex,Grass, Unknown,Overgrow,,Protean,87.5,12.5,61,80,63,60,63,83,410
+#0974,Cetoddle,On Smogon Pokédex,Ice, Unknown,Snow Cloak, Thick Fat,Sheer Force,50.0,50.0,108,68,45,30,40,43,334
+#0233,Porygon2,Generation II,Normal, Unknown,Trace, Download,Analytic,0.0,0.0,85,80,90,105,95,60,515
+#0892,Urshifu,Generation VIII,Fighting, Dark,Unseen Fist,,,87.5,12.5,100,130,100,63,60,97,550
+#0269,Dustox,Generation III,Bug, Poison,Shield Dust,,Compound Eyes,50.0,50.0,60,50,70,50,90,65,385
+#0275,Shiftry,Generation III,Grass, Dark,Early Bird, Chlorophyll,Pickpocket,50.0,50.0,90,100,60,90,60,80,480
+#0330,Flygon,Generation III,Ground, Dragon,Levitate,,,50.0,50.0,80,100,80,80,80,100,520
+#0409,Rampardos,Generation IV,Rock, Unknown,Mold Breaker,,Sheer Force,87.5,12.5,97,165,60,65,50,58,495
+#0797,Celesteela,Generation VII,Steel, Flying,Beast Boost,,,0.0,0.0,97,101,103,107,101,61,570
+#0855,Polteageist,Generation VIII,Ghost, Unknown,Weak Armor,,Cursed Body,0.0,0.0,60,65,65,134,114,70,508
+#0952,Scovillain,On Smogon Pokédex,Grass, Fire,Insomnia, Chlorophyll,Moody,50.0,50.0,65,108,65,108,65,75,486
+#0582,Vanillite,Generation V,Ice, Unknown,Ice Body, Snow Cloak,Weak Armor,50.0,50.0,36,50,50,65,60,44,305
+#0439,Mime Jr.,Generation IV,Psychic, Fairy,Filter, Soundproof,Technician,50.0,50.0,20,25,45,70,90,60,310
+#0476,Probopass,Generation IV,Rock, Steel,Magnet Pull, Sturdy,Sand Force,50.0,50.0,60,55,145,75,150,40,525
+#0848,Toxel,Generation VIII,Electric, Poison,Static, Rattled,Klutz,50.0,50.0,40,38,35,54,35,40,242
+#0364,Sealeo,Generation III,Ice, Water,Ice Body, Thick Fat,Oblivious,50.0,50.0,90,60,70,75,70,45,410
+#0136,Flareon,Generation I,Fire, Unknown,Flash Fire,,Guts,87.5,12.5,65,130,60,95,110,65,525
+#0338,Solrock,Generation III,Rock, Psychic,Levitate,,,0.0,0.0,70,95,85,55,65,70,440
+#0936,Armarouge,On Smogon Pokédex,Fire, Psychic,Flash Fire,,Weak Armor,50.0,50.0,85,60,100,125,80,75,525
+#0218,Slugma,Generation II,Fire, Unknown,Magma Armor, Flame Body,Weak Armor,50.0,50.0,40,40,40,70,40,20,250
+#0777,Togedemaru,Generation VII,Electric, Steel,Iron Barbs, Lightning Rod,Sturdy,50.0,50.0,65,98,63,40,73,96,435
+#0474,Porygon-Z,Generation IV,Normal, Unknown,Adaptability, Download,Analytic,0.0,0.0,85,80,70,135,75,90,535
+#0597,Ferroseed,Generation V,Grass, Steel,Iron Barbs,,,50.0,50.0,44,50,91,24,86,10,305
+#0112,Rhydon,Generation I,Ground, Rock,Lightning Rod, Rock Head,Reckless,50.0,50.0,105,130,120,45,45,40,485
+#0339,Barboach,Generation III,Water, Ground,Oblivious, Anticipation,Hydration,50.0,50.0,50,48,43,46,41,60,288
+#0707,Klefki,Generation VI,Steel, Fairy,Prankster,,Magician,50.0,50.0,57,80,91,80,87,75,470
+#0796,Xurkitree,Generation VII,Electric, Unknown,Beast Boost,,,0.0,0.0,83,89,71,173,71,83,570
+#0835,Yamper,Generation VIII,Electric, Unknown,Ball Fetch,,Rattled,50.0,50.0,59,45,50,40,50,26,270
+#0903,Sneasler,Generation VIII,Fighting, Poison,Unburden, Pressure,Poison Touch,50.0,50.0,80,130,60,40,80,120,510
+#0709,Trevenant,Generation VI,Ghost, Grass,Natural Cure, Frisk,Harvest,50.0,50.0,85,110,76,65,82,56,474
+#0516,Simipour,Generation V,Water, Unknown,Gluttony,,Torrent,87.5,12.5,75,98,63,98,63,101,498
+#0056,Mankey,Generation I,Fighting, Unknown,Vital Spirit, Anger Point,Defiant,50.0,50.0,40,80,35,35,45,70,305
+#0877,Morpeko,Generation VIII,Electric, Dark,Hunger Switch,,,50.0,50.0,58,95,58,70,58,97,436
+#0347,Anorith,Generation III,Rock, Bug,Battle Armor,,Swift Swim,87.5,12.5,45,95,50,40,50,75,355
+#0067,Machoke,Generation I,Fighting, Unknown,No Guard, Guts,Steadfast,75.0,25.0,80,100,70,50,60,45,405
+#0917,Tarountula,On Smogon Pokédex,Bug, Unknown,Insomnia,,Stakeout,50.0,50.0,35,41,45,29,40,20,210
+#0285,Shroomish,Generation III,Grass, Unknown,Effect Spore, Poison Heal,Quick Feet,50.0,50.0,60,40,60,40,60,35,295
+#0294,Loudred,Generation III,Normal, Unknown,Soundproof,,Scrappy,50.0,50.0,84,71,43,71,43,48,360
+#0334,Altaria,Generation III,Dragon, Flying,Natural Cure, Pixilate,Cloud Nine,50.0,50.0,75,70,90,70,105,80,490
+#0109,Koffing,Generation I,Poison, Unknown,Neutralizing Gas, Levitate,Stench,50.0,50.0,40,65,95,60,45,35,340
+#0257,Blaziken,Generation III,Fire, Fighting,Blaze, Speed Boost,Speed Boost,87.5,12.5,80,120,70,110,70,80,530
+#0517,Munna,Generation V,Psychic, Unknown,Forewarn, Synchronize,Telepathy,50.0,50.0,76,25,45,67,55,24,292
+#0592,Frillish,Generation V,Water, Ghost,Cursed Body, Water Absorb,Damp,50.0,50.0,55,40,50,65,85,40,335
+#0880,Dracozolt,Generation VIII,Electric, Dragon,Volt Absorb, Hustle,Sand Rush,0.0,0.0,90,100,90,80,70,75,505
+#0119,Seaking,Generation I,Water, Unknown,Swift Swim, Water Veil,Lightning Rod,50.0,50.0,80,92,65,65,80,68,450
+#0885,Dreepy,Generation VIII,Dragon, Ghost,Infiltrator, Clear Body,Cursed Body,50.0,50.0,28,60,30,40,30,82,270
+#0522,Blitzle,Generation V,Electric, Unknown,Lightning Rod, Motor Drive,Sap Sipper,50.0,50.0,45,60,32,50,32,76,295
+#0096,Drowzee,Generation I,Psychic, Unknown,Insomnia, Forewarn,Inner Focus,50.0,50.0,60,48,45,43,90,42,328
+#0659,Bunnelby,Generation VI,Normal, Unknown,Pickup, Cheek Pouch,Huge Power,50.0,50.0,38,36,38,32,36,57,237
+#0480,Uxie,Generation IV,Psychic, Unknown,Levitate,,,0.0,0.0,75,75,130,75,130,95,580
+#0431,Glameow,Generation IV,Normal, Unknown,Limber, Own Tempo,Keen Eye,25.0,75.0,49,55,42,42,37,85,310
+#0398,Staraptor,Generation IV,Normal, Flying,Intimidate,,Reckless,50.0,50.0,85,120,70,50,50,100,475
+#0094,Gengar,Generation I,Ghost, Poison,Cursed Body, Levitate,,50.0,50.0,60,65,60,130,75,110,500
+#0152,Chikorita,Generation II,Grass, Unknown,Overgrow,,Leaf Guard,87.5,12.5,45,49,65,49,65,45,318
+#0614,Beartic,Generation V,Ice, Unknown,Slush Rush, Snow Cloak,Swift Swim,50.0,50.0,95,110,80,70,80,50,485
+#0214,Heracross,Generation II,Bug, Fighting,Skill Link, Swarm,Moxie,50.0,50.0,80,125,75,40,95,85,500
+#0612,Haxorus,Generation V,Dragon, Unknown,Mold Breaker, Rivalry,Unnerve,50.0,50.0,76,147,90,60,70,97,540
+#0633,Deino,Generation V,Dark, Dragon,Hustle,,,50.0,50.0,52,65,50,45,50,38,300
+#0042,Golbat,Generation I,Poison, Flying,Inner Focus,,Infiltrator,50.0,50.0,75,80,70,65,75,90,455
+#0584,Vanilluxe,Generation V,Ice, Unknown,Snow Warning, Ice Body,Weak Armor,50.0,50.0,71,95,85,110,95,79,535
+#0220,Swinub,Generation II,Ice, Ground,Oblivious, Snow Cloak,Thick Fat,50.0,50.0,50,50,40,30,30,50,250
+#0868,Milcery,Generation VIII,Fairy, Unknown,Sweet Veil,,Aroma Veil,0.0,100.0,45,40,40,50,61,34,270
+#0583,Vanillish,Generation V,Ice, Unknown,Ice Body, Snow Cloak,Weak Armor,50.0,50.0,51,65,65,80,75,59,395
+#0332,Cacturne,Generation III,Grass, Dark,Sand Veil,,Water Absorb,50.0,50.0,70,115,60,115,60,55,475
+#0144,Articuno,Generation I,Ice, Flying,Pressure, Competitive,Snow Cloak,0.0,0.0,90,85,100,95,125,85,580
+#0258,Mudkip,Generation III,Water, Unknown,Torrent,,Damp,87.5,12.5,50,70,50,50,50,40,310
+#0458,Mantyke,Generation IV,Water, Flying,Swift Swim, Water Absorb,Water Veil,50.0,50.0,45,20,50,60,120,50,345
+#0190,Aipom,Generation II,Normal, Unknown,Pickup, Run Away,Skill Link,50.0,50.0,55,70,55,40,55,85,360
+#0162,Furret,Generation II,Normal, Unknown,Keen Eye, Run Away,Frisk,50.0,50.0,85,76,64,45,55,90,415
+#0062,Poliwrath,Generation I,Water, Fighting,Water Absorb, Damp,Swift Swim,50.0,50.0,90,85,95,70,90,70,500
+#0274,Nuzleaf,Generation III,Grass, Dark,Early Bird, Chlorophyll,Pickpocket,50.0,50.0,70,70,40,60,40,60,340
+#0370,Luvdisc,Generation III,Water, Unknown,Swift Swim,,Hydration,25.0,75.0,43,30,55,40,65,97,330
+#0173,Cleffa,Generation II,Fairy, Unknown,Magic Guard, Cute Charm,Friend Guard,25.0,75.0,50,25,28,45,55,15,218
+#0052,Meowth,Generation I,Normal, Unknown,Technician, Pickup,Rattled,50.0,50.0,40,45,35,40,40,90,290
+#0210,Granbull,Generation II,Fairy, Unknown,Quick Feet, Intimidate,Rattled,25.0,75.0,90,120,75,60,60,45,450
+#0513,Pansear,Generation V,Fire, Unknown,Gluttony,,Blaze,87.5,12.5,50,53,48,53,48,64,316
+#0964,Palafin,On Smogon Pokédex,Water, Unknown,Zero to Hero,,,50.0,50.0,100,70,72,53,62,100,457
+#0282,Gardevoir,Generation III,Psychic, Fairy,Trace, Pixilate,Telepathy,50.0,50.0,68,65,65,125,115,80,518
+#0209,Snubbull,Generation II,Fairy, Unknown,Run Away, Intimidate,Rattled,25.0,75.0,60,80,50,40,40,30,300
+#0532,Timburr,Generation V,Fighting, Unknown,Sheer Force, Guts,Iron Fist,75.0,25.0,75,80,55,25,35,35,305
+#0346,Cradily,Generation III,Rock, Grass,Suction Cups,,Storm Drain,87.5,12.5,86,81,97,81,107,43,495
+#0212,Scizor,Generation II,Bug, Steel,Technician, Swarm,Light Metal,50.0,50.0,70,130,100,55,80,65,500
+#0677,Espurr,Generation VI,Psychic, Unknown,Infiltrator, Keen Eye,Own Tempo,50.0,50.0,62,48,54,63,60,68,355
+#0284,Masquerain,Generation III,Bug, Flying,Intimidate,,Unnerve,50.0,50.0,70,60,62,80,82,60,414
+#0792,Lunala,Generation VII,Psychic, Ghost,Shadow Shield,,,0.0,0.0,137,113,89,137,107,97,680
+#0620,Mienshao,Generation V,Fighting, Unknown,Inner Focus, Regenerator,Reckless,50.0,50.0,65,125,60,95,60,105,510
+#0267,Beautifly,Generation III,Bug, Flying,Swarm,,Rivalry,50.0,50.0,60,70,50,90,50,65,385
+#0078,Rapidash,Generation I,Fire, Unknown,Pastel Veil, Flash Fire,Anticipation,50.0,50.0,65,100,70,80,80,105,500
+#0829,Gossifleur,Generation VIII,Grass, Unknown,Regenerator, Cotton Down,Effect Spore,50.0,50.0,40,40,60,40,60,10,250
+#0623,Golurk,Generation V,Ground, Ghost,Klutz, Iron Fist,No Guard,0.0,0.0,89,124,80,55,80,55,483
+#0081,Magnemite,Generation I,Electric, Steel,Sturdy, Magnet Pull,Analytic,0.0,0.0,25,35,70,95,55,45,325
+#0986,Brute Bonnet,On Smogon Pokédex,Grass, Dark,Protosynthesis,,,0.0,0.0,111,127,99,79,99,55,570
+#0246,Larvitar,Generation II,Rock, Ground,Guts,,Sand Veil,50.0,50.0,50,64,50,45,50,41,300
+#0654,Braixen,Generation VI,Fire, Unknown,Blaze,,Magician,87.5,12.5,59,59,58,90,70,73,409
+#0072,Tentacool,Generation I,Water, Poison,Liquid Ooze, Clear Body,Rain Dish,50.0,50.0,40,40,35,50,100,70,335
+#0244,Entei,Generation II,Fire, Unknown,Pressure,,Flash Fire,0.0,0.0,115,115,85,90,75,100,580
+#0145,Zapdos,Generation I,Electric, Flying,Pressure, Defiant,Lightning Rod,0.0,0.0,90,90,85,125,90,100,580
+#0622,Golett,Generation V,Ground, Ghost,Klutz, Iron Fist,No Guard,0.0,0.0,59,74,50,35,50,35,303
+#0057,Primeape,Generation I,Fighting, Unknown,Vital Spirit, Anger Point,Defiant,50.0,50.0,65,105,60,60,70,95,455
+#0149,Dragonite,Generation I,Dragon, Flying,Inner Focus,,Multiscale,50.0,50.0,91,134,95,100,100,80,600
+#0651,Quilladin,Generation VI,Grass, Unknown,Overgrow,,Bulletproof,87.5,12.5,61,78,95,56,58,57,405
+#0098,Krabby,Generation I,Water, Unknown,Shell Armor, Hyper Cutter,Sheer Force,50.0,50.0,30,105,90,25,25,50,325
+#0165,Ledyba,Generation II,Bug, Flying,Early Bird, Swarm,Rattled,50.0,50.0,40,20,30,40,80,55,265
+#0001,Bulbasaur,Generation I,Grass, Poison,Overgrow,,Chlorophyll,87.5,12.5,45,49,49,65,65,45,318
+#0221,Piloswine,Generation II,Ice, Ground,Oblivious, Snow Cloak,Thick Fat,50.0,50.0,100,100,80,60,60,50,450
+#0237,Hitmontop,Generation II,Fighting, Unknown,Technician, Intimidate,Steadfast,100.0,0.0,50,95,95,35,110,70,455
+#0510,Liepard,Generation V,Dark, Unknown,Unburden, Limber,Prankster,50.0,50.0,64,88,50,88,50,106,446
+#0729,Brionne,Generation VII,Water, Unknown,Torrent,,Liquid Voice,87.5,12.5,60,69,69,91,81,50,420
+#0263,Zigzagoon,Generation III,Normal, Unknown,Pickup, Gluttony,Quick Feet,50.0,50.0,38,30,41,30,41,60,240
+#0296,Makuhita,Generation III,Fighting, Unknown,Guts, Thick Fat,Sheer Force,75.0,25.0,72,60,30,20,30,25,237
+#0411,Bastiodon,Generation IV,Rock, Steel,Sturdy,,Soundproof,87.5,12.5,60,52,168,47,138,30,495
+#0281,Kirlia,Generation III,Psychic, Fairy,Trace, Synchronize,Telepathy,50.0,50.0,38,35,35,65,55,50,278
+#0736,Grubbin,Generation VII,Bug, Unknown,Swarm,,,50.0,50.0,47,62,45,55,45,46,300
+#0438,Bonsly,Generation IV,Rock, Unknown,Rock Head, Sturdy,Rattled,50.0,50.0,50,80,95,10,45,10,290
+#0038,Ninetales,Generation I,Fire, Unknown,Flash Fire, Snow Cloak,Snow Warning,25.0,75.0,73,76,75,81,100,100,505
+#0657,Frogadier,Generation VI,Water, Unknown,Torrent,,Protean,87.5,12.5,54,63,52,83,56,97,405
+#0547,Whimsicott,Generation V,Grass, Fairy,Infiltrator, Prankster,Chlorophyll,50.0,50.0,60,67,85,77,75,116,480
+#0073,Tentacruel,Generation I,Water, Poison,Liquid Ooze, Clear Body,Rain Dish,50.0,50.0,80,70,65,80,120,100,515
+#0579,Reuniclus,Generation V,Psychic, Unknown,Overcoat, Magic Guard,Regenerator,50.0,50.0,110,65,75,125,85,30,490
+#0005,Charmeleon,Generation I,Fire, Unknown,Blaze,,Solar Power,87.5,12.5,58,64,58,80,65,80,405
+#0950,Klawf,On Smogon Pokédex,Rock, Unknown,Shell Armor, Anger Shell,Regenerator,50.0,50.0,70,100,115,35,55,75,450
+#0957,Tinkatink,On Smogon Pokédex,Fairy, Steel,Mold Breaker, Own Tempo,Pickpocket,0.0,100.0,50,45,45,35,64,58,297
+#0286,Breloom,Generation III,Grass, Fighting,Effect Spore, Poison Heal,Technician,50.0,50.0,60,130,80,60,60,70,460
+#0041,Zubat,Generation I,Poison, Flying,Inner Focus,,Infiltrator,50.0,50.0,40,45,35,30,40,55,245
+#0846,Arrokuda,Generation VIII,Water, Unknown,Swift Swim,,Propeller Tail,50.0,50.0,41,63,40,40,30,66,280
+#0106,Hitmonlee,Generation I,Fighting, Unknown,Limber, Reckless,Unburden,100.0,0.0,50,120,53,35,110,87,455
+#0478,Froslass,Generation IV,Ice, Ghost,Snow Cloak,,Cursed Body,0.0,100.0,70,80,70,80,70,110,480
+#0661,Fletchling,Generation VI,Normal, Flying,Big Pecks,,Gale Wings,50.0,50.0,45,50,43,40,38,62,278
+#1007,Koraidon,On Smogon Pokédex,Fighting, Dragon,Orichalcum Pulse,,,0.0,0.0,100,135,115,85,100,135,670
+#0523,Zebstrika,Generation V,Electric, Unknown,Lightning Rod, Motor Drive,Sap Sipper,50.0,50.0,75,100,63,80,63,116,497
+#0019,Rattata,Generation I,Normal, Unknown,Hustle, Gluttony,Thick Fat,50.0,50.0,30,56,35,25,35,72,253
+#0088,Grimer,Generation I,Poison, Unknown,Sticky Hold, Gluttony,Power of Alchemy,50.0,50.0,80,80,50,40,50,25,325
+#0408,Cranidos,Generation IV,Rock, Unknown,Mold Breaker,,Sheer Force,87.5,12.5,67,125,40,30,30,58,350
+#0908,Meowscarada,On Smogon Pokédex,Grass, Dark,Overgrow,,Protean,87.5,12.5,76,110,70,81,70,123,530
+#0973,Flamigo,On Smogon Pokédex,Flying, Fighting,Tangled Feet, Scrappy,Costar,50.0,50.0,82,115,74,75,64,90,500
+#0578,Duosion,Generation V,Psychic, Unknown,Overcoat, Magic Guard,Regenerator,50.0,50.0,65,40,50,125,60,30,370
+#0676,Furfrou,Generation VI,Normal, Unknown,Fur Coat,,,50.0,50.0,75,80,60,65,90,102,472
+#0970,Glimmora,On Smogon Pokédex,Rock, Poison,Toxic Debris,,Corrosion,50.0,50.0,83,55,90,130,81,86,525
+#0790,Cosmoem,Generation VII,Psychic, Unknown,Sturdy,,,0.0,0.0,43,29,131,29,131,37,400
+#0485,Heatran,Generation IV,Fire, Steel,Flash Fire,,Flame Body,50.0,50.0,91,90,106,130,106,77,600
+#0684,Swirlix,Generation VI,Fairy, Unknown,Sweet Veil,,Unburden,50.0,50.0,62,48,66,59,57,49,341
+#0021,Spearow,Generation I,Normal, Flying,Keen Eye,,Sniper,50.0,50.0,40,60,30,31,31,70,262
+#0562,Yamask,Generation V,Ghost, Unknown,Mummy, Wandering Spirit,,50.0,50.0,38,30,85,55,65,30,303
+#0921,Pawmi,On Smogon Pokédex,Electric, Unknown,Static, Natural Cure,Iron Fist,50.0,50.0,45,50,20,40,25,60,240
+#0514,Simisear,Generation V,Fire, Unknown,Gluttony,,Blaze,87.5,12.5,75,98,63,98,63,101,498
+#0996,Frigibax,On Smogon Pokédex,Dragon, Ice,Thermal Exchange,,Ice Body,50.0,50.0,65,75,45,35,45,55,320
+#0865,Sirfetch'd,Generation VIII,Fighting, Unknown,Steadfast,,Scrappy,50.0,50.0,62,135,95,68,82,65,507
+#0763,Tsareena,Generation VII,Grass, Unknown,Leaf Guard, Queenly Majesty,Sweet Veil,0.0,100.0,72,120,98,50,98,72,510
+#0003,Venusaur,Generation I,Grass, Poison,Overgrow, Thick Fat,Chlorophyll,87.5,12.5,80,82,83,100,100,80,525
+#0820,Greedent,Generation VIII,Normal, Unknown,Cheek Pouch,,Gluttony,50.0,50.0,120,95,95,55,75,20,460
+#0891,Kubfu,Generation VIII,Fighting, Unknown,Inner Focus,,No Guard,87.5,12.5,60,90,60,53,50,72,385
+#0949,Toedscruel,On Smogon Pokédex,Ground, Grass,Mycelium Might,,,50.0,50.0,80,70,65,80,120,100,515
+#0572,Minccino,Generation V,Normal, Unknown,Technician, Cute Charm,Skill Link,25.0,75.0,55,50,40,40,40,75,300
+#0140,Kabuto,Generation I,Rock, Water,Swift Swim, Battle Armor,Weak Armor,87.5,12.5,30,80,90,55,45,55,355
+#0215,Sneasel,Generation II,Dark, Ice,Keen Eye, Inner Focus,Pickpocket,50.0,50.0,55,95,55,35,75,115,430
+#0836,Boltund,Generation VIII,Electric, Unknown,Strong Jaw,,Competitive,50.0,50.0,69,90,60,90,60,121,490
+#0369,Relicanth,Generation III,Water, Rock,Swift Swim, Rock Head,Sturdy,87.5,12.5,100,90,130,45,65,55,485
+#0148,Dragonair,Generation I,Dragon, Unknown,Shed Skin,,Marvel Scale,50.0,50.0,61,84,65,70,70,70,420
+#0063,Abra,Generation I,Psychic, Unknown,Inner Focus, Synchronize,Magic Guard,75.0,25.0,25,20,15,105,55,90,310
+#0299,Nosepass,Generation III,Rock, Unknown,Magnet Pull, Sturdy,Sand Force,50.0,50.0,30,45,135,45,90,30,375
+#0900,Kleavor,Generation VIII,Bug, Rock,Sheer Force, Swarm,Sharpness,50.0,50.0,70,135,95,45,70,85,500
+#0914,Quaquaval,On Smogon Pokédex,Water, Fighting,Torrent,,Moxie,87.5,12.5,85,120,80,85,75,85,530
+#0202,Wobbuffet,Generation II,Psychic, Unknown,Shadow Tag,,Telepathy,50.0,50.0,190,33,58,33,58,33,405
+#0417,Pachirisu,Generation IV,Electric, Unknown,Pickup, Run Away,Volt Absorb,50.0,50.0,60,45,70,45,90,95,405
+#0735,Gumshoos,Generation VII,Normal, Unknown,Stakeout, Strong Jaw,Adaptability,50.0,50.0,88,110,60,55,60,45,418
+#0915,Lechonk,On Smogon Pokédex,Normal, Unknown,Gluttony, Aroma Veil,Thick Fat,50.0,50.0,54,45,40,35,45,35,254
+#0395,Empoleon,Generation IV,Water, Steel,Torrent,,Defiant,87.5,12.5,84,86,88,111,101,60,530
+#0719,Diancie,Generation VI,Rock, Fairy,Magic Bounce, Clear Body,,0.0,0.0,50,100,150,100,150,50,600
+#0287,Slakoth,Generation III,Normal, Unknown,Truant,,,50.0,50.0,60,60,60,35,35,30,280
+#0826,Orbeetle,Generation VIII,Bug, Psychic,Frisk, Swarm,Telepathy,50.0,50.0,60,45,110,80,120,90,505
+#0118,Goldeen,Generation I,Water, Unknown,Swift Swim, Water Veil,Lightning Rod,50.0,50.0,45,67,60,35,50,63,320
+#0942,Maschiff,On Smogon Pokédex,Dark, Unknown,Run Away, Intimidate,Stakeout,50.0,50.0,60,78,60,40,51,51,340
+#0551,Sandile,Generation V,Ground, Dark,Moxie, Intimidate,Anger Point,50.0,50.0,50,72,35,35,35,65,292
+#0925,Maushold,On Smogon Pokédex,Normal, Unknown,Friend Guard, Cheek Pouch,Technician,0.0,0.0,74,75,70,65,75,111,470
+#0026,Raichu,Generation I,Electric, Unknown,Static, Surge Surfer,Lightning Rod,50.0,50.0,60,90,55,90,80,100,475
+#0426,Drifblim,Generation IV,Ghost, Flying,Unburden, Aftermath,Flare Boost,50.0,50.0,150,80,44,90,54,80,498
+#0808,Meltan,Generation VII,Steel, Unknown,Magnet Pull,,,0.0,0.0,46,65,65,55,35,34,300
+#0941,Kilowattrel,On Smogon Pokédex,Electric, Flying,Volt Absorb, Wind Power,Competitive,50.0,50.0,70,70,60,105,60,125,490
+#0858,Hatterene,Generation VIII,Psychic, Fairy,Healer, Anticipation,Magic Bounce,0.0,100.0,57,90,95,136,103,29,510
+#0360,Wynaut,Generation III,Psychic, Unknown,Shadow Tag,,Telepathy,50.0,50.0,95,23,48,23,48,23,260
+#0629,Vullaby,Generation V,Dark, Flying,Overcoat, Big Pecks,Weak Armor,0.0,100.0,70,55,75,45,65,60,370
+#0199,Slowking,Generation II,Water, Psychic,Oblivious, Own Tempo,Regenerator,50.0,50.0,95,75,80,100,110,30,490
+#0672,Skiddo,Generation VI,Grass, Unknown,Sap Sipper,,Grass Pelt,50.0,50.0,66,65,48,62,57,52,350
+#0840,Applin,Generation VIII,Grass, Dragon,Gluttony, Ripen,Bulletproof,50.0,50.0,40,40,80,40,40,20,260
+#0204,Pineco,Generation II,Bug, Unknown,Sturdy,,Overcoat,50.0,50.0,50,65,90,35,35,15,290
+#0120,Staryu,Generation I,Water, Unknown,Natural Cure, Illuminate,Analytic,0.0,0.0,30,45,55,70,55,85,340
+#0984,Great Tusk,On Smogon Pokédex,Ground, Fighting,Protosynthesis,,,0.0,0.0,115,131,131,53,53,87,570
+#0108,Lickitung,Generation I,Normal, Unknown,Oblivious, Own Tempo,Cloud Nine,50.0,50.0,90,55,75,60,75,30,385
+#0769,Sandygast,Generation VII,Ghost, Ground,Water Compaction,,Sand Veil,50.0,50.0,55,55,80,70,45,15,320
+#0565,Carracosta,Generation V,Water, Rock,Solid Rock, Sturdy,Swift Swim,87.5,12.5,74,108,133,83,65,32,495
+#0451,Skorupi,Generation IV,Poison, Bug,Battle Armor, Sniper,Keen Eye,50.0,50.0,40,50,90,30,55,65,330
+#0576,Gothitelle,Generation V,Psychic, Unknown,Frisk, Competitive,Shadow Tag,25.0,75.0,70,55,95,95,110,65,490
+#0643,Reshiram,Generation V,Dragon, Fire,Turboblaze,,,0.0,0.0,100,120,100,150,120,90,680
+#0351,Castform,Generation III,Normal, Unknown,Forecast,,,50.0,50.0,70,70,70,70,70,70,420
+#0390,Chimchar,Generation IV,Fire, Unknown,Blaze,,Iron Fist,87.5,12.5,44,58,44,58,44,61,309
+#0850,Sizzlipede,Generation VIII,Fire, Bug,Flash Fire, White Smoke,Flame Body,50.0,50.0,50,65,45,50,50,45,305
+#0125,Electabuzz,Generation I,Electric, Unknown,Static,,Vital Spirit,75.0,25.0,65,83,57,95,85,105,490
+#0613,Cubchoo,Generation V,Ice, Unknown,Slush Rush, Snow Cloak,Rattled,50.0,50.0,55,70,40,60,40,40,305
+#0065,Alakazam,Generation I,Psychic, Unknown,Trace, Inner Focus,Magic Guard,75.0,25.0,55,50,45,135,85,120,490
+#0138,Omanyte,Generation I,Rock, Water,Swift Swim, Shell Armor,Weak Armor,87.5,12.5,35,40,100,90,55,35,355
+#0617,Accelgor,Generation V,Bug, Unknown,Sticky Hold, Hydration,Unburden,50.0,50.0,80,70,40,100,60,145,495
+#0760,Bewear,Generation VII,Normal, Fighting,Fluffy, Klutz,Unnerve,50.0,50.0,120,125,80,55,60,60,500
+#0784,Kommo-o,Generation VII,Dragon, Fighting,Bulletproof, Soundproof,Overcoat,50.0,50.0,75,110,125,100,105,85,600
+#0948,Toedscool,On Smogon Pokédex,Ground, Grass,Mycelium Might,,,50.0,50.0,40,40,35,50,100,70,335
+#0103,Exeggutor,Generation I,Grass, Psychic,Frisk, Chlorophyll,Harvest,50.0,50.0,95,95,85,125,65,55,520
+#0236,Tyrogue,Generation II,Fighting, Unknown,Guts, Steadfast,Vital Spirit,100.0,0.0,35,35,35,35,35,35,210
+#0492,Shaymin,Generation IV,Grass, Unknown,Natural Cure, Serene Grace,,0.0,0.0,100,100,100,100,100,100,600
+#0568,Trubbish,Generation V,Poison, Unknown,Sticky Hold, Stench,Aftermath,50.0,50.0,50,50,62,40,62,65,329
+#0849,Toxtricity,Generation VIII,Electric, Poison,Punk Rock, Minus,Technician,50.0,50.0,75,98,70,114,70,75,502
+#0556,Maractus,Generation V,Grass, Unknown,Chlorophyll, Water Absorb,Storm Drain,50.0,50.0,75,86,67,106,67,60,461
+#0123,Scyther,Generation I,Bug, Flying,Technician, Swarm,Steadfast,50.0,50.0,70,110,80,55,80,105,500
+#0045,Vileplume,Generation I,Grass, Poison,Chlorophyll,,Effect Spore,50.0,50.0,75,80,85,100,90,50,480
+#0232,Donphan,Generation II,Ground, Unknown,Sturdy,,Sand Veil,50.0,50.0,90,120,120,60,60,50,500
+#0239,Elekid,Generation II,Electric, Unknown,Static,,Vital Spirit,75.0,25.0,45,63,37,65,55,95,360
+#0923,Pawmot,On Smogon Pokédex,Electric, Fighting,Natural Cure, Volt Absorb,Iron Fist,50.0,50.0,70,115,70,70,60,105,490
+#0959,Tinkaton,On Smogon Pokédex,Fairy, Steel,Mold Breaker, Own Tempo,Pickpocket,0.0,100.0,85,75,77,70,105,94,506
+#0013,Weedle,Generation I,Bug, Poison,Shield Dust,,Run Away,50.0,50.0,40,35,30,20,20,50,195
+#0860,Morgrem,Generation VIII,Dark, Fairy,Frisk, Prankster,Pickpocket,100.0,0.0,65,60,45,75,55,70,370
+#0870,Falinks,Generation VIII,Fighting, Unknown,Battle Armor,,Defiant,0.0,0.0,65,100,100,70,60,75,470
+#0953,Rellor,On Smogon Pokédex,Bug, Unknown,Compound Eyes,,Shed Skin,50.0,50.0,41,50,60,31,58,30,270
+#0394,Prinplup,Generation IV,Water, Unknown,Torrent,,Defiant,87.5,12.5,64,66,68,81,76,50,405
+#0863,Perrserker,Generation VIII,Steel, Unknown,Battle Armor, Tough Claws,Steely Spirit,50.0,50.0,70,110,100,50,60,50,440
+#0435,Skuntank,Generation IV,Poison, Dark,Aftermath, Stench,Keen Eye,50.0,50.0,103,93,67,71,61,84,479
+#0177,Natu,Generation II,Psychic, Flying,Early Bird, Synchronize,Magic Bounce,50.0,50.0,40,50,45,70,45,70,320
+#0897,Spectrier,Generation VIII,Ghost, Unknown,Grim Neigh,,,0.0,0.0,100,65,60,145,80,130,580
+#0899,Wyrdeer,Generation VIII,Normal, Psychic,Frisk, Intimidate,Sap Sipper,50.0,50.0,103,105,72,105,75,65,525
+#0381,Latios,Generation III,Dragon, Psychic,Levitate,,,100.0,0.0,80,90,80,130,110,110,600
+#0060,Poliwag,Generation I,Water, Unknown,Water Absorb, Damp,Swift Swim,50.0,50.0,40,50,40,40,40,90,300
+#0337,Lunatone,Generation III,Rock, Psychic,Levitate,,,0.0,0.0,70,55,65,95,85,70,440
+#0142,Aerodactyl,Generation I,Rock, Flying,Tough Claws, Pressure,Unnerve,87.5,12.5,80,105,65,60,75,130,515
+#0682,Spritzee,Generation VI,Fairy, Unknown,Healer,,Aroma Veil,50.0,50.0,78,52,60,63,65,23,341
+#0727,Incineroar,Generation VII,Fire, Dark,Blaze,,Intimidate,87.5,12.5,95,115,90,80,90,60,530
+#0830,Eldegoss,Generation VIII,Grass, Unknown,Regenerator, Cotton Down,Effect Spore,50.0,50.0,60,50,90,80,120,60,460
+#0497,Serperior,Generation V,Grass, Unknown,Overgrow,,Contrary,87.5,12.5,75,75,95,75,95,113,528
+#0731,Pikipek,Generation VII,Normal, Flying,Skill Link, Keen Eye,Pickup,50.0,50.0,35,75,30,30,30,65,265
+#0975,Cetitan,On Smogon Pokédex,Ice, Unknown,Slush Rush, Thick Fat,Sheer Force,50.0,50.0,170,113,65,45,55,73,521
+#0888,Zacian,Generation VIII,Fairy, Unknown,Intrepid Sword,,,0.0,0.0,92,130,115,80,115,138,670
+#0982,Dudunsparce,On Smogon Pokédex,Normal, Unknown,Serene Grace, Run Away,Rattled,50.0,50.0,125,100,80,85,75,55,520
+#0946,Bramblin,On Smogon Pokédex,Grass, Ghost,Wind Rider,,Infiltrator,50.0,50.0,40,65,30,45,35,60,275
+#0811,Thwackey,Generation VIII,Grass, Unknown,Overgrow,,Grassy Surge,87.5,12.5,70,85,70,55,60,80,420
+#0831,Wooloo,Generation VIII,Normal, Unknown,Fluffy, Run Away,Bulletproof,50.0,50.0,42,40,55,40,45,48,270
+#0884,Duraludon,Generation VIII,Steel, Dragon,Light Metal, Heavy Metal,Stalwart,50.0,50.0,70,95,115,120,50,85,535
+#0095,Onix,Generation I,Rock, Ground,Rock Head, Sturdy,Weak Armor,50.0,50.0,35,45,160,30,45,70,385
+#0595,Joltik,Generation V,Bug, Electric,Compound Eyes, Unnerve,Swarm,50.0,50.0,50,47,50,57,50,65,319
+#0642,Thundurus,Generation V,Electric, Flying,Volt Absorb, Prankster,Defiant,100.0,0.0,79,115,70,125,80,111,580
+#0883,Arctovish,Generation VIII,Water, Ice,Ice Body, Water Absorb,Slush Rush,0.0,0.0,90,90,100,80,90,55,505
+#0750,Mudsdale,Generation VII,Ground, Unknown,Stamina, Own Tempo,Inner Focus,50.0,50.0,100,125,100,55,85,35,500
+#0985,Scream Tail,On Smogon Pokédex,Fairy, Psychic,Protosynthesis,,,0.0,0.0,115,65,99,65,115,111,570
+#0586,Sawsbuck,Generation V,Normal, Grass,Chlorophyll, Sap Sipper,Serene Grace,50.0,50.0,80,100,70,60,70,95,475
+#0554,Darumaka,Generation V,Fire, Unknown,Hustle,,Inner Focus,50.0,50.0,70,90,45,15,45,50,315
+#0223,Remoraid,Generation II,Water, Unknown,Hustle, Sniper,Moody,50.0,50.0,35,65,35,65,35,65,300
+#0605,Elgyem,Generation V,Psychic, Unknown,Telepathy, Synchronize,Analytic,50.0,50.0,55,55,55,85,55,30,335
+#0951,Capsakid,On Smogon Pokédex,Grass, Unknown,Insomnia, Chlorophyll,Klutz,50.0,50.0,50,62,40,62,40,50,304
+#1005,Roaring Moon,On Smogon Pokédex,Dragon, Dark,Protosynthesis,,,0.0,0.0,105,139,71,55,101,119,590
+#0127,Pinsir,Generation I,Bug, Unknown,Mold Breaker, Hyper Cutter,Moxie,50.0,50.0,65,125,100,55,70,85,500
+#0656,Froakie,Generation VI,Water, Unknown,Torrent,,Protean,87.5,12.5,41,56,40,62,44,71,314
+#1002,Chien-Pao,On Smogon Pokédex,Dark, Ice,Sword of Ruin,,,0.0,0.0,80,130,80,90,65,135,580
+#0988,Slither Wing,On Smogon Pokédex,Bug, Fighting,Protosynthesis,,,0.0,0.0,85,135,79,85,105,81,570
+#0540,Sewaddle,Generation V,Bug, Grass,Chlorophyll, Swarm,Overcoat,50.0,50.0,45,53,70,40,60,42,310
+#0089,Muk,Generation I,Poison, Unknown,Sticky Hold, Gluttony,Power of Alchemy,50.0,50.0,105,105,75,65,100,50,500
+#0482,Azelf,Generation IV,Psychic, Unknown,Levitate,,,0.0,0.0,75,125,70,125,70,115,580
+#0569,Garbodor,Generation V,Poison, Unknown,Stench, Weak Armor,Aftermath,50.0,50.0,80,95,82,60,82,75,474
+#0473,Mamoswine,Generation IV,Ice, Ground,Oblivious, Snow Cloak,Thick Fat,50.0,50.0,110,130,80,70,60,80,530
+#0272,Ludicolo,Generation III,Water, Grass,Swift Swim, Rain Dish,Own Tempo,50.0,50.0,80,70,70,90,100,70,480
+#0183,Marill,Generation II,Water, Fairy,Huge Power, Thick Fat,Sap Sipper,50.0,50.0,70,20,50,20,50,40,250
+#0440,Happiny,Generation IV,Normal, Unknown,Natural Cure, Serene Grace,Friend Guard,0.0,100.0,100,5,5,15,65,30,220
+#0524,Roggenrola,Generation V,Rock, Unknown,Weak Armor, Sturdy,Sand Force,50.0,50.0,55,75,85,25,25,15,280
+#0564,Tirtouga,Generation V,Water, Rock,Solid Rock, Sturdy,Swift Swim,87.5,12.5,54,78,103,53,45,22,355
+#0434,Stunky,Generation IV,Poison, Dark,Aftermath, Stench,Keen Eye,50.0,50.0,63,63,47,41,41,74,329
+#0107,Hitmonchan,Generation I,Fighting, Unknown,Keen Eye, Iron Fist,Inner Focus,100.0,0.0,50,105,79,35,110,76,455
+#0844,Sandaconda,Generation VIII,Ground, Unknown,Sand Spit, Shed Skin,Sand Veil,50.0,50.0,72,107,125,65,70,71,510
+#0879,Copperajah,Generation VIII,Steel, Unknown,Sheer Force,,Heavy Metal,50.0,50.0,122,130,69,80,69,30,500
+#0972,Houndstone,On Smogon Pokédex,Ghost, Unknown,Sand Rush,,Fluffy,50.0,50.0,72,101,100,50,97,68,488
+#0126,Magmar,Generation I,Fire, Unknown,Flame Body,,Vital Spirit,75.0,25.0,65,95,57,100,85,93,495
+#0625,Bisharp,Generation V,Dark, Steel,Inner Focus, Defiant,Pressure,50.0,50.0,65,125,100,60,70,70,490
+#0693,Clawitzer,Generation VI,Water, Unknown,Mega Launcher,,,50.0,50.0,71,73,88,120,89,59,500
+#0176,Togetic,Generation II,Fairy, Flying,Hustle, Serene Grace,Super Luck,87.5,12.5,55,40,85,80,105,40,405
+#0276,Taillow,Generation III,Normal, Flying,Guts,,Scrappy,50.0,50.0,40,55,30,30,30,85,270
+#0486,Regigigas,Generation IV,Normal, Unknown,Slow Start,,,0.0,0.0,110,160,110,80,110,100,670
+#0664,Scatterbug,Generation VI,Bug, Unknown,Shield Dust, Compound Eyes,Friend Guard,50.0,50.0,38,35,40,27,25,35,200
+#0842,Appletun,Generation VIII,Grass, Dragon,Gluttony, Ripen,Thick Fat,50.0,50.0,110,85,80,100,80,30,485
+#0621,Druddigon,Generation V,Dragon, Unknown,Sheer Force, Rough Skin,Mold Breaker,50.0,50.0,77,120,90,60,90,48,485
+#0490,Manaphy,Generation IV,Water, Unknown,Hydration,,,0.0,0.0,100,100,100,100,100,100,600
+#0785,Tapu Koko,Generation VII,Electric, Fairy,Electric Surge,,Telepathy,0.0,0.0,70,115,85,95,75,130,570
+#0166,Ledian,Generation II,Bug, Flying,Early Bird, Swarm,Iron Fist,50.0,50.0,55,35,50,55,110,85,390
+#0546,Cottonee,Generation V,Grass, Fairy,Infiltrator, Prankster,Chlorophyll,50.0,50.0,40,27,60,37,50,66,280
+#0806,Blacephalon,Generation VII,Fire, Ghost,Beast Boost,,,0.0,0.0,53,127,53,151,79,107,570
+#0708,Phantump,Generation VI,Ghost, Grass,Natural Cure, Frisk,Harvest,50.0,50.0,43,70,48,50,60,38,309
+#0881,Arctozolt,Generation VIII,Electric, Ice,Static, Volt Absorb,Slush Rush,0.0,0.0,90,100,90,90,80,55,505
+#0893,Zarude,Generation VIII,Dark, Grass,Leaf Guard,,,0.0,0.0,105,120,105,70,95,105,600
+#0630,Mandibuzz,Generation V,Dark, Flying,Overcoat, Big Pecks,Weak Armor,0.0,100.0,110,65,105,55,95,80,510
+#0415,Combee,Generation IV,Bug, Flying,Honey Gather,,Hustle,87.5,12.5,30,30,42,30,42,70,244
+#0343,Baltoy,Generation III,Ground, Psychic,Levitate,,,0.0,0.0,40,40,55,40,70,55,300
+#0344,Claydol,Generation III,Ground, Psychic,Levitate,,,0.0,0.0,60,70,105,70,120,75,500
+#0201,Unown,Generation II,Psychic, Unknown,Levitate,,,0.0,0.0,48,72,48,72,48,48,336
+#0416,Vespiquen,Generation IV,Bug, Flying,Pressure,,Unnerve,0.0,100.0,70,80,102,80,102,40,474
+#0302,Sableye,Generation III,Dark, Ghost,Magic Bounce, Keen Eye,Prankster,50.0,50.0,50,75,75,65,65,50,380
+#0624,Pawniard,Generation V,Dark, Steel,Inner Focus, Defiant,Pressure,50.0,50.0,45,85,70,40,40,60,340
+#0793,Nihilego,Generation VII,Rock, Poison,Beast Boost,,,0.0,0.0,109,53,47,127,131,103,570
+#0420,Cherubi,Generation IV,Grass, Unknown,Chlorophyll,,,50.0,50.0,45,35,45,62,53,35,275
+#0827,Nickit,Generation VIII,Dark, Unknown,Unburden, Run Away,Stakeout,50.0,50.0,40,28,28,47,52,50,245
+#0396,Starly,Generation IV,Normal, Flying,Keen Eye,,Reckless,50.0,50.0,40,55,30,30,30,60,245
+#0368,Gorebyss,Generation III,Water, Unknown,Swift Swim,,Hydration,50.0,50.0,55,84,105,114,75,52,485
+#0454,Toxicroak,Generation IV,Poison, Fighting,Dry Skin, Anticipation,Poison Touch,50.0,50.0,83,106,65,86,65,85,490
+#0059,Arcanine,Generation I,Fire, Unknown,Flash Fire, Intimidate,Rock Head,75.0,25.0,90,110,80,100,80,95,555
+#0361,Snorunt,Generation III,Ice, Unknown,Ice Body, Inner Focus,Moody,50.0,50.0,50,50,50,50,50,50,300
+#0935,Charcadet,On Smogon Pokédex,Fire, Unknown,Flash Fire,,Flame Body,50.0,50.0,40,50,40,50,40,35,255
+#0154,Meganium,Generation II,Grass, Unknown,Overgrow,,Leaf Guard,87.5,12.5,80,82,100,83,100,80,525
+#0388,Grotle,Generation IV,Grass, Unknown,Overgrow,,Shell Armor,87.5,12.5,75,89,85,55,65,36,405
+#0535,Tympole,Generation V,Water, Unknown,Swift Swim, Hydration,Water Absorb,50.0,50.0,50,50,40,50,40,64,294
+#0795,Pheromosa,Generation VII,Bug, Fighting,Beast Boost,,,0.0,0.0,71,137,37,137,37,151,570
+#0841,Flapple,Generation VIII,Grass, Dragon,Gluttony, Ripen,Hustle,50.0,50.0,70,110,80,95,60,70,485
+#0090,Shellder,Generation I,Water, Unknown,Shell Armor, Skill Link,Overcoat,50.0,50.0,30,65,100,45,25,40,305
+#0292,Shedinja,Generation III,Bug, Ghost,Wonder Guard,,,0.0,0.0,1,90,45,30,30,40,236
+#0457,Lumineon,Generation IV,Water, Unknown,Swift Swim, Storm Drain,Water Veil,50.0,50.0,69,69,76,69,86,91,460
+#0500,Emboar,Generation V,Fire, Fighting,Blaze,,Reckless,87.5,12.5,110,123,65,100,65,65,528
+#0689,Barbaracle,Generation VI,Rock, Water,Tough Claws, Sniper,Pickpocket,50.0,50.0,72,105,115,54,86,68,500
+#0724,Decidueye,Generation VII,Grass, Ghost,Overgrow,,Scrappy,87.5,12.5,78,107,75,100,100,70,530
+#0804,Naganadel,Generation VII,Poison, Dragon,Beast Boost,,,0.0,0.0,73,73,73,127,73,121,540
+#0121,Starmie,Generation I,Water, Psychic,Natural Cure, Illuminate,Analytic,0.0,0.0,60,75,85,100,85,115,520
+#0866,Mr. Rime,Generation VIII,Ice, Psychic,Tangled Feet, Screen Cleaner,Ice Body,50.0,50.0,80,85,75,110,100,70,520
+#0998,Baxcalibur,On Smogon Pokédex,Dragon, Ice,Thermal Exchange,,Ice Body,50.0,50.0,115,145,92,75,86,87,600
+#0648,Meloetta,Generation V,Normal, Psychic,Serene Grace,,,0.0,0.0,100,77,77,128,128,90,600
+#0219,Magcargo,Generation II,Fire, Rock,Magma Armor, Flame Body,Weak Armor,50.0,50.0,50,50,120,80,80,30,410
+#0039,Jigglypuff,Generation I,Normal, Fairy,Cute Charm, Competitive,Friend Guard,25.0,75.0,115,45,20,45,25,20,270
+#0080,Slowbro,Generation I,Water, Psychic,Shell Armor, Oblivious,Regenerator,50.0,50.0,95,75,110,100,80,30,490
+#0160,Feraligatr,Generation II,Water, Unknown,Torrent,,Sheer Force,87.5,12.5,85,105,100,79,83,78,530
+#0273,Seedot,Generation III,Grass, Unknown,Early Bird, Chlorophyll,Pickpocket,50.0,50.0,40,40,50,30,30,30,220
+#0352,Kecleon,Generation III,Normal, Unknown,Color Change,,Protean,50.0,50.0,60,90,70,60,120,40,440
+#0920,Lokix,On Smogon Pokédex,Bug, Dark,Swarm,,Tinted Lens,50.0,50.0,71,102,78,52,55,92,450
+#0185,Sudowoodo,Generation II,Rock, Unknown,Rock Head, Sturdy,Rattled,50.0,50.0,70,100,115,30,65,30,410
+#0441,Chatot,Generation IV,Normal, Flying,Tangled Feet, Keen Eye,Big Pecks,50.0,50.0,76,65,45,92,42,91,411
+#0712,Bergmite,Generation VI,Ice, Unknown,Own Tempo, Ice Body,Sturdy,50.0,50.0,55,69,85,32,35,28,304
+#0470,Leafeon,Generation IV,Grass, Unknown,Leaf Guard,,Chlorophyll,87.5,12.5,65,110,130,60,65,95,525
+#0979,Annihilape,On Smogon Pokédex,Fighting, Ghost,Vital Spirit, Inner Focus,Defiant,50.0,50.0,110,115,80,50,90,90,535
+#0550,Basculin,Generation V,Water, Unknown,Rock Head, Reckless,Mold Breaker,50.0,50.0,70,92,65,80,55,98,460
+#0192,Sunflora,Generation II,Grass, Unknown,Chlorophyll, Solar Power,Early Bird,50.0,50.0,75,75,55,105,85,30,425
+#0527,Woobat,Generation V,Psychic, Flying,Unaware, Klutz,Simple,50.0,50.0,55,45,43,55,43,72,313
+#0918,Spidops,On Smogon Pokédex,Bug, Unknown,Insomnia,,Stakeout,50.0,50.0,60,79,92,52,86,35,404
+#0336,Seviper,Generation III,Poison, Unknown,Shed Skin,,Infiltrator,50.0,50.0,73,100,60,100,60,65,458
+#0537,Seismitoad,Generation V,Water, Ground,Swift Swim, Poison Touch,Water Absorb,50.0,50.0,105,85,75,85,75,74,499
+#0498,Tepig,Generation V,Fire, Unknown,Blaze,,Thick Fat,87.5,12.5,65,63,45,45,45,45,308
+#0894,Regieleki,Generation VIII,Electric, Unknown,Transistor,,,0.0,0.0,80,100,50,100,50,200,580
+#0658,Greninja,Generation VI,Water, Dark,Battle Bond, Torrent,Protean,87.5,12.5,72,95,67,103,71,122,530
+#0066,Machop,Generation I,Fighting, Unknown,No Guard, Guts,Steadfast,75.0,25.0,70,80,50,35,35,35,305
+#0050,Diglett,Generation I,Ground, Unknown,Arena Trap, Sand Veil,Sand Force,50.0,50.0,10,55,25,35,45,95,265
+#0226,Mantine,Generation II,Water, Flying,Swift Swim, Water Absorb,Water Veil,50.0,50.0,65,40,70,80,140,70,465
+#0448,Lucario,Generation IV,Fighting, Steel,Adaptability, Steadfast,Justified,87.5,12.5,70,110,70,115,70,90,525
+#0898,Calyrex,Generation VIII,Psychic, Grass,As One, Unnerve,,0.0,0.0,100,80,80,80,80,80,500
+#0061,Poliwhirl,Generation I,Water, Unknown,Water Absorb, Damp,Swift Swim,50.0,50.0,65,65,65,50,50,90,385
+#0803,Poipole,Generation VII,Poison, Unknown,Beast Boost,,,0.0,0.0,67,73,67,73,67,73,420
+#0007,Squirtle,Generation I,Water, Unknown,Torrent,,Rain Dish,87.5,12.5,44,48,65,50,64,43,314
+#0789,Cosmog,Generation VII,Psychic, Unknown,Unaware,,,0.0,0.0,43,29,31,29,31,37,200
+#0649,Genesect,Generation V,Bug, Steel,Download,,,0.0,0.0,71,120,95,120,95,99,600
+#0581,Swanna,Generation V,Water, Flying,Big Pecks, Keen Eye,Hydration,50.0,50.0,75,87,63,87,63,98,473
+#0635,Hydreigon,Generation V,Dark, Dragon,Levitate,,,50.0,50.0,92,105,90,125,90,98,600
+#0545,Scolipede,Generation V,Bug, Poison,Swarm, Poison Point,Quick Feet,50.0,50.0,60,90,89,55,69,112,475
+#0194,Wooper,Generation II,Water, Ground,Water Absorb, Damp,Unaware,50.0,50.0,55,45,45,25,25,15,210
+#0022,Fearow,Generation I,Normal, Flying,Keen Eye,,Sniper,50.0,50.0,65,90,65,61,61,100,442
+#0701,Hawlucha,Generation VI,Fighting, Flying,Unburden, Limber,Mold Breaker,50.0,50.0,78,92,75,74,63,118,500
+#0178,Xatu,Generation II,Psychic, Flying,Early Bird, Synchronize,Magic Bounce,50.0,50.0,65,75,70,95,70,95,470
+#0143,Snorlax,Generation I,Normal, Unknown,Thick Fat, Immunity,Gluttony,87.5,12.5,160,110,65,65,110,30,540
+#0567,Archeops,Generation V,Rock, Flying,Defeatist,,,87.5,12.5,75,140,65,112,65,110,567
+#0229,Houndoom,Generation II,Dark, Fire,Early Bird, Flash Fire,Unnerve,50.0,50.0,75,90,50,110,80,95,500
+#0349,Feebas,Generation III,Water, Unknown,Swift Swim, Oblivious,Adaptability,50.0,50.0,20,15,20,10,55,80,200
+#0646,Kyurem,Generation V,Dragon, Ice,Teravolt, Pressure,,0.0,0.0,125,130,90,130,90,95,660
+#0688,Binacle,Generation VI,Rock, Water,Tough Claws, Sniper,Pickpocket,50.0,50.0,42,52,67,39,56,50,306
+#681,Aegislash,Generation VI,Steel, Ghost,Stance Change,,,50.0,50.0,60,50,150,50,150,60,520
+#0260,Swampert,Generation III,Water, Ground,Swift Swim, Torrent,Damp,87.5,12.5,100,110,90,85,90,60,535
+#0710,Pumpkaboo,Generation VI,Ghost, Grass,Frisk, Pickup,Insomnia,50.0,50.0,44,66,70,44,55,56,335
+#0602,Tynamo,Generation V,Electric, Unknown,Levitate,,,50.0,50.0,35,55,40,45,40,60,275
+#0243,Raikou,Generation II,Electric, Unknown,Pressure,,Volt Absorb,0.0,0.0,90,85,75,115,100,115,580
+#0010,Caterpie,Generation I,Bug, Unknown,Shield Dust,,Run Away,50.0,50.0,45,30,35,20,20,45,195
+#0753,Fomantis,Generation VII,Grass, Unknown,Leaf Guard,,Contrary,50.0,50.0,40,55,35,50,35,35,250
+#0924,Tandemaus,On Smogon Pokédex,Normal, Unknown,Pickup, Run Away,Own Tempo,0.0,0.0,50,50,45,40,45,75,305
+#0861,Grimmsnarl,Generation VIII,Dark, Fairy,Frisk, Prankster,Pickpocket,100.0,0.0,95,120,65,95,75,60,510
+#0869,Alcremie,Generation VIII,Fairy, Unknown,Sweet Veil,,Aroma Veil,0.0,100.0,65,60,75,110,121,64,495
+#0378,Regice,Generation III,Ice, Unknown,Clear Body,,Ice Body,0.0,0.0,80,50,100,100,200,50,580
+#0856,Hatenna,Generation VIII,Psychic, Unknown,Healer, Anticipation,Magic Bounce,0.0,100.0,42,30,45,56,53,39,265
+#0150,Mewtwo,Generation I,Psychic, Unknown,Insomnia, Pressure,Unnerve,0.0,0.0,106,110,90,154,90,130,680
+#0342,Crawdaunt,Generation III,Water, Dark,Shell Armor, Hyper Cutter,Adaptability,50.0,50.0,63,120,85,90,55,55,468
+#0544,Whirlipede,Generation V,Bug, Poison,Swarm, Poison Point,Quick Feet,50.0,50.0,40,55,99,40,79,47,360
+#0247,Pupitar,Generation II,Rock, Ground,Shed Skin,,,50.0,50.0,70,84,70,65,70,51,410
+#0182,Bellossom,Generation II,Grass, Unknown,Chlorophyll,,Healer,50.0,50.0,75,80,85,90,100,50,480
+#0254,Sceptile,Generation III,Grass, Unknown,Overgrow, Lightning Rod,Unburden,87.5,12.5,70,85,65,105,85,120,530
+#0077,Ponyta,Generation I,Fire, Unknown,Pastel Veil, Flash Fire,Anticipation,50.0,50.0,50,85,55,65,65,90,410
+#0122,Mr. Mime,Generation I,Psychic, Fairy,Vital Spirit, Filter,Ice Body,50.0,50.0,40,45,65,100,120,90,460
+#0040,Wigglytuff,Generation I,Normal, Fairy,Cute Charm, Competitive,Frisk,25.0,75.0,140,70,45,75,50,45,425
+#0155,Cyndaquil,Generation II,Fire, Unknown,Blaze,,Flash Fire,87.5,12.5,39,52,43,60,50,65,309
+#0728,Popplio,Generation VII,Water, Unknown,Torrent,,Liquid Voice,87.5,12.5,50,54,54,66,56,40,320
+#0570,Zorua,Generation V,Dark, Unknown,Illusion,,,87.5,12.5,40,65,40,80,40,65,330
+#0222,Corsola,Generation II,Water, Rock,Natural Cure, Hustle,Cursed Body,25.0,75.0,55,55,85,65,85,35,380
+#0721,Volcanion,Generation VI,Fire, Water,Water Absorb,,,0.0,0.0,80,110,120,130,90,70,600
+#0916,Oinkologne,On Smogon Pokédex,Normal, Unknown,Gluttony, Aroma Veil,Thick Fat,50.0,50.0,110,100,75,59,80,65,489
+#0720,Hoopa,Generation VI,Psychic, Ghost,Magician,,,0.0,0.0,80,110,60,150,130,70,600
+#0926,Fidough,On Smogon Pokédex,Fairy, Unknown,Own Tempo,,Klutz,50.0,50.0,37,55,70,30,55,65,312
+#0929,Dolliv,On Smogon Pokédex,Grass, Normal,Early Bird,,Harvest,50.0,50.0,52,53,60,78,78,33,354
+#0175,Togepi,Generation II,Fairy, Unknown,Hustle, Serene Grace,Super Luck,87.5,12.5,35,20,65,40,65,20,245
+#0977,Dondozo,On Smogon Pokédex,Water, Unknown,Oblivious, Unaware,Water Veil,50.0,50.0,150,100,115,65,65,35,530
+#0234,Stantler,Generation II,Normal, Unknown,Frisk, Intimidate,Sap Sipper,50.0,50.0,73,95,62,85,65,85,465
+#0772,Type: Null,Generation VII,Normal, Unknown,Battle Armor,,,0.0,0.0,95,95,95,95,95,59,534
+#0723,Dartrix,Generation VII,Grass, Flying,Overgrow,,Long Reach,87.5,12.5,78,75,75,70,70,52,420
+#0380,Latias,Generation III,Dragon, Psychic,Levitate,,,0.0,100.0,80,80,90,110,130,110,600
+#0529,Drilbur,Generation V,Ground, Unknown,Sand Force, Sand Rush,Mold Breaker,50.0,50.0,60,85,40,30,45,68,328
+#0761,Bounsweet,Generation VII,Grass, Unknown,Leaf Guard, Oblivious,Sweet Veil,0.0,100.0,42,30,38,30,38,32,210
+#0744,Rockruff,Generation VII,Rock, Unknown,Vital Spirit, Own Tempo,Steadfast,50.0,50.0,45,65,40,30,40,60,280
+#0205,Forretress,Generation II,Bug, Steel,Sturdy,,Overcoat,50.0,50.0,75,90,140,60,60,40,465
+#0530,Excadrill,Generation V,Ground, Steel,Sand Force, Sand Rush,Mold Breaker,50.0,50.0,110,135,60,50,65,88,508
+#0683,Aromatisse,Generation VI,Fairy, Unknown,Healer,,Aroma Veil,50.0,50.0,101,72,72,99,89,29,462
+#0157,Typhlosion,Generation II,Fire, Unknown,Blaze,,Frisk,87.5,12.5,78,84,78,109,85,100,534
+#0235,Smeargle,Generation II,Normal, Unknown,Technician, Own Tempo,Moody,50.0,50.0,55,20,35,20,45,75,250
+#0770,Palossand,Generation VII,Ghost, Ground,Water Compaction,,Sand Veil,50.0,50.0,85,75,110,100,75,35,480
+#0386,Deoxys,Generation III,Psychic, Unknown,Pressure,,,0.0,0.0,50,150,50,150,50,150,600
+#0521,Unfezant,Generation V,Normal, Flying,Super Luck, Big Pecks,Rivalry,50.0,50.0,80,105,80,65,55,93,478
+#0615,Cryogonal,Generation V,Ice, Unknown,Levitate,,,0.0,0.0,70,50,30,95,135,105,485
+#0032,Nidoran♂,Generation I,Poison, Unknown,Rivalry, Poison Point,Hustle,100.0,0.0,46,57,40,40,40,50,273
+#0702,Dedenne,Generation VI,Electric, Fairy,Pickup, Cheek Pouch,Plus,50.0,50.0,67,58,57,81,67,101,431
+#0981,Farigiraf,On Smogon Pokédex,Normal, Psychic,Armor Tail, Cud Chew,Sap Sipper,50.0,50.0,120,90,70,110,70,60,520
+#0634,Zweilous,Generation V,Dark, Dragon,Hustle,,,50.0,50.0,72,85,70,65,70,58,420
+#0645,Landorus,Generation V,Ground, Flying,Sand Force, Intimidate,Sheer Force,100.0,0.0,89,125,90,115,80,101,600
+#0889,Zamazenta,Generation VIII,Fighting, Unknown,Dauntless Shield,,,0.0,0.0,92,130,115,80,115,138,670
+#0009,Blastoise,Generation I,Water, Unknown,Torrent, Mega Launcher,Rain Dish,87.5,12.5,79,83,100,85,105,78,530
+#0425,Drifloon,Generation IV,Ghost, Flying,Unburden, Aftermath,Flare Boost,50.0,50.0,90,50,34,60,44,70,348
+#0366,Clamperl,Generation III,Water, Unknown,Shell Armor,,Rattled,50.0,50.0,35,64,85,74,55,32,345
+#0653,Fennekin,Generation VI,Fire, Unknown,Blaze,,Magician,87.5,12.5,40,45,40,62,60,60,307
+#0300,Skitty,Generation III,Normal, Unknown,Normalize, Cute Charm,Wonder Skin,25.0,75.0,50,45,45,35,35,50,260
+#0989,Sandy Shocks,On Smogon Pokédex,Electric, Ground,Protosynthesis,,,0.0,0.0,85,81,97,121,85,101,570
+#0607,Litwick,Generation V,Ghost, Fire,Flash Fire, Flame Body,Shadow Tag,50.0,50.0,50,30,55,65,55,20,275
+#0012,Butterfree,Generation I,Bug, Flying,Compound Eyes,,Tinted Lens,50.0,50.0,60,45,50,80,80,70,385
+#0197,Umbreon,Generation II,Dark, Unknown,Synchronize,,Inner Focus,87.5,12.5,95,65,110,60,130,65,525
+#0705,Sliggoo,Generation VI,Dragon, Unknown,Shell Armor, Sap Sipper,Gooey,50.0,50.0,68,75,53,83,113,60,452
+#0662,Fletchinder,Generation VI,Fire, Flying,Flame Body,,Gale Wings,50.0,50.0,62,73,55,56,52,84,382
+#0044,Gloom,Generation I,Grass, Poison,Chlorophyll,,Stench,50.0,50.0,60,65,70,85,75,40,395
+#0933,Naclstack,On Smogon Pokédex,Rock, Unknown,Purifying Salt, Sturdy,Clear Body,50.0,50.0,60,60,100,35,65,35,355
+#0363,Spheal,Generation III,Ice, Water,Ice Body, Thick Fat,Oblivious,50.0,50.0,70,40,50,55,50,25,290
+#0111,Rhyhorn,Generation I,Ground, Rock,Lightning Rod, Rock Head,Reckless,50.0,50.0,80,85,95,30,30,25,345
+#0110,Weezing,Generation I,Poison, Unknown,Neutralizing Gas, Levitate,Misty Surge,50.0,50.0,65,90,120,85,70,60,490
+#0238,Smoochum,Generation II,Ice, Psychic,Forewarn, Oblivious,Hydration,0.0,100.0,45,30,15,85,65,65,305
+#0913,Quaxwell,On Smogon Pokédex,Water, Unknown,Torrent,,Moxie,87.5,12.5,70,85,65,65,60,65,410
+#0200,Misdreavus,Generation II,Ghost, Unknown,Levitate,,,50.0,50.0,60,60,60,85,85,85,435
+#0193,Yanma,Generation II,Bug, Flying,Compound Eyes, Speed Boost,Frisk,50.0,50.0,65,65,45,75,45,95,390
+#0198,Murkrow,Generation II,Dark, Flying,Insomnia, Super Luck,Prankster,50.0,50.0,60,85,42,85,42,91,405
+#0446,Munchlax,Generation IV,Normal, Unknown,Pickup, Thick Fat,Gluttony,87.5,12.5,135,85,40,40,85,5,390
+#0505,Watchog,Generation V,Normal, Unknown,Keen Eye, Illuminate,Analytic,50.0,50.0,60,85,69,60,69,77,420
+#0309,Electrike,Generation III,Electric, Unknown,Static, Lightning Rod,Minus,50.0,50.0,40,45,40,65,40,65,295
+#0298,Azurill,Generation III,Normal, Fairy,Huge Power, Thick Fat,Sap Sipper,25.0,75.0,50,20,40,20,40,20,190
+#0459,Snover,Generation IV,Grass, Ice,Snow Warning,,Soundproof,50.0,50.0,60,62,50,62,60,40,334
+#0348,Armaldo,Generation III,Rock, Bug,Battle Armor,,Swift Swim,87.5,12.5,75,125,100,70,80,45,495
+#0574,Gothita,Generation V,Psychic, Unknown,Frisk, Competitive,Shadow Tag,25.0,75.0,45,30,50,55,65,45,290
+#0787,Tapu Bulu,Generation VII,Grass, Fairy,Grassy Surge,,Telepathy,0.0,0.0,70,130,115,85,95,75,570
+#0834,Drednaw,Generation VIII,Water, Rock,Shell Armor, Strong Jaw,Swift Swim,50.0,50.0,90,115,90,48,68,74,485
+#0129,Magikarp,Generation I,Water, Unknown,Swift Swim,,Rattled,50.0,50.0,20,10,55,15,20,80,200
+#0730,Primarina,Generation VII,Water, Fairy,Torrent,,Liquid Voice,87.5,12.5,80,74,74,126,116,60,530
+#0113,Chansey,Generation I,Normal, Unknown,Natural Cure, Serene Grace,Healer,0.0,100.0,250,5,5,35,105,50,450
+#0821,Rookidee,Generation VIII,Flying, Unknown,Keen Eye, Unnerve,Big Pecks,50.0,50.0,38,47,35,33,35,57,245
+#0305,Lairon,Generation III,Steel, Rock,Rock Head, Sturdy,Heavy Metal,50.0,50.0,60,90,140,50,50,40,430
+#0734,Yungoos,Generation VII,Normal, Unknown,Stakeout, Strong Jaw,Adaptability,50.0,50.0,48,70,30,30,30,45,253
+#0764,Comfey,Generation VII,Fairy, Unknown,Flower Veil, Triage,Natural Cure,25.0,75.0,51,52,90,82,110,100,485
+#0383,Groudon,Generation III,Ground, Unknown,Drought, Desolate Land,,0.0,0.0,100,150,140,100,90,90,670
+#0940,Wattrel,On Smogon Pokédex,Electric, Flying,Volt Absorb, Wind Power,Competitive,50.0,50.0,40,40,35,55,40,70,280
+#0037,Vulpix,Generation I,Fire, Unknown,Flash Fire, Snow Cloak,Snow Warning,25.0,75.0,38,41,40,50,65,65,299
+#0822,Corvisquire,Generation VIII,Flying, Unknown,Keen Eye, Unnerve,Big Pecks,50.0,50.0,68,67,55,43,55,77,365
+#0832,Dubwool,Generation VIII,Normal, Unknown,Fluffy, Steadfast,Bulletproof,50.0,50.0,72,80,100,60,90,88,490
+#0944,Shroodle,On Smogon Pokédex,Poison, Normal,Unburden, Pickpocket,Prankster,50.0,50.0,40,65,35,40,35,75,290
+#0403,Shinx,Generation IV,Electric, Unknown,Rivalry, Intimidate,Guts,50.0,50.0,45,65,34,40,34,45,263
+#0580,Ducklett,Generation V,Water, Flying,Big Pecks, Keen Eye,Hydration,50.0,50.0,62,44,50,44,50,55,305
+#0749,Mudbray,Generation VII,Ground, Unknown,Stamina, Own Tempo,Inner Focus,50.0,50.0,70,100,70,45,55,45,385
+#0901,Ursaluna,Generation VIII,Ground, Normal,Bulletproof, Guts,Unnerve,50.0,50.0,130,140,105,45,80,50,550
+#0093,Haunter,Generation I,Ghost, Poison,Levitate,,,50.0,50.0,45,50,45,115,55,95,405
+#0526,Gigalith,Generation V,Rock, Unknown,Sand Stream, Sturdy,Sand Force,50.0,50.0,85,135,130,60,70,25,505
+#0768,Golisopod,Generation VII,Bug, Water,Emergency Exit,,,50.0,50.0,75,125,140,60,90,40,530
+#0432,Purugly,Generation IV,Normal, Unknown,Own Tempo, Thick Fat,Defiant,25.0,75.0,71,82,64,64,59,112,452
+#0802,Marshadow,Generation VII,Fighting, Ghost,Technician,,,0.0,0.0,90,125,80,90,90,125,600
+#0443,Gible,Generation IV,Dragon, Ground,Sand Veil,,Rough Skin,50.0,50.0,58,70,45,40,45,42,300
+#0810,Grookey,Generation VIII,Grass, Unknown,Overgrow,,Grassy Surge,87.5,12.5,50,65,50,40,40,65,310
+#0171,Lanturn,Generation II,Water, Electric,Volt Absorb, Illuminate,Water Absorb,50.0,50.0,125,58,58,76,76,67,460
+#0766,Passimian,Generation VII,Fighting, Unknown,Receiver,,Defiant,50.0,50.0,100,120,90,40,60,80,490
+#0465,Tangrowth,Generation IV,Grass, Unknown,Leaf Guard, Chlorophyll,Regenerator,50.0,50.0,100,100,125,110,50,50,535
+#0715,Noivern,Generation VI,Flying, Dragon,Frisk, Infiltrator,Telepathy,50.0,50.0,85,70,80,97,80,123,535
+#0280,Ralts,Generation III,Psychic, Fairy,Trace, Synchronize,Telepathy,50.0,50.0,28,25,25,45,35,40,198
+#0418,Buizel,Generation IV,Water, Unknown,Swift Swim,,Water Veil,50.0,50.0,55,65,35,60,30,85,330
+#0538,Throh,Generation V,Fighting, Unknown,Guts, Inner Focus,Mold Breaker,100.0,0.0,120,100,85,30,85,45,465
+#0250,Ho-Oh,Generation II,Fire, Flying,Pressure,,Regenerator,0.0,0.0,106,130,90,110,154,90,680
+#0618,Stunfisk,Generation V,Ground, Electric,Static, Limber,Sand Veil,50.0,50.0,109,66,84,81,99,32,471
+#0644,Zekrom,Generation V,Dragon, Electric,Teravolt,,,0.0,0.0,100,150,120,120,100,90,680
+#0290,Nincada,Generation III,Bug, Ground,Compound Eyes,,Run Away,50.0,50.0,31,45,90,30,30,40,266
+#0809,Melmetal,Generation VII,Steel, Unknown,Iron Fist,,,0.0,0.0,135,143,143,80,65,34,600
+#0489,Phione,Generation IV,Water, Unknown,Hydration,,,0.0,0.0,80,80,80,80,80,80,480
+#0495,Snivy,Generation V,Grass, Unknown,Overgrow,,Contrary,87.5,12.5,45,45,55,45,55,63,308
+#0751,Dewpider,Generation VII,Water, Bug,Water Bubble,,Water Absorb,50.0,50.0,38,40,52,40,72,27,269
+#0774,Minior,Generation VII,Rock, Flying,Shields Down,,,0.0,0.0,60,60,100,60,100,60,440
+#0011,Metapod,Generation I,Bug, Unknown,Shed Skin,,,50.0,50.0,50,20,55,25,25,30,205
+#0872,Snom,Generation VIII,Ice, Bug,Shield Dust,,Ice Scales,50.0,50.0,30,25,35,45,30,20,185
+#0304,Aron,Generation III,Steel, Rock,Rock Head, Sturdy,Heavy Metal,50.0,50.0,50,70,100,40,40,30,330
+#0329,Vibrava,Generation III,Ground, Dragon,Levitate,,,50.0,50.0,50,70,50,50,50,70,340
+#0555,Darmanitan,Generation V,Fire, Unknown,Sheer Force, Gorilla Tactics,Zen Mode,50.0,50.0,105,140,55,30,55,95,480
+#0805,Stakataka,Generation VII,Rock, Steel,Beast Boost,,,0.0,0.0,61,131,211,53,101,13,570
+#0999,Gimmighoul,On Smogon Pokédex,Ghost, Unknown,Run Away, Rattled,,0.0,0.0,45,30,70,75,70,10,300
+#0601,Klinklang,Generation V,Steel, Unknown,Minus, Plus,Clear Body,0.0,0.0,60,100,115,70,85,90,520
+#0699,Aurorus,Generation VI,Rock, Ice,Refrigerate,,Snow Warning,87.5,12.5,123,77,72,99,92,58,521
+#0327,Spinda,Generation III,Normal, Unknown,Tangled Feet, Own Tempo,Contrary,50.0,50.0,60,60,60,60,60,60,360
+#0030,Nidorina,Generation I,Poison, Unknown,Rivalry, Poison Point,Hustle,0.0,100.0,70,62,67,55,55,56,365
+#0563,Cofagrigus,Generation V,Ghost, Unknown,Mummy,,,50.0,50.0,58,50,145,95,105,30,483
+#0034,Nidoking,Generation I,Poison, Ground,Rivalry, Poison Point,Sheer Force,100.0,0.0,81,92,77,85,75,85,495
+#0100,Voltorb,Generation I,Electric, Unknown,Static, Soundproof,Aftermath,0.0,0.0,40,30,50,55,55,100,330
+#0133,Eevee,Generation I,Normal, Unknown,Adaptability, Run Away,Anticipation,87.5,12.5,55,55,50,45,65,55,325
+#0608,Lampent,Generation V,Ghost, Fire,Flash Fire, Flame Body,Shadow Tag,50.0,50.0,60,40,60,95,60,55,370
+#0665,Spewpa,Generation VI,Bug, Unknown,Shed Skin,,Friend Guard,50.0,50.0,45,22,60,27,30,29,213
+#0812,Rillaboom,Generation VIII,Grass, Unknown,Overgrow,,Grassy Surge,87.5,12.5,100,125,90,60,70,85,530
+#0851,Centiskorch,Generation VIII,Fire, Bug,Flash Fire, White Smoke,Flame Body,50.0,50.0,100,115,65,90,90,65,525
+#0249,Lugia,Generation II,Psychic, Flying,Pressure,,Multiscale,0.0,0.0,106,90,130,90,154,110,680
+#0130,Gyarados,Generation I,Water, Flying,Mold Breaker, Intimidate,Moxie,50.0,50.0,95,125,79,60,100,81,540
+#0447,Riolu,Generation IV,Fighting, Unknown,Steadfast, Inner Focus,Prankster,87.5,12.5,40,70,40,35,40,60,285
+#0002,Ivysaur,Generation I,Grass, Poison,Overgrow,,Chlorophyll,87.5,12.5,60,62,63,80,80,60,405
+#1008,Miraidon,On Smogon Pokédex,Electric, Dragon,Hadron Engine,,,0.0,0.0,100,85,100,135,115,135,670
+#0818,Inteleon,Generation VIII,Water, Unknown,Torrent,,Sniper,87.5,12.5,70,85,65,125,65,120,530
+#0904,Overqwil,Generation VIII,Dark, Poison,Swift Swim, Poison Point,Intimidate,50.0,50.0,85,115,95,65,65,85,510
+#0320,Wailmer,Generation III,Water, Unknown,Oblivious, Water Veil,Pressure,50.0,50.0,130,70,35,70,35,60,400
+#0164,Noctowl,Generation II,Normal, Flying,Insomnia, Keen Eye,Tinted Lens,50.0,50.0,100,50,50,76,96,70,442
+#0873,Frosmoth,Generation VIII,Ice, Bug,Shield Dust,,Ice Scales,50.0,50.0,70,65,60,125,90,65,475
+#0638,Cobalion,Generation V,Steel, Fighting,Justified,,,0.0,0.0,91,90,129,90,72,108,580
+#0203,Girafarig,Generation II,Normal, Psychic,Early Bird, Inner Focus,Sap Sipper,50.0,50.0,70,80,65,90,65,85,455
+#0187,Hoppip,Generation II,Grass, Flying,Leaf Guard, Chlorophyll,Infiltrator,50.0,50.0,35,35,40,35,55,50,250
+#0251,Celebi,Generation II,Psychic, Grass,Natural Cure,,,0.0,0.0,100,100,100,100,100,100,600
+#0983,Kingambit,On Smogon Pokédex,Dark, Steel,Supreme Overlord, Defiant,Pressure,50.0,50.0,100,135,120,60,85,50,550
+#0191,Sunkern,Generation II,Grass, Unknown,Chlorophyll, Solar Power,Early Bird,50.0,50.0,30,30,30,30,30,30,180
+#0641,Tornadus,Generation V,Flying, Unknown,Regenerator, Prankster,Defiant,100.0,0.0,79,115,70,125,80,111,580
+#0240,Magby,Generation II,Fire, Unknown,Flame Body,,Vital Spirit,75.0,25.0,45,75,37,70,55,83,365
+#0596,Galvantula,Generation V,Bug, Electric,Compound Eyes, Unnerve,Swarm,50.0,50.0,70,77,60,97,60,108,472
+#0698,Amaura,Generation VI,Rock, Ice,Refrigerate,,Snow Warning,87.5,12.5,77,59,50,67,63,46,362
+#0927,Dachsbun,On Smogon Pokédex,Fairy, Unknown,Well-Baked Body,,Aroma Veil,50.0,50.0,57,80,115,50,80,95,477
+#0452,Drapion,Generation IV,Poison, Dark,Battle Armor, Sniper,Keen Eye,50.0,50.0,70,90,110,60,75,95,500
+#0029,Nidoran♀,Generation I,Poison, Unknown,Rivalry, Poison Point,Hustle,0.0,100.0,55,47,52,40,40,41,275
+#0587,Emolga,Generation V,Electric, Flying,Static,,Motor Drive,50.0,50.0,55,75,60,75,60,103,428
+#0181,Ampharos,Generation II,Electric, Unknown,Static, Mold Breaker,Plus,50.0,50.0,90,75,75,115,90,55,500
+#0429,Mismagius,Generation IV,Ghost, Unknown,Levitate,,,50.0,50.0,60,60,60,105,105,105,495
+#0297,Hariyama,Generation III,Fighting, Unknown,Guts, Thick Fat,Sheer Force,75.0,25.0,144,120,60,40,60,50,474
+#0355,Duskull,Generation III,Ghost, Unknown,Levitate,,Frisk,50.0,50.0,20,40,90,30,90,25,295
+#0994,Iron Moth,On Smogon Pokédex,Fire, Poison,Quark Drive,,,0.0,0.0,80,70,60,140,110,110,570
+#0055,Golduck,Generation I,Water, Unknown,Cloud Nine, Damp,Swift Swim,50.0,50.0,80,82,78,95,80,85,500
+#0393,Piplup,Generation IV,Water, Unknown,Torrent,,Defiant,87.5,12.5,53,51,53,61,56,40,314
+#0823,Corviknight,Generation VIII,Flying, Steel,Pressure, Unnerve,Mirror Armor,50.0,50.0,98,87,105,53,85,67,495
+#0670,Floette,Generation VI,Fairy, Unknown,Flower Veil,,Symbiosis,0.0,100.0,54,45,47,75,98,52,371
+#0864,Cursola,Generation VIII,Ghost, Unknown,Weak Armor,,Perish Body,25.0,75.0,60,95,50,145,130,30,510
+#0168,Ariados,Generation II,Bug, Poison,Insomnia, Swarm,Sniper,50.0,50.0,70,90,70,60,60,40,390
+#0053,Persian,Generation I,Normal, Unknown,Technician, Limber,Rattled,50.0,50.0,65,70,60,65,65,115,440
+#0475,Gallade,Generation IV,Psychic, Fighting,Sharpness, Steadfast,Justified,100.0,0.0,68,125,65,65,115,80,518
+#0153,Bayleef,Generation II,Grass, Unknown,Overgrow,,Leaf Guard,87.5,12.5,60,62,80,63,80,60,405
+#0992,Iron Hands,On Smogon Pokédex,Fighting, Electric,Quark Drive,,,0.0,0.0,154,140,108,50,68,50,570
+#0690,Skrelp,Generation VI,Poison, Water,Poison Touch, Poison Point,Adaptability,50.0,50.0,50,60,60,60,60,30,320
+#0771,Pyukumuku,Generation VII,Water, Unknown,Innards Out,,Unaware,50.0,50.0,55,60,130,30,130,5,410
+#0071,Victreebel,Generation I,Grass, Poison,Chlorophyll,,Gluttony,50.0,50.0,80,105,65,100,60,70,480
+#0726,Torracat,Generation VII,Fire, Unknown,Blaze,,Intimidate,87.5,12.5,65,85,50,80,50,90,420
+#0909,Fuecoco,On Smogon Pokédex,Fire, Unknown,Blaze,,Unaware,87.5,12.5,67,45,59,63,40,36,310
+#0747,Mareanie,Generation VII,Poison, Water,Merciless, Limber,Regenerator,50.0,50.0,50,53,62,43,52,45,305
+#0028,Sandslash,Generation I,Ground, Unknown,Sand Veil, Snow Cloak,Slush Rush,50.0,50.0,75,100,110,45,55,65,450
+#0213,Shuckle,Generation II,Bug, Rock,Gluttony, Sturdy,Contrary,50.0,50.0,20,10,230,10,230,5,505
+#0303,Mawile,Generation III,Steel, Fairy,Hyper Cutter, Huge Power,Sheer Force,50.0,50.0,50,85,85,55,55,50,380
+#0965,Varoom,On Smogon Pokédex,Steel, Poison,Overcoat,,Slow Start,50.0,50.0,45,70,63,30,45,47,300
+#0619,Mienfoo,Generation V,Fighting, Unknown,Inner Focus, Regenerator,Reckless,50.0,50.0,45,85,50,55,50,65,350
+#0376,Metagross,Generation III,Steel, Psychic,Tough Claws, Clear Body,Light Metal,0.0,0.0,80,135,130,95,90,70,600
+#0871,Pincurchin,Generation VIII,Electric, Unknown,Lightning Rod,,Electric Surge,50.0,50.0,48,101,95,91,85,15,435
+#0102,Exeggcute,Generation I,Grass, Psychic,Chlorophyll,,Harvest,50.0,50.0,60,40,80,60,45,40,325
+#0259,Marshtomp,Generation III,Water, Ground,Torrent,,Damp,87.5,12.5,70,85,70,60,70,50,405
+#0291,Ninjask,Generation III,Bug, Flying,Speed Boost,,Infiltrator,50.0,50.0,61,90,45,50,50,160,456
+#0631,Heatmor,Generation V,Fire, Unknown,Flash Fire, Gluttony,White Smoke,50.0,50.0,85,97,66,105,66,65,484
+#0919,Nymble,On Smogon Pokédex,Bug, Unknown,Swarm,,Tinted Lens,50.0,50.0,33,46,40,21,25,45,210
+#0373,Salamence,Generation III,Dragon, Flying,Aerilate, Intimidate,Moxie,50.0,50.0,95,135,80,110,80,100,600
+#0401,Kricketot,Generation IV,Bug, Unknown,Shed Skin,,Run Away,50.0,50.0,37,25,41,25,41,25,194
+#0675,Pangoro,Generation VI,Fighting, Dark,Mold Breaker, Iron Fist,Scrappy,50.0,50.0,95,124,78,69,71,58,495
+#0051,Dugtrio,Generation I,Ground, Unknown,Arena Trap, Sand Veil,Sand Force,50.0,50.0,35,80,50,50,70,120,405
+#0225,Delibird,Generation II,Ice, Flying,Vital Spirit, Hustle,Insomnia,50.0,50.0,45,55,45,65,45,75,330
+#0085,Dodrio,Generation I,Normal, Flying,Early Bird, Run Away,Tangled Feet,50.0,50.0,60,110,70,60,60,100,460
+#0938,Tadbulb,On Smogon Pokédex,Electric, Unknown,Static, Own Tempo,Damp,50.0,50.0,61,31,41,59,35,45,272
+#0738,Vikavolt,Generation VII,Bug, Electric,Levitate,,,50.0,50.0,77,70,90,145,75,43,500
+#0256,Combusken,Generation III,Fire, Fighting,Blaze,,Speed Boost,87.5,12.5,60,85,60,85,60,55,405
+#0932,Nacli,On Smogon Pokédex,Rock, Unknown,Purifying Salt, Sturdy,Clear Body,50.0,50.0,55,55,75,35,35,25,280
+#0711,Gourgeist,Generation VI,Ghost, Grass,Frisk, Pickup,Insomnia,50.0,50.0,55,85,122,58,75,99,494
+#0224,Octillery,Generation II,Water, Unknown,Suction Cups, Sniper,Moody,50.0,50.0,75,105,75,105,75,45,480
+#0421,Cherrim,Generation IV,Grass, Unknown,Flower Gift,,,50.0,50.0,70,60,70,87,78,85,450
+#1003,Ting-Lu,On Smogon Pokédex,Dark, Ground,Vessel of Ruin,,,0.0,0.0,165,110,130,50,80,45,580
+#0741,Oricorio,Generation VII,Fire, Flying,Dancer,,,25.0,75.0,75,70,70,98,70,93,476
+#0838,Carkol,Generation VIII,Rock, Fire,Flame Body, Steam Engine,Flash Fire,50.0,50.0,80,60,90,60,70,50,410
+#0987,Flutter Mane,On Smogon Pokédex,Ghost, Fairy,Protosynthesis,,,0.0,0.0,55,55,55,135,135,135,570
+#0542,Leavanny,Generation V,Bug, Grass,Chlorophyll, Swarm,Overcoat,50.0,50.0,75,103,80,70,70,92,490
+#0227,Skarmory,Generation II,Steel, Flying,Keen Eye, Sturdy,Weak Armor,50.0,50.0,65,80,140,40,70,70,465
+#0248,Tyranitar,Generation II,Rock, Dark,Sand Stream,,Unnerve,50.0,50.0,100,134,110,95,100,61,600
+#0603,Eelektrik,Generation V,Electric, Unknown,Levitate,,,50.0,50.0,65,85,70,75,70,40,405
+#0322,Numel,Generation III,Fire, Ground,Oblivious, Simple,Own Tempo,50.0,50.0,60,60,40,65,45,35,305
+#0488,Cresselia,Generation IV,Psychic, Unknown,Levitate,,,0.0,100.0,120,70,120,75,130,85,600
+#0541,Swadloon,Generation V,Bug, Grass,Leaf Guard, Chlorophyll,Overcoat,50.0,50.0,55,63,90,50,80,42,380
+#0828,Thievul,Generation VIII,Dark, Unknown,Unburden, Run Away,Stakeout,50.0,50.0,70,58,58,87,92,90,455
+#0385,Jirachi,Generation III,Steel, Psychic,Serene Grace,,,0.0,0.0,100,100,100,100,100,100,600
+#0531,Audino,Generation V,Normal, Unknown,Healer, Regenerator,Klutz,50.0,50.0,103,60,86,60,86,50,445
+#0954,Rabsca,On Smogon Pokédex,Bug, Psychic,Synchronize,,Telepathy,50.0,50.0,75,50,85,115,100,45,470
+#0464,Rhyperior,Generation IV,Ground, Rock,Solid Rock, Lightning Rod,Reckless,50.0,50.0,115,140,130,55,55,40,535
+#0847,Barraskewda,Generation VIII,Water, Unknown,Swift Swim,,Propeller Tail,50.0,50.0,61,123,60,60,50,136,490
+#0058,Growlithe,Generation I,Fire, Unknown,Flash Fire, Intimidate,Rock Head,75.0,25.0,55,70,45,70,50,60,350
+#0427,Buneary,Generation IV,Normal, Unknown,Run Away, Klutz,Limber,50.0,50.0,55,66,44,44,56,85,350
+#0543,Venipede,Generation V,Bug, Poison,Swarm, Poison Point,Quick Feet,50.0,50.0,30,45,59,30,39,57,260
+#0253,Grovyle,Generation III,Grass, Unknown,Overgrow,,Unburden,87.5,12.5,50,65,45,85,65,95,405
+#0922,Pawmo,On Smogon Pokédex,Electric, Fighting,Natural Cure, Volt Absorb,Iron Fist,50.0,50.0,60,75,40,50,40,85,350
+#0680,Doublade,Generation VI,Steel, Ghost,No Guard,,,50.0,50.0,59,110,150,45,49,35,448
+#0313,Volbeat,Generation III,Bug, Unknown,Swarm, Illuminate,Prankster,100.0,0.0,65,73,55,47,75,85,400
+#0315,Roselia,Generation III,Grass, Poison,Natural Cure, Poison Point,Leaf Guard,50.0,50.0,50,60,45,100,80,65,400
+#0557,Dwebble,Generation V,Bug, Rock,Shell Armor, Sturdy,Weak Armor,50.0,50.0,50,65,85,35,35,55,325
+#0479,Rotom,Generation IV,Electric, Ghost,Levitate,,,0.0,0.0,50,50,77,95,77,91,440
+#0887,Dragapult,Generation VIII,Dragon, Ghost,Infiltrator, Clear Body,Cursed Body,50.0,50.0,88,120,75,100,75,142,600
+#0813,Scorbunny,Generation VIII,Fire, Unknown,Blaze,,Libero,87.5,12.5,50,71,40,40,40,69,310
+#0627,Rufflet,Generation V,Normal, Flying,Sheer Force, Keen Eye,Hustle,100.0,0.0,70,83,50,37,50,60,350
+#0264,Linoone,Generation III,Normal, Unknown,Pickup, Gluttony,Quick Feet,50.0,50.0,78,70,61,50,61,100,420
+#0036,Clefable,Generation I,Fairy, Unknown,Magic Guard, Cute Charm,Unaware,25.0,75.0,95,70,73,85,90,60,473
+#0997,Arctibax,On Smogon Pokédex,Dragon, Ice,Thermal Exchange,,Ice Body,50.0,50.0,90,95,66,45,65,62,423
+#0626,Bouffalant,Generation V,Normal, Unknown,Reckless, Sap Sipper,Soundproof,50.0,50.0,95,110,95,40,95,55,490
+#0074,Geodude,Generation I,Rock, Ground,Magnet Pull, Rock Head,Galvanize,50.0,50.0,40,80,100,30,30,20,300
+#0503,Samurott,Generation V,Water, Unknown,Torrent,,Sharpness,87.5,12.5,95,100,85,108,70,70,528
+#0509,Purrloin,Generation V,Dark, Unknown,Unburden, Limber,Prankster,50.0,50.0,41,50,37,50,37,66,281
+#0686,Inkay,Generation VI,Dark, Psychic,Suction Cups, Contrary,Infiltrator,50.0,50.0,53,54,53,37,46,45,288
+#0340,Whiscash,Generation III,Water, Ground,Oblivious, Anticipation,Hydration,50.0,50.0,110,78,73,76,71,60,468
+#0172,Pichu,Generation II,Electric, Unknown,Static,,Lightning Rod,50.0,50.0,20,40,15,35,35,60,205
+#0722,Rowlet,Generation VII,Grass, Flying,Overgrow,,Long Reach,87.5,12.5,68,55,55,50,50,42,320
+#0008,Wartortle,Generation I,Water, Unknown,Torrent,,Rain Dish,87.5,12.5,59,63,80,65,80,58,405
+#0636,Larvesta,Generation V,Bug, Fire,Flame Body,,Swarm,50.0,50.0,55,85,55,50,55,60,360
+#0335,Zangoose,Generation III,Normal, Unknown,Immunity,,Toxic Boost,50.0,50.0,73,115,60,60,60,90,458
+#0428,Lopunny,Generation IV,Normal, Unknown,Scrappy, Cute Charm,Limber,50.0,50.0,65,76,84,54,96,105,480
+#0501,Oshawott,Generation V,Water, Unknown,Torrent,,Shell Armor,87.5,12.5,55,55,45,63,45,45,308
+#0882,Dracovish,Generation VIII,Water, Dragon,Strong Jaw, Water Absorb,Sand Rush,0.0,0.0,90,90,100,70,80,75,505
+#0515,Panpour,Generation V,Water, Unknown,Gluttony,,Torrent,87.5,12.5,50,53,48,53,48,64,316
+#0387,Turtwig,Generation IV,Grass, Unknown,Overgrow,,Shell Armor,87.5,12.5,55,68,64,45,55,31,318
+#0375,Metang,Generation III,Steel, Psychic,Clear Body,,Light Metal,0.0,0.0,60,75,100,55,80,50,420
+#0886,Drakloak,Generation VIII,Dragon, Ghost,Infiltrator, Clear Body,Cursed Body,50.0,50.0,68,80,50,60,50,102,410
+#0436,Bronzor,Generation IV,Steel, Psychic,Heatproof, Levitate,Heavy Metal,0.0,0.0,57,24,86,24,86,23,300
+#0859,Impidimp,Generation VIII,Dark, Fairy,Frisk, Prankster,Pickpocket,100.0,0.0,45,45,30,55,40,50,265
+#0740,Crabominable,Generation VII,Fighting, Ice,Hyper Cutter, Iron Fist,Anger Point,50.0,50.0,97,132,77,62,67,43,478
+#0208,Steelix,Generation II,Steel, Ground,Sand Force, Rock Head,Sheer Force,50.0,50.0,75,85,200,55,65,30,510
+#0778,Mimikyu,Generation VII,Ghost, Fairy,Disguise,,,50.0,50.0,55,90,80,50,105,96,476
+#1006,Iron Valiant,valiant/ On Smogon Pokédex,Fairy, Fighting,Quark Drive,,,0.0,0.0,74,130,90,120,60,116,590
+#0389,Torterra,Generation IV,Grass, Ground,Overgrow,,Shell Armor,87.5,12.5,95,109,105,75,85,56,525
+#0561,Sigilyph,Generation V,Psychic, Flying,Magic Guard, Wonder Skin,Tinted Lens,50.0,50.0,72,58,80,103,80,97,490
+#0671,Florges,Generation VI,Fairy, Unknown,Flower Veil,,Symbiosis,0.0,100.0,78,65,68,112,154,75,552
+#0963,Finizen,On Smogon Pokédex,Water, Unknown,Water Veil,,,50.0,50.0,70,45,40,45,40,75,315
+#0391,Monferno,Generation IV,Fire, Fighting,Blaze,,Iron Fist,87.5,12.5,64,78,52,78,52,81,405
+#0799,Guzzlord,Generation VII,Dark, Dragon,Beast Boost,,,0.0,0.0,223,101,53,97,53,43,570
+#0025,Pikachu,Generation I,Electric, Unknown,Static,,Lightning Rod,50.0,50.0,35,55,30,50,40,90,300
+#0307,Meditite,Generation III,Fighting, Psychic,Pure Power,,Telepathy,50.0,50.0,30,40,55,40,55,60,280
+#0791,Solgaleo,Generation VII,Psychic, Steel,Full Metal Body,,,0.0,0.0,137,137,107,113,89,97,680
+#0312,Minun,Generation III,Electric, Unknown,Minus,,Volt Absorb,50.0,50.0,60,40,50,75,85,95,405
+#0433,Chingling,Generation IV,Psychic, Unknown,Levitate,,,50.0,50.0,45,30,50,65,50,45,285
+#0472,Gliscor,Generation IV,Ground, Flying,Sand Veil, Hyper Cutter,Poison Heal,50.0,50.0,75,95,125,45,75,95,510
+#0405,Luxray,Generation IV,Electric, Unknown,Rivalry, Intimidate,Guts,50.0,50.0,80,120,79,95,79,70,523
+#0174,Igglybuff,Generation II,Normal, Fairy,Cute Charm, Competitive,Friend Guard,25.0,75.0,90,30,15,40,20,15,210
+#0687,Malamar,Generation VI,Dark, Psychic,Suction Cups, Contrary,Infiltrator,50.0,50.0,86,92,88,68,75,73,482
+#0775,Komala,Generation VII,Normal, Unknown,Comatose,,,50.0,50.0,65,115,65,75,95,65,480
+#0748,Toxapex,Generation VII,Poison, Water,Merciless, Limber,Regenerator,50.0,50.0,50,63,152,53,142,35,495
+#0780,Drampa,Generation VII,Normal, Dragon,Berserk, Sap Sipper,Cloud Nine,50.0,50.0,78,60,85,135,91,36,485
+#0048,Venonat,Generation I,Bug, Poison,Tinted Lens, Compound Eyes,Run Away,50.0,50.0,60,55,50,40,55,45,305
+#0359,Absol,Generation III,Dark, Unknown,Super Luck, Magic Bounce,Justified,50.0,50.0,65,130,60,75,60,75,465
+#0794,Buzzwole,Generation VII,Bug, Fighting,Beast Boost,,,0.0,0.0,107,139,139,53,53,79,570
+#0135,Jolteon,Generation I,Electric, Unknown,Volt Absorb,,Quick Feet,87.5,12.5,65,65,60,110,95,130,525
+#0496,Servine,Generation V,Grass, Unknown,Overgrow,,Contrary,87.5,12.5,60,60,75,60,75,83,413
+#0947,Brambleghast,On Smogon Pokédex,Grass, Ghost,Wind Rider,,Infiltrator,50.0,50.0,55,115,70,80,70,90,480
+#1004,Chi-Yu,On Smogon Pokédex,Dark, Fire,Beads of Ruin,,,0.0,0.0,55,80,80,145,120,100,580
+#0783,Hakamo-o,Generation VII,Dragon, Fighting,Bulletproof, Soundproof,Overcoat,50.0,50.0,55,75,90,65,70,65,420
+#0890,Eternatus,Generation VIII,Poison, Dragon,Pressure,,,0.0,0.0,140,85,95,145,95,130,690
+#0356,Dusclops,Generation III,Ghost, Unknown,Pressure,,Frisk,50.0,50.0,40,70,130,60,130,25,455
+#0762,Steenee,Generation VII,Grass, Unknown,Leaf Guard, Oblivious,Sweet Veil,0.0,100.0,52,40,48,40,48,62,290
+#0084,Doduo,Generation I,Normal, Flying,Early Bird, Run Away,Tangled Feet,50.0,50.0,35,85,45,35,35,75,310
+#0086,Seel,Generation I,Water, Unknown,Hydration, Thick Fat,Ice Body,50.0,50.0,65,45,55,45,70,45,325
+#0445,Garchomp,Generation IV,Dragon, Ground,Sand Force, Sand Veil,Rough Skin,50.0,50.0,108,130,95,80,85,102,600
+#0092,Gastly,Generation I,Ghost, Poison,Levitate,,,50.0,50.0,30,35,30,100,35,80,310
+#0075,Graveler,Generation I,Rock, Ground,Magnet Pull, Rock Head,Galvanize,50.0,50.0,55,95,115,45,45,35,390
+#0896,Glastrier,Generation VIII,Ice, Unknown,Chilling Neigh,,,0.0,0.0,100,145,130,65,110,30,580
+#0905,Enamorus,Generation VIII,Fairy, Flying,Overcoat, Cute Charm,Contrary,0.0,100.0,74,115,70,135,80,106,580
+#0279,Pelipper,Generation III,Water, Flying,Keen Eye, Drizzle,Rain Dish,50.0,50.0,60,50,100,85,70,65,430
+#0512,Simisage,Generation V,Grass, Unknown,Gluttony,,Overgrow,87.5,12.5,75,98,63,98,63,101,498
+#0976,Veluza,On Smogon Pokédex,Water, Psychic,Mold Breaker,,Sharpness,50.0,50.0,90,102,73,78,65,70,478
+#0539,Sawk,Generation V,Fighting, Unknown,Inner Focus, Sturdy,Mold Breaker,100.0,0.0,75,125,75,30,75,85,465
+#0819,Skwovet,Generation VIII,Normal, Unknown,Cheek Pouch,,Gluttony,50.0,50.0,70,55,55,35,35,25,275
+#0525,Boldore,Generation V,Rock, Unknown,Weak Armor, Sturdy,Sand Force,50.0,50.0,70,105,105,50,40,20,390
+#0628,Braviary,Generation V,Normal, Flying,Sheer Force, Keen Eye,Tinted Lens,100.0,0.0,100,123,75,57,75,80,510
+#0043,Oddish,Generation I,Grass, Poison,Chlorophyll,,Run Away,50.0,50.0,45,50,55,75,65,30,320
+#0288,Vigoroth,Generation III,Normal, Unknown,Vital Spirit,,,50.0,50.0,80,80,80,55,55,90,440
+#0716,Xerneas,Generation VI,Fairy, Unknown,Fairy Aura,,,0.0,0.0,126,131,95,131,98,99,680
+#0807,Zeraora,Generation VII,Electric, Unknown,Volt Absorb,,,0.0,0.0,88,112,75,102,80,143,600
+#0117,Seadra,Generation I,Water, Unknown,Sniper, Poison Point,Damp,50.0,50.0,55,65,95,95,45,85,440
+#0161,Sentret,Generation II,Normal, Unknown,Keen Eye, Run Away,Frisk,50.0,50.0,35,46,34,35,45,20,215
+#0442,Spiritomb,Generation IV,Ghost, Dark,Pressure,,Infiltrator,50.0,50.0,50,92,108,92,108,35,485
+#0317,Swalot,Generation III,Poison, Unknown,Liquid Ooze, Sticky Hold,Gluttony,50.0,50.0,100,73,83,73,83,55,467
+#0156,Quilava,Generation II,Fire, Unknown,Blaze,,Flash Fire,87.5,12.5,58,64,58,80,65,80,405
+#0902,Basculegion,Generation VIII,Water, Ghost,Swift Swim, Adaptability,Mold Breaker,50.0,50.0,120,112,65,80,75,78,530
+#0754,Lurantis,Generation VII,Grass, Unknown,Leaf Guard,,Contrary,50.0,50.0,70,105,90,80,90,45,480
+#0082,Magneton,Generation I,Electric, Steel,Sturdy, Magnet Pull,Analytic,0.0,0.0,50,60,95,120,70,70,465
+#0756,Shiinotic,Generation VII,Grass, Fairy,Effect Spore, Illuminate,Rain Dish,50.0,50.0,60,45,80,90,100,30,405
+#0064,Kadabra,Generation I,Psychic, Unknown,Inner Focus, Synchronize,Magic Guard,75.0,25.0,40,35,30,120,70,105,400
+#0397,Staravia,Generation IV,Normal, Flying,Intimidate,,Reckless,50.0,50.0,55,75,50,40,40,80,340
+#0518,Musharna,Generation V,Psychic, Unknown,Forewarn, Synchronize,Telepathy,50.0,50.0,116,55,85,107,95,29,487
+#0559,Scraggy,Generation V,Dark, Fighting,Shed Skin, Moxie,Intimidate,50.0,50.0,50,75,70,35,70,48,348
+#0700,Sylveon,Generation VI,Fairy, Unknown,Cute Charm,,Pixilate,87.5,12.5,95,65,65,110,130,60,525
+#0788,Tapu Fini,Generation VII,Water, Fairy,Misty Surge,,Telepathy,0.0,0.0,70,75,115,95,130,85,570
+#0031,Nidoqueen,Generation I,Poison, Ground,Rivalry, Poison Point,Sheer Force,0.0,100.0,90,82,87,75,85,76,495
+#0139,Omastar,Generation I,Rock, Water,Swift Swim, Shell Armor,Weak Armor,87.5,12.5,70,60,125,115,70,55,495
+#0241,Miltank,Generation II,Normal, Unknown,Scrappy, Thick Fat,Sap Sipper,0.0,100.0,95,80,105,40,70,100,490
+#0911,Skeledirge,On Smogon Pokédex,Fire, Ghost,Blaze,,Unaware,87.5,12.5,104,75,100,110,75,66,530
+#0956,Espathra,On Smogon Pokédex,Psychic, Unknown,Frisk, Opportunist,Speed Boost,50.0,50.0,95,60,60,101,60,105,481
+#0991,Iron Bundle,On Smogon Pokédex,Ice, Water,Quark Drive,,,0.0,0.0,56,80,114,124,60,136,570
+#0857,Hattrem,Generation VIII,Psychic, Unknown,Healer, Anticipation,Magic Bounce,0.0,100.0,57,40,65,86,73,49,370
+#0499,Pignite,Generation V,Fire, Fighting,Blaze,,Thick Fat,87.5,12.5,90,93,55,70,55,55,418
+#0566,Archen,Generation V,Rock, Flying,Defeatist,,,87.5,12.5,55,112,45,74,45,70,401
+#0969,Glimmet,On Smogon Pokédex,Rock, Poison,Toxic Debris,,Corrosion,50.0,50.0,48,35,42,105,60,60,350
+#0195,Quagsire,Generation II,Water, Ground,Water Absorb, Damp,Unaware,50.0,50.0,95,85,85,65,65,35,430
+#1000,Gholdengo,On Smogon Pokédex,Steel, Ghost,Good as Gold,,,0.0,0.0,87,60,95,133,91,84,550
+#0494,Victini,Generation V,Psychic, Fire,Victory Star,,,0.0,0.0,100,100,100,100,100,100,600
+#0912,Quaxly,On Smogon Pokédex,Water, Unknown,Torrent,,Moxie,87.5,12.5,55,65,45,50,45,50,310
+#0456,Finneon,Generation IV,Water, Unknown,Swift Swim, Storm Drain,Water Veil,50.0,50.0,49,49,56,49,61,66,330
+#0575,Gothorita,Generation V,Psychic, Unknown,Frisk, Competitive,Shadow Tag,25.0,75.0,60,45,70,75,85,55,390
+#0875,Eiscue,Generation VIII,Ice, Unknown,Ice Face,,,50.0,50.0,75,80,110,65,90,50,470
+#0283,Surskit,Generation III,Bug, Water,Swift Swim,,Rain Dish,50.0,50.0,40,30,32,50,52,65,269
+#0357,Tropius,Generation III,Grass, Flying,Chlorophyll, Solar Power,Harvest,50.0,50.0,99,68,83,72,87,51,460
+#0585,Deerling,Generation V,Normal, Grass,Chlorophyll, Sap Sipper,Serene Grace,50.0,50.0,60,60,50,40,50,75,335
+#0895,Regidrago,Generation VIII,Dragon, Unknown,Dragon's Maw,,,0.0,0.0,200,100,50,100,50,80,580
+#0326,Grumpig,Generation III,Psychic, Unknown,Own Tempo, Thick Fat,Gluttony,50.0,50.0,80,45,65,90,110,80,470
+#0713,Avalugg,Generation VI,Ice, Unknown,Own Tempo, Ice Body,Sturdy,50.0,50.0,95,117,184,44,46,28,514
+#0468,Togekiss,Generation IV,Fairy, Flying,Hustle, Serene Grace,Super Luck,87.5,12.5,85,50,95,120,115,80,545
+#0070,Weepinbell,Generation I,Grass, Poison,Chlorophyll,,Gluttony,50.0,50.0,65,90,50,85,45,55,390
+#0270,Lotad,Generation III,Water, Grass,Swift Swim, Rain Dish,Own Tempo,50.0,50.0,40,30,30,40,50,30,220
+#0548,Petilil,Generation V,Grass, Unknown,Chlorophyll, Own Tempo,Leaf Guard,0.0,100.0,45,35,50,70,50,30,280
+#0571,Zoroark,Generation V,Dark, Unknown,Illusion,,,87.5,12.5,60,105,60,120,60,105,510
+#0697,Tyrantrum,Generation VI,Rock, Dragon,Strong Jaw,,Rock Head,87.5,12.5,82,121,119,69,59,71,521
+#0739,Crabrawler,Generation VII,Fighting, Unknown,Hyper Cutter, Iron Fist,Anger Point,50.0,50.0,47,82,57,42,47,63,338
+#0049,Venomoth,Generation I,Bug, Poison,Tinted Lens, Shield Dust,Wonder Skin,50.0,50.0,70,65,60,90,75,90,450
+#0669,Flabébé,Generation VI,Fairy, Unknown,Flower Veil,,Symbiosis,0.0,100.0,44,38,39,61,79,42,303
+#0228,Houndour,Generation II,Dark, Fire,Early Bird, Flash Fire,Unnerve,50.0,50.0,45,60,30,80,50,65,330
+#0833,Chewtle,Generation VIII,Water, Unknown,Shell Armor, Strong Jaw,Swift Swim,50.0,50.0,50,64,50,38,38,44,284
+#0742,Cutiefly,Generation VII,Bug, Fairy,Honey Gather, Shield Dust,Sweet Veil,50.0,50.0,40,45,40,55,40,84,304
+#0685,Slurpuff,Generation VI,Fairy, Unknown,Sweet Veil,,Unburden,50.0,50.0,82,80,86,85,75,72,480
+#0852,Clobbopus,Generation VIII,Fighting, Unknown,Limber,,Technician,50.0,50.0,50,68,60,50,50,32,310
+#0407,Roserade,Generation IV,Grass, Poison,Natural Cure, Poison Point,Technician,50.0,50.0,60,70,55,125,105,90,505
+#0266,Silcoon,Generation III,Bug, Unknown,Shed Skin,,,50.0,50.0,50,35,55,25,25,15,205
+#0714,Noibat,Generation VI,Flying, Dragon,Frisk, Infiltrator,Telepathy,50.0,50.0,40,30,35,45,40,55,245
+#0759,Stufful,Generation VII,Normal, Fighting,Fluffy, Klutz,Cute Charm,50.0,50.0,70,75,50,45,50,50,340
+#0114,Tangela,Generation I,Grass, Unknown,Leaf Guard, Chlorophyll,Regenerator,50.0,50.0,65,55,115,100,40,60,435
+#0961,Wugtrio,On Smogon Pokédex,Water, Unknown,Gooey, Rattled,Sand Veil,50.0,50.0,35,100,50,50,70,120,425
+#0151,Mew,Generation I,Psychic, Unknown,Synchronize,,,0.0,0.0,100,100,100,100,100,100,600
+#0960,Wiglett,On Smogon Pokédex,Water, Unknown,Gooey, Rattled,Sand Veil,50.0,50.0,10,55,25,35,25,95,245
+#0015,Beedrill,Generation I,Bug, Poison,Swarm, Adaptability,Sniper,50.0,50.0,65,80,40,45,80,75,385
+#0679,Honedge,Generation VI,Steel, Ghost,No Guard,,,50.0,50.0,45,80,100,35,37,28,325
+#0971,Greavard,On Smogon Pokédex,Ghost, Unknown,Pickup,,Fluffy,50.0,50.0,50,61,60,30,55,34,290
+#0993,Iron Jugulis,On Smogon Pokédex,Dark, Flying,Quark Drive,,,0.0,0.0,94,80,86,122,80,108,570
+#0782,Jangmo-o,Generation VII,Dragon, Unknown,Bulletproof, Soundproof,Overcoat,50.0,50.0,45,55,65,45,45,45,300
+#0217,Ursaring,Generation II,Normal, Unknown,Guts, Quick Feet,Unnerve,50.0,50.0,90,130,75,75,75,55,500
+#0134,Vaporeon,Generation I,Water, Unknown,Water Absorb,,Hydration,87.5,12.5,130,65,60,110,95,65,525
+#0424,Ambipom,Generation IV,Normal, Unknown,Technician, Pickup,Skill Link,50.0,50.0,75,100,66,60,66,115,482
+#0765,Oranguru,Generation VII,Normal, Psychic,Telepathy, Inner Focus,Symbiosis,50.0,50.0,90,60,80,90,110,60,490
+#0170,Chinchou,Generation II,Water, Electric,Volt Absorb, Illuminate,Water Absorb,50.0,50.0,75,38,38,56,56,67,330
+#0666,Vivillon,Generation VI,Bug, Flying,Shield Dust, Compound Eyes,Friend Guard,50.0,50.0,80,52,50,90,50,89,411
+#0878,Cufant,Generation VIII,Steel, Unknown,Sheer Force,,Heavy Metal,50.0,50.0,72,80,49,40,49,40,330
+#0733,Toucannon,Generation VII,Normal, Flying,Skill Link, Keen Eye,Sheer Force,50.0,50.0,80,120,75,75,75,60,485
+#0419,Floatzel,Generation IV,Water, Unknown,Swift Swim,,Water Veil,50.0,50.0,85,105,55,85,50,115,495
+#0437,Bronzong,Generation IV,Steel, Psychic,Heatproof, Levitate,Heavy Metal,0.0,0.0,67,89,116,79,116,33,500
+#0268,Cascoon,Generation III,Bug, Unknown,Shed Skin,,,50.0,50.0,50,35,55,25,25,15,205
+#0533,Gurdurr,Generation V,Fighting, Unknown,Sheer Force, Guts,Iron Fist,75.0,25.0,85,105,85,40,50,40,405
+#0536,Palpitoad,Generation V,Water, Ground,Swift Swim, Hydration,Water Absorb,50.0,50.0,75,65,55,65,55,69,384
+#0006,Charizard,Generation I,Fire, Flying,Blaze, Tough Claws,Solar Power,87.5,12.5,78,84,78,109,85,100,534
+#0132,Ditto,Generation I,Normal, Unknown,Limber,,Imposter,0.0,0.0,48,48,48,48,48,48,288
+#0655,Delphox,Generation VI,Fire, Psychic,Blaze,,Magician,87.5,12.5,75,69,72,114,100,104,534
+#0252,Treecko,Generation III,Grass, Unknown,Overgrow,,Unburden,87.5,12.5,40,45,35,65,55,70,310
+#0694,Helioptile,Generation VI,Electric, Normal,Sand Veil, Dry Skin,Solar Power,50.0,50.0,44,38,33,61,43,70,289
+#0853,Grapploct,Generation VIII,Fighting, Unknown,Limber,,Technician,50.0,50.0,80,118,90,70,80,42,480
+#0308,Medicham,Generation III,Fighting, Psychic,Pure Power,,Telepathy,50.0,50.0,60,60,75,60,75,80,410
+#0511,Pansage,Generation V,Grass, Unknown,Gluttony,,Overgrow,87.5,12.5,50,53,48,53,48,64,316
+#0593,Jellicent,Generation V,Water, Ghost,Cursed Body, Water Absorb,Damp,50.0,50.0,100,60,70,85,105,60,480
+#0945,Grafaiai,On Smogon Pokédex,Poison, Normal,Unburden, Poison Touch,Prankster,50.0,50.0,63,95,65,80,72,110,485
+#0678,Meowstic,Generation VI,Psychic, Unknown,Infiltrator, Keen Eye,Competitive,50.0,50.0,74,48,76,83,81,104,466
+#0743,Ribombee,Generation VII,Bug, Fairy,Honey Gather, Shield Dust,Sweet Veil,50.0,50.0,60,55,60,95,70,124,464
+#0020,Raticate,Generation I,Normal, Unknown,Hustle, Gluttony,Thick Fat,50.0,50.0,55,81,60,50,70,97,413
+#0014,Kakuna,Generation I,Bug, Poison,Shed Skin,,,50.0,50.0,45,25,50,25,25,35,205
+#0128,Tauros,Generation I,Normal, Unknown,Anger Point, Intimidate,Cud Chew,100.0,0.0,75,100,95,40,70,110,490
+#0640,Virizion,Generation V,Grass, Fighting,Justified,,,0.0,0.0,91,90,72,90,129,108,580
+#0255,Torchic,Generation III,Fire, Unknown,Blaze,,Speed Boost,87.5,12.5,45,60,40,70,50,45,310
+#0876,Indeedee,Generation VIII,Psychic, Normal,Own Tempo, Inner Focus,Psychic Surge,50.0,50.0,60,65,55,105,95,95,475
+#0033,Nidorino,Generation I,Poison, Unknown,Rivalry, Poison Point,Hustle,100.0,0.0,61,72,57,55,55,65,365
+#0341,Corphish,Generation III,Water, Unknown,Shell Armor, Hyper Cutter,Adaptability,50.0,50.0,43,80,65,50,35,35,308
+#0504,Patrat,Generation V,Normal, Unknown,Keen Eye, Run Away,Analytic,50.0,50.0,45,55,39,35,39,42,255
+#0461,Weavile,Generation IV,Dark, Ice,Pressure,,Pickpocket,50.0,50.0,70,120,65,45,85,125,510
+#0460,Abomasnow,Generation IV,Grass, Ice,Snow Warning,,Soundproof,50.0,50.0,90,92,75,92,85,60,494
+#0469,Yanmega,Generation IV,Bug, Flying,Tinted Lens, Speed Boost,Frisk,50.0,50.0,86,76,86,116,56,95,515
+#0862,Obstagoon,Generation VIII,Dark, Normal,Reckless, Guts,Defiant,50.0,50.0,93,90,101,60,81,95,520
+#0245,Suicune,Generation II,Water, Unknown,Pressure,,Water Absorb,0.0,0.0,100,75,115,90,115,85,580
+#0506,Lillipup,Generation V,Normal, Unknown,Vital Spirit, Pickup,Run Away,50.0,50.0,45,60,45,25,45,55,275
+#0365,Walrein,Generation III,Ice, Water,Ice Body, Thick Fat,Oblivious,50.0,50.0,110,80,90,95,90,65,530
+#0382,Kyogre,Generation III,Water, Unknown,Primordial Sea, Drizzle,,0.0,0.0,100,100,90,150,140,90,670
+#0674,Pancham,Generation VI,Fighting, Unknown,Mold Breaker, Iron Fist,Scrappy,50.0,50.0,67,82,62,46,48,43,348
+#0455,Carnivine,Generation IV,Grass, Unknown,Levitate,,,50.0,50.0,74,100,72,90,72,46,454
+#0824,Blipbug,Generation VIII,Bug, Unknown,Swarm, Compound Eyes,Telepathy,50.0,50.0,25,20,20,25,45,45,180
+#0289,Slaking,Generation III,Normal, Unknown,Truant,,,50.0,50.0,150,160,100,95,65,100,670
+#0450,Hippowdon,Generation IV,Ground, Unknown,Sand Stream,,Sand Force,50.0,50.0,108,112,118,68,72,47,525
+#0186,Politoed,Generation II,Water, Unknown,Water Absorb, Damp,Drizzle,50.0,50.0,90,75,75,90,100,70,500
+#0141,Kabutops,Generation I,Rock, Water,Swift Swim, Battle Armor,Weak Armor,87.5,12.5,60,115,105,65,70,80,495
+#0318,Carvanha,Generation III,Water, Dark,Rough Skin,,Speed Boost,50.0,50.0,45,90,20,65,20,65,305
+#0825,Dottler,Generation VIII,Bug, Psychic,Swarm, Compound Eyes,Telepathy,50.0,50.0,50,35,80,50,90,30,335
+#0035,Clefairy,Generation I,Fairy, Unknown,Magic Guard, Cute Charm,Friend Guard,25.0,75.0,70,45,48,60,65,35,323
+#0423,Gastrodon,Generation IV,Water, Ground,Storm Drain, Sticky Hold,Sand Force,50.0,50.0,111,83,68,92,82,39,475
+#0374,Beldum,Generation III,Steel, Psychic,Clear Body,,Light Metal,0.0,0.0,40,55,80,35,60,30,300
+#0660,Diggersby,Generation VI,Normal, Ground,Pickup, Cheek Pouch,Huge Power,50.0,50.0,85,56,77,50,77,78,423
+#0798,Kartana,Generation VII,Grass, Steel,Beast Boost,,,0.0,0.0,59,181,131,59,31,109,570
+#0589,Escavalier,Generation V,Bug, Steel,Shell Armor, Swarm,Overcoat,50.0,50.0,70,135,105,60,105,20,495
+#0046,Paras,Generation I,Bug, Grass,Dry Skin, Effect Spore,Damp,50.0,50.0,35,70,55,45,55,25,285
+#0507,Herdier,Generation V,Normal, Unknown,Sand Rush, Intimidate,Scrappy,50.0,50.0,65,80,65,35,65,60,370
+#0706,Goodra,Generation VI,Dragon, Unknown,Shell Armor, Sap Sipper,Gooey,50.0,50.0,90,100,70,110,150,80,600
+#0321,Wailord,Generation III,Water, Unknown,Oblivious, Water Veil,Pressure,50.0,50.0,170,90,45,90,45,60,500
+#0463,Lickilicky,Generation IV,Normal, Unknown,Oblivious, Own Tempo,Cloud Nine,50.0,50.0,110,85,95,80,95,50,515
+#0943,Mabosstiff,On Smogon Pokédex,Dark, Unknown,Guard Dog, Intimidate,Stakeout,50.0,50.0,80,120,90,60,70,85,505
+#0016,Pidgey,Generation I,Normal, Flying,Tangled Feet, Keen Eye,Big Pecks,50.0,50.0,40,45,40,35,35,56,251
+#0519,Pidove,Generation V,Normal, Flying,Super Luck, Big Pecks,Rivalry,50.0,50.0,50,55,50,36,30,43,264
+#0196,Espeon,Generation II,Psychic, Unknown,Synchronize,,Magic Bounce,87.5,12.5,65,65,60,130,95,110,525
+#0673,Gogoat,Generation VI,Grass, Unknown,Sap Sipper,,Grass Pelt,50.0,50.0,123,100,62,97,81,68,531
+#0116,Horsea,Generation I,Water, Unknown,Swift Swim, Sniper,Damp,50.0,50.0,30,40,70,70,25,60,295
+#0099,Kingler,Generation I,Water, Unknown,Shell Armor, Hyper Cutter,Sheer Force,50.0,50.0,55,130,115,50,50,75,475
+#0776,Turtonator,Generation VII,Fire, Dragon,Shell Armor,,,50.0,50.0,60,78,135,91,85,36,485
+#0590,Foongus,Generation V,Grass, Poison,Effect Spore,,Regenerator,50.0,50.0,69,55,45,55,55,15,294
+#0384,Rayquaza,Generation III,Dragon, Flying,Air Lock, Delta Stream,,0.0,0.0,105,150,90,150,90,95,680
+#0758,Salazzle,Generation VII,Poison, Fire,Corrosion,,Oblivious,0.0,100.0,68,64,60,111,60,117,480
+#0930,Arboliva,On Smogon Pokédex,Grass, Normal,Seed Sower,,Harvest,50.0,50.0,78,69,90,125,109,39,510
+#0158,Totodile,Generation II,Water, Unknown,Torrent,,Sheer Force,87.5,12.5,50,65,64,44,48,43,314
+#0047,Parasect,Generation I,Bug, Grass,Dry Skin, Effect Spore,Damp,50.0,50.0,60,95,80,60,80,30,405
+#0242,Blissey,Generation II,Normal, Unknown,Natural Cure, Serene Grace,Healer,0.0,100.0,255,10,10,75,135,55,540
+#0115,Kangaskhan,Generation I,Normal, Unknown,Early Bird, Parental Bond,Inner Focus,0.0,100.0,105,95,80,40,80,90,490
+#0691,Dragalge,Generation VI,Poison, Dragon,Poison Touch, Poison Point,Adaptability,50.0,50.0,65,75,90,97,123,44,494
+#0018,Pidgeot,Generation I,Normal, Flying,No Guard, Tangled Feet,Big Pecks,50.0,50.0,83,80,75,70,70,91,469
