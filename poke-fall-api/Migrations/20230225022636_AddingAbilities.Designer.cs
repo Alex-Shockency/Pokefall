@@ -2,8 +2,10 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+using poke_fall_api.Configuration;
 using poke_fall_api.Models;
 
 #nullable disable
@@ -11,9 +13,11 @@ using poke_fall_api.Models;
 namespace pokefallapi.Migrations
 {
     [DbContext(typeof(PokefallContext))]
-    partial class PokefallContextModelSnapshot : ModelSnapshot
+    [Migration("20230225022636_AddingAbilities")]
+    partial class AddingAbilities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +45,7 @@ namespace pokefallapi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Abilities");
-                });
+            });
 
             modelBuilder.Entity("poke_fall_api.Models.Move", b =>
                 {
