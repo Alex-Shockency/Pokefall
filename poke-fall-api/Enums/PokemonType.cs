@@ -1,22 +1,24 @@
+using System.ComponentModel;
+
 namespace poke_fall_api.Enums;
 public enum PokemonType
 {
     NORMAL,
+    FIGHTING,
+    FLYING,
+    POISON,
+    GROUND,
+    ROCK,
+    BUG,
+    GHOST,
+    STEEL,
     FIRE,
     WATER,
     GRASS,
     ELECTRIC,
-    ICE,
-    FIGHTING,
-    POISON,
-    GROUND,
-    FLYING,
     PSYCHIC,
-    BUG,
-    ROCK,
-    GHOST,
-    DARK,
+    ICE,
     DRAGON,
-    STEEL,
+    DARK,
     FAIRY
 }

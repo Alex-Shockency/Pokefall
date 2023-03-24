@@ -58,12 +58,6 @@ namespace pokefallapi.Migrations
                     b.Property<int>("Accuracy")
                         .HasColumnType("integer");
 
-                    b.Property<bool>("AffectedKingsRock")
-                        .HasColumnType("boolean");
-
-                    b.Property<bool>("AffectedMagicCoat")
-                        .HasColumnType("boolean");
-
                     b.Property<bool>("AffectedMirrorMove")
                         .HasColumnType("boolean");
 
@@ -91,30 +85,15 @@ namespace pokefallapi.Migrations
                     b.Property<int>("PP")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("PokemonId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("PokemonId1")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("PokemonId2")
-                        .HasColumnType("integer");
-
                     b.Property<int>("Power")
                         .HasColumnType("integer");
 
                     b.Property<int>("Type")
-                        .HasColumnType("integer");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PokemonId");
-
-                    b.HasIndex("PokemonId1");
-
-                    b.HasIndex("PokemonId2");
-
-                    b.ToTable("Move");
+                    b.ToTable("Moves");
                 });
 
             modelBuilder.Entity("poke_fall_api.Models.Pokemon", b =>

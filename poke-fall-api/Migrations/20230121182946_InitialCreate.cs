@@ -41,64 +41,6 @@ namespace pokefallapi.Migrations
                 {
                     table.PrimaryKey("PK_Pokemons", x => x.PokemonId);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "Move",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Name = table.Column<string>(type: "text", nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: false),
-                    Type = table.Column<int>(type: "integer", nullable: false),
-                    Category = table.Column<string>(type: "text", nullable: false),
-                    PP = table.Column<int>(type: "integer", nullable: false),
-                    Power = table.Column<int>(type: "integer", nullable: false),
-                    Accuracy = table.Column<int>(type: "integer", nullable: false),
-                    Contact = table.Column<bool>(type: "boolean", nullable: false),
-                    AffectedProtect = table.Column<bool>(type: "boolean", nullable: false),
-                    AffectedMagicCoat = table.Column<bool>(type: "boolean", nullable: false),
-                    AffectedSnatch = table.Column<bool>(type: "boolean", nullable: false),
-                    AffectedMirrorMove = table.Column<bool>(type: "boolean", nullable: false),
-                    AffectedKingsRock = table.Column<bool>(type: "boolean", nullable: false),
-                    PokemonId = table.Column<int>(type: "integer", nullable: true),
-                    PokemonId1 = table.Column<int>(type: "integer", nullable: true),
-                    PokemonId2 = table.Column<int>(type: "integer", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Move", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Move_Pokemons_PokemonId",
-                        column: x => x.PokemonId,
-                        principalTable: "Pokemons",
-                        principalColumn: "PokemonId");
-                    table.ForeignKey(
-                        name: "FK_Move_Pokemons_PokemonId1",
-                        column: x => x.PokemonId1,
-                        principalTable: "Pokemons",
-                        principalColumn: "PokemonId");
-                    table.ForeignKey(
-                        name: "FK_Move_Pokemons_PokemonId2",
-                        column: x => x.PokemonId2,
-                        principalTable: "Pokemons",
-                        principalColumn: "PokemonId");
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Move_PokemonId",
-                table: "Move",
-                column: "PokemonId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Move_PokemonId1",
-                table: "Move",
-                column: "PokemonId1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Move_PokemonId2",
-                table: "Move",
-                column: "PokemonId2");
         }
 
         /// <inheritdoc />
