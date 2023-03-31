@@ -81,18 +81,6 @@ namespace poke_fall_api.Models
         public int Speed { get; set; }
 
         // [Required]
-        // public ICollection<LevelUpMove> LevelUpMoves { get; set; }
-
-        // [Required]
-        // public ICollection<Move> TMMoves { get; set; }
-
-        // [Required]
-        // public ICollection<Move> EggMoves { get; set; }
-
-        // [Required]
-        // public ICollection<Move> TutorMoves { get; set; }
-
-        // [Required]
         // public int EvolvesTo { get; set; }
 
         // [Required]
