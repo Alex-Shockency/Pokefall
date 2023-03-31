@@ -121,15 +121,6 @@ namespace pokefallapi.Migrations
                     b.Property<int>("EggGroup")
                         .HasColumnType("integer");
 
-                    b.Property<string>("EvolutionDescription")
-                        .HasColumnType("text");
-
-                    b.Property<int>("EvolvesFrom")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("EvolvesTo")
-                        .HasColumnType("integer");
-
                     b.Property<int>("HatchStepMax")
                         .HasColumnType("integer");
 
@@ -164,7 +155,7 @@ namespace pokefallapi.Migrations
 
                     b.HasKey("PokemonId");
 
-                    b.ToTable("Pokemons");
+                    b.ToTable("Pokemon");
                 });
 
             modelBuilder.Entity("poke_fall_api.Models.Move", b =>

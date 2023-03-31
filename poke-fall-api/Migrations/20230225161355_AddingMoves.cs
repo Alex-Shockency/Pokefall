@@ -44,24 +44,6 @@ namespace pokefallapi.Migrations
                     table.PrimaryKey("PK_Moves", x => x.Id);
                 }
             );
-
-            string[] columns = new string[]
-            {
-                "Id",
-                "Name",
-                "Description",
-                "Type",
-                "Category",
-                "PP",
-                "Power",
-                "Accuracy",
-                "Contact",
-                "AffectedProtect",
-                //"AffectedMagicCoat",
-                "AffectedSnatch",
-                "AffectedMirrorMove",
-                //"AffectedKingsRock"
-            };
             var databaseMoves = new List<Move>();
             using (var moveReader = new StreamReader(@"./data/moves.csv"))
             using (var flavorReader = new StreamReader(@"./data/move_flavor_text.csv"))
@@ -70,29 +52,14 @@ namespace pokefallapi.Migrations
                 using (var moveCsv = new CsvReader(moveReader, CultureInfo.InvariantCulture))
                 {
                     var moves = moveCsv.GetRecords<PokeApiMove>().ToArray();
+                    
                     Dictionary<Int32, string> damageTypeMap = new Dictionary<int, string>();
                     damageTypeMap.Add(1, "Status");
                     damageTypeMap.Add(2, "Physical");
                     damageTypeMap.Add(3, "Special");
-                    Dictionary<Int32, string> typeMap = new Dictionary<int, string>();
-                    typeMap.Add(1, "normal");
-                    typeMap.Add(2, "fighting");
-                    typeMap.Add(3, "flying");
-                    typeMap.Add(4, "poison");
-                    typeMap.Add(5, "ground");
-                    typeMap.Add(6, "rock");
-                    typeMap.Add(7, "bug");
-                    typeMap.Add(8, "ghost");
-                    typeMap.Add(9, "steel");
-                    typeMap.Add(10, "fire");
-                    typeMap.Add(11, "water");
-                    typeMap.Add(12, "grass");
-                    typeMap.Add(13, "electric");
-                    typeMap.Add(14, "psychic");
-                    typeMap.Add(15, "ice");
-                    typeMap.Add(16, "dragon");
-                    typeMap.Add(17, "dark");
-                    typeMap.Add(18, "fairy");
+
+                    Dictionary<Int32, string> typeMap = new PokemonTypeMap().getTypeMap();
+                    
 
                     var flavorTexts = flavorCsv.GetRecords<PokeApiMoveFlavorText>().ToArray();
                     foreach (PokeApiMove move in moves)
@@ -129,32 +96,6 @@ namespace pokefallapi.Migrations
                             }
                         }
                     }
-
-                    // using (var flavorReader = new StreamReader(@"./data/flavortext.csv"))
-                    // using (var flavorCsv = new CsvReader(flavorReader, CultureInfo.InvariantCulture))
-                    // {
-                    //     var flavorTexts = flavorCsv.GetRecords<PokeApiFlavorText>().ToArray();
-                    //     foreach (PokeApiAbility ability in abilities)
-                    //     {
-                    //         foreach (PokeApiFlavorText text in flavorTexts)
-                    //         {
-                    //             if (
-                    //                 ability.id == text.ability_id
-                    //                 && text.version_group_id == 20
-                    //                 && text.language_id == 9
-                    //             )
-                    //             {
-                    //                 string[] dbValues = new string[]
-                    //                 {
-                    //                     ability.id.ToString(),
-                    //                     ability.identifier,
-                    //                     text.flavor_text
-                    //                 };
-                    //                 migrationBuilder.InsertData("Abilities", columns, dbValues);
-                    //             }
-                    //         }
-                    //     }
-                    // }
                 }
             }
 
@@ -167,10 +108,6 @@ namespace pokefallapi.Migrations
                     var moveFlags = moveFlagCsv.GetRecords<PokeApiMoveFlag>().ToArray();
                     foreach (PokeApiMoveFlag moveFlag in moveFlags)
                     {
-                        // Console.WriteLine(
-                        //     "FlagId:" + moveFlag.move_flag_id + " MoveId:" + moveFlag.move_id
-                        // );
-                        // Console.WriteLine(databaseMoves.Count);
                         switch (moveFlag.move_flag_id)
                         {
                             case 1:

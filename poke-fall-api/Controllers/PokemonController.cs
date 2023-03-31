@@ -22,7 +22,7 @@ public class PokemonController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult<Pokemon>> GetPokemon(int id)
     {
-        var Pokemon = await _context.Pokemons.FindAsync(id);
+        var Pokemon = await _context.Pokemon.FindAsync(id);
 
         if (Pokemon == null)
         {
@@ -44,25 +44,25 @@ public class PokemonController : ControllerBase
             Ability1Id = item.Ability1Id,
             Ability2Id = item.Ability2Id,
             HiddenAbilityId = item.HiddenAbilityId,
-            CatchRate = item.CatchRate,
-            GenderRatio = item.GenderRatio.ToList(),
-            EggGroup = item.EggGroup.ToString(),
-            HatchStepsMin = item.HatchStepsMin,
-            HatchStepMax = item.HatchStepMax,
+            // CatchRate = item.CatchRate,
+            // GenderRatio = item.GenderRatio.ToList(),
+            // EggGroup = item.EggGroup.ToString(),
+            // HatchStepsMin = item.HatchStepsMin,
+            // HatchStepMax = item.HatchStepMax,
             Height = item.Height,
             Weight = item.Weight,
             BaseEXPYield = item.BaseEXPYield,
-            LevelingRate = item.LevelingRate,
-            EVYield = item.EVYield,
-            BaseFriendship = item.BaseFriendship,
-            BaseStats = item.BaseStats,
-            LevelUpMoves = item.LevelUpMoves.ToList(),
-            TMMoves = item.TMMoves.ToList(),
-            EggMoves = item.EggMoves.ToList(),
-            TutorMoves = item.TutorMoves.ToList(),
-            EvolvesTo = item.EvolvesTo,
-            EvolvesFrom = item.EvolvesFrom,
-            EvolutionDescription = item.EvolutionDescription
+            // LevelingRate = item.LevelingRate,
+            // EVYield = item.EVYield,
+            // BaseFriendship = item.BaseFriendship,
+            // BaseStats = item.BaseStats,
+            // LevelUpMoves = item.LevelUpMoves.ToList(),
+            // TMMoves = item.TMMoves.ToList(),
+            // EggMoves = item.EggMoves.ToList(),
+            // TutorMoves = item.TutorMoves.ToList(),
+            // EvolvesTo = item.EvolvesTo,
+            // EvolvesFrom = item.EvolvesFrom,
+            // EvolutionDescription = item.EvolutionDescription
          };
     }
 

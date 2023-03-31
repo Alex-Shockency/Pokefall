@@ -54,12 +54,6 @@ namespace pokefallapi.Migrations
                     b.Property<int>("Accuracy")
                         .HasColumnType("integer");
 
-                    b.Property<bool>("AffectedKingsRock")
-                        .HasColumnType("boolean");
-
-                    b.Property<bool>("AffectedMagicCoat")
-                        .HasColumnType("boolean");
-
                     b.Property<bool>("AffectedMirrorMove")
                         .HasColumnType("boolean");
 
@@ -99,8 +93,9 @@ namespace pokefallapi.Migrations
                     b.Property<int>("Power")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Type")
-                        .HasColumnType("integer");
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -182,7 +177,7 @@ namespace pokefallapi.Migrations
 
                     b.HasKey("PokemonId");
 
-                    b.ToTable("Pokemons");
+                    b.ToTable("Pokemon");
                 });
 
             modelBuilder.Entity("poke_fall_api.Models.Move", b =>

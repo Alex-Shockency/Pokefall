@@ -17,9 +17,9 @@ namespace poke_fall_api.Models
         public string Name { get; set; }
 
         [Required]
-        public PokemonType Type1 { get; set; }
+        public string Type1 { get; set; }
 
-        public PokemonType Type2 { get; set; }
+        public string Type2 { get; set; }
 
         [Required]
         public int Ability1Id { get; set; }
@@ -28,19 +28,19 @@ namespace poke_fall_api.Models
 
         public int HiddenAbilityId { get; set; }
 
-        [Required]
-        public int CatchRate { get; set; }
+        // [Required]
+        // public int CatchRate { get; set; }
 
-        public ICollection<GenderRatio> GenderRatio { get; set; }
+        // //public ICollection<GenderRatio> GenderRatio { get; set; }
 
-        [Required]
-        public PokemonEggGroup EggGroup { get; set; }
+        // [Required]
+        // public PokemonEggGroup EggGroup { get; set; }
 
-        [Required]
-        public int HatchStepsMin { get; set; }
+        // [Required]
+        // public int HatchStepsMin { get; set; }
 
-        [Required]
-        public int HatchStepMax { get; set; }
+        // [Required]
+        // public int HatchStepMax { get; set; }
 
         // Stored as cms and converted later
         [Required]
@@ -53,36 +53,51 @@ namespace poke_fall_api.Models
         [Required]
         public int BaseEXPYield { get; set; }
 
-        [Required]
-        public string LevelingRate { get; set; }
+        // [Required]
+        // public string LevelingRate { get; set; }
 
-        [Required] 
-        public Stats EVYield { get; set; }
+        // [Required]
+        // public Stats EVYield { get; set; }
 
-        [Required]
-        public int BaseFriendship { get; set; }
-
-        [Required]
-        public Stats BaseStats { get; set; }
+        // [Required]
+        // public int BaseFriendship { get; set; }
 
         [Required]
-        public ICollection<LevelUpMove> LevelUpMoves { get; set; }
+        public int HP { get; set; }
 
         [Required]
-        public ICollection<Move> TMMoves { get; set; }
+        public int Attack { get; set; }
 
         [Required]
-        public ICollection<Move> EggMoves { get; set; }
+        public int Defense { get; set; }
 
         [Required]
-        public ICollection<Move> TutorMoves { get; set; }
+        public int SpecAttack { get; set; }
 
         [Required]
-        public int EvolvesTo { get; set; }
+        public int SpecDefense { get; set; }
 
         [Required]
-        public int EvolvesFrom { get; set; }
+        public int Speed { get; set; }
 
-        public string? EvolutionDescription { get; set; }
+        // [Required]
+        // public ICollection<LevelUpMove> LevelUpMoves { get; set; }
+
+        // [Required]
+        // public ICollection<Move> TMMoves { get; set; }
+
+        // [Required]
+        // public ICollection<Move> EggMoves { get; set; }
+
+        // [Required]
+        // public ICollection<Move> TutorMoves { get; set; }
+
+        // [Required]
+        // public int EvolvesTo { get; set; }
+
+        // [Required]
+        // public int EvolvesFrom { get; set; }
+
+        // public string? EvolutionDescription { get; set; }
     }
 }

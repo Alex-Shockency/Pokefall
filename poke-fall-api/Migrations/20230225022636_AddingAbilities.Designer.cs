@@ -165,7 +165,7 @@ namespace pokefallapi.Migrations
 
                     b.HasKey("PokemonId");
 
-                    b.ToTable("Pokemons");
+                    b.ToTable("Pokemon");
                 });
 
             modelBuilder.Entity("poke_fall_api.Models.Move", b =>
