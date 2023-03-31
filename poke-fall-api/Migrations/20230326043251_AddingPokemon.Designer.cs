@@ -108,7 +108,7 @@ namespace pokefallapi.Migrations
 
                     b.HasIndex("PokemonId2");
 
-                    b.ToTable("Move");
+                    b.ToTable("Moves");
                 });
 
             modelBuilder.Entity("poke_fall_api.Models.Pokemon", b =>
