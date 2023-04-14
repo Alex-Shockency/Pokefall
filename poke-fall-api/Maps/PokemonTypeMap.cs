@@ -4,6 +4,7 @@ public class PokemonTypeMap
 
     public PokemonTypeMap()
     {
+        this.typeMap.Add(0, null);
         this.typeMap.Add(1, "normal");
         this.typeMap.Add(2, "fighting");
         this.typeMap.Add(3, "flying");
@@ -24,7 +25,8 @@ public class PokemonTypeMap
         this.typeMap.Add(18, "fairy");
     }
 
-    public  Dictionary<Int32, string> getTypeMap(){
+    public Dictionary<Int32, string> getTypeMap()
+    {
         return this.typeMap;
     }
 }
