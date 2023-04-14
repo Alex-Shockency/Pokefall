@@ -32,6 +32,18 @@ public class PokemonController : ControllerBase
         return Ok(result);
     }
 
+    [HttpGet("/search?{queryString}")]
+    [ProducesResponseType(typeof(IEnumerable<PokemonDTO>), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<ActionResult<IEnumerable<PokemonDTO>>> ListPokemon(string queryString) {
+        var pokemonQuery = from p in _context.Pokemon
+                      where p.Type1 == queryString ||
+                            p.Type2 == queryString
+                      select p;
+        List<PokemonDTO> result = ListToDTO(pokemonQuery.OrderBy(p => p.PokemonId).ToList());
+        return await Task.FromResult(Ok(result));
+    }
+
     private PokemonDTO ToDTO(Pokemon item)
     {
         return new PokemonDTO
