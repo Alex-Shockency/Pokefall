@@ -21,9 +21,11 @@
 
         </mat-grid-tile-header>
         <mat-grid-tile-footer>
-          <mat-chip-listbox aria-label="Dog selection">
-            <!-- <mat-chip *ngFor="let type of pokemon.types" color="primary">
-              {{ type.type.name }}</mat-chip> -->
+          <mat-chip-listbox>
+            <mat-chip color="primary">
+              {{ pokemon.type1 }}</mat-chip>
+              <mat-chip *ngIf="pokemon.type2" color="primary">
+                {{ pokemon.type2 }}</mat-chip>
           </mat-chip-listbox>
         </mat-grid-tile-footer>
         <img id="{{pokemon.id}}" mat-card-xl-image
