@@ -41,7 +41,7 @@ export class AppComponent {
       // const api = new PokemonClient();
       this.pokemonService.getAllPokemon().subscribe((pokemons) => {
         let filteredList = pokemons.filter((pokemon) =>
-          pokemon.name.toLocaleLowerCase().includes(this.searchString)
+          pokemon.name.toLocaleLowerCase().includes(this.searchString) && !pokemon.name.toLocaleLowerCase().includes("-")
         );
         this.searchResults = filteredList.sort((a,b) => a.pokedexNumber - b.pokedexNumber);
         this.searchLoading = false;

@@ -79,6 +79,16 @@
           #{{ padId(pokemon.pokedexNumber) }}&nbsp;{{
           capitalizeFirstLetter(pokemon.name)
           }}
+          <div style="width: 100%;display: flex;justify-content: end;">
+            <button mat-icon-button (click)="playCry(pokemon.id)">
+              <mat-icon>volume_up</mat-icon>
+            </button>
+            <audio id="audio-{{pokemon.id}}">
+              <source src="https://play.pokemonshowdown.com/audio/cries/{{formatName(pokemon.name)}}.mp3"
+                type="audio/mp3">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
         </mat-grid-tile-header>
         <div style="display: flex;">
           <img id="{{pokemon.id}}" mat-card-xl-image
@@ -98,10 +108,10 @@
     </mat-grid-list>
   </div>
   <div *ngIf="searchResults.length == 0 && !searchLoading" style="display: flex;justify-content: center;">
-    <div >
+    <div>
       <div style="display: flex;justify-content: center;">
         <img
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{genRandPokeId()}}.png" />
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{genRandPokeId()}}.png" />
       </div>
       <div style="display: flex;justify-content: center;">
         <h1>No Pokemon Found</h1>

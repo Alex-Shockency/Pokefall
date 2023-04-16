@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, Input, SimpleChanges, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  SimpleChanges,
+  ViewChild,
+} from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Output, EventEmitter } from '@angular/core';
 import { Pokemon } from 'src/app/Entities/pokemon';
@@ -18,19 +24,28 @@ export interface Tile {
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss'],
 })
-export class SearchResultsComponent implements AfterViewInit{
+export class SearchResultsComponent implements AfterViewInit {
   @Input() searchResults: Pokemon[] = [];
-  @Input() searchLoading: boolean; 
+  @Input() searchLoading: boolean;
 
-  displayedColumns: string[] = ['name', 'type1','type2','hp','defense','specAttack','specDefense','speed'];
+  displayedColumns: string[] = [
+    'name',
+    'type1',
+    'type2',
+    'hp',
+    'defense',
+    'specAttack',
+    'specDefense',
+    'speed',
+  ];
   dataSource = new MatTableDataSource<Pokemon>();
 
-  @ViewChild(MatPaginator, {static: false})
+  @ViewChild(MatPaginator, { static: false })
   set paginator(value: MatPaginator) {
     this.dataSource.paginator = value;
   }
 
-  @ViewChild(MatSort, {static: false})
+  @ViewChild(MatSort, { static: false })
   set sort(value: MatSort) {
     this.dataSource.sort = value;
   }
@@ -44,7 +59,7 @@ export class SearchResultsComponent implements AfterViewInit{
   disabled = false;
   gridDisplay = true;
 
-  ngOnChanges(){
+  ngOnChanges() {
     this.dataSource = new MatTableDataSource<Pokemon>(this.searchResults);
   }
 
@@ -61,12 +76,13 @@ export class SearchResultsComponent implements AfterViewInit{
     return String(id).padStart(4, '0');
   }
 
-  setAlternateImage(id: number, dexNum:number) {
+  setAlternateImage(id: number, dexNum: number) {
     document
       .getElementById(id.toString())
       ?.setAttribute(
         'src',
-        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + dexNum +
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' +
+          dexNum +
           '.png'
       );
   }
@@ -75,11 +91,22 @@ export class SearchResultsComponent implements AfterViewInit{
     return word.charAt(0).toUpperCase() + word.slice(1);
   }
 
-  displayGrid(display:boolean){
+  displayGrid(display: boolean) {
     this.gridDisplay = display;
   }
 
-  genRandPokeId(){
-    return Math.floor(Math.random()*1010)
+  genRandPokeId() {
+    return Math.floor(Math.random() * 1010);
+  }
+
+  playCry(id: number) {
+    let audio: HTMLAudioElement = <HTMLAudioElement>(
+      document.getElementById('audio-' + id.toString())
+    );
+    audio.play();
+  }
+
+  formatName(name: string) {
+      return name.toLowerCase();
   }
 }
