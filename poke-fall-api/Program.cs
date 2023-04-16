@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using poke_fall_api.Models;
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 
 /** 
@@ -13,9 +15,19 @@ builder.Services.AddDbContext<poke_fall_api.Models.PokefallContext>(opt => opt.U
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:4200");
+                      });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,6 +38,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthorization();
 

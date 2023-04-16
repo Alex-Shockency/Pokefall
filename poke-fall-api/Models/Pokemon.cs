@@ -24,23 +24,9 @@ namespace poke_fall_api.Models
         [Required]
         public int Ability1Id { get; set; }
 
-        public int Ability2Id { get; set; }
+        public Nullable<int> Ability2Id { get; set; }
 
         public int HiddenAbilityId { get; set; }
-
-        // [Required]
-        // public int CatchRate { get; set; }
-
-        // //public ICollection<GenderRatio> GenderRatio { get; set; }
-
-        // [Required]
-        // public PokemonEggGroup EggGroup { get; set; }
-
-        // [Required]
-        // public int HatchStepsMin { get; set; }
-
-        // [Required]
-        // public int HatchStepMax { get; set; }
 
         // Stored as cms and converted later
         [Required]
@@ -52,15 +38,6 @@ namespace poke_fall_api.Models
 
         [Required]
         public int BaseEXPYield { get; set; }
-
-        // [Required]
-        // public string LevelingRate { get; set; }
-
-        // [Required]
-        // public Stats EVYield { get; set; }
-
-        // [Required]
-        // public int BaseFriendship { get; set; }
 
         [Required]
         public int HP { get; set; }
@@ -79,13 +56,5 @@ namespace poke_fall_api.Models
 
         [Required]
         public int Speed { get; set; }
-
-        // [Required]
-        // public int EvolvesTo { get; set; }
-
-        // [Required]
-        // public int EvolvesFrom { get; set; }
-
-        // public string? EvolutionDescription { get; set; }
     }
 }

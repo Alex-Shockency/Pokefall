@@ -12,26 +12,18 @@ namespace poke_fall_api.DTO
         public string Type1 { get; set; }
         public string Type2 { get; set; }
         public int Ability1Id { get; set; }
-        public int Ability2Id { get; set; }
+        public Nullable<int> Ability2Id { get; set; }
         public int HiddenAbilityId { get; set; }
-        public int CatchRate { get; set; }
-        public List<GenderRatio> GenderRatio { get; set; }
-        public string EggGroup { get; set; }
-        public int HatchStepsMin { get; set; }
-        public int HatchStepMax { get; set; }
+        // Stored as cms and converted later
         public int Height { get; set; }
+        // Stored as gs and converted later
         public int Weight { get; set; }
         public int BaseEXPYield { get; set; }
-        public string LevelingRate { get; set; }
-        public Stats EVYield { get; set; }
-        public int BaseFriendship { get; set; }
-        public Stats BaseStats { get; set; }
-        public List<LevelUpMove> LevelUpMoves { get; set; }
-        public List<Move> TMMoves { get; set; }
-        public List<Move> EggMoves { get; set; }
-        public List<Move> TutorMoves { get; set; }
-        public int EvolvesTo { get; set; }
-        public int EvolvesFrom { get; set; }
-        public string? EvolutionDescription { get; set; }
+        public int HP { get; set; }
+        public int Attack { get; set; }
+        public int Defense { get; set; }
+        public int SpecAttack { get; set; }
+        public int SpecDefense { get; set; }
+        public int Speed { get; set; }
     }
 }

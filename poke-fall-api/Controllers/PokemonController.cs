@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using poke_fall_api.DTO;
 using poke_fall_api.Models;
@@ -32,17 +33,25 @@ public class PokemonController : ControllerBase
         return Ok(result);
     }
 
-    [HttpGet("/search?{queryString}")]
+    [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<PokemonDTO>), StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<IEnumerable<PokemonDTO>>> ListPokemon(string queryString) {
-        var pokemonQuery = from p in _context.Pokemon
-                      where p.Type1 == queryString ||
-                            p.Type2 == queryString
-                      select p;
-        List<PokemonDTO> result = ListToDTO(pokemonQuery.OrderBy(p => p.PokemonId).ToList());
-        return await Task.FromResult(Ok(result));
+    [EnableCors("_myAllowSpecificOrigins")]
+    public IQueryable<Pokemon> GetAllPokemon()
+    {
+        return _context.Set<Pokemon>();
     }
+
+    // [HttpGet("/search?{queryString}")]
+    // [ProducesResponseType(typeof(IEnumerable<PokemonDTO>), StatusCodes.Status200OK)]
+    // [ProducesResponseType(StatusCodes.Status404NotFound)]
+    // public async Task<ActionResult<IEnumerable<PokemonDTO>>> ListPokemon(string queryString) {
+    //     var pokemonQuery = from p in _context.Pokemon
+    //                   where p.Type1 == queryString ||
+    //                         p.Type2 == queryString
+    //                   select p;
+    //     List<PokemonDTO> result = ListToDTO(pokemonQuery.OrderBy(p => p.PokemonId).ToList());
+    //     return await Task.FromResult(Ok(result));
+    // }
 
     private PokemonDTO ToDTO(Pokemon item)
     {
@@ -56,26 +65,16 @@ public class PokemonController : ControllerBase
             Ability1Id = item.Ability1Id,
             Ability2Id = item.Ability2Id,
             HiddenAbilityId = item.HiddenAbilityId,
-            // CatchRate = item.CatchRate,
-            // GenderRatio = item.GenderRatio.ToList(),
-            // EggGroup = item.EggGroup.ToString(),
-            // HatchStepsMin = item.HatchStepsMin,
-            // HatchStepMax = item.HatchStepMax,
             Height = item.Height,
             Weight = item.Weight,
             BaseEXPYield = item.BaseEXPYield,
-            // LevelingRate = item.LevelingRate,
-            // EVYield = item.EVYield,
-            // BaseFriendship = item.BaseFriendship,
-            // BaseStats = item.BaseStats,
-            // LevelUpMoves = item.LevelUpMoves.ToList(),
-            // TMMoves = item.TMMoves.ToList(),
-            // EggMoves = item.EggMoves.ToList(),
-            // TutorMoves = item.TutorMoves.ToList(),
-            // EvolvesTo = item.EvolvesTo,
-            // EvolvesFrom = item.EvolvesFrom,
-            // EvolutionDescription = item.EvolutionDescription
-         };
+            HP = item.HP,
+            Attack = item.Attack,
+            Defense = item.Defense,
+            SpecAttack = item.SpecAttack,
+            SpecDefense = item.SpecDefense,
+            Speed = item.Speed,
+        };
     }
 
     private List<PokemonDTO> ListToDTO(List<Pokemon> items)

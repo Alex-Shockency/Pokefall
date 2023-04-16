@@ -7,11 +7,15 @@ import { Pokemon } from '../Entities/pokemon';
     providedIn: 'root'
   })
   export class PokemonService {
-    private api: string = 'http://localhost:5001/api/Pokemons';
+    private api: string = 'http://localhost:5028/Pokemon';
     constructor(private http: HttpClient) {}
 
-    getPokemon(queryString: string): Observable<Pokemon> {
-        return this.http.get<Pokemon[]>(this.api + '/pokemon?q=' + queryString);
+    getAllPokemon(): Observable<Pokemon[]>{
+      return this.http.get<Pokemon[]>(this.api);
     }
+
+    // getPokemon(queryString: string): Observable<Pokemon> {
+    //     return this.http.get<Pokemon[]>(this.api + '/pokemon?q=' + queryString);
+    // }
 
   }

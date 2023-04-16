@@ -12,21 +12,21 @@
       </span>
     </div>
     <mat-divider class="divider"></mat-divider>
-    <mat-grid-list class="inner-grid" *ngIf="searchResults.length > 0" cols="4">
+    <mat-grid-list class="inner-grid" *ngIf="searchResults.length > 0" cols="4" gutterSize="0.5em">
       <mat-grid-tile *ngFor="let pokemon of searchResults">
         <mat-grid-tile-header>
-          #{{ padId(pokemon.id) }}&nbsp;{{
+          #{{ padId(pokemon.pokedexNumber) }}&nbsp;{{
           capitalizeFirstLetter(pokemon.name)
           }}
 
         </mat-grid-tile-header>
         <mat-grid-tile-footer>
           <mat-chip-listbox aria-label="Dog selection">
-            <mat-chip *ngFor="let type of pokemon.types" color="primary">
-              {{ type.type.name }}</mat-chip>
+            <!-- <mat-chip *ngFor="let type of pokemon.types" color="primary">
+              {{ type.type.name }}</mat-chip> -->
           </mat-chip-listbox>
         </mat-grid-tile-footer>
-        <img mat-card-xl-image [attr.src]="pokemon.sprites.other?.['official-artwork']?.front_default" alt=" " />
+        <img mat-card-xl-image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.pokemonId}}.png" alt=" " />
       </mat-grid-tile>
     </mat-grid-list>
   </div>

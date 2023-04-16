@@ -1,7 +1,7 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { Pokemon, PokemonClient } from 'pokenode-ts';
 import { Output, EventEmitter } from '@angular/core';
+import { Pokemon } from 'src/app/Entities/pokemon';
 
 export interface Tile {
   color: string;
@@ -40,7 +40,7 @@ export class SearchResultsComponent {
   }
 
   padId(id:number): string {
-    return String(id).padStart(3, '0');
+    return String(id).padStart(4, '0');
   }
 
   capitalizeFirstLetter(word: string): string {
