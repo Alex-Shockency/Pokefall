@@ -27,6 +27,15 @@
   margin-left: 1em;
 }
 
+.grid-tile{
+  cursor: pointer;
+  transition: 250ms linear; 
+}
+
+.grid-tile:hover{
+  transform: scale(1.05);
+}
+
 button[value="grass"] {
   background-color: #78C850 !important;
 }
