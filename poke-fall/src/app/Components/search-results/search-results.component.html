@@ -12,25 +12,27 @@
       </span>
     </div>
     <mat-divider class="divider"></mat-divider>
-    <mat-grid-list class="inner-grid" *ngIf="searchResults.length > 0" cols="4" >
+    <mat-grid-list class="inner-grid" *ngIf="searchResults.length > 0" cols="4" gutterSize="1em">
       <mat-grid-tile *ngFor="let pokemon of searchResults">
-        <mat-grid-tile-header style="font-size: larger;">
+        <mat-grid-tile-header class="header">
           #{{ padId(pokemon.pokedexNumber) }}&nbsp;{{
           capitalizeFirstLetter(pokemon.name)
           }}
-
         </mat-grid-tile-header>
-        <mat-grid-tile-footer style="justify-content: flex-end;">
-          <div >
-          <button mat-flat-button class="footer-button" color="primary" value="{{ pokemon.type1 }}">
-            {{ capitalizeFirstLetter(pokemon.type1) }}</button>
-          <button mat-flat-button class="footer-button" color="primary" *ngIf="pokemon.type2" value="{{ pokemon.type2 }}">
-            {{  capitalizeFirstLetter(pokemon.type2) }}</button>
+        <div style="display: flex;">
+          <img id="{{pokemon.id}}" mat-card-xl-image
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png"
+            alt="" (error)="setAlternateImage(pokemon.id,pokemon.pokedexNumber)">
+        </div>
+        <mat-grid-tile-footer class="footer">
+          <div>
+            <button mat-flat-button class="footer-button" color="primary" value="{{ pokemon.type1 }}">
+              {{ capitalizeFirstLetter(pokemon.type1) }}</button>
+            <button mat-flat-button class="footer-button" color="primary" *ngIf="pokemon.type2"
+              value="{{ pokemon.type2 }}">
+              {{ capitalizeFirstLetter(pokemon.type2) }}</button>
           </div>
         </mat-grid-tile-footer>
-        <img id="{{pokemon.id}}" mat-card-xl-image
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png"
-          alt="" (error)="setAlternateImage(pokemon.id,pokemon.pokedexNumber)">
       </mat-grid-tile>
     </mat-grid-list>
   </div>
