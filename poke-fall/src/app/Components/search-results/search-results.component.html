@@ -4,20 +4,20 @@
 <div class="main">
   <div *ngIf="!searchLoading">
     <mat-divider class="divider"></mat-divider>
-    <div class="inner-grid" style="padding-bottom: 1em;">
+    <div *ngIf="searchResults.length > 0" class="inner-grid" style="padding-bottom: 1em;">
       <button mat-flat-button color="primary" [matMenuTriggerFor]="menu">Display</button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="displayGrid(true)">Grid</button>
         <button mat-menu-item (click)="displayGrid(false)">List</button>
       </mat-menu>
     </div>
-    <div class="inner-grid">
+    <div *ngIf="searchResults.length > 0" class="inner-grid">
       <span>
         {{ searchResults.length }} Pokemon found
       </span>
     </div>
     <mat-divider class="divider"></mat-divider>
-    <div *ngIf="!gridDisplay" class="mat-elevation-z8">
+    <div *ngIf="!gridDisplay && searchResults.length > 0" class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
@@ -97,11 +97,21 @@
       </mat-grid-tile>
     </mat-grid-list>
   </div>
-  <div *ngIf="searchResults.length == 0 && !searchLoading">
-    <div style="display: flex; justify-content: center">
-      <div>
+  <div *ngIf="searchResults.length == 0 && !searchLoading" style="display: flex;justify-content: center;">
+    <div >
+      <div style="display: flex;justify-content: center;">
         <img
-          src="https://blogger.googleusercontent.com/img/a/AVvXsEhfAxj52nrWwKOtCNJ30F86mA4LE_JqSgdhmdIKdcETr3y7no0UmyEqo9ckQaL1ox85hHLOuHDXqHvXErUZ_9Z9c5p0iRroh3hJ8UktsEURf-sLvHjyPhTY8WA1FFqfS-Jvx8SxvorRcEeVys9-ViqSod6bOdRFB21dwvPfCGvnem4_WnB53Xtp_Zvbyg=w1200-h630-p-k-no-nu" />
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{genRandPokeId()}}.png" />
+      </div>
+      <div style="display: flex;justify-content: center;">
+        <h1>No Pokemon Found</h1>
+      </div>
+      <div style="display: flex;justify-content: center;">
+        <span>Your search didn’t match any pokemon. Adjust your terms or try one of the links below:</span>
+      </div>
+      <div style="display: flex;justify-content: center;padding: 1em;">
+        <button mat-raised-button class="icon-button"> <mat-icon>list</mat-icon>Advanced</button>
+        <button mat-raised-button class="icon-button"> <mat-icon>help</mat-icon>Syntax</button>
       </div>
     </div>
   </div>

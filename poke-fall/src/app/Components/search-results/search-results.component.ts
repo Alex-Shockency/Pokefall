@@ -78,4 +78,8 @@ export class SearchResultsComponent implements AfterViewInit{
   displayGrid(display:boolean){
     this.gridDisplay = display;
   }
+
+  genRandPokeId(){
+    return Math.floor(Math.random()*1010)
+  }
 }
