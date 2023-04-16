@@ -27,6 +27,14 @@ export class SearchResultsComponent {
   showFirstLastButtons = true;
   disabled = false;
 
+  ngOnInit(){
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
+
   constructor() {
     this.searchLoading = false;
   }

@@ -9,11 +9,12 @@ import { count } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
+
 export class AppComponent {
   title = 'poke-fall';
   searchString: string = 'pikachu';
   searchResults: Pokemon[];
-  searchLoading:boolean = false;
+  searchLoading: boolean = false;
 
   constructor() {
     this.searchResults = [];
@@ -34,14 +35,14 @@ export class AppComponent {
           let filteredList = data.results.filter((pokemon) =>
             pokemon.name.includes(this.searchString)
           );
-          let tasks:Promise<Pokemon>[] = [];
+          let tasks: Promise<Pokemon>[] = [];
           filteredList.forEach((filteredPokemon) => {
             tasks.push(this.getPokemonDetails(filteredPokemon.name));
           });
-          Promise.all(tasks).then(results=>{
+          Promise.all(tasks).then((results) => {
             this.searchResults = results;
             this.searchLoading = false;
-          })
+          });
         })
         .catch((error) => console.error(error));
     } else {

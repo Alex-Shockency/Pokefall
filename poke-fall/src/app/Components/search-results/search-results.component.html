@@ -1,0 +1,40 @@
+<div *ngIf="searchLoading">
+  <mat-progress-bar style=" position: fixed; z-index: 1;" mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="main">
+  <div *ngIf="!searchLoading">
+
+    <mat-divider class="divider"></mat-divider>
+    <div class="inner-grid">
+      <span>
+        {{ searchResults.length }} Pokemon found
+      </span>
+    </div>
+    <mat-divider class="divider"></mat-divider>
+    <mat-grid-list class="inner-grid" *ngIf="searchResults.length > 0" cols="4">
+      <mat-grid-tile *ngFor="let pokemon of searchResults">
+        <mat-grid-tile-header>
+          #{{ padId(pokemon.id) }}&nbsp;{{
+          capitalizeFirstLetter(pokemon.name)
+          }}
+
+        </mat-grid-tile-header>
+        <mat-grid-tile-footer>
+          <mat-chip-listbox aria-label="Dog selection">
+            <mat-chip *ngFor="let type of pokemon.types" color="primary">
+              {{ type.type.name }}</mat-chip>
+          </mat-chip-listbox>
+        </mat-grid-tile-footer>
+        <img mat-card-xl-image [attr.src]="pokemon.sprites.other?.['official-artwork']?.front_default" alt=" " />
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div *ngIf="searchResults.length == 0 && !searchLoading">
+    <div style="display: flex; justify-content: center">
+      <div>
+        <img
+          src="https://blogger.googleusercontent.com/img/a/AVvXsEhfAxj52nrWwKOtCNJ30F86mA4LE_JqSgdhmdIKdcETr3y7no0UmyEqo9ckQaL1ox85hHLOuHDXqHvXErUZ_9Z9c5p0iRroh3hJ8UktsEURf-sLvHjyPhTY8WA1FFqfS-Jvx8SxvorRcEeVys9-ViqSod6bOdRFB21dwvPfCGvnem4_WnB53Xtp_Zvbyg=w1200-h630-p-k-no-nu" />
+      </div>
+    </div>
+  </div>
+</div>
