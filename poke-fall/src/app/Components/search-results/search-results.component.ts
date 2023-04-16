@@ -2,6 +2,7 @@ import { Component, Input, SimpleChanges } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Output, EventEmitter } from '@angular/core';
 import { Pokemon } from 'src/app/Entities/pokemon';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 export interface Tile {
   color: string;
@@ -17,7 +18,7 @@ export interface Tile {
 })
 export class SearchResultsComponent {
   @Input() searchResults: Pokemon[] = [];
-  @Input() searchLoading:boolean;
+  @Input() searchLoading: boolean;
 
   imageUrl = '';
   panelOpenState = false;
@@ -27,7 +28,7 @@ export class SearchResultsComponent {
   showFirstLastButtons = true;
   disabled = false;
 
-  ngOnInit(){
+  ngOnInit() {
     window.scroll({
       top: 0,
       left: 0,
@@ -35,12 +36,22 @@ export class SearchResultsComponent {
     });
   }
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.searchLoading = false;
   }
 
-  padId(id:number): string {
+  padId(id: number): string {
     return String(id).padStart(4, '0');
+  }
+
+  setAlternateImage(id: number, dexNum:number) {
+    document
+      .getElementById(id.toString())
+      ?.setAttribute(
+        'src',
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + dexNum +
+          '.png'
+      );
   }
 
   capitalizeFirstLetter(word: string): string {

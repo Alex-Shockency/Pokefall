@@ -26,7 +26,10 @@
               {{ type.type.name }}</mat-chip> -->
           </mat-chip-listbox>
         </mat-grid-tile-footer>
-        <img mat-card-xl-image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.pokemonId}}.png" alt=" " />
+        <img id="{{pokemon.pokemonId}}" mat-card-xl-image
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.pokemonId}}.png"
+          alt=""
+          (error)="setAlternateImage(pokemon.pokemonId,pokemon.pokedexNumber)">
       </mat-grid-tile>
     </mat-grid-list>
   </div>
