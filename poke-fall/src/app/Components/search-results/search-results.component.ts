@@ -1,8 +1,10 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
+import { AfterViewInit, Component, Input, SimpleChanges, ViewChild } from '@angular/core';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Output, EventEmitter } from '@angular/core';
 import { Pokemon } from 'src/app/Entities/pokemon';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 export interface Tile {
   color: string;
@@ -16,9 +18,22 @@ export interface Tile {
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss'],
 })
-export class SearchResultsComponent {
+export class SearchResultsComponent implements AfterViewInit{
   @Input() searchResults: Pokemon[] = [];
-  @Input() searchLoading: boolean;
+  @Input() searchLoading: boolean; 
+
+  displayedColumns: string[] = ['name', 'type1','type2','hp','defense','specAttack','specDefense','speed'];
+  dataSource = new MatTableDataSource<Pokemon>();
+
+  @ViewChild(MatPaginator, {static: false})
+  set paginator(value: MatPaginator) {
+    this.dataSource.paginator = value;
+  }
+
+  @ViewChild(MatSort, {static: false})
+  set sort(value: MatSort) {
+    this.dataSource.sort = value;
+  }
 
   imageUrl = '';
   panelOpenState = false;
@@ -27,13 +42,15 @@ export class SearchResultsComponent {
   showPageSizeOptions = true;
   showFirstLastButtons = true;
   disabled = false;
+  gridDisplay = true;
 
-  ngOnInit() {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
+  ngOnChanges(){
+    this.dataSource = new MatTableDataSource<Pokemon>(this.searchResults);
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   constructor(private http: HttpClient) {
@@ -56,5 +73,9 @@ export class SearchResultsComponent {
 
   capitalizeFirstLetter(word: string): string {
     return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
+  displayGrid(display:boolean){
+    this.gridDisplay = display;
   }
 }
