@@ -26,6 +26,14 @@ export class AppComponent {
     this.search();
   }
 
+  async randomSearch(): Promise<void>{
+    this.pokemonService.getPokemonById(Math.floor(Math.random()*1010)).subscribe((pokemon) =>{
+      let filteredList = [];
+      filteredList.push(pokemon)
+      this.searchResults = filteredList;
+    });
+  }
+
   async search(): Promise<void> {
     this.searchLoading = true;
     if (this.searchString) {

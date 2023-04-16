@@ -14,6 +14,10 @@ import { Pokemon } from '../Entities/pokemon';
       return this.http.get<Pokemon[]>(this.api);
     }
 
+    getPokemonById(id:number): Observable<Pokemon>{
+      return this.http.get<Pokemon>(this.api+"/"+id)
+    }
+
     // getPokemon(queryString: string): Observable<Pokemon> {
     //     return this.http.get<Pokemon[]>(this.api + '/pokemon?q=' + queryString);
     // }
