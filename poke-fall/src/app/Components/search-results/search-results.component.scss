@@ -5,6 +5,83 @@
   margin: auto;
 }
 
+.footer-button {
+  display: table-cell;
+  margin-right: 1em;
+}
+
 .divider{
   padding: 0.5em;
+}
+
+button[value="grass"] {
+  background-color: #78C850 !important;
+}
+
+button[value="poison"] {
+  background-color: #A040A0 !important;
+}
+
+button[value="normal"] {
+  background-color: #A8A878 !important;
+}
+
+button[value="fire"] {
+  background-color: #F08030 !important;
+}
+
+button[value="fighting"] {
+  background-color: #C03028 !important;
+}
+
+button[value="water"] {
+  background-color: #6890F0 !important;
+}
+
+button[value="flying"] {
+  background-color: #A890F0 !important;
+}
+
+button[value="electric"] {
+  background-color: #F8D030 !important;
+}
+
+button[value="ground"] {
+  background-color: #E0C068 !important;
+}
+
+button[value="psychic"] {
+  background-color: #F85888 !important;
+}
+
+button[value="rock"] {
+  background-color: #B8A038 !important;
+}
+
+button[value="ice"] {
+  background-color: #98D8D8 !important;
+}
+
+button[value="bug"] {
+  background-color: #A8B820 !important;
+}
+
+button[value="dragon"] {
+  background-color: #7038F8 !important;
+}
+
+button[value="ghost"] {
+  background-color: #705898 !important;
+}
+
+button[value="dark"] {
+  background-color: #705848 !important;
+}
+
+button[value="steel"] {
+  background-color: #B8B8D0 !important;
+}
+
+button[value="fairy"] {
+  background-color: #EE99AC !important;
 }

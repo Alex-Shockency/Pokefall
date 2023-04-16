@@ -2,8 +2,8 @@ export interface Pokemon {
     id:number;
     pokedexNumber:number;
     name:string;
-    type1:number;
-    type2:number;
+    type1:string;
+    type2:string;
     ability1Id:number;
     ability2Id:number;
     hiddenAbilityId:number;
