@@ -19,7 +19,7 @@ namespace pokefallapi.Migrations
                 columns: table =>
                     new
                     {
-                        PokemonId = table
+                        Id = table
                             .Column<int>(type: "integer", nullable: false)
                             .Annotation(
                                 "Npgsql:ValueGenerationStrategy",
@@ -44,7 +44,7 @@ namespace pokefallapi.Migrations
                     },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Pokemon", x => x.PokemonId);
+                    table.PrimaryKey("PK_Pokemon", x => x.Id);
                 }
             );
 
@@ -176,7 +176,7 @@ namespace pokefallapi.Migrations
                                 databasePokemon.Add(
                                     new Pokemon
                                     {
-                                        PokemonId = pokemon.id,
+                                        Id = pokemon.id,
                                         PokedexNumber = pokemon.species_id,
                                         Name = pokemonName,
                                         Type1 = type1,
@@ -207,7 +207,7 @@ namespace pokefallapi.Migrations
                     table: "Pokemon",
                     columns: new[]
                     {
-                        "PokemonId",
+                        "Id",
                         "PokedexNumber",
                         "Name",
                         "Type1",
@@ -227,7 +227,7 @@ namespace pokefallapi.Migrations
                     },
                     values: new object[]
                     {
-                        pokemon.PokemonId,
+                        pokemon.Id,
                         pokemon.PokedexNumber,
                         pokemon.Name,
                         pokemon.Type1,

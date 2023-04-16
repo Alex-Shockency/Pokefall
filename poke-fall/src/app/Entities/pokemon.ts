@@ -1,5 +1,5 @@
 export interface Pokemon {
-    pokemonId:number;
+    id:number;
     pokedexNumber:number;
     name:string;
     type1:number;

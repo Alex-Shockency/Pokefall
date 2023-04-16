@@ -6,7 +6,7 @@ namespace poke_fall_api.DTO
     [Keyless]
     public class PokemonDTO
     {
-        public int PokemonId { get; set; }
+        public int Id { get; set; }
         public int PokedexNumber { get; set; }
         public string Name { get; set; }
         public string Type1 { get; set; }

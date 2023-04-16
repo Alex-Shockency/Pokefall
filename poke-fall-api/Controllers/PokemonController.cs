@@ -49,7 +49,7 @@ public class PokemonController : ControllerBase
     //                   where p.Type1 == queryString ||
     //                         p.Type2 == queryString
     //                   select p;
-    //     List<PokemonDTO> result = ListToDTO(pokemonQuery.OrderBy(p => p.PokemonId).ToList());
+    //     List<PokemonDTO> result = ListToDTO(pokemonQuery.OrderBy(p => p.Id).ToList());
     //     return await Task.FromResult(Ok(result));
     // }
 
@@ -57,7 +57,7 @@ public class PokemonController : ControllerBase
     {
         return new PokemonDTO
         {
-            PokemonId = item.PokemonId,
+            Id = item.Id,
             PokedexNumber = item.PokedexNumber,
             Name = item.Name,
             Type1 = item.Type1.ToString(),

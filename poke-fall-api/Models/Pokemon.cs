@@ -8,7 +8,7 @@ namespace poke_fall_api.Models
     {
         [Key]
         [Required]
-        public int PokemonId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public int PokedexNumber { get; set; }

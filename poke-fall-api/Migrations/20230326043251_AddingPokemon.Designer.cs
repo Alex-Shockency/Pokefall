@@ -113,11 +113,11 @@ namespace pokefallapi.Migrations
 
             modelBuilder.Entity("poke_fall_api.Models.Pokemon", b =>
                 {
-                    b.Property<int>("PokemonId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("PokemonId"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Ability1Id")
                         .HasColumnType("integer");
@@ -196,7 +196,7 @@ namespace pokefallapi.Migrations
                     b.Property<int>("Weight")
                         .HasColumnType("integer");
 
-                    b.HasKey("PokemonId");
+                    b.HasKey("Id");
 
                     b.ToTable("Pokemon");
                 });
