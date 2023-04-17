@@ -11,6 +11,8 @@ import { Pokemon } from 'src/app/Entities/pokemon';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { ActivatedRoute } from '@angular/router';
+import { PokemonService } from 'src/app/Services/pokemon-service';
 
 export interface Tile {
   color: string;
@@ -24,10 +26,15 @@ export interface Tile {
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss'],
 })
+
 export class SearchResultsComponent implements AfterViewInit {
   @Input() searchResults: Pokemon[] = [];
   @Input() searchLoading: boolean;
 
+  searchString = "";
+  randomId = this.genRandPokeId();
+  
+  dataSource = new MatTableDataSource<Pokemon>();
   displayedColumns: string[] = [
     'name',
     'type1',
@@ -38,7 +45,6 @@ export class SearchResultsComponent implements AfterViewInit {
     'specDefense',
     'speed',
   ];
-  dataSource = new MatTableDataSource<Pokemon>();
 
   @ViewChild(MatPaginator, { static: false })
   set paginator(value: MatPaginator) {
@@ -59,8 +65,11 @@ export class SearchResultsComponent implements AfterViewInit {
   disabled = false;
   gridDisplay = true;
 
-  ngOnChanges() {
-    this.dataSource = new MatTableDataSource<Pokemon>(this.searchResults);
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.searchString = params['query'];
+    });
+    this.getPokemon();
   }
 
   ngAfterViewInit() {
@@ -68,8 +77,26 @@ export class SearchResultsComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  constructor(private http: HttpClient) {
+  constructor(private pokemonService: PokemonService, private route: ActivatedRoute,) {
     this.searchLoading = false;
+  }
+
+  getPokemon(){
+     this.searchLoading = true;
+    if (this.searchString) {
+      //TODO: fix the nidoran case
+      this.pokemonService.getAllPokemon().subscribe((pokemons) => {
+        let filteredList = pokemons.filter((pokemon) =>
+          pokemon.name.toLocaleLowerCase().includes(this.searchString)
+        );
+        this.searchResults = filteredList.sort((a,b) => a.pokedexNumber - b.pokedexNumber);
+        this.dataSource = new MatTableDataSource<Pokemon>(this.searchResults);
+        this.searchLoading = false;
+      });
+    } else {
+      this.searchResults = [];
+      this.searchLoading = false;
+    }
   }
 
   padId(id: number): string {
@@ -99,7 +126,7 @@ export class SearchResultsComponent implements AfterViewInit {
     return Math.floor(Math.random() * 1010);
   }
 
-  playCry(id: number) {
+  protected playCry(id: number) {
     let audio: HTMLAudioElement = <HTMLAudioElement>(
       document.getElementById('audio-' + id.toString())
     );

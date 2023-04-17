@@ -1,22 +1,9 @@
 <div>
+  <app-search-bar></app-search-bar>
   <router-outlet>
-    <mat-toolbar color="primary" style="position: fixed; z-index: 2;">
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
-        (click)="search()">
-        <mat-icon>search</mat-icon>
-      </button>
-      <mat-form-field class="full-width">
-        <input matInput type="text" [(ngModel)]="searchString" (keydown.enter)="search()" placeholder="Ex. Pikachu" />
-      </mat-form-field>
-      <div>
-        <button mat-button class="icon-button"> <mat-icon>list</mat-icon>Advanced</button>
-        <button mat-button class="icon-button"> <mat-icon>help</mat-icon>Syntax</button>
-        <button mat-button class="icon-button" (click)="randomSearch()"> <mat-icon>shuffle</mat-icon>Random</button>
-      </div>
-    </mat-toolbar>
-    <app-search-results [searchLoading]="searchLoading" [searchResults]="searchResults"></app-search-results>
-    <footer class="footer">
-      <div style="height: 100px;">footer</div>
-    </footer>
+    <!-- <app-search-results [searchLoading]="searchLoading" [searchResults]="searchResults"></app-search-results> -->  
   </router-outlet>
+  <!-- <footer class="footer">
+    <div style="height: 100px;">footer</div>
+  </footer> -->
 </div>
