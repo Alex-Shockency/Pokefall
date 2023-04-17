@@ -23,7 +23,7 @@ export class SearchBarComponent {
     this.pokemonService.getPokemonById(Math.floor(Math.random()*1010)).subscribe((pokemon) =>{
       this.router.navigate(
         ['../search'],
-        { queryParams: { q:  pokemon.name.toLocaleLowerCase() } }
+        { queryParams: { q:  pokemon.name.toLocaleLowerCase(), gd: true } }
       ).then(()=>{
         window.location.reload();
       });
@@ -33,7 +33,7 @@ export class SearchBarComponent {
   async search(): Promise<void> {
     this.router.navigate(
       ['../search'],
-      { queryParams: { q: this.searchString.toLocaleLowerCase() } }
+      { queryParams: { q: this.searchString.toLocaleLowerCase(), gd:true }}
     ).then(()=>{
       window.location.reload();
     });

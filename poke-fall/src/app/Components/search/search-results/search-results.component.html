@@ -18,9 +18,9 @@
     </div>
     <mat-divider class="divider"></mat-divider>
     <div *ngIf="!gridDisplay && searchResults.length > 0" class="mat-elevation-z8">
-      <mat-form-field style="width: 100%;">
+      <mat-form-field color="primary" style="width: 100%;">
         <mat-label>Filter</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Pikachu" #input>
+        <input  matInput (keyup)="applyFilter($event)" placeholder="Ex. Pikachu" #input>
       </mat-form-field>
 
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>

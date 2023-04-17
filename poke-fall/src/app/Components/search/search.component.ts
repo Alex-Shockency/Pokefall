@@ -12,6 +12,7 @@ export class SearchComponent {
   searchString = "";
   searchLoading = false;
   searchResults:Pokemon[] = [];
+  gridDisplay:boolean = false;
 
   constructor(private pokemonService: PokemonService, private route: ActivatedRoute,) {
     this.searchLoading = false;
@@ -20,6 +21,7 @@ export class SearchComponent {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.searchString = params['q'];
+      this.gridDisplay = JSON.parse(params['gd']);
     });
     this.getPokemon();
   }

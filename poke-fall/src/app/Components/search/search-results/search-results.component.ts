@@ -12,7 +12,7 @@ import { Pokemon } from 'src/app/Entities/pokemon';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PokemonService } from 'src/app/Services/pokemon-service';
 
 export interface Tile {
@@ -31,6 +31,7 @@ export class SearchResultsComponent implements AfterViewInit {
   @Input() searchString: string = '';
   @Input() searchResults: Pokemon[] = [];
   @Input() searchLoading: boolean;
+  @Input() gridDisplay:boolean;
 
   randomId = this.genRandPokeId();
   columnNum = 4;
@@ -81,11 +82,9 @@ export class SearchResultsComponent implements AfterViewInit {
   showPageSizeOptions = true;
   showFirstLastButtons = true;
   disabled = false;
-  gridDisplay = true;
 
   ngOnChanges() {
     this.dataSource = new MatTableDataSource<Pokemon>(this.searchResults);
-  
   }
 
   ngAfterViewInit() {
@@ -94,8 +93,9 @@ export class SearchResultsComponent implements AfterViewInit {
     window.scrollTo(0,0)
   }
 
-  constructor() {
+  constructor(private router:Router) {
     this.searchLoading = false;
+    this.gridDisplay = true;
     this.onResize();
   }
 
@@ -124,7 +124,10 @@ export class SearchResultsComponent implements AfterViewInit {
   }
 
   displayGrid(display: boolean) {
-    this.gridDisplay = display;
+    this.router.navigate(
+      ['../search'],
+      { queryParams: { q: this.searchString, gd: display } }
+    )
   }
 
   genRandPokeId() {
