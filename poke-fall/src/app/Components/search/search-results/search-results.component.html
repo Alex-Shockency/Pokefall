@@ -13,11 +13,16 @@
     </div>
     <div *ngIf="searchResults.length > 0" class="inner-grid">
       <span>
-        {{ searchResults.length }} Pokemon found
+        {{ searchResults.length }} Pokemon found where name includes "{{this.searchString}}"
       </span>
     </div>
     <mat-divider class="divider"></mat-divider>
     <div *ngIf="!gridDisplay && searchResults.length > 0" class="mat-elevation-z8">
+      <mat-form-field style="width: 100%;">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Pikachu" #input>
+      </mat-form-field>
+
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
@@ -72,45 +77,47 @@
       </mat-paginator>
     </div>
 
-
-    <mat-grid-list class="inner-grid" *ngIf="gridDisplay && searchResults.length > 0" cols="4" gutterSize="1em">
-      <mat-grid-tile class="grid-tile" *ngFor="let pokemon of searchResults" >
-        <mat-grid-tile-header class="header">
-          #{{ padId(pokemon.pokedexNumber) }}&nbsp;{{
-          capitalizeFirstLetter(pokemon.name)
-          }}
-          <div style="width: 100%;display: flex;justify-content: end;">
-            <button mat-icon-button (click)="playCry(pokemon.id)">
-              <mat-icon>volume_up</mat-icon>
-            </button>
-            <audio id="audio-{{pokemon.id}}">
-              <source src="https://play.pokemonshowdown.com/audio/cries/{{formatName(pokemon.name)}}.ogg"
-                type="audio/mp3">
-              Your browser does not support the audio element.
-            </audio>
+    <div *ngIf="gridDisplay && searchResults.length > 0">
+      <mat-grid-list class="inner-grid" cols="{{columnNum}}"
+        gutterSize="1em">
+        <mat-grid-tile class="grid-tile" *ngFor="let pokemon of searchResults">
+          <mat-grid-tile-header class="header">
+            #{{ padId(pokemon.pokedexNumber) }}&nbsp;{{
+            capitalizeFirstLetter(pokemon.name)
+            }}
+            <div style="width: 100%;display: flex;justify-content: end;">
+              <button mat-icon-button (click)="playCry(pokemon.id)">
+                <mat-icon>volume_up</mat-icon>
+              </button>
+              <audio id="audio-{{pokemon.id}}">
+                <source src="https://play.pokemonshowdown.com/audio/cries/{{formatName(pokemon.name)}}.ogg"
+                  type="audio/mp3">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </mat-grid-tile-header>
+          <div style="display: flex;">
+            <img id="{{pokemon.id}}" mat-card-xl-image
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png"
+              alt="" (error)="setAlternateImage(pokemon.id,pokemon.pokedexNumber)">
           </div>
-        </mat-grid-tile-header>
-        <div style="display: flex;">
-          <img id="{{pokemon.id}}" mat-card-xl-image
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png"
-            alt="" (error)="setAlternateImage(pokemon.id,pokemon.pokedexNumber)">
-        </div>
-        <mat-grid-tile-footer class="footer">
-          <div>
-            <button mat-flat-button class="footer-button" color="primary" value="{{ pokemon.type1 }}">
-              {{ capitalizeFirstLetter(pokemon.type1) }}</button>
-            <button mat-flat-button class="footer-button" color="primary" *ngIf="pokemon.type2"
-              value="{{ pokemon.type2 }}">
-              {{ capitalizeFirstLetter(pokemon.type2) }}</button>
-          </div>
-        </mat-grid-tile-footer>
-      </mat-grid-tile>
-    </mat-grid-list>
+          <mat-grid-tile-footer class="footer">
+            <div>
+              <button mat-flat-button class="footer-button" color="primary" value="{{ pokemon.type1 }}">
+                {{ capitalizeFirstLetter(pokemon.type1) }}</button>
+              <button mat-flat-button class="footer-button" color="primary" *ngIf="pokemon.type2"
+                value="{{ pokemon.type2 }}">
+                {{ capitalizeFirstLetter(pokemon.type2) }}</button>
+            </div>
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
   </div>
   <div *ngIf="searchResults.length == 0 && !searchLoading" style="display: flex;justify-content: center;">
     <div>
       <div style="display: flex;justify-content: center;">
-        <img style="width: 100%;height: 100%;"
+        <img loading="lazy" style="width: 100%;height: 100%;"
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{randomId}}.png" />
       </div>
       <div style="display: flex;justify-content: center;">

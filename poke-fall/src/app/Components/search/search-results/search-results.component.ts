@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   Component,
+  HostListener,
   Input,
   SimpleChanges,
   ViewChild,
@@ -26,14 +27,16 @@ export interface Tile {
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss'],
 })
-
 export class SearchResultsComponent implements AfterViewInit {
+  @Input() searchString: string = '';
   @Input() searchResults: Pokemon[] = [];
   @Input() searchLoading: boolean;
 
-  searchString = "";
   randomId = this.genRandPokeId();
-  
+  columnNum = 4;
+  screenHeight = 0;
+  screenWidth = 0;
+
   dataSource = new MatTableDataSource<Pokemon>();
   displayedColumns: string[] = [
     'name',
@@ -45,6 +48,21 @@ export class SearchResultsComponent implements AfterViewInit {
     'specDefense',
     'speed',
   ];
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.screenHeight = window.innerHeight;
+    this.screenWidth = window.innerWidth;
+    if (this.screenWidth <= 1920 && this.screenWidth > 1200) {
+      this.columnNum = 3;
+    } else if (this.screenWidth < 1200 && this.screenWidth > 800) {
+      this.columnNum = 2;
+    } else if (this.screenWidth < 800) {
+      this.columnNum = 1;
+    } else {
+      this.columnNum = 4;
+    }
+  }
 
   @ViewChild(MatPaginator, { static: false })
   set paginator(value: MatPaginator) {
@@ -65,38 +83,25 @@ export class SearchResultsComponent implements AfterViewInit {
   disabled = false;
   gridDisplay = true;
 
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.searchString = params['query'];
-    });
-    this.getPokemon();
+  ngOnChanges() {
+    this.dataSource = new MatTableDataSource<Pokemon>(this.searchResults);
+  
   }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    window.scrollTo(0,0)
   }
 
-  constructor(private pokemonService: PokemonService, private route: ActivatedRoute,) {
+  constructor() {
     this.searchLoading = false;
+    this.onResize();
   }
 
-  getPokemon(){
-     this.searchLoading = true;
-    if (this.searchString) {
-      //TODO: fix the nidoran case
-      this.pokemonService.getAllPokemon().subscribe((pokemons) => {
-        let filteredList = pokemons.filter((pokemon) =>
-          pokemon.name.toLocaleLowerCase().includes(this.searchString)
-        );
-        this.searchResults = filteredList.sort((a,b) => a.pokedexNumber - b.pokedexNumber);
-        this.dataSource = new MatTableDataSource<Pokemon>(this.searchResults);
-        this.searchLoading = false;
-      });
-    } else {
-      this.searchResults = [];
-      this.searchLoading = false;
-    }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   padId(id: number): string {
@@ -134,6 +139,6 @@ export class SearchResultsComponent implements AfterViewInit {
   }
 
   formatName(name: string) {
-      return name.toLowerCase();
+    return name.toLowerCase();
   }
 }

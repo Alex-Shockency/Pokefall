@@ -21,10 +21,9 @@ export class SearchBarComponent {
   
   async randomSearch(): Promise<void>{
     this.pokemonService.getPokemonById(Math.floor(Math.random()*1010)).subscribe((pokemon) =>{
-      this.searchString = pokemon.name;
       this.router.navigate(
         ['../search'],
-        { queryParams: { query: this.searchString.toLocaleLowerCase() } }
+        { queryParams: { q:  pokemon.name.toLocaleLowerCase() } }
       ).then(()=>{
         window.location.reload();
       });
@@ -34,23 +33,9 @@ export class SearchBarComponent {
   async search(): Promise<void> {
     this.router.navigate(
       ['../search'],
-      { queryParams: { query: this.searchString.toLocaleLowerCase() } }
+      { queryParams: { q: this.searchString.toLocaleLowerCase() } }
     ).then(()=>{
       window.location.reload();
     });
-    // this.searchLoading = true;
-    // if (this.searchString) {
-    //   //TODO: fix the nidoran case
-    //   this.pokemonService.getAllPokemon().subscribe((pokemons) => {
-    //     let filteredList = pokemons.filter((pokemon) =>
-    //       pokemon.name.toLocaleLowerCase().includes(this.searchString) && !pokemon.name.toLocaleLowerCase().includes("-")
-    //     );
-    //     this.searchResults = filteredList.sort((a,b) => a.pokedexNumber - b.pokedexNumber);
-    //     this.searchLoading = false;
-    //   });
-    // } else {
-    //   this.searchResults = [];
-    //   this.searchLoading = false;
-    // }
   }
 }
