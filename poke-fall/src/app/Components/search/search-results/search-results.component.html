@@ -97,7 +97,7 @@
             </div>
           </mat-grid-tile-header>
           <div style="display: flex;">
-            <img id="{{pokemon.id}}" mat-card-xl-image
+            <img style="width: 100%" id="{{pokemon.id}}" mat-card-xl-image
               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png"
               alt="" (error)="setAlternateImage(pokemon.id,pokemon.pokedexNumber)">
           </div>
