@@ -15,8 +15,8 @@
       <span>
         {{ searchResults.length }} Pokemon found where name includes "{{this.searchString}}"
       </span>
+      <mat-divider class="divider"></mat-divider>
     </div>
-    <mat-divider class="divider"></mat-divider>
     <div *ngIf="!gridDisplay && searchResults.length > 0" class="mat-elevation-z8">
       <mat-form-field color="primary" style="width: 100%;">
         <mat-label>Filter</mat-label>
@@ -76,9 +76,9 @@
       <mat-paginator [pageSizeOptions]="[15,5,10]" showFirstLastButtons aria-label="blah">
       </mat-paginator>
     </div>
-    <mat-card>
+    <mat-card *ngIf="gridDisplay && searchResults.length > 0">
       <mat-card-content>
-        <div *ngIf="gridDisplay && searchResults.length > 0">
+        <div>
           <mat-grid-list class="inner-grid" cols="{{columnNum}}" gutterSize="1em">
             <mat-grid-tile class="grid-tile" *ngFor="let pokemon of searchResults">
               <mat-grid-tile-header style="z-index: 1;" class="header">

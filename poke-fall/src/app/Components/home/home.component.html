@@ -1,1 +1,24 @@
-<p>home works!</p>
+<div
+    style="display: flex; height: 100vh; justify-content: center;background: linear-gradient(to bottom, #1d1c25, teal);">
+    <div class="inner-flex">
+        <img mat-card-xl-image
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"
+            alt="">
+        <h1>Pokemon Search is a powerful search tool</h1>
+        <div style="display: flex;">
+
+            <mat-form-field class="example-full-width">
+                <button matPrefix mat-icon-button class="example-icon favorite-icon"
+                    aria-label="Example icon-button with heart icon" (click)="search()">
+                    <mat-icon>search</mat-icon>
+                </button>
+                <input matInput [(ngModel)]="searchString" (keydown.enter)="search()" placeholder="Ex. Pikachu">
+            </mat-form-field>
+        </div>
+        <div style="display: flex;justify-content: center; padding: 1em;">
+            <button mat-raised-button class="icon-button"> <mat-icon>list</mat-icon>Advanced</button>
+            <button mat-raised-button class="icon-button"> <mat-icon>help</mat-icon>Syntax</button>
+            <button mat-raised-button class="icon-button"> <mat-icon>shuffle</mat-icon>Random</button>
+        </div>
+    </div>
+</div>

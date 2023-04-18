@@ -11,6 +11,7 @@ import { NgxJsonViewerModule } from 'ngx-json-viewer';
 import { SearchBarComponent } from './Components/search/search-bar/search-bar.component';
 import { HomeComponent } from './Components/home/home.component';
 import { SearchComponent } from './Components/search/search.component';
+import { PokemonInfoComponent } from './Components/pokemon-info/pokemon-info.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SearchComponent } from './Components/search/search.component';
     SearchBarComponent,
     HomeComponent,
     SearchComponent,
+    PokemonInfoComponent,
   ],
   imports: [
     BrowserModule,

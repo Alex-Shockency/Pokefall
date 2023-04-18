@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { PokemonService } from 'src/app/Services/pokemon-service';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  searchString: string = '';
+
+  constructor(private pokemonService: PokemonService, private router:Router) {
+  }
+
+  async search(): Promise<void> {
+    this.router.navigate(
+      ['../search'],
+      { queryParams: { q: this.searchString.toLocaleLowerCase(), gd:true }}
+    ).then(()=>{
+      window.location.reload();
+    });
+  }
 }

@@ -12,11 +12,8 @@ import { PokemonService } from 'src/app/Services/pokemon-service';
 export class SearchBarComponent {
   title = 'poke-fall';
   searchString: string = '';
-  searchResults: Pokemon[];
-  searchLoading: boolean = false;
 
   constructor(private pokemonService: PokemonService, private router:Router) {
-    this.searchResults = [];
   }
   
   async randomSearch(): Promise<void>{
