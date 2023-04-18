@@ -8,11 +8,22 @@ import { PokemonService } from 'src/app/Services/pokemon-service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+  randomId = this.genRandPokeId();
   searchString: string = '';
 
   constructor(private pokemonService: PokemonService, private router:Router) {
   }
+
+  async randomSearch(): Promise<void>{
+    this.pokemonService.getPokemonById(Math.floor(Math.random()*1010)).subscribe((pokemon) =>{
+      this.router.navigate(
+        ['../search'],
+        { queryParams: { q:  pokemon.name.toLocaleLowerCase(), gd: true } }
+      ).then(()=>{
+        window.location.reload();
+      });
+    });
+  }  
 
   async search(): Promise<void> {
     this.router.navigate(
@@ -21,5 +32,9 @@ export class HomeComponent {
     ).then(()=>{
       window.location.reload();
     });
+  }
+
+  genRandPokeId() {
+    return Math.floor(Math.random() * 1010);
   }
 }

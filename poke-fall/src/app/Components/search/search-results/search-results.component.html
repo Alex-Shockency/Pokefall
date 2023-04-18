@@ -85,7 +85,7 @@
                 #{{ padId(pokemon.pokedexNumber) }}&nbsp;{{
                 capitalizeFirstLetter(pokemon.name)
                 }}
-                <div style="width: 100%;display: flex;justify-content: end;">
+                <!-- <div style="width: 100%;display: flex;justify-content: end;">
                   <button mat-icon-button (click)="playCry(pokemon.id)">
                     <mat-icon>volume_up</mat-icon>
                   </button>
@@ -94,10 +94,10 @@
                       type="audio/mp3">
                     Your browser does not support the audio element.
                   </audio>
-                </div>
+                </div> -->
               </mat-grid-tile-header>
               <div style="display: flex;">
-                <img style="width: 100%; height: 100%;" id="{{pokemon.id}}" mat-card-xl-image
+                <img loading="lazy" style="width: 100%; height: 100%;" id="{{pokemon.id}}" mat-card-xl-image
                   src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png"
                   alt="" (error)="setAlternateImage(pokemon.id,pokemon.pokedexNumber)">
               </div>
@@ -119,7 +119,7 @@
   <div *ngIf="searchResults.length == 0 && !searchLoading" style="display: flex;justify-content: center;">
     <div>
       <div style="display: flex;justify-content: center;">
-        <img loading="lazy" style="width: 100%;height: 100%;"
+        <img style="width: 100%;height: 100%;"
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{randomId}}.png" />
       </div>
       <div style="display: flex;justify-content: center;">
