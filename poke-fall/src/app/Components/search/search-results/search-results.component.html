@@ -81,7 +81,7 @@
         <div *ngIf="gridDisplay && searchResults.length > 0">
           <mat-grid-list class="inner-grid" cols="{{columnNum}}" gutterSize="1em">
             <mat-grid-tile class="grid-tile" *ngFor="let pokemon of searchResults">
-              <mat-grid-tile-header class="header">
+              <mat-grid-tile-header style="z-index: 1;" class="header">
                 #{{ padId(pokemon.pokedexNumber) }}&nbsp;{{
                 capitalizeFirstLetter(pokemon.name)
                 }}
