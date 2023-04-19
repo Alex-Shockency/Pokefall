@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Pokemon } from 'src/app/Entities/pokemon';
 import { PokemonService } from 'src/app/Services/pokemon-service';
 
@@ -14,7 +14,7 @@ export class SearchComponent {
   searchResults:Pokemon[] = [];
   gridDisplay:boolean = false;
 
-  constructor(private pokemonService: PokemonService, private route: ActivatedRoute,) {
+  constructor(private pokemonService: PokemonService, private route: ActivatedRoute, private router:Router) {
     this.searchLoading = false;
   }
 
@@ -34,6 +34,12 @@ export class SearchComponent {
        let filteredList = pokemons.filter((pokemon) =>
          pokemon.name.toLocaleLowerCase().includes(this.searchString)
        );
+       if(filteredList.length == 1){
+        this.router.navigate(
+          ['../pokemon'],
+          { queryParams: { id: filteredList.pop()?.id } }
+        )
+       }
        this.searchResults = filteredList.sort((a,b) => a.pokedexNumber - b.pokedexNumber);
        this.searchLoading = false;
      });

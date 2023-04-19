@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Pokemon } from 'src/app/Entities/pokemon';
 import { PokemonService } from 'src/app/Services/pokemon-service';
 
 @Component({
@@ -8,10 +9,14 @@ import { PokemonService } from 'src/app/Services/pokemon-service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  randomId = this.genRandPokeId();
+  randomPoke!: Pokemon;
   searchString: string = '';
 
   constructor(private pokemonService: PokemonService, private router:Router) {
+  }
+
+  ngOnInit(){
+    this.genRandPoke();
   }
 
   async randomSearch(): Promise<void>{
@@ -32,7 +37,18 @@ export class HomeComponent {
     });
   }
 
-  genRandPokeId() {
-    return Math.floor(Math.random() * 1010);
+  navigateToPokemon(pokemonId: number){
+    this.router.navigate(
+      ['../pokemon'],
+      { queryParams: { id: pokemonId } }
+    )
+  }
+
+  genRandPoke() {
+    this.pokemonService
+        .getPokemonById( Math.floor(Math.random() * 1010))
+        .subscribe((pokemon) => {
+          this.randomPoke = pokemon;
+        });
   }
 }

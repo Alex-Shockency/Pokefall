@@ -1,29 +1,92 @@
+<app-search-bar></app-search-bar>
+<div class="example-action-buttons">
+    <button class="button" mat-raised-button (click)="accordion.openAll()">Expand All</button>
+    <button class="button" mat-raised-button (click)="accordion.closeAll()">Collapse All</button>
+</div>
 <div class="inner-flex">
-    <div style="width: 75%;">
-        <div>
-            <h1>Description</h1>
-            <p></p>
+    <div style="width: 75%; padding: 1em;">
+        <mat-accordion class="example-headers-align" multi>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <h1>Description</h1>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>
 
-        </div>
-        <div>
-            <h1>Stats</h1>
-            <p></p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at magna consectetur, dapibus eros
+                    sed, luctus urna. Donec rutrum quam vitae ligula gravida, a posuere lacus lacinia. Curabitur erat
+                    quam, tincidunt vel ultricies vel, pulvinar vitae arcu. Praesent molestie malesuada diam non auctor.
+                    Morbi ut mollis risus. Sed vehicula porta lacus, eu maximus sem tincidunt non. Donec posuere lorem
+                    in risus sagittis eleifend. Vestibulum ultricies odio nec tortor aliquet, eget volutpat dui
+                    interdum. Quisque id quam sit amet leo bibendum placerat vel quis enim. Suspendisse et massa nunc.
+                    Donec posuere turpis et elit vestibulum porttitor.
 
-        </div>
+                    Nulla tincidunt commodo lorem a consectetur. Cras non nulla eu nisl pretium elementum. Nulla
+                    sollicitudin turpis a libero consequat lobortis. Fusce eu aliquam leo, quis fringilla arcu. Etiam
+                    facilisis, leo sit amet semper laoreet, est lectus molestie massa, in dictum justo lacus nec turpis.
+                    Suspendisse laoreet at ante ut tristique. Morbi ut dolor et mi bibendum rutrum ac sit amet nibh.
+
+                    Morbi facilisis velit id purus commodo congue. Nullam sed erat in metus malesuada mollis et ac
+                    velit. Praesent eu auctor augue. Etiam vel suscipit massa. Praesent posuere, purus ac iaculis
+                    tempus, diam quam pulvinar magna, vitae dapibus odio mauris aliquet diam. Vivamus posuere sem a quam
+                    tincidunt, nec convallis dui ullamcorper. Nam quis ipsum sapien. In pulvinar dui nec lacus accumsan
+                    venenatis. Nulla sem nisl, varius lacinia ipsum ut, vehicula pulvinar tellus. Duis sit amet justo
+                    ornare, dapibus quam ac, egestas ex.
+
+                    Mauris sagittis odio eu elit tempus, quis feugiat urna tempor. Ut aliquet velit ac erat scelerisque,
+                    a commodo quam auctor. Nullam elementum semper elit, nec ultrices dolor ornare sit amet. Donec non
+                    nisl nisi. Praesent at imperdiet tortor. In maximus in ligula id ultrices. Aenean tempus consequat
+                    nisi semper semper. Quisque iaculis eu diam et vulputate. Nunc scelerisque justo orci, sed
+                    consectetur odio mollis id. In bibendum ultrices pharetra. Integer bibendum, elit id vestibulum
+                    ultrices, tortor ligula tempor dolor, sed porttitor ipsum purus et augue. Nam vel erat at nisi
+                    porttitor tincidunt vel sed odio. Sed urna lacus, scelerisque vitae augue et, mattis facilisis nibh.
+                    Ut ipsum enim, egestas quis dictum vitae, volutpat nec justo. Vestibulum porttitor ligula vel risus
+                    mollis, non dictum neque ultricies.
+
+                    Aenean id augue fermentum, consectetur risus vitae, venenatis justo. In rutrum semper massa sed
+                    congue. Morbi sed erat in tellus fermentum cursus. Quisque posuere nisl augue, quis dapibus ex porta
+                    eget. Mauris eu tempor ipsum. Praesent nunc ipsum, ultricies vitae enim vulputate, malesuada tempor
+                    mi. Aenean tincidunt purus in purus ultrices dapibus. Donec ac tellus quis ligula facilisis
+                    tincidunt vel eget nisl. Vivamus eget ligula ultricies, pulvinar sem ac, feugiat quam. </p>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <h1>Stats</h1>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-card class="chart-container">
+                    <canvas id="myChart" width="400" height="400">{{chart}}</canvas>
+                </mat-card>
+            </mat-expansion-panel>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <h1>Moves</h1>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-card class="chart-container">
+                </mat-card>
+            </mat-expansion-panel>
+        </mat-accordion>
     </div>
 
-    <mat-card style="width: 25%;">
+    <mat-card style="width: 25%; height: 100%; margin: 1em;">
         <mat-card-header>{{pokemon.name}} #{{padId(pokemon.pokedexNumber)}}</mat-card-header>
         <mat-card-content>
-            <img id="{{pokemonId}}" mat-card-xl-image
-                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemonId}}.png"
-                alt="">
+            <div style="max-width: 475px;max-height: 475px;">
+                <img style="width: 100%;height: 100%;" mat-card-image id="{{pokemonId}}"
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemonId}}.png"
+                    alt="">
+            </div>
             <div>
-            <button mat-flat-button class="footer-button" color="primary" value="{{ pokemon.type1 }}">
-                {{pokemon.type1 }}</button>
-            <button mat-flat-button class="footer-button" color="primary" *ngIf="pokemon.type2"
-                value="{{ pokemon.type2 }}">
-                {{ pokemon.type2 }}</button>
+                <button mat-flat-button class="button" color="primary" value="{{ pokemon.type1 }}">
+                    {{pokemon.type1 }}</button>
+                <button mat-flat-button class="button" color="primary" *ngIf="pokemon.type2"
+                    value="{{ pokemon.type2 }}">
+                    {{ pokemon.type2 }}</button>
             </div>
 
         </mat-card-content>

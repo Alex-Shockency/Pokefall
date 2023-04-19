@@ -90,7 +90,6 @@ export class SearchResultsComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    window.scrollTo(0,0)
   }
 
   constructor(private router:Router) {
@@ -121,6 +120,13 @@ export class SearchResultsComponent implements AfterViewInit {
 
   capitalizeFirstLetter(word: string): string {
     return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
+  navigateToPokemon(pokemonId: number){
+    this.router.navigate(
+      ['../pokemon'],
+      { queryParams: { id: pokemonId } }
+    )
   }
 
   displayGrid(display: boolean) {
