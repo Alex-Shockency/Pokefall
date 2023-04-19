@@ -15,14 +15,12 @@ export class HomeComponent {
   }
 
   async randomSearch(): Promise<void>{
-    this.pokemonService.getPokemonById(Math.floor(Math.random()*1010)).subscribe((pokemon) =>{
       this.router.navigate(
-        ['../search'],
-        { queryParams: { q:  pokemon.name.toLocaleLowerCase(), gd: true } }
+        ['../pokemon'],
+        { queryParams: { id:  Math.floor(Math.random()*1010)} }
       ).then(()=>{
         window.location.reload();
       });
-    });
   }  
 
   async search(): Promise<void> {

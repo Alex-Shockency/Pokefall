@@ -1,1 +1,31 @@
-<p>pokemon-info works!</p>
+<div class="inner-flex">
+    <div style="width: 75%;">
+        <div>
+            <h1>Description</h1>
+            <p></p>
+
+        </div>
+        <div>
+            <h1>Stats</h1>
+            <p></p>
+
+        </div>
+    </div>
+
+    <mat-card style="width: 25%;">
+        <mat-card-header>{{pokemon.name}} #{{padId(pokemon.pokedexNumber)}}</mat-card-header>
+        <mat-card-content>
+            <img id="{{pokemonId}}" mat-card-xl-image
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemonId}}.png"
+                alt="">
+            <div>
+            <button mat-flat-button class="footer-button" color="primary" value="{{ pokemon.type1 }}">
+                {{pokemon.type1 }}</button>
+            <button mat-flat-button class="footer-button" color="primary" *ngIf="pokemon.type2"
+                value="{{ pokemon.type2 }}">
+                {{ pokemon.type2 }}</button>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>
