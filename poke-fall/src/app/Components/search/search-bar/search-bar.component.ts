@@ -33,4 +33,11 @@ export class SearchBarComponent {
       window.location.reload();
     });
   }
+
+  async navigateHome(): Promise<void> {
+    this.router.navigate(
+      ['']
+    )
+  }
+
 }

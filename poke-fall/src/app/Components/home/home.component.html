@@ -12,7 +12,7 @@
             <mat-form-field class="example-full-width">
                 <button matPrefix mat-icon-button class="example-icon favorite-icon"
                     aria-label="Example icon-button with heart icon" (click)="search()">
-                    <mat-icon>search</mat-icon>
+                    <mat-icon svgIcon="search"></mat-icon>
                 </button>
                 <input matInput [(ngModel)]="searchString" (keydown.enter)="search()" placeholder="Ex. Pikachu">
             </mat-form-field>

@@ -1,9 +1,14 @@
 <mat-toolbar color="primary" style="position: fixed; z-index: 2;">
+  <button matPrefix mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+    (click)="navigateHome()">
+    <mat-icon svgIcon="logo"></mat-icon>
+  </button>
   <mat-form-field class="full-width">
     <button matPrefix mat-icon-button class="example-icon favorite-icon"
       aria-label="Example icon-button with heart icon" (click)="search()">
-      <mat-icon>search</mat-icon>
+      <mat-icon svgIcon="search"></mat-icon>
     </button>
+
     <input matInput type="text" [(ngModel)]="searchString" (keydown.enter)="search()" placeholder="Ex. Pikachu" />
   </mat-form-field>
   <div>
