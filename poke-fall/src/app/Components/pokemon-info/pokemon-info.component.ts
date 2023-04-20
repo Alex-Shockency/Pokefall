@@ -14,6 +14,7 @@ export class PokemonInfoComponent {
   @ViewChild(MatAccordion)
   accordion!: MatAccordion;
 
+
   pokemonId = 0;
   pokemon!: Pokemon;
   barChart: any;
@@ -22,6 +23,7 @@ export class PokemonInfoComponent {
   showRadarChart = false;
   audioUrl = '';
   totalStats = 0;
+  pokemonLoaded!: Promise<boolean>;
 
   pokeCry!: HTMLMediaElement;
 
@@ -38,24 +40,35 @@ export class PokemonInfoComponent {
         .getPokemonById(this.pokemonId)
         .subscribe((pokemon) => {
           this.pokemon = pokemon;
-          this.totalStats =
-            pokemon.hp +
-            pokemon.attack +
-            pokemon.defense +
-            pokemon.specAttack +
-            pokemon.specDefense +
-            pokemon.speed;
-          this.pokeCry = document.getElementById(
-            'audioElement'
-          ) as HTMLMediaElement;
-          this.pokeCry.src =
-            'https://play.pokemonshowdown.com/audio/cries/' +
-            this.formatName(pokemon.name) +
-            '.ogg';
-          this.createBarChart();
-          this.createRadarChart();
+          this.pokemonLoaded = Promise.resolve(true);
+          
+          // this.pokeCry = document.getElementById(
+          //   'audioElement'
+          // ) as HTMLMediaElement;
+          // this.pokeCry.src =
+          //   'https://play.pokemonshowdown.com/audio/cries/' +
+          //   this.formatName(this.pokemon.name) +
+          //   '.ogg';
+        
         });
     });
+  }
+
+  ngAfterViewChecked(){
+    this.constructCharts();
+  }
+
+  constructCharts() {
+    this.totalStats =
+    this.pokemon.hp +
+    this.pokemon.attack +
+    this.pokemon.defense +
+    this.pokemon.specAttack +
+    this.pokemon.specDefense +
+    this.pokemon.speed;
+  
+  this.createBarChart();
+  this.createRadarChart();
   }
 
   createRadarChart() {

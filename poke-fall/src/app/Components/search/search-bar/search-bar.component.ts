@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pokemon } from 'src/app/Entities/pokemon';
 import { PokemonService } from 'src/app/Services/pokemon-service';
@@ -10,8 +10,10 @@ import { PokemonService } from 'src/app/Services/pokemon-service';
 })
 
 export class SearchBarComponent {
+  @Input() searchString: string = '';
+
   title = 'poke-fall';
-  searchString: string = '';
+  queryString: string = '';
 
   constructor(private pokemonService: PokemonService, private router:Router) {
   }
@@ -26,10 +28,14 @@ export class SearchBarComponent {
   }
 
   async search(): Promise<void> {
+   
     this.router.navigate(
       ['../search'],
-      { queryParams: { q: this.searchString.toLocaleLowerCase(), gd:true }}
+      { queryParams: { q: this.queryString.toLocaleLowerCase(), gd:true }}
     ).then(()=>{
+      if(this.searchString !== this.queryString){
+        scroll(0,0)
+      }
       window.location.reload();
     });
   }
