@@ -21,16 +21,14 @@ export class HomeComponent {
 
   async randomSearch(): Promise<void>{
       this.router.navigate(
-        ['../pokemon'],
+        ['pokemon'],
         { queryParams: { id:  Math.floor(Math.random()*1010)} }
-      ).then(()=>{
-        window.location.reload();
-      });
+      )
   }  
 
   async search(): Promise<void> {
     this.router.navigate(
-      ['../search'],
+      ['search'],
       { queryParams: { q: this.searchString.toLocaleLowerCase(), gd:true }}
     ).then(()=>{
       window.location.reload();
@@ -39,7 +37,7 @@ export class HomeComponent {
 
   navigateToPokemon(pokemonId: number){
     this.router.navigate(
-      ['../pokemon'],
+      ['pokemon'],
       { queryParams: { id: pokemonId } }
     )
   }

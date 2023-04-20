@@ -124,14 +124,14 @@ export class SearchResultsComponent implements AfterViewInit {
 
   navigateToPokemon(pokemonId: number){
     this.router.navigate(
-      ['../pokemon'],
+      ['pokemon'],
       { queryParams: { id: pokemonId } }
     )
   }
 
   displayGrid(display: boolean) {
     this.router.navigate(
-      ['../search'],
+      ['search'],
       { queryParams: { q: this.searchString, gd: display } }
     )
   }
