@@ -21,6 +21,7 @@ export class PokemonInfoComponent {
   showBarChart = true;
   showRadarChart = false;
   audioUrl = '';
+  totalStats = 0;
 
   pokeCry!: HTMLMediaElement;
 
@@ -37,6 +38,13 @@ export class PokemonInfoComponent {
         .getPokemonById(this.pokemonId)
         .subscribe((pokemon) => {
           this.pokemon = pokemon;
+          this.totalStats =
+            pokemon.hp +
+            pokemon.attack +
+            pokemon.defense +
+            pokemon.specAttack +
+            pokemon.specDefense +
+            pokemon.speed;
           this.pokeCry = document.getElementById(
             'audioElement'
           ) as HTMLMediaElement;
@@ -51,6 +59,7 @@ export class PokemonInfoComponent {
   }
 
   createRadarChart() {
+    let darkmode = window.matchMedia("(prefers-color-scheme: dark)");
     this.radarChart = new Chart('radarChart', {
       type: 'radar', //this denotes tha type of chart
 
@@ -90,6 +99,7 @@ export class PokemonInfoComponent {
         ],
       },
       options: {
+        maintainAspectRatio: true,
         plugins: {
           legend: {
             display: false,
@@ -97,6 +107,9 @@ export class PokemonInfoComponent {
         },
         scales: {
           r: {
+            pointLabels:{
+              color: darkmode.matches? "white":"black",
+            },
             min: 0,
             beginAtZero: true,
           },
@@ -107,6 +120,7 @@ export class PokemonInfoComponent {
   }
 
   createBarChart() {
+    let darkmode = window.matchMedia("(prefers-color-scheme: dark)");
     this.barChart = new Chart('barChart', {
       type: 'bar', //this denotes tha type of chart
 
@@ -144,6 +158,7 @@ export class PokemonInfoComponent {
       options: {
         plugins: {
           legend: {
+            
             display: false,
           },
         },
@@ -152,6 +167,11 @@ export class PokemonInfoComponent {
             max: 255,
             beginAtZero: true,
           },
+          y:{
+            ticks: {
+              color: darkmode.matches? "white":"black",
+            }
+          }
         },
         indexAxis: 'y',
         aspectRatio: 2.5,
@@ -166,8 +186,8 @@ export class PokemonInfoComponent {
     this.showBarChart = true;
     this.showRadarChart = false;
   }
-  toggleOnRadar(){
-    this.showRadarChart =true;
+  toggleOnRadar() {
+    this.showRadarChart = true;
     this.showBarChart = false;
   }
 

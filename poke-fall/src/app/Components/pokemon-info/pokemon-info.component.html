@@ -55,21 +55,24 @@
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         <h1>Stats</h1>
-
                     </mat-panel-title>
-
+                  
                 </mat-expansion-panel-header>
                 <mat-radio-group aria-label="Select an option">
                     <mat-radio-button [checked]="showBarChart" (click)="toggleOnBar()" value="1">Bar</mat-radio-button>
-                    <mat-radio-button [checked]="showRadarChart" (click)="toggleOnRadar()"value="2">Radar</mat-radio-button>
-                  </mat-radio-group>
-                  
+                    <mat-radio-button [checked]="showRadarChart" (click)="toggleOnRadar()"
+                        value="2">Radar</mat-radio-button>
+                </mat-radio-group>
+
                 <mat-card [style.display]="showBarChart? '': 'none'" class="chart-container">
                     <canvas id="barChart" width="400" height="400">{{barChart}}</canvas>
+                    <h3 style="padding: 1em;">Total: {{totalStats}}</h3>
                 </mat-card>
-                <mat-card  [style.display]="showRadarChart? '': 'none'" class="chart-container">
+                <mat-card [style.display]="showRadarChart? '': 'none'" class="chart-container">
                     <canvas id="radarChart" width="400" height="400">{{radarChart}}</canvas>
+                    <h3 style="padding: 1em;">Total: {{totalStats}}</h3>
                 </mat-card>
+               
             </mat-expansion-panel>
             <mat-expansion-panel [expanded]="true">
                 <mat-expansion-panel-header>
@@ -90,8 +93,7 @@
                     <mat-icon>volume_up</mat-icon>
                 </button>
                 <audio id="audioElement">
-                    <source src=""
-                        type="audio/ogg">
+                    <source src="" type="audio/ogg">
                 </audio>
             </div>
         </mat-card-header>
