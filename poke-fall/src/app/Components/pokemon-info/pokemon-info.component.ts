@@ -41,21 +41,20 @@ export class PokemonInfoComponent {
         .subscribe((pokemon) => {
           this.pokemon = pokemon;
           this.pokemonLoaded = Promise.resolve(true);
-          
-          // this.pokeCry = document.getElementById(
-          //   'audioElement'
-          // ) as HTMLMediaElement;
-          // this.pokeCry.src =
-          //   'https://play.pokemonshowdown.com/audio/cries/' +
-          //   this.formatName(this.pokemon.name) +
-          //   '.ogg';
-        
         });
     });
   }
 
   ngAfterViewChecked(){
     this.constructCharts();
+      
+    this.pokeCry = document.getElementById(
+      'audioElement'
+    ) as HTMLMediaElement;
+    this.pokeCry.src =
+      'https://play.pokemonshowdown.com/audio/cries/' +
+      this.formatName(this.pokemon.name) +
+      '.ogg';
   }
 
   constructCharts() {
