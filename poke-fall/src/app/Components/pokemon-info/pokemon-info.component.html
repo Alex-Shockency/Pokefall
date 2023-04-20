@@ -1,9 +1,9 @@
 <app-search-bar></app-search-bar>
-<div *ngIf="pokemonLoaded | async" class="example-action-buttons">
+<div class="example-action-buttons">
     <button class="button" mat-raised-button (click)="accordion.openAll()">Expand All</button>
     <button class="button" mat-raised-button (click)="accordion.closeAll()">Collapse All</button>
 </div>
-<div *ngIf="pokemonLoaded | async" class="inner-flex">
+<div class="inner-flex">
     <div style="width: 75%; padding: 1em;">
         <mat-accordion class="example-headers-align" multi>
             <mat-expansion-panel [expanded]="true">

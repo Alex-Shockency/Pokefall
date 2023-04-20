@@ -16,9 +16,9 @@ export class PokemonInfoComponent {
 
 
   pokemonId = 0;
-  pokemon!: Pokemon;
-  barChart: any;
-  radarChart: any;
+  pokemon: Pokemon = {} as Pokemon;
+  barChart: Chart = {} as Chart;
+  radarChart: Chart = {} as Chart;;
   showBarChart = true;
   showRadarChart = false;
   audioUrl = '';
@@ -30,7 +30,7 @@ export class PokemonInfoComponent {
   constructor(
     private pokemonService: PokemonService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
@@ -41,33 +41,30 @@ export class PokemonInfoComponent {
         .subscribe((pokemon) => {
           this.pokemon = pokemon;
           this.pokemonLoaded = Promise.resolve(true);
+          this.constructCharts();
+
+          this.pokeCry = document.getElementById(
+            'audioElement'
+          ) as HTMLMediaElement;
+          this.pokeCry.src =
+            'https://play.pokemonshowdown.com/audio/cries/' +
+            this.formatName(this.pokemon.name) +
+            '.ogg';
         });
     });
   }
 
-  ngAfterViewChecked(){
-    this.constructCharts();
-      
-    this.pokeCry = document.getElementById(
-      'audioElement'
-    ) as HTMLMediaElement;
-    this.pokeCry.src =
-      'https://play.pokemonshowdown.com/audio/cries/' +
-      this.formatName(this.pokemon.name) +
-      '.ogg';
-  }
-
   constructCharts() {
     this.totalStats =
-    this.pokemon.hp +
-    this.pokemon.attack +
-    this.pokemon.defense +
-    this.pokemon.specAttack +
-    this.pokemon.specDefense +
-    this.pokemon.speed;
-  
-  this.createBarChart();
-  this.createRadarChart();
+      this.pokemon.hp +
+      this.pokemon.attack +
+      this.pokemon.defense +
+      this.pokemon.specAttack +
+      this.pokemon.specDefense +
+      this.pokemon.speed;
+
+    this.createBarChart();
+    this.createRadarChart();
   }
 
   createRadarChart() {
@@ -119,8 +116,8 @@ export class PokemonInfoComponent {
         },
         scales: {
           r: {
-            pointLabels:{
-              color: darkmode.matches? "white":"black",
+            pointLabels: {
+              color: darkmode.matches ? "white" : "black",
             },
             min: 0,
             beginAtZero: true,
@@ -170,7 +167,7 @@ export class PokemonInfoComponent {
       options: {
         plugins: {
           legend: {
-            
+
             display: false,
           },
         },
@@ -179,9 +176,9 @@ export class PokemonInfoComponent {
             max: 255,
             beginAtZero: true,
           },
-          y:{
+          y: {
             ticks: {
-              color: darkmode.matches? "white":"black",
+              color: darkmode.matches ? "white" : "black",
             }
           }
         },
