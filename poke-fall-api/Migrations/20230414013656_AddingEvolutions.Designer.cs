@@ -72,6 +72,9 @@ namespace pokefallapi.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("EvolutionChainId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("EvolutionTrigger")
                         .IsRequired()
                         .HasColumnType("text");
@@ -100,6 +103,9 @@ namespace pokefallapi.Migrations
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("text");
+
+                     b.Property<int>("MinHappiness")
+                        .HasColumnType("integer");
 
                     b.Property<int>("MinAffection")
                         .HasColumnType("integer");

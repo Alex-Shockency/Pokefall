@@ -16,6 +16,8 @@ namespace poke_fall_api.Models
         [Required]
         public string Name { get; set; }
 
+        public Nullable<int> EvolutionChainId { get; set; }
+
         [Required]
         public string Type1 { get; set; }
 

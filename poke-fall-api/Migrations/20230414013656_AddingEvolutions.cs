@@ -25,6 +25,7 @@ namespace pokefallapi.Migrations
                                 "Npgsql:ValueGenerationStrategy",
                                 NpgsqlValueGenerationStrategy.IdentityByDefaultColumn
                             ),
+                        EvolutionChainId = table.Column<int>(type: "integer", nullable: true),
                         EvolvedPokedexNumber = table.Column<int>(type: "integer", nullable: false),
                         EvolvedFromPokedexNumber = table.Column<int>(type: "integer", nullable: false),
                         EvolutionTrigger = table.Column<string>(type: "text", nullable: false),
@@ -36,6 +37,7 @@ namespace pokefallapi.Migrations
                         TimeOfDay = table.Column<int>(type: "text", nullable: true),
                         KnownMoveId = table.Column<int>(type: "integer", nullable: true),
                         KnownMoveType = table.Column<int>(type: "text", nullable: true),
+                        MinHappiness = table.Column<int>(type: "integer", nullable: true),
                         MinBeauty = table.Column<int>(type: "integer", nullable: true),
                         MinAffection = table.Column<int>(type: "integer", nullable: true),
                         RelativePhysicalStats = table.Column<int>(type: "text", nullable: true),
@@ -54,11 +56,12 @@ namespace pokefallapi.Migrations
             var databaseEvolution = new Dictionary<int, Evolution>();
             Dictionary<Int32, string> evolutionTriggerMap = new EvolutionTriggerMap().getEvoTriggerMap();
             using (var pokemonEvolutionReader = new StreamReader(@"./data/pokemon_evolution.csv"))
+            using (var evolutionsReader = new StreamReader(@"./data/evolutions.csv"))
             using (var pokemonSpeciesReader = new StreamReader(@"./data/pokemon_species.csv"))
             using (var pokemonItemsReader = new StreamReader(@"./data/items.csv"))
-            using (var pokmeonEvolutionCsv = new CsvReader(pokemonEvolutionReader, CultureInfo.InvariantCulture))
+            using (var pokmeonEvolutionCsv = new CsvReader(evolutionsReader, CultureInfo.InvariantCulture))
             {
-                var pokemonEvolutionArray = pokmeonEvolutionCsv.GetRecords<PokeApiEvolution>().ToArray();
+                var pokemonEvolutionArray = pokmeonEvolutionCsv.GetRecords<Evolution>().ToArray();
                 using (var pokemonItemsCsv = new CsvReader(pokemonItemsReader, CultureInfo.InvariantCulture))
                 {
                     var pokemonItemsArray = pokemonItemsCsv.GetRecords<PokeApiItem>().ToArray();
@@ -66,52 +69,54 @@ namespace pokefallapi.Migrations
                     {
                         var pokemonSpeciesArray = pokmeonSpeciesCsv.GetRecords<PokeApiSpecies>().ToArray();
                         int count = 1;
-                        foreach (PokeApiEvolution pokeApiEvolution in pokemonEvolutionArray)
+                        foreach (Evolution pokeApiEvolution in pokemonEvolutionArray)
                         {
                             foreach (PokeApiSpecies pokeSpecies in pokemonSpeciesArray)
                             {
-                                if (pokeApiEvolution.evolved_species_id == pokeSpecies.id)
+                                if (pokeApiEvolution.EvolvedPokedexNumber == pokeSpecies.id)
                                 {
                                     Evolution tempEvolution = new Evolution
                                     {
                                         Id = count++,
-                                        EvolvedPokedexNumber = pokeApiEvolution.evolved_species_id,
+                                        EvolutionChainId = pokeApiEvolution.EvolutionChainId,
+                                        EvolvedPokedexNumber = pokeApiEvolution.EvolvedPokedexNumber,
                                         EvolvedFromPokedexNumber = pokeSpecies.evolves_from_species_id,
-                                        EvolutionTrigger = new EvolutionTriggerMap().getEvoTriggerMap()[pokeApiEvolution.evolution_trigger_id],
-                                        TriggerItem = "",
-                                        MinLevel = pokeApiEvolution.minimum_level,
-                                        Gender = new GenderMap().getGenderMap()[pokeApiEvolution.gender_id],
-                                        Location = pokeApiEvolution.location_id.ToString(),
-                                        HeldItem = "",
-                                        TimeOfDay = pokeApiEvolution.time_of_day,
-                                        KnownMoveId = pokeApiEvolution.known_move_id,
-                                        KnownMoveType = new PokemonTypeMap().getTypeMap()[pokeApiEvolution.known_move_type_id],
-                                        MinBeauty = pokeApiEvolution.minimum_beauty,
-                                        MinAffection = pokeApiEvolution.minimum_affection,
-                                        RelativePhysicalStats = pokeApiEvolution.relative_physical_stats,
-                                        PartyPokedexNumber = pokeApiEvolution.party_species_id,
-                                        PartyType = new PokemonTypeMap().getTypeMap()[pokeApiEvolution.party_type_id],
-                                        TradePokedexNumber = pokeApiEvolution.trade_species_id,
-                                        NeedsOverworldRain = pokeApiEvolution.needs_overworld_rain != 0,
-                                        TurnUpsideDown = pokeApiEvolution.turn_upside_down != 0,
+                                        EvolutionTrigger = pokeApiEvolution.EvolutionTrigger,
+                                        TriggerItem = pokeApiEvolution.TriggerItem,
+                                        MinLevel = pokeApiEvolution.MinLevel,
+                                        Gender = pokeApiEvolution.Gender,
+                                        Location = pokeApiEvolution.Location.ToString(),
+                                        HeldItem = pokeApiEvolution.HeldItem,
+                                        TimeOfDay = pokeApiEvolution.TimeOfDay,
+                                        KnownMoveId = pokeApiEvolution.KnownMoveId,
+                                        KnownMoveType = pokeApiEvolution.KnownMoveType,
+                                        MinHappiness = pokeApiEvolution.MinHappiness,
+                                        MinBeauty = pokeApiEvolution.MinBeauty,
+                                        MinAffection = pokeApiEvolution.MinAffection,
+                                        RelativePhysicalStats = pokeApiEvolution.RelativePhysicalStats,
+                                        PartyPokedexNumber = pokeApiEvolution.PartyPokedexNumber,
+                                        PartyType = pokeApiEvolution.PartyType,
+                                        TradePokedexNumber = pokeApiEvolution.TradePokedexNumber,
+                                        NeedsOverworldRain = pokeApiEvolution.NeedsOverworldRain,
+                                        TurnUpsideDown = pokeApiEvolution.TurnUpsideDown,
                                     };
 
-                                    if (pokeApiEvolution.trigger_item_id != 0 || pokeApiEvolution.held_item_id != 0)
-                                    {
-                                        foreach (PokeApiItem pokeItem in pokemonItemsArray)
-                                        {
-                                            //trigger item
-                                            if (pokeItem.id == pokeApiEvolution.trigger_item_id)
-                                            {
-                                                tempEvolution.TriggerItem = pokeItem.identifier;
-                                            }
-                                            //held item
-                                            else if (pokeItem.id == pokeApiEvolution.held_item_id)
-                                            {
-                                                tempEvolution.HeldItem = pokeItem.identifier;
-                                            }
-                                        }
-                                    }
+                                    // if (pokeApiEvolution.trigger_item_id != 0 || pokeApiEvolution.held_item_id != 0)
+                                    // {
+                                    //     foreach (PokeApiItem pokeItem in pokemonItemsArray)
+                                    //     {
+                                    //         //trigger item
+                                    //         if (pokeItem.id == pokeApiEvolution.trigger_item_id)
+                                    //         {
+                                    //             tempEvolution.TriggerItem = pokeItem.identifier;
+                                    //         }
+                                    //         //held item
+                                    //         else if (pokeItem.id == pokeApiEvolution.held_item_id)
+                                    //         {
+                                    //             tempEvolution.HeldItem = pokeItem.identifier;
+                                    //         }
+                                    //     }
+                                    // }
                                     databaseEvolution[count] = tempEvolution;
                                 }
                             }
@@ -127,6 +132,7 @@ namespace pokefallapi.Migrations
                 columns: new[]
                 {
                         "Id",
+                        "EvolutionChainId",
                         "EvolvedPokedexNumber",
                         "EvolvedFromPokedexNumber",
                         "EvolutionTrigger",
@@ -138,6 +144,7 @@ namespace pokefallapi.Migrations
                         "TimeOfDay",
                         "KnownMoveId",
                         "KnownMoveType",
+                        "MinHappiness",
                         "MinBeauty",
                         "MinAffection",
                         "RelativePhysicalStats",
@@ -150,6 +157,7 @@ namespace pokefallapi.Migrations
                 values: new object[]
                 {
                         databaseEvolution[key].Id,
+                        databaseEvolution[key].EvolutionChainId,
                         databaseEvolution[key].EvolvedPokedexNumber,
                         databaseEvolution[key].EvolvedFromPokedexNumber,
                         databaseEvolution[key].EvolutionTrigger,
@@ -161,6 +169,7 @@ namespace pokefallapi.Migrations
                         databaseEvolution[key].TimeOfDay,
                         databaseEvolution[key].KnownMoveId,
                         databaseEvolution[key].KnownMoveType,
+                        databaseEvolution[key].MinHappiness,
                         databaseEvolution[key].MinBeauty,
                         databaseEvolution[key].MinAffection,
                         databaseEvolution[key].RelativePhysicalStats,

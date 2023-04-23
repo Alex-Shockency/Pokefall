@@ -169,6 +169,9 @@ namespace pokefallapi.Migrations
                     b.Property<int>("PokedexNumber")
                         .HasColumnType("integer");
 
+                    b.Property<int>("EvolutionChainId")
+                        .HasColumnType("integer");
+
                     b.Property<int>("Type1")
                         .HasColumnType("text");
 

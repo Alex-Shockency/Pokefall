@@ -1,17 +1,13 @@
-using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
+using poke_fall_api.Models;
 
-namespace poke_fall_api.Models
+namespace poke_fall_api.DTO
 {
-    public class Evolution
+    [Keyless]
+    public class EvolutionDTO
     {
-        [Required]
         public int Id { get; set; }
-        public int EvolutionChainId { get; set; }
-        [Required]
-        public int EvolvedPokedexNumber { get; set; }
-        [Required]
-        public int EvolvedFromPokedexNumber { get; set; }
-        [Required]
+        public int PokedexNumber { get; set; }
         public string EvolutionTrigger { get; set; }
         public string TriggerItem { get; set; }
         public int MinLevel { get; set; }
@@ -19,9 +15,9 @@ namespace poke_fall_api.Models
         public string Location { get; set; }
         public string HeldItem { get; set; }
         public string TimeOfDay { get; set; }
-         public int KnownMoveId { get; set; }
+        public int KnownMoveId { get; set; }
         public string KnownMoveType { get; set; }
-        public int MinHappiness {get; set;}
+        public int MinHappiness { get; set; }
         public int MinBeauty { get; set; }
         public int MinAffection { get; set; }
         public string RelativePhysicalStats { get; set; }

@@ -10,7 +10,6 @@ namespace poke_fall_api.Controllers;
 [Route("[controller]")]
 public class PokemonController : ControllerBase
 {
-
     private readonly PokefallContext _context;
 
     public PokemonController(PokefallContext context)
@@ -31,6 +30,44 @@ public class PokemonController : ControllerBase
         }
         PokemonDTO result = ToDTO(Pokemon);
         return Ok(result);
+    }
+
+    [HttpGet("evolution/{chainId}")]
+    [ProducesResponseType(typeof(IEnumerable<EvolutionDTO>), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<ActionResult<Evolution>> GetEvolutionChain(int chainId)
+    {
+        var pokemonList = _context.Pokemon
+            .Where(p => p.EvolutionChainId == chainId)
+            .OrderBy(p => p.PokedexNumber)
+            .ToList();
+        var evolutionList = _context.Evolutions.Where(e => e.EvolutionChainId == chainId).ToList();
+        List<EvolutionDTO> evolutionDtos = new List<EvolutionDTO>();
+        var index = 0;
+        foreach (Pokemon pokemon in pokemonList)
+        {
+            if (index == 0)
+            {
+                evolutionDtos.Add(ToEvolutionDTO(new Evolution(), pokemon));
+            }
+            else
+            {
+                var tempEvolution = evolutionList.Find(
+                    e => e.EvolvedPokedexNumber == pokemon.PokedexNumber
+                );
+                if (tempEvolution != null)
+                {
+                    evolutionDtos.Add(ToEvolutionDTO(tempEvolution, pokemon));
+                }
+            }
+            index++;
+        }
+
+        if (pokemonList == null)
+        {
+            return NotFound();
+        }
+        return Ok(evolutionDtos);
     }
 
     [HttpGet]
@@ -77,11 +114,35 @@ public class PokemonController : ControllerBase
         };
     }
 
+    private EvolutionDTO ToEvolutionDTO(Evolution evolution, Pokemon pokemon)
+    {
+        return new EvolutionDTO
+        {
+            Id = pokemon.Id,
+            PokedexNumber = pokemon.PokedexNumber,
+            EvolutionTrigger = evolution.EvolutionTrigger,
+            TriggerItem = evolution.TriggerItem,
+            MinLevel = evolution.MinLevel,
+            Gender = evolution.Gender,
+            Location = evolution.Location,
+            HeldItem = evolution.HeldItem,
+            TimeOfDay = evolution.TimeOfDay,
+            KnownMoveId = evolution.KnownMoveId,
+            KnownMoveType = evolution.KnownMoveType,
+            MinHappiness = evolution.MinHappiness,
+            MinBeauty = evolution.MinBeauty,
+            MinAffection = evolution.MinAffection,
+            RelativePhysicalStats = evolution.RelativePhysicalStats,
+            PartyPokedexNumber = evolution.PartyPokedexNumber,
+            PartyType = evolution.PartyType,
+            TradePokedexNumber = evolution.TradePokedexNumber,
+            NeedsOverworldRain = evolution.NeedsOverworldRain,
+            TurnUpsideDown = evolution.TurnUpsideDown,
+        };
+    }
+
     private List<PokemonDTO> ListToDTO(List<Pokemon> items)
     {
         return items.Select(p => ToDTO(p)).ToList();
     }
-
-
-
 }
