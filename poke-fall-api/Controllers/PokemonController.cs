@@ -49,19 +49,24 @@ public class PokemonController : ControllerBase
             var tempEvolution = evolutionList.Find(
                 e => e.EvolvedPokedexNumber == pokemon.PokedexNumber
             );
-            if (pokemon.IsBaby)
-            {
-                evolutionDtos.Insert(0,ToEvolutionDTO(new Evolution(), pokemon));
-            }
-            if (tempEvolution != null)
+            if (tempEvolution != null && !pokemon.IsBaby)
             {
                 evolutionDtos.Add(ToEvolutionDTO(tempEvolution, pokemon));
             }
-            else if(index == 0)
+            else if (index == 0 && !pokemon.IsBaby)
             {
                 evolutionDtos.Add(ToEvolutionDTO(new Evolution(), pokemon));
             }
             index++;
+        }
+
+        var babyPoke = pokemonList.Find(
+                p => p.IsBaby == true
+            );
+
+        if (babyPoke != null)
+        {
+            evolutionDtos.Insert(0, ToEvolutionDTO(new Evolution(), babyPoke));
         }
 
         if (pokemonList == null)
