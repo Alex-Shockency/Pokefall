@@ -34,6 +34,7 @@ namespace poke_fall_api.Models
          [Required]
         public bool AffectedProtect { get; set; }
 
+
         //  [Required]
         // public bool AffectedMagicCoat { get; set; }
 
@@ -45,5 +46,6 @@ namespace poke_fall_api.Models
 
         //   [Required]
         // public bool AffectedKingsRock { get; set; }
+
     }  
 }
