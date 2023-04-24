@@ -14,7 +14,7 @@ namespace poke_fall_api.Models
         public string Description { get; set; }
 
         [Required]
-        public PokemonType Type { get; set; }
+        public string Type { get; set; }
 
          [Required]
         public string Category { get; set; }
@@ -34,8 +34,9 @@ namespace poke_fall_api.Models
          [Required]
         public bool AffectedProtect { get; set; }
 
-         [Required]
-        public bool AffectedMagicCoat { get; set; }
+
+        //  [Required]
+        // public bool AffectedMagicCoat { get; set; }
 
          [Required]
         public bool AffectedSnatch { get; set; }
@@ -43,7 +44,8 @@ namespace poke_fall_api.Models
          [Required]
         public bool AffectedMirrorMove { get; set; }
 
-          [Required]
-        public bool AffectedKingsRock { get; set; }
+        //   [Required]
+        // public bool AffectedKingsRock { get; set; }
+
     }  
 }

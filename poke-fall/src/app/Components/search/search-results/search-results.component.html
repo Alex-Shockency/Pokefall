@@ -1,0 +1,128 @@
+<div *ngIf="searchLoading">
+  <mat-progress-bar color="accent" style="position:fixed; padding-top: 4em" mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="main">
+  <div *ngIf="!searchLoading">
+    <mat-divider class="divider"></mat-divider>
+    <div *ngIf="searchResults.length > 0" class="inner-grid" style="padding-bottom: 1em;">
+      <button mat-flat-button color="primary" [matMenuTriggerFor]="menu">Display</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="displayGrid(true)">Grid</button>
+        <button mat-menu-item (click)="displayGrid(false)">List</button>
+      </mat-menu>
+    </div>
+    <div *ngIf="searchResults.length > 0" class="inner-grid">
+      <span>
+        {{ searchResults.length }} Pokemon found where name includes "{{this.searchString}}"
+      </span>
+      <mat-divider class="divider"></mat-divider>
+    </div>
+    <div *ngIf="!gridDisplay && searchResults.length > 0" class="mat-elevation-z8">
+      <mat-form-field color="primary" style="width: 100%;">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Pikachu" #input>
+      </mat-form-field>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="type1">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Type1 </th>
+          <td mat-cell *matCellDef="let element"> {{element.type1}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="type2">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Type2 </th>
+          <td mat-cell *matCellDef="let element"> {{element.type2}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="hp">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> HP </th>
+          <td mat-cell *matCellDef="let element"> {{element.hp}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="attack">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Attack </th>
+          <td mat-cell *matCellDef="let element"> {{element.attack}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="defense">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Defense </th>
+          <td mat-cell *matCellDef="let element"> {{element.defense}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="specAttack">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Spec. Attack </th>
+          <td mat-cell *matCellDef="let element"> {{element.specAttack}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="specDefense">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Spec. Defense </th>
+          <td mat-cell *matCellDef="let element"> {{element.specDefense}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="speed">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Speed </th>
+          <td mat-cell *matCellDef="let element"> {{element.speed}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+      <mat-paginator [pageSizeOptions]="[15,5,10]" showFirstLastButtons aria-label="blah">
+      </mat-paginator>
+    </div>
+    <mat-card *ngIf="gridDisplay && searchResults.length > 0">
+      <mat-card-content>
+        <div>
+          <mat-grid-list class="inner-grid" cols="{{columnNum}}" gutterSize="1em">
+            <mat-grid-tile (click)="navigateToPokemon(pokemon.id)" class="grid-tile" *ngFor="let pokemon of searchResults">
+              <mat-grid-tile-header style="z-index: 1;" class="header">
+                #{{ padId(pokemon.pokedexNumber) }}&nbsp;{{
+                capitalizeFirstLetter(pokemon.name)
+                }}
+         
+              </mat-grid-tile-header>
+              <div style="display: flex;">
+                <img loading="lazy" style="width: 100%; height: 100%;" id="{{pokemon.id}}" mat-card-xl-image
+                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png"
+                  alt="" (error)="setAlternateImage(pokemon.id,pokemon.pokedexNumber)">
+              </div>
+              <mat-grid-tile-footer class="footer">
+                <div>
+                  <button mat-flat-button class="footer-button" color="primary" value="{{ pokemon.type1 }}">
+                    {{ capitalizeFirstLetter(pokemon.type1) }}</button>
+                  <button mat-flat-button class="footer-button" color="primary" *ngIf="pokemon.type2"
+                    value="{{ pokemon.type2 }}">
+                    {{ capitalizeFirstLetter(pokemon.type2) }}</button>
+                </div>
+              </mat-grid-tile-footer>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div *ngIf="searchResults.length == 0 && !searchLoading" style="display: flex;justify-content: center;">
+    <div>
+      <div style="display: flex;justify-content: center; width: 475px; height: 475px;">
+        <img style="width: 100%;height: 100%;"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{randomId}}.png" />
+      </div>
+      <div style="display: flex;justify-content: center;">
+        <h1>No Pokemon Found</h1>
+      </div>
+      <div style="display: flex;justify-content: center;">
+        <span>Your search didn’t match any pokemon. Adjust your terms or try one of the links below:</span>
+      </div>
+      <div style="display: flex;justify-content: center;padding: 1em;">
+        <button mat-raised-button class="icon-button"> <mat-icon>list</mat-icon>Advanced</button>
+        <button mat-raised-button class="icon-button"> <mat-icon>help</mat-icon>Syntax</button>
+      </div>
+    </div>
+  </div>
+</div>

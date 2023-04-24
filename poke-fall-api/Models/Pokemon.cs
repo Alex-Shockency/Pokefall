@@ -1,13 +1,14 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 using poke_fall_api.Enums;
 
 namespace poke_fall_api.Models
 {
-
     public class Pokemon
     {
+        [Key]
         [Required]
-        public int PokemonId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public int PokedexNumber { get; set; }
@@ -15,73 +16,49 @@ namespace poke_fall_api.Models
         [Required]
         public string Name { get; set; }
 
-        [Required]
-        public PokemonType Type1 { get; set; }
+        public Nullable<int> EvolutionChainId { get; set; }
 
-        public PokemonType Type2 { get; set; }
+        [Required]
+        public string Type1 { get; set; }
+
+        public string Type2 { get; set; }
 
         [Required]
         public int Ability1Id { get; set; }
 
-        public int Ability2Id { get; set; }
+        public Nullable<int> Ability2Id { get; set; }
 
         public int HiddenAbilityId { get; set; }
 
-        [Required]
-        public int CatchRate { get; set; }
-
-        public List<(string,  int)> GenderRatio { get; set; }
-
-        [Required]
-        public PokemonEggGroup EggGroup { get; set; }
-
-        [Required]
-        public int HatchStepsMin { get; set; }
-
-        [Required]
-        public int HatchStepMax { get; set; }
-
         // Stored as cms and converted later
         [Required]
-        public int HeightMetric { get; set; }
+        public int Height { get; set; }
 
         // Stored as gs and converted later
         [Required]
-        public int WeightMetric { get; set; }
+        public int Weight { get; set; }
 
         [Required]
         public int BaseEXPYield { get; set; }
 
         [Required]
-        public string LevelingRate { get; set; }
-
-        [Required] 
-        public Array EVYield { get; set; }
+        public int HP { get; set; }
 
         [Required]
-        public int BaseFriendship { get; set; }
+        public int Attack { get; set; }
 
         [Required]
-        public Array BaseStats { get; set; }
+        public int Defense { get; set; }
 
         [Required]
-        public List<(string, int)> LevelUpMoves { get; set; }
+        public int SpecAttack { get; set; }
 
         [Required]
-        public Array TMMoves { get; set; }
+        public int SpecDefense { get; set; }
 
         [Required]
-        public Array EggMoves { get; set; }
+        public int Speed { get; set; }
 
-        [Required]
-        public Array TutorMoves { get; set; }
-
-        [Required]
-        public int EvolvesTo { get; set; }
-
-        [Required]
-        public int EvolvesFrom { get; set; }
-
-        public string? EvolutionDescription { get; set; }
+        public bool IsBaby { get; set; }
     }
 }

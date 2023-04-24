@@ -27,9 +27,7 @@ poke-fall/package-lock.json
 poke-fall-api/bin/Debug/net7.0/poke-fall-api.exe
 poke-fall-api/bin/Debug/net7.0/poke-fall-api.pdb
 poke-fall/package-lock.json
-poke-fall-api/obj/Debug/net7.0/staticwebassets.build.json
-poke-fall-api/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
-poke-fall-api/obj/Debug/net7.0/poke-fall-api.AssemblyInfo.cs
-poke-fall-api/obj/Debug/net7.0/poke-fall-api.GeneratedMSBuildEditorConfig.editorconfig
-poke-fall-api/obj/Debug/net7.0/poke-fall-api.GlobalUsings.g.cs
-poke-fall-api/obj/Debug/net7.0/poke-fall-api.MvcApplicationPartsAssemblyInfo.cs
+poke-fall-api/obj/Debug/*
+poke-fall-api/obj/Debug/net7.0/project.razor.json
+poke-fall-api/bin/Debug/net7.0/poke-fall-api.deps.json
+poke-fall-api/bin/Debug/net7.0/poke-fall-api

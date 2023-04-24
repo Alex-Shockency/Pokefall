@@ -28,6 +28,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTreeModule } from '@angular/material/tree';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatProgressBarModule} from '@angular/material/progress-bar'; 
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
+import {MatRadioModule} from '@angular/material/radio';
 
 const materialModules = [
   CdkTreeModule,
@@ -58,7 +60,9 @@ const materialModules = [
   OverlayModule,
   MatGridListModule,
   MatProgressBarModule,
-  PortalModule
+  PortalModule,
+  MatSlideToggleModule,
+  MatRadioModule
 ];
 
 @NgModule({

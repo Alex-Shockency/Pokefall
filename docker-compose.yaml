@@ -1,0 +1,15 @@
+version: "3"
+services:
+    poke-fall:
+        build:
+            context: ./poke-fall
+            dockerfile: Dockerfile
+        ports:
+            - 8989:80
+
+    poke-fall-api:
+        build:
+            context: ./poke-fall-api
+            dockerfile: Dockerfile
+        ports:
+            - 10011:80
