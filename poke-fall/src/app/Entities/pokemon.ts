@@ -1,5 +1,6 @@
 export interface Pokemon {
     id:number;
+    evolutionChainId:number;
     pokedexNumber:number;
     name:string;
     type1:string;

@@ -95,6 +95,7 @@ public class PokemonController : ControllerBase
         return new PokemonDTO
         {
             Id = item.Id,
+            EvolutionChainId = item.EvolutionChainId,
             PokedexNumber = item.PokedexNumber,
             Name = item.Name,
             Type1 = item.Type1.ToString(),
@@ -120,6 +121,7 @@ public class PokemonController : ControllerBase
         {
             Id = pokemon.Id,
             PokedexNumber = pokemon.PokedexNumber,
+            EvolvedFromPokedexNumber = evolution.EvolvedFromPokedexNumber,
             EvolutionTrigger = evolution.EvolutionTrigger,
             TriggerItem = evolution.TriggerItem,
             MinLevel = evolution.MinLevel,

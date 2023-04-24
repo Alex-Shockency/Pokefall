@@ -8,6 +8,7 @@ namespace poke_fall_api.DTO
     {
         public int Id { get; set; }
         public int PokedexNumber { get; set; }
+       public int EvolvedFromPokedexNumber { get; set; }
         public string EvolutionTrigger { get; set; }
         public string TriggerItem { get; set; }
         public int MinLevel { get; set; }

@@ -4,6 +4,7 @@ import { Pokemon } from 'src/app/Entities/pokemon';
 import { PokemonService } from 'src/app/Services/pokemon-service';
 import Chart from 'chart.js/auto';
 import { MatAccordion } from '@angular/material/expansion';
+import { Evolution } from 'src/app/Entities/evolution';
 
 @Component({
   selector: 'app-pokemon-info',
@@ -17,6 +18,8 @@ export class PokemonInfoComponent {
 
   pokemonId = 0;
   pokemon: Pokemon = {} as Pokemon;
+  evolutions: Evolution[] =  [];
+  branchingEvolution:boolean =  false;
   barChart: Chart = {} as Chart;
   radarChart: Chart = {} as Chart;;
   showBarChart = true;
@@ -50,6 +53,9 @@ export class PokemonInfoComponent {
             'https://play.pokemonshowdown.com/audio/cries/' +
             this.formatName(this.pokemon.name) +
             '.ogg';
+            this.pokemonService.getEvolutionByChainId(pokemon.evolutionChainId).subscribe((evolutions:Evolution[]) =>{
+              this.evolutions = evolutions;
+            })
         });
     });
   }
