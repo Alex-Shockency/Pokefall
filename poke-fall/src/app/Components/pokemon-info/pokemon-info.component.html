@@ -62,7 +62,7 @@
                         <div
                             style="display: flex;width:100%;height: 100%;justify-content: space-between;align-items: center;">
                             <span></span>
-                            <img style="height: 100%;" mat-card-image id="{{evolution.id}}"
+                            <img (click)="navigateToPokemon(evolution.id)" style="cursor: pointer;height: 100%;" mat-card-image id="{{evolution.id}}"
                                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{evolution.id}}.png"
                                 alt="">
                             <mat-icon *ngIf="i == 0" aria-hidden="false"

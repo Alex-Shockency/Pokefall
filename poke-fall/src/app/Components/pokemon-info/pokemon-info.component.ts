@@ -32,7 +32,8 @@ export class PokemonInfoComponent {
 
   constructor(
     private pokemonService: PokemonService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -195,6 +196,15 @@ export class PokemonInfoComponent {
   }
   protected playCry(id: number) {
     this.pokeCry.play();
+  }
+
+  navigateToPokemon(pokemonId: number){
+    this.router.navigate(
+      ['pokemon'],
+      { queryParams: { id: pokemonId } }
+    ).then(()=>{
+      window.location.reload();
+    });
   }
 
   toggleOnBar() {
