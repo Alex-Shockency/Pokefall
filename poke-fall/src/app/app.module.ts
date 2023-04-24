@@ -12,6 +12,7 @@ import { SearchBarComponent } from './Components/search/search-bar/search-bar.co
 import { HomeComponent } from './Components/home/home.component';
 import { SearchComponent } from './Components/search/search.component';
 import { PokemonInfoComponent } from './Components/pokemon-info/pokemon-info.component';
+import { PokemonStatChartsComponent } from './Components/pokemon-info/pokemon-stat-charts/pokemon-stat-charts.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PokemonInfoComponent } from './Components/pokemon-info/pokemon-info.com
     HomeComponent,
     SearchComponent,
     PokemonInfoComponent,
+    PokemonStatChartsComponent,
   ],
   imports: [
     BrowserModule,
