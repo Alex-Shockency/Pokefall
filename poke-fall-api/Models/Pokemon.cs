@@ -58,5 +58,7 @@ namespace poke_fall_api.Models
 
         [Required]
         public int Speed { get; set; }
+
+        public bool IsBaby { get; set; }
     }
 }

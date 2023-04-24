@@ -7,7 +7,7 @@ namespace poke_fall_api.DTO
     public class PokemonDTO
     {
         public int Id { get; set; }
-         public Nullable<int> EvolutionChainId { get; set; }
+        public Nullable<int> EvolutionChainId { get; set; }
         public int PokedexNumber { get; set; }
         public string Name { get; set; }
         public string Type1 { get; set; }
@@ -26,5 +26,6 @@ namespace poke_fall_api.DTO
         public int SpecAttack { get; set; }
         public int SpecDefense { get; set; }
         public int Speed { get; set; }
+        public bool IsBaby { get; set; }
     }
 }

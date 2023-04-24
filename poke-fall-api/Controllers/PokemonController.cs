@@ -46,19 +46,20 @@ public class PokemonController : ControllerBase
         var index = 0;
         foreach (Pokemon pokemon in pokemonList)
         {
-            if (index == 0)
+            var tempEvolution = evolutionList.Find(
+                e => e.EvolvedPokedexNumber == pokemon.PokedexNumber
+            );
+            if (pokemon.IsBaby)
+            {
+                evolutionDtos.Insert(0,ToEvolutionDTO(new Evolution(), pokemon));
+            }
+            if (tempEvolution != null)
+            {
+                evolutionDtos.Add(ToEvolutionDTO(tempEvolution, pokemon));
+            }
+            else if(index == 0)
             {
                 evolutionDtos.Add(ToEvolutionDTO(new Evolution(), pokemon));
-            }
-            else
-            {
-                var tempEvolution = evolutionList.Find(
-                    e => e.EvolvedPokedexNumber == pokemon.PokedexNumber
-                );
-                if (tempEvolution != null)
-                {
-                    evolutionDtos.Add(ToEvolutionDTO(tempEvolution, pokemon));
-                }
             }
             index++;
         }

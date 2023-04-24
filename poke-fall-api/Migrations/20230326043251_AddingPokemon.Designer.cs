@@ -183,7 +183,7 @@ namespace pokefallapi.Migrations
 
                     b.Property<int>("Attack")
                         .HasColumnType("integer");
-                    
+
                     b.Property<int>("Defense")
                         .HasColumnType("integer");
 
@@ -195,6 +195,9 @@ namespace pokefallapi.Migrations
 
                     b.Property<int>("Speed")
                         .HasColumnType("integer");
+
+                    b.Property<bool>("IsBaby")
+                        .HasColumnType("boolean");
 
                     b.Property<int>("Weight")
                         .HasColumnType("integer");

@@ -42,6 +42,7 @@ namespace pokefallapi.Migrations
                         SpecAttack = table.Column<int>(type: "integer", nullable: false),
                         SpecDefense = table.Column<int>(type: "integer", nullable: false),
                         Speed = table.Column<int>(type: "integer", nullable: false),
+                        IsBaby = table.Column<bool>(type: "boolean", nullable: false),
                     },
                 constraints: table =>
                 {
@@ -186,12 +187,13 @@ namespace pokefallapi.Migrations
                                         }
                                     }
                                     int chainId = 0;
-
+                                    bool isBaby = false;
                                     foreach (PokeApiSpecies pokemonSpecies in pokemonSpeciesArray)
                                     {
                                         if (pokemonSpecies.identifier.Equals(pokemon.identifier))
                                         {
                                             chainId = pokemonSpecies.evolution_chain_id;
+                                            isBaby = pokemonSpecies.is_baby != 0;
                                         }
                                     }
 
@@ -218,6 +220,7 @@ namespace pokefallapi.Migrations
                                             SpecAttack = specAttack,
                                             SpecDefense = specDefense,
                                             Speed = speed,
+                                            IsBaby = isBaby,
                                         }
                                     );
                                 }
@@ -251,6 +254,7 @@ namespace pokefallapi.Migrations
                         "SpecAttack",
                         "SpecDefense",
                         "Speed",
+                        "IsBaby"
                     },
                     values: new object[]
                     {
@@ -272,6 +276,7 @@ namespace pokefallapi.Migrations
                         pokemon.SpecAttack,
                         pokemon.SpecDefense,
                         pokemon.Speed,
+                        pokemon.IsBaby
                     }
                 );
             }
