@@ -14,6 +14,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PokemonService } from 'src/app/Services/pokemon-service';
+import { SearchResultPokemon } from 'src/app/Entities/searchResultPokemon';
 
 export interface Tile {
   color: string;
@@ -29,7 +30,7 @@ export interface Tile {
 })
 export class SearchResultsComponent implements AfterViewInit {
   @Input() searchString: string = '';
-  @Input() searchResults: Pokemon[] = [];
+  @Input() searchResults: SearchResultPokemon[] = [];
   @Input() searchLoading: boolean;
   @Input() gridDisplay:boolean;
 
@@ -38,7 +39,7 @@ export class SearchResultsComponent implements AfterViewInit {
   screenHeight = 0;
   screenWidth = 0;
 
-  dataSource = new MatTableDataSource<Pokemon>();
+  dataSource = new MatTableDataSource<SearchResultPokemon>();
   displayedColumns: string[] = [
     'name',
     'type1',
@@ -84,7 +85,7 @@ export class SearchResultsComponent implements AfterViewInit {
   disabled = false;
 
   ngOnChanges() {
-    this.dataSource = new MatTableDataSource<Pokemon>(this.searchResults);
+    this.dataSource = new MatTableDataSource<SearchResultPokemon>(this.searchResults);
   }
 
   ngAfterViewInit() {
