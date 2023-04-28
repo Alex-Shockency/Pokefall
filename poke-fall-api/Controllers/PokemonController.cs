@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using poke_fall_api.DTO;
 using poke_fall_api.Models;
+using poke_fall_api.Utils;
 using System.Linq;
 
 namespace poke_fall_api.Controllers;
@@ -28,7 +29,7 @@ public class PokemonController : ControllerBase
         {
             return NotFound();
         }
-        PokemonDTO result = ToDTO(Pokemon);
+        PokemonDTO result = ToPokemonDTO(Pokemon);
         return Ok(result);
     }
 
@@ -84,19 +85,28 @@ public class PokemonController : ControllerBase
         return _context.Set<Pokemon>();
     }
 
-    // [HttpGet("/search?{queryString}")]
-    // [ProducesResponseType(typeof(IEnumerable<PokemonDTO>), StatusCodes.Status200OK)]
-    // [ProducesResponseType(StatusCodes.Status404NotFound)]
-    // public async Task<ActionResult<IEnumerable<PokemonDTO>>> ListPokemon(string queryString) {
-    //     var pokemonQuery = from p in _context.Pokemon
-    //                   where p.Type1 == queryString ||
-    //                         p.Type2 == queryString
-    //                   select p;
-    //     List<PokemonDTO> result = ListToDTO(pokemonQuery.OrderBy(p => p.Id).ToList());
-    //     return await Task.FromResult(Ok(result));
-    // }
+    [HttpGet("/search/{queryString}")]
+    [ProducesResponseType(typeof(IEnumerable<SearchResultPokemonDTO>), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<ActionResult<IEnumerable<SearchResultPokemonDTO>>> ListPokemon(string queryString) {
+        var searchTerms = QueryStringUtils.readQueryString(queryString);
 
-    private PokemonDTO ToDTO(Pokemon item)
+        IQueryable<Pokemon> pokemonQuery = _context.Pokemon
+                                            .Where(p => p.Id < 10000);
+        
+        if (!String.IsNullOrEmpty(searchTerms.Name)) {
+            pokemonQuery = pokemonQuery.Where(p => p.Name.ToLower().Contains(searchTerms.Name));
+        }
+
+        if (!String.IsNullOrEmpty(searchTerms.Type)) {
+            pokemonQuery = pokemonQuery.Where(p => p.Type1 == searchTerms.Type || p.Type2 == searchTerms.Type);
+        }
+
+        List<SearchResultPokemonDTO> result = ListToSearchResultPokemonDTO(pokemonQuery.OrderBy(p => p.Id).ToList());
+        return await Task.FromResult(Ok(result));
+    }
+
+    private PokemonDTO ToPokemonDTO(Pokemon item)
     {
         return new PokemonDTO
         {
@@ -118,6 +128,18 @@ public class PokemonController : ControllerBase
             SpecAttack = item.SpecAttack,
             SpecDefense = item.SpecDefense,
             Speed = item.Speed,
+        };
+    }
+
+    private SearchResultPokemonDTO ToSearchResultPokemonDTO(Pokemon pokemon)
+    {
+        return new SearchResultPokemonDTO
+        {
+            Id = pokemon.Id,
+            PokedexNumber = pokemon.PokedexNumber,
+            Name = pokemon.Name,
+            Type1 = pokemon.Type1.ToString(),
+            Type2 = pokemon.Type2.ToString(),
         };
     }
 
@@ -149,8 +171,12 @@ public class PokemonController : ControllerBase
         };
     }
 
-    private List<PokemonDTO> ListToDTO(List<Pokemon> items)
+    private List<PokemonDTO> ListToPokemonDTO(List<Pokemon> items)
     {
-        return items.Select(p => ToDTO(p)).ToList();
+        return items.Select(p => ToPokemonDTO(p)).ToList();
+    }
+
+    private List<SearchResultPokemonDTO> ListToSearchResultPokemonDTO(List<Pokemon> results) {
+        return results.Select(p => ToSearchResultPokemonDTO(p)).ToList();
     }
 }
