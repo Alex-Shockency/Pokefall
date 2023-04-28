@@ -85,10 +85,11 @@ public class PokemonController : ControllerBase
         return _context.Set<Pokemon>();
     }
 
-    [HttpGet("/search/{queryString}")]
+    [HttpGet("search/{queryString}")]
     [ProducesResponseType(typeof(IEnumerable<SearchResultPokemonDTO>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<IEnumerable<SearchResultPokemonDTO>>> ListPokemon(string queryString) {
+    public async Task<ActionResult<IEnumerable<SearchResultPokemonDTO>>> ListPokemon(string queryString)
+    {
         var searchTerms = QueryStringUtils.readQueryString(queryString);
 
         IQueryable<Pokemon> pokemonQuery = _context.Pokemon
@@ -194,7 +195,8 @@ public class PokemonController : ControllerBase
         return items.Select(p => ToPokemonDTO(p)).ToList();
     }
 
-    private List<SearchResultPokemonDTO> ListToSearchResultPokemonDTO(List<Pokemon> results) {
+    private List<SearchResultPokemonDTO> ListToSearchResultPokemonDTO(List<Pokemon> results)
+    {
         return results.Select(p => ToSearchResultPokemonDTO(p)).ToList();
     }
 

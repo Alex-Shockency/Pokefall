@@ -5,6 +5,7 @@ import { PokemonService } from 'src/app/Services/pokemon-service';
 import Chart from 'chart.js/auto';
 import { MatAccordion } from '@angular/material/expansion';
 import { Evolution } from 'src/app/Entities/evolution';
+import { Utilities } from 'src/app/Shared/utilities';
 
 @Component({
   selector: 'app-pokemon-info',
@@ -31,7 +32,7 @@ export class PokemonInfoComponent {
   constructor(
     private pokemonService: PokemonService,
     private route: ActivatedRoute,
-    private router: Router,
+    protected utilities:Utilities,
   ) { }
 
   ngOnInit() {
@@ -60,29 +61,5 @@ export class PokemonInfoComponent {
 
   protected playCry(id: number) {
     this.pokeCry.play();
-  }
-
-  navigateToPokemon(pokemonId: number){
-    this.router.navigate(
-      ['pokemon'],
-      { queryParams: { id: pokemonId } }
-    )
-  }
-
-  toggleOnBar() {
-    this.showBarChart = true;
-    this.showRadarChart = false;
-  }
-  toggleOnRadar() {
-    this.showRadarChart = true;
-    this.showBarChart = false;
-  }
-
-  formatName(name: string) {
-    return name.toLowerCase();
-  }
-
-  padId(id: number): string {
-    return String(id).padStart(4, '0');
   }
 }

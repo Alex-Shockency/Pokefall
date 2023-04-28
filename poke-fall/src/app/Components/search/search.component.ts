@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pokemon } from 'src/app/Entities/pokemon';
+import { SearchResultPokemon } from 'src/app/Entities/searchResultPokemon';
 import { PokemonService } from 'src/app/Services/pokemon-service';
 
 @Component({
@@ -11,7 +12,7 @@ import { PokemonService } from 'src/app/Services/pokemon-service';
 export class SearchComponent {
   searchString = "";
   searchLoading = false;
-  searchResults:Pokemon[] = [];
+  searchResults: SearchResultPokemon[] = [];
   gridDisplay:boolean = false;
 
   constructor(private pokemonService: PokemonService, private route: ActivatedRoute, private router:Router) {
@@ -30,17 +31,14 @@ export class SearchComponent {
     this.searchLoading = true;
    if (this.searchString) {
      //TODO: fix the nidoran case
-     this.pokemonService.getAllPokemon().subscribe((pokemons) => {
-       let filteredList = pokemons.filter((pokemon) =>
-         pokemon.name.toLocaleLowerCase().includes(this.searchString)
-       );
-       if(filteredList.length == 1){
-        this.router.navigate(
-          ['../pokemon'],
-          { queryParams: { id: filteredList.pop()?.id } }
-        )
-       }
-       this.searchResults = filteredList.sort((a,b) => a.pokedexNumber - b.pokedexNumber);
+     this.pokemonService.searchPokemon(this.searchString).subscribe((searchResultPokemon) => {
+      //  if(filteredList.length == 1){
+      //   this.router.navigate(
+      //     ['../pokemon'],
+      //     { queryParams: { id: filteredList.pop()?.id } }
+      //   )
+      //  }
+       this.searchResults = searchResultPokemon;
        this.searchLoading = false;
      });
    } else {

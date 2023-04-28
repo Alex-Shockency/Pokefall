@@ -62,7 +62,7 @@
                         <div
                             style="display: flex;width:100%;height: 100%;justify-content: space-between;align-items: center;">
                             <span></span>
-                            <img (click)="navigateToPokemon(evolution.id)" style="cursor: pointer;height: 100%;"
+                            <img (click)="utilities.navigateToPokemon(evolution.id)" style="cursor: pointer;height: 100%;"
                                 mat-card-image id="{{evolution.id}}"
                                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{evolution.id}}.png"
                                 alt="">
@@ -98,7 +98,7 @@
     </div>
 
     <mat-card style="width: 25%; height: 100%; margin: 1em;">
-        <mat-card-header>{{pokemon.name}} #{{padId(pokemon.pokedexNumber)}}
+        <mat-card-header>{{pokemon.name}} #{{utilities.padId(pokemon.pokedexNumber)}}
             <div style="width: 100%;display: flex;justify-content: end;">
                 <!-- <button mat-icon-button (click)="playCry(pokemon.id)">
                     <mat-icon>volume_up</mat-icon>
