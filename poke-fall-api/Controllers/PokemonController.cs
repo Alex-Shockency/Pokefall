@@ -94,15 +94,33 @@ public class PokemonController : ControllerBase
         IQueryable<Pokemon> pokemonQuery = _context.Pokemon
                                             .Where(p => p.Id < 10000);
         
+        
         if (!String.IsNullOrEmpty(searchTerms.Name)) {
-            pokemonQuery = pokemonQuery.Where(p => p.Name.ToLower().Contains(searchTerms.Name));
+            pokemonQuery = pokemonQuery.Where(p => p.Name.ToLower().Contains(searchTerms.Name.ToLower()));
         }
 
         if (!String.IsNullOrEmpty(searchTerms.Type)) {
-            pokemonQuery = pokemonQuery.Where(p => p.Type1 == searchTerms.Type || p.Type2 == searchTerms.Type);
+            pokemonQuery = pokemonQuery.Where(p => p.Type1.ToLower() == searchTerms.Type.ToLower() || p.Type2.ToLower() == searchTerms.Type.ToLower());
         }
 
-        List<SearchResultPokemonDTO> result = ListToSearchResultPokemonDTO(pokemonQuery.OrderBy(p => p.Id).ToList());
+        if (!String.IsNullOrEmpty(searchTerms.Ability)) {
+            List<int> abilityIds = _context.Abilities
+                                    .Where(a => a.Name.ToLower().Equals(searchTerms.Ability.ToLower()))
+                                    .Select(a => a.Id)
+                                    .ToList();
+            pokemonQuery = pokemonQuery.Where(p => abilityIds.Contains(p.Ability1Id) || 
+                                                (p.Ability2Id.HasValue && abilityIds.Contains(p.Ability2Id.Value)) || 
+                                                abilityIds.Contains(p.HiddenAbilityId));
+        }
+
+        List<Pokemon> queryResult = pokemonQuery.OrderBy(p => p.Id).ToList();
+        if (searchTerms.BaseStatTotal != null)
+        {
+            queryResult = queryResult.FindAll(p => applyBaseStatSearchTerm(searchTerms.BaseStatTotal.Item1, searchTerms.BaseStatTotal.Item2, p));
+        }
+
+        List<SearchResultPokemonDTO> result = ListToSearchResultPokemonDTO(queryResult);
+
         return await Task.FromResult(Ok(result));
     }
 
@@ -178,5 +196,24 @@ public class PokemonController : ControllerBase
 
     private List<SearchResultPokemonDTO> ListToSearchResultPokemonDTO(List<Pokemon> results) {
         return results.Select(p => ToSearchResultPokemonDTO(p)).ToList();
+    }
+
+    private Boolean applyBaseStatSearchTerm(string op, int number, Pokemon p) {
+        int baseStatTotal = new int[]{p.Attack, p.Defense, p.SpecAttack, p.SpecDefense, p.Speed, p.HP}.Sum();
+        switch (op)
+            {
+                case "<":
+                    return baseStatTotal < number;
+                case ">":
+                    return baseStatTotal > number;
+                case "<=":
+                    return baseStatTotal <= number;
+                case ">=":
+                    return baseStatTotal >= number;
+                case "=":
+                    return baseStatTotal == number;
+                default:
+                throw new ArgumentException("Invalid operator for numerical comparison");
+            }
     }
 }

@@ -23,23 +23,32 @@ public static class QueryStringUtils
                             .Cast<Match>()
                             .Select(match => match.Value)
                             .ToHashSet();
-
-        // lazily assume name search if single search term without a colon
-        if (entries.Count() == 1 && ! entries.First().Contains(":")) {
-            return new PokemonQueryFields {
-                Name = queryString,
-                Type = ""
-            };
-        }
                             
-        Dictionary<string, string> fieldMap = new Dictionary<string, string>();
+        Dictionary<string, string> stringFieldMap = new Dictionary<string, string>();
         HashSet<string> nameEntries = new HashSet<string>();
+        Dictionary<string, Tuple<string, int>> intFieldMap = new Dictionary<string, Tuple<string, int>>();
         foreach (string entry in entries) {
-            if (entry.Contains(":")) {
+            if (entry.Contains(":"))
+            {
                 string[] pair = entry.Split(":");
-                if (isSearchField(pair[0])) {
-                    fieldMap.Add(_searchTermMap[pair[0]], pair[1]);
+                addQueryTerm(stringFieldMap, pair);
+            }
+            else if (entry.Contains("<") || entry.Contains(">") || entry.Contains("=")) 
+            {
+                string pattern = @"[><=]=?"; // Matches >, <, >=, or <=
+
+                Match match = Regex.Match(entry, pattern);
+                if (match.Success && !entry.Contains("=="))
+                {
+                    string op = match.Value;
+                    string[] parts = entry.Split(new string[] { op }, StringSplitOptions.None);
+
+                    if (isSearchField(parts[0]))
+                    {
+                        intFieldMap.Add(_searchTermMap[parts[0]], new Tuple<string, int>(op, Int32.Parse(parts[1])));
+                    }
                 }
+                
             } else {
                 // lazily assume this is looking for a name
                 nameEntries.Add(entry);
@@ -47,11 +56,23 @@ public static class QueryStringUtils
         }
        
 
-        // TODO(aaron) make name return an array to chain like statements
-        return new PokemonQueryFields{
+        // TODO(aaron): make name return an array to chain like statements
+        return new PokemonQueryFields 
+        {
             Name = nameEntries.Count() > 0 ? String.Join(" ", nameEntries) : String.Empty,
-            Type = fieldMap.ContainsKey(TYPE) ? fieldMap[TYPE] : String.Empty
+            Type = stringFieldMap.ContainsKey(TYPE) ? stringFieldMap[TYPE] : String.Empty,
+            Ability = stringFieldMap.ContainsKey(ABILITY) ? stringFieldMap[ABILITY] : String.Empty,
+            BaseStatTotal = intFieldMap.ContainsKey(BASE_STAT_TOTAL) ? intFieldMap[BASE_STAT_TOTAL] : null
         };
+    }
+
+    private static void addQueryTerm(Dictionary<string, string> fieldMap, string[] pair)
+    {
+        // TODO(akmindt): What happens if we want to search for Pokemon with multiple types or abilities etc etc
+        if (isSearchField(pair[0]))
+        {
+            fieldMap.Add(_searchTermMap[pair[0]], pair[1]);
+        }
     }
 
     private static Boolean isSearchField(string key) {
