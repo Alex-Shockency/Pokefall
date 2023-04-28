@@ -15,6 +15,7 @@ import { MatSort } from '@angular/material/sort';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PokemonService } from 'src/app/Services/pokemon-service';
 import { SearchResultPokemon } from 'src/app/Entities/searchResultPokemon';
+import { Utilities } from 'src/app/Shared/utilities';
 
 export interface Tile {
   color: string;
@@ -34,7 +35,7 @@ export class SearchResultsComponent implements AfterViewInit {
   @Input() searchLoading: boolean;
   @Input() gridDisplay:boolean;
 
-  randomId = this.genRandPokeId();
+  randomId = this.utilities.genRandPokeId();
   columnNum = 4;
   screenHeight = 0;
   screenWidth = 0;
@@ -93,7 +94,7 @@ export class SearchResultsComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  constructor(private router:Router) {
+  constructor(private router:Router,protected utilities:Utilities) {
     this.searchLoading = false;
     this.gridDisplay = true;
     this.onResize();
@@ -102,10 +103,6 @@ export class SearchResultsComponent implements AfterViewInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
-  padId(id: number): string {
-    return String(id).padStart(4, '0');
   }
 
   setAlternateImage(id: number, dexNum: number) {
@@ -119,17 +116,6 @@ export class SearchResultsComponent implements AfterViewInit {
       );
   }
 
-  capitalizeFirstLetter(word: string): string {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  }
-
-  navigateToPokemon(pokemonId: number){
-    this.router.navigate(
-      ['pokemon'],
-      { queryParams: { id: pokemonId } }
-    )
-  }
-
   displayGrid(display: boolean) {
     this.router.navigate(
       ['search'],
@@ -137,18 +123,10 @@ export class SearchResultsComponent implements AfterViewInit {
     )
   }
 
-  genRandPokeId() {
-    return Math.floor(Math.random() * 1010);
-  }
-
   protected playCry(id: number) {
     let audio: HTMLAudioElement = <HTMLAudioElement>(
       document.getElementById('audio-' + id.toString())
     );
     audio.play();
-  }
-
-  formatName(name: string) {
-    return name.toLowerCase();
   }
 }
