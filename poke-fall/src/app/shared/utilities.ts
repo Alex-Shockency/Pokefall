@@ -141,34 +141,36 @@ export class Utilities {
 
     weaknesses.forEach((weakness) => {
       let tempResistance = resistances.find((resist) => resist == weakness);
+      let tempImmunity = immunities.find((immunity) => immunity == weakness);
       let tempDuplicate = typeWeaknessesSeverity.find(
         (weak) => weak.type == weakness
       );
-      if (tempResistance) {
+      if (tempResistance && !tempImmunity) {
         normals.push(weakness);
-      } else if (tempDuplicate) {
+      } else if (tempDuplicate && !tempImmunity) {
         typeWeaknessesSeverity.splice(
           typeWeaknessesSeverity.indexOf(tempDuplicate),
           1
         );
         typeWeaknessesSeverity.push({ type: weakness, severity: 4 });
-      } else {
+      } else if(!tempImmunity){
         typeWeaknessesSeverity.push({ type: weakness, severity: 2 });
       }
     });
 
     resistances.forEach((resistance) => {
       let tempNormal = normals.find((normal) => normal == resistance);
+      let tempImmunity = immunities.find((immunity) => immunity == resistance);
       let tempDuplicate = typeResistanceSeverity.find(
         (resist) => resist.type == resistance
       );
-      if (tempDuplicate) {
+      if (tempDuplicate && !tempImmunity) {
         typeResistanceSeverity.splice(
           typeResistanceSeverity.indexOf(tempDuplicate),
           1
         );
         typeResistanceSeverity.push({ type: resistance, severity: 1 / 4 });
-      } else if (!tempNormal) {
+      } else if (!tempNormal && !tempImmunity) {
         typeResistanceSeverity.push({ type: resistance, severity: 1 / 2 });
       }
     });
