@@ -32,12 +32,12 @@ export class SearchComponent {
    if (this.searchString) {
      //TODO: fix the nidoran case
      this.pokemonService.searchPokemon(this.searchString).subscribe((searchResultPokemon) => {
-      //  if(filteredList.length == 1){
-      //   this.router.navigate(
-      //     ['../pokemon'],
-      //     { queryParams: { id: filteredList.pop()?.id } }
-      //   )
-      //  }
+       if(searchResultPokemon.length == 1){
+        this.router.navigate(
+          ['../pokemon'],
+          { queryParams: { id: searchResultPokemon.pop()?.id } }
+        )
+       }
        this.searchResults = searchResultPokemon;
        this.searchLoading = false;
      });

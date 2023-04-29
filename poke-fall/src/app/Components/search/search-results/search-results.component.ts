@@ -45,11 +45,6 @@ export class SearchResultsComponent implements AfterViewInit {
     'name',
     'type1',
     'type2',
-    'hp',
-    'defense',
-    'specAttack',
-    'specDefense',
-    'speed',
   ];
 
   @HostListener('window:resize', ['$event'])
