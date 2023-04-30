@@ -5,9 +5,9 @@ import { TypeEffectiveness } from './typeEffectiveness';
 import { Resistance, TypeChart, Weakness } from './typeChart';
 
 export type Distance = {
-    feet: number;
-    inches: number;
-}
+  feet: number;
+  inches: number;
+};
 
 @Injectable({
   providedIn: 'root',
@@ -18,18 +18,16 @@ export class Utilities {
     private typeEffectiveness: TypeEffectiveness
   ) {}
 
-
-  
-   convertMetersToFeetAndInches(meters: number): Distance {
+  convertMetersToFeetAndInches(meters: number): Distance {
     let feet = meters * 3.28084;
     let inches = (feet - Math.floor(feet)) * 12;
-    if(Math.round(inches) == 12){
-        feet++;
-        inches =0;
+    if (Math.round(inches) == 12) {
+      feet++;
+      inches = 0;
     }
     return {
       feet: Math.floor(feet),
-      inches: Math.round(inches)
+      inches: Math.round(inches),
     };
   }
 
@@ -46,7 +44,7 @@ export class Utilities {
   }
 
   genRandPokeId() {
-    return Math.floor(Math.random() * 1010);
+    return Math.floor(Math.random() * 1009)+1;
   }
 
   getResistances(type1: PokemonType, type2?: PokemonType): PokemonType[] {
@@ -172,7 +170,7 @@ export class Utilities {
           1
         );
         typeWeaknessesSeverity.push({ type: weakness, severity: 4 });
-      } else if(!tempImmunity){
+      } else if (!tempImmunity) {
         typeWeaknessesSeverity.push({ type: weakness, severity: 2 });
       }
     });
@@ -194,12 +192,12 @@ export class Utilities {
       }
     });
 
-    let typeChart:TypeChart = {
-        typeResistances: typeResistanceSeverity,
-        typeWeaknesses: typeWeaknessesSeverity,
-        typeImmunities: immunities,
-        typeNormals: normals,
-    }
+    let typeChart: TypeChart = {
+      typeResistances: typeResistanceSeverity,
+      typeWeaknesses: typeWeaknessesSeverity,
+      typeImmunities: immunities,
+      typeNormals: normals,
+    };
 
     return typeChart;
   }
