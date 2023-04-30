@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pokemon } from 'src/app/Entities/pokemon';
 import { PokemonService } from 'src/app/Services/pokemon-service';
+import { Utilities } from 'src/app/Shared/utilities';
 
 @Component({
   selector: 'app-search-bar',
@@ -15,13 +16,13 @@ export class SearchBarComponent {
   title = 'poke-fall';
   queryString: string = '';
 
-  constructor(private pokemonService: PokemonService, private router:Router) {
+  constructor(private router:Router, private utilities:Utilities) {
   }
   
   async randomSearch(): Promise<void>{
       this.router.navigate(
         ['../pokemon'],
-        { queryParams: { id:  Math.floor(Math.random()*1010) } }
+        { queryParams: { id:  this.utilities.genRandPokeId() } }
       ).then(()=>{
         window.location.reload();
       });

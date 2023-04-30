@@ -32,9 +32,9 @@ export class PokemonInfoComponent {
   totalStats = 0;
   pokemonLoaded!: Promise<boolean>;
   pokemonWeightLbs = 0;
-  pokemonHeightFeet:Distance = {} as Distance;
+  pokemonHeightFeet: Distance = {} as Distance;
 
-  typeEffectiveness:TypeChart = {} as TypeChart;
+  typeEffectiveness: TypeChart = {} as TypeChart;
 
   pokeCry!: HTMLMediaElement;
 
@@ -54,21 +54,25 @@ export class PokemonInfoComponent {
           this.pokemon = pokemon;
           this.pokemonLoaded = Promise.resolve(true);
 
-          this.pokemonWeightLbs = Math.round(pokemon.weight/10*2.20462262185*10)/10;
-          this.pokemonHeightFeet = this.utilities.convertMetersToFeetAndInches(pokemon.height/10)
+          this.pokemonWeightLbs =
+            Math.round((pokemon.weight / 10) * 2.20462262185 * 10) / 10;
+          this.pokemonHeightFeet = this.utilities.convertMetersToFeetAndInches(
+            pokemon.height / 10
+          );
+
+          this.typeEffectiveness = this.utilities.getTypeEffectiveness(
+            this.utilities.capitalizeFirstLetter(pokemon.type1) as PokemonType,
+            this.utilities.capitalizeFirstLetter(pokemon.type2) as PokemonType
+          );
 
           this.pokeCry = document.getElementById(
             'audioElement'
           ) as HTMLMediaElement;
-          // this.pokeCry.src =
-          //   'https://play.pokemonshowdown.com/audio/cries/' +
-          //   this.formatName(this.pokemon.name) +
-          //   '.ogg';
-
-          this.typeEffectiveness =this.utilities.getTypeEffectiveness(
-            this.utilities.capitalizeFirstLetter(pokemon.type1) as PokemonType,
-            this.utilities.capitalizeFirstLetter(pokemon.type2) as PokemonType
-          );
+          
+          this.pokeCry.src =
+            'https://play.pokemonshowdown.com/audio/cries/' +
+            this.pokemon.name.toLocaleLowerCase() +
+            '.ogg';
 
           this.pokemonService
             .getEvolutionByChainId(pokemon.evolutionChainId)
