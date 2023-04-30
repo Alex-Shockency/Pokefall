@@ -4,6 +4,7 @@ using CsvHelper;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using poke_fall_api.Models;
+using poke_fall_api.Utils;
 
 #nullable disable
 
@@ -59,7 +60,7 @@ namespace pokefallapi.Migrations
                                 string[] dbValues = new string[]
                                 {
                                     ability.id.ToString(),
-                                    ability.identifier,
+                                    StringUtils.FirstCharToUpper(ability.identifier.Replace('-',' ')),
                                     text.flavor_text
                                 };
                                 migrationBuilder.InsertData("Abilities", columns, dbValues);
@@ -75,6 +76,8 @@ namespace pokefallapi.Migrations
         {
             migrationBuilder.DropTable(name: "Abilities");
         }
+
+    
 
         private class PokeApiAbility
         {

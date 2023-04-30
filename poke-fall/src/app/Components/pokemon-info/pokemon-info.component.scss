@@ -16,74 +16,187 @@
   padding-top: 5em;
 }
 
-button[value="grass"] {
-  background-color: #78c850 !important;
+mat-divider{
+
 }
 
-button[value="poison"] {
-  background-color: #a040a0 !important;
+div[id="Grass-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #78C850 !important;
 }
 
-button[value="normal"] {
-  background-color: #a8a878 !important;
+div[id="Poison-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #A040A0 !important;
 }
 
-button[value="fire"] {
-  background-color: #f08030 !important;
+div[id="Normal-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #A8A878 !important;
+  background-color: #A8A878 !important;
 }
 
-button[value="fighting"] {
-  background-color: #c03028 !important;
+div[id="Fire-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #F08030 !important;
 }
 
-button[value="water"] {
-  background-color: #6890f0 !important;
+div[id="Fighting-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #C03028 !important;
 }
 
-button[value="flying"] {
-  background-color: #a890f0 !important;
+div[id="Water-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #6890F0 !important;
 }
 
-button[value="electric"] {
-  background-color: #f8d030 !important;
+div[id="Flying-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #A890F0 !important;
 }
 
-button[value="ground"] {
-  background-color: #e0c068 !important;
+div[id="Electric-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #F8D030 !important;
 }
 
-button[value="psychic"] {
-  background-color: #f85888 !important;
+div[id="Ground-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #E0C068 !important;
 }
 
-button[value="rock"] {
-  background-color: #b8a038 !important;
+div[id="Psychic-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #F85888 !important;
 }
 
-button[value="ice"] {
-  background-color: #98d8d8 !important;
+div[id="Rock-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #B8A038 !important;
 }
 
-button[value="bug"] {
-  background-color: #a8b820 !important;
+div[id="Ice-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #98D8D8 !important;
 }
 
-button[value="dragon"] {
-  background-color: #7038f8 !important;
+div[id="Bug-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #A8B820 !important;
 }
 
-button[value="ghost"] {
+div[id="Dragon-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #7038F8 !important;
+}
+
+div[id="Ghost-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #705898 !important;
+}
+
+div[id="Dark-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #705848 !important;
+}
+
+div[id="Steel-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #B8B8D0 !important;
+}
+
+div[id="Fairy-Card"] {
+  border: solid;
+  border-radius: 1em;
+  border-color: #EE99AC !important;
+}
+
+button[value="Grass"] {
+  background-color: #78C850 !important;
+}
+
+button[value="Poison"] {
+  background-color: #A040A0 !important;
+}
+
+button[value="Normal"] {
+  background-color: #A8A878 !important;
+}
+
+button[value="Fire"] {
+  background-color: #F08030 !important;
+}
+
+button[value="Fighting"] {
+  background-color: #C03028 !important;
+}
+
+button[value="Water"] {
+  background-color: #6890F0 !important;
+}
+
+button[value="Flying"] {
+  background-color: #A890F0 !important;
+}
+
+button[value="Electric"] {
+  background-color: #F8D030 !important;
+}
+
+button[value="Ground"] {
+  background-color: #E0C068 !important;
+}
+
+button[value="Psychic"] {
+  background-color: #F85888 !important;
+}
+
+button[value="Rock"] {
+  background-color: #B8A038 !important;
+}
+
+button[value="Ice"] {
+  background-color: #98D8D8 !important;
+}
+
+button[value="Bug"] {
+  background-color: #A8B820 !important;
+}
+
+button[value="Dragon"] {
+  background-color: #7038F8 !important;
+}
+
+button[value="Ghost"] {
   background-color: #705898 !important;
 }
 
-button[value="dark"] {
+button[value="Dark"] {
   background-color: #705848 !important;
 }
 
-button[value="steel"] {
-  background-color: #b8b8d0 !important;
+button[value="Steel"] {
+  background-color: #B8B8D0 !important;
 }
 
-button[value="fairy"] {
-  background-color: #ee99ac !important;
+button[value="Fairy"] {
+  background-color: #EE99AC !important;
 }

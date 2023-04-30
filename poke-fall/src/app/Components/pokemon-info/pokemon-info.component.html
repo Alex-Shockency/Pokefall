@@ -6,50 +6,6 @@
 <div *ngIf="pokemonLoaded | async" class="inner-flex">
     <div style="width: 75%; padding: 1em;">
         <mat-accordion class="example-headers-align" multi>
-            <!-- <mat-expansion-panel [expanded]="true">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h1>Description</h1>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <p>
-
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at magna consectetur, dapibus eros
-                    sed, luctus urna. Donec rutrum quam vitae ligula gravida, a posuere lacus lacinia. Curabitur erat
-                    quam, tincidunt vel ultricies vel, pulvinar vitae arcu. Praesent molestie malesuada diam non auctor.
-                    Morbi ut mollis risus. Sed vehicula porta lacus, eu maximus sem tincidunt non. Donec posuere lorem
-                    in risus sagittis eleifend. Vestibulum ultricies odio nec tortor aliquet, eget volutpat dui
-                    interdum. Quisque id quam sit amet leo bibendum placerat vel quis enim. Suspendisse et massa nunc.
-                    Donec posuere turpis et elit vestibulum porttitor.
-
-                    Nulla tincidunt commodo lorem a consectetur. Cras non nulla eu nisl pretium elementum. Nulla
-                    sollicitudin turpis a libero consequat lobortis. Fusce eu aliquam leo, quis fringilla arcu. Etiam
-                    facilisis, leo sit amet semper laoreet, est lectus molestie massa, in dictum justo lacus nec turpis.
-                    Suspendisse laoreet at ante ut tristique. Morbi ut dolor et mi bibendum rutrum ac sit amet nibh.
-
-                    Morbi facilisis velit id purus commodo congue. Nullam sed erat in metus malesuada mollis et ac
-                    velit. Praesent eu auctor augue. Etiam vel suscipit massa. Praesent posuere, purus ac iaculis
-                    tempus, diam quam pulvinar magna, vitae dapibus odio mauris aliquet diam. Vivamus posuere sem a quam
-                    tincidunt, nec convallis dui ullamcorper. Nam quis ipsum sapien. In pulvinar dui nec lacus accumsan
-                    venenatis. Nulla sem nisl, varius lacinia ipsum ut, vehicula pulvinar tellus. Duis sit amet justo
-                    ornare, dapibus quam ac, egestas ex.
-
-                    Mauris sagittis odio eu elit tempus, quis feugiat urna tempor. Ut aliquet velit ac erat scelerisque,
-                    a commodo quam auctor. Nullam elementum semper elit, nec ultrices dolor ornare sit amet. Donec non
-                    nisl nisi. Praesent at imperdiet tortor. In maximus in ligula id ultrices. Aenean tempus consequat
-                    nisi semper semper. Quisque iaculis eu diam et vulputate. Nunc scelerisque justo orci, sed
-                    consectetur odio mollis id. In bibendum ultrices pharetra. Integer bibendum, elit id vestibulum
-                    ultrices, tortor ligula tempor dolor, sed porttitor ipsum purus et augue. Nam vel erat at nisi
-                    porttitor tincidunt vel sed odio. Sed urna lacus, scelerisque vitae augue et, mattis facilisis nibh.
-                    Ut ipsum enim, egestas quis dictum vitae, volutpat nec justo. Vestibulum porttitor ligula vel risus
-                    mollis, non dictum neque ultricies.
-
-                    Aenean id augue fermentum, consectetur risus vitae, venenatis justo. In rutrum semper massa sed
-                    congue. Morbi sed erat in tellus fermentum cursus. Quisque posuere nisl augue, quis dapibus ex porta
-                    eget. Mauris eu tempor ipsum. Praesent nunc ipsum, ultricies vitae enim vulputate, malesuada tempor
-                    mi. Aenean tincidunt purus in purus ultrices dapibus. Donec ac tellus quis ligula facilisis
-                    tincidunt vel eget nisl. Vivamus eget ligula ultricies, pulvinar sem ac, feugiat quam. </p>
-            </mat-expansion-panel> -->
             <mat-expansion-panel *ngIf="evolutions.length>1" [expanded]="true">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
@@ -92,7 +48,7 @@
                         <h1>Type Effect</h1>
                     </mat-panel-title>
                 </mat-expansion-panel-header>
-                <div >
+                <div>
                     <mat-card style="padding: 1em;" *ngIf="typeEffectiveness.typeNormals.length > 0">
                         <mat-card-header>
                             <mat-card-title> Normal: </mat-card-title>
@@ -101,7 +57,7 @@
                         <mat-card-content style="flex-wrap: wrap;display: inline-flex;">
                             <div style="padding-top: 1em;" *ngFor="let normal of typeEffectiveness.typeNormals">
                                 <button matSufix style="min-width: 150px;" mat-flat-button class="button"
-                                    color="primary" value="{{ normal.toString().toLowerCase() }}">
+                                    color="primary" value="{{ normal.toString() }}">
                                     {{normal}} <span
                                         style="background: gray;border-radius: 2em;padding: .35em;">1x</span>
                                 </button>
@@ -109,7 +65,7 @@
                         </mat-card-content>
                     </mat-card>
                 </div>
-                <div >
+                <div>
                     <mat-card style="padding: 1em;" *ngIf="typeEffectiveness.typeWeaknesses.length > 0">
                         <mat-card-header>
                             <mat-card-title> Super Effective: </mat-card-title>
@@ -118,7 +74,7 @@
                         <mat-card-content style="flex-wrap: wrap;display: inline-flex;">
                             <div style="padding-top: 1em;" *ngFor="let weakness of typeEffectiveness.typeWeaknesses">
                                 <button matSufix style="min-width: 150px;" mat-flat-button class="button"
-                                    color="primary" value="{{ weakness.type.toString().toLowerCase() }}">
+                                    color="primary" value="{{ weakness.type.toString() }}">
                                     {{weakness.type}} <span
                                         style="background: gray;border-radius: 2em;padding: .35em;">{{weakness.severity}}x</span>
                                 </button>
@@ -135,7 +91,7 @@
                         <mat-card-content style="flex-wrap: wrap;display: inline-flex;">
                             <div style="padding-top: 1em;" *ngFor="let resistance of typeEffectiveness.typeResistances">
                                 <button style="min-width: 150px;" mat-flat-button class="button" color="primary"
-                                    value="{{ resistance.type.toString().toLowerCase() }}">
+                                    value="{{ resistance.type.toString() }}">
                                     {{resistance.type}} <span
                                         style="background: gray;border-radius: 2em;padding: .35em;">{{resistance.severity}}x</span>
                                 </button>
@@ -152,7 +108,7 @@
                         <mat-card-content style="flex-wrap: wrap;display: inline-flex;">
                             <div style="padding-top: 1em;" *ngFor="let immunity of typeEffectiveness.typeImmunities">
                                 <button style="min-width: 150px;" mat-flat-button class="button" color="primary"
-                                    value="{{ immunity.toString().toLowerCase() }}">
+                                    value="{{ immunity.toString() }}">
                                     {{immunity}} <span
                                         style="background: gray;border-radius: 2em;padding: .35em;">0x</span>
                                 </button>
@@ -175,31 +131,114 @@
             </mat-expansion-panel>
         </mat-accordion>
     </div>
-
-    <mat-card style="width: 25%; height: 100%; margin: 1em;">
-        <mat-card-header>{{pokemon.name}} #{{utilities.padId(pokemon.pokedexNumber)}}
-            <div style="width: 100%;display: flex;justify-content: end;">
-                <!-- <button mat-icon-button (click)="playCry(pokemon.id)">
+    <div id="{{pokemon.type1}}-Card" style="width: 25%; height: 100%; margin-top: 1em;border-radius: 1em;">
+        <mat-card style="border-radius: 1em;">
+            <mat-card-header>
+                <span style="font-size: xx-large;">{{pokemon.name}}</span>
+                <div style="width: 100%;display: flex;justify-content: end;">
+                    #{{utilities.padId(pokemon.pokedexNumber)}}
+                    <!-- <button mat-icon-button (click)="playCry(pokemon.id)">
                     <mat-icon>volume_up</mat-icon>
                 </button>
                 <audio id="audioElement">
                     <source src="" type="audio/ogg">
                 </audio> -->
-            </div>
-        </mat-card-header>
-        <mat-card-content>
-            <div style="max-width: 475px;max-height: 475px;">
-                <img style="width: 100%;height: 100%;" mat-card-image id="{{pokemonId}}"
-                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemonId}}.png"
-                    alt="">
-            </div>
-            <div>
-                <button mat-flat-button class="button" color="primary" value="{{ pokemon.type1 }}">
-                    {{pokemon.type1 }}</button>
-                <button mat-flat-button class="button" color="primary" *ngIf="pokemon.type2"
-                    value="{{ pokemon.type2 }}">
-                    {{ pokemon.type2 }}</button>
-            </div>
-        </mat-card-content>
-    </mat-card>
+                </div>
+            </mat-card-header>
+            <mat-card-content>
+                <div style="max-width: 475px;max-height: 475px;">
+                    <img style="width: 100%;height: 100%;" mat-card-image id="{{pokemonId}}"
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemonId}}.png"
+                        alt="">
+                </div>
+                <div style="margin: .5em;" *ngIf="pokemon.type1" id="{{pokemon.type1}}-Card">
+                    <mat-card style="border-radius: 1em;">
+                        <div>
+                            <mat-card-header style="justify-content: center;">Type</mat-card-header>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div>
+                            <button *ngIf="!pokemon.type2"
+                                style="min-width: 100%; border-bottom-left-radius: 1em;border-bottom-right-radius: 1em;border-top-right-radius: 0em; border-top-left-radius: 0em;"
+                                mat-flat-button color="primary" value="{{ pokemon.type1 }}">
+                                {{pokemon.type1 }}</button>
+                            <button *ngIf="pokemon.type1 && pokemon.type2"
+                                style="min-width: 50%; border-bottom-left-radius: 1em; border-bottom-right-radius: 0em;border-top-right-radius: 0em; border-top-left-radius: 0em;"
+                                mat-flat-button color="primary" value="{{ pokemon.type1 }}">
+                                {{pokemon.type1 }}</button>
+                            <button
+                                style="min-width: 50%; border-bottom-right-radius: 1em; border-bottom-left-radius: 0em;border-top-right-radius: 0em; border-top-left-radius: 0em;"
+                                mat-flat-button color="primary" *ngIf="pokemon.type2" value="{{ pokemon.type2 }}">
+                                {{ pokemon.type2 }}</button>
+                        </div>
+                    </mat-card>
+                </div>
+                <div style="margin: .5em;" *ngIf="pokemon.ability1" id="{{pokemon.type1}}-Card">
+                    <mat-card style="border-radius: 1em;">
+                        <div>
+                            <mat-card-header style="justify-content: center;">Abilities</mat-card-header>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div style="display: flex;justify-content: space-between;">
+                            <button *ngIf="pokemon.ability1 && !pokemon.ability2 && pokemon.hiddenAbility"
+                                style="min-width: 100%;" mat-flat-button matTooltip="{{pokemon.ability1.description}}"
+                                [matTooltipPositionAtOrigin]="enabled.value">
+                                {{pokemon.ability1.name }}
+                            </button>
+                            <button *ngIf="pokemon.ability1 && !pokemon.ability2 && !pokemon.hiddenAbility"
+                                style="min-width: 100%;border-bottom-left-radius: 1em;border-bottom-right-radius: 1em;"
+                                mat-flat-button matTooltip="{{pokemon.ability1.description}}"
+                                [matTooltipPositionAtOrigin]="enabled.value">
+                                {{pokemon.ability1.name }}</button>
+                            <button *ngIf="pokemon.ability2" style="min-width: 50%;" mat-flat-button
+                                matTooltip="{{pokemon.ability1.description}}">
+                                {{pokemon.ability1.name }}</button>
+                            <button style="min-width: 50%;" mat-flat-button
+                                matTooltip="{{pokemon.ability2.description}}" *ngIf="pokemon.ability2">
+                                {{ pokemon.ability2.name }}</button>
+                        </div>
+                        <div *ngIf="pokemon.hiddenAbility">
+                            <div>
+                                <span style="display: flex;justify-content: center;">Hidden Ability</span>
+                            </div>
+                            <mat-divider></mat-divider>
+                            <button
+                                style="min-width: 100%; border-bottom-right-radius: 1em;border-bottom-left-radius: 1em;"
+                                mat-flat-button matTooltip="{{pokemon.hiddenAbility.description}}"
+                                [matTooltipPositionAtOrigin]="enabled.value">
+                                {{ pokemon.hiddenAbility.name }}</button>
+                        </div>
+                    </mat-card>
+                </div>
+                <div style="margin: .5em;" *ngIf="pokemon.type1" id="{{pokemon.type1}}-Card">
+                    <mat-card style="border-radius: 1em;">
+                        <div>
+                            <mat-card-header style="justify-content: center;">Physical Attributes</mat-card-header>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div
+                            style="display: grid; grid-template-columns: auto auto auto;justify-content: space-around;">
+                            <span>Weight:</span>
+                            <span> {{pokemon.weight/10}} kg</span>
+                            <span> {{pokemonWeightLbs}} lbs</span>
+                            <span>Height:</span>
+                            <span> {{pokemon.height/10}} m</span>
+                            <span> {{pokemonHeightFeet.feet}}'{{pokemonHeightFeet.inches}}" </span>
+                        </div>
+                    </mat-card>
+                </div>
+                <div style="margin: .5em;" *ngIf="pokemon.type1" id="{{pokemon.type1}}-Card">
+                    <mat-card style="border-radius: 1em;">
+                        <div>
+                            <mat-card-header style="justify-content: center;">Base Exp Yield</mat-card-header>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div style="display: grid; grid-template-columns: auto auto auto;justify-content: center;">
+                            <span>{{pokemon.baseEXPYield}}</span>
+                        </div>
+                    </mat-card>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
 </div>

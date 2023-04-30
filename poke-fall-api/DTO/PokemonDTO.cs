@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using poke_fall_api.Models;
 
 namespace poke_fall_api.DTO
 {
@@ -11,9 +12,9 @@ namespace poke_fall_api.DTO
         public string Name { get; set; }
         public string Type1 { get; set; }
         public string Type2 { get; set; }
-        public int Ability1Id { get; set; }
-        public Nullable<int> Ability2Id { get; set; }
-        public int HiddenAbilityId { get; set; }
+        public Ability Ability1 { get; set; }
+        public Ability Ability2 { get; set; }
+        public Ability HiddenAbility { get; set; }
         // Stored as cms and converted later
         public int Height { get; set; }
         // Stored as gs and converted later

@@ -4,6 +4,10 @@ import { PokemonType } from './pokemonTypes';
 import { TypeEffectiveness } from './typeEffectiveness';
 import { Resistance, TypeChart, Weakness } from './typeChart';
 
+export type Distance = {
+    feet: number;
+    inches: number;
+}
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +17,21 @@ export class Utilities {
     private router: Router,
     private typeEffectiveness: TypeEffectiveness
   ) {}
+
+
+  
+   convertMetersToFeetAndInches(meters: number): Distance {
+    let feet = meters * 3.28084;
+    let inches = (feet - Math.floor(feet)) * 12;
+    if(Math.round(inches) == 12){
+        feet++;
+        inches =0;
+    }
+    return {
+      feet: Math.floor(feet),
+      inches: Math.round(inches)
+    };
+  }
 
   padId(id: number): string {
     return String(id).padStart(4, '0');

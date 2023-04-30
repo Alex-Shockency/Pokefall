@@ -24,12 +24,16 @@ public class PokemonController : ControllerBase
     public async Task<ActionResult<Pokemon>> GetPokemon(int id)
     {
         var Pokemon = await _context.Pokemon.FindAsync(id);
-
         if (Pokemon == null)
         {
             return NotFound();
         }
-        PokemonDTO result = ToPokemonDTO(Pokemon);
+
+        var Ability1 = await _context.Abilities.FindAsync(Pokemon.Ability1Id);
+        var Ability2 = await _context.Abilities.FindAsync(Pokemon.Ability2Id);
+        var HiddenAbility = await _context.Abilities.FindAsync(Pokemon.HiddenAbilityId);
+
+        PokemonDTO result = ToPokemonDTO(Pokemon,Ability1,Ability2,HiddenAbility);
         return Ok(result);
     }
 
@@ -94,23 +98,26 @@ public class PokemonController : ControllerBase
 
         IQueryable<Pokemon> pokemonQuery = _context.Pokemon
                                             .Where(p => p.Id < 10000);
-        
-        
-        if (!String.IsNullOrEmpty(searchTerms.Name)) {
+
+
+        if (!String.IsNullOrEmpty(searchTerms.Name))
+        {
             pokemonQuery = pokemonQuery.Where(p => p.Name.ToLower().Contains(searchTerms.Name.ToLower()));
         }
 
-        if (!String.IsNullOrEmpty(searchTerms.Type)) {
+        if (!String.IsNullOrEmpty(searchTerms.Type))
+        {
             pokemonQuery = pokemonQuery.Where(p => p.Type1.ToLower() == searchTerms.Type.ToLower() || p.Type2.ToLower() == searchTerms.Type.ToLower());
         }
 
-        if (!String.IsNullOrEmpty(searchTerms.Ability)) {
+        if (!String.IsNullOrEmpty(searchTerms.Ability))
+        {
             List<int> abilityIds = _context.Abilities
                                     .Where(a => a.Name.ToLower().Equals(searchTerms.Ability.ToLower()))
                                     .Select(a => a.Id)
                                     .ToList();
-            pokemonQuery = pokemonQuery.Where(p => abilityIds.Contains(p.Ability1Id) || 
-                                                (p.Ability2Id.HasValue && abilityIds.Contains(p.Ability2Id.Value)) || 
+            pokemonQuery = pokemonQuery.Where(p => abilityIds.Contains(p.Ability1Id) ||
+                                                (p.Ability2Id.HasValue && abilityIds.Contains(p.Ability2Id.Value)) ||
                                                 abilityIds.Contains(p.HiddenAbilityId));
         }
 
@@ -125,7 +132,7 @@ public class PokemonController : ControllerBase
         return await Task.FromResult(Ok(result));
     }
 
-    private PokemonDTO ToPokemonDTO(Pokemon item)
+    private PokemonDTO ToPokemonDTO(Pokemon item, Ability ability1, Ability ability2, Ability hiddenAbility)
     {
         return new PokemonDTO
         {
@@ -135,9 +142,9 @@ public class PokemonController : ControllerBase
             Name = item.Name,
             Type1 = item.Type1.ToString(),
             Type2 = item.Type2.ToString(),
-            Ability1Id = item.Ability1Id,
-            Ability2Id = item.Ability2Id,
-            HiddenAbilityId = item.HiddenAbilityId,
+            Ability1 = ability1,
+            Ability2 = ability2,
+            HiddenAbility = hiddenAbility,
             Height = item.Height,
             Weight = item.Weight,
             BaseEXPYield = item.BaseEXPYield,
@@ -190,32 +197,33 @@ public class PokemonController : ControllerBase
         };
     }
 
-    private List<PokemonDTO> ListToPokemonDTO(List<Pokemon> items)
-    {
-        return items.Select(p => ToPokemonDTO(p)).ToList();
-    }
+    // private List<PokemonDTO> ListToPokemonDTO(List<Pokemon> items)
+    // {
+    //     return items.Select(p => ToPokemonDTO(p)).ToList();
+    // }
 
     private List<SearchResultPokemonDTO> ListToSearchResultPokemonDTO(List<Pokemon> results)
     {
         return results.Select(p => ToSearchResultPokemonDTO(p)).ToList();
     }
 
-    private Boolean applyBaseStatSearchTerm(string op, int number, Pokemon p) {
-        int baseStatTotal = new int[]{p.Attack, p.Defense, p.SpecAttack, p.SpecDefense, p.Speed, p.HP}.Sum();
+    private Boolean applyBaseStatSearchTerm(string op, int number, Pokemon p)
+    {
+        int baseStatTotal = new int[] { p.Attack, p.Defense, p.SpecAttack, p.SpecDefense, p.Speed, p.HP }.Sum();
         switch (op)
-            {
-                case "<":
-                    return baseStatTotal < number;
-                case ">":
-                    return baseStatTotal > number;
-                case "<=":
-                    return baseStatTotal <= number;
-                case ">=":
-                    return baseStatTotal >= number;
-                case "=":
-                    return baseStatTotal == number;
-                default:
+        {
+            case "<":
+                return baseStatTotal < number;
+            case ">":
+                return baseStatTotal > number;
+            case "<=":
+                return baseStatTotal <= number;
+            case ">=":
+                return baseStatTotal >= number;
+            case "=":
+                return baseStatTotal == number;
+            default:
                 throw new ArgumentException("Invalid operator for numerical comparison");
-            }
+        }
     }
 }

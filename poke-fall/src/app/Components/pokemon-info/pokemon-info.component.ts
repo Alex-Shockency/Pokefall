@@ -5,10 +5,11 @@ import { PokemonService } from 'src/app/Services/pokemon-service';
 import Chart from 'chart.js/auto';
 import { MatAccordion } from '@angular/material/expansion';
 import { Evolution } from 'src/app/Entities/evolution';
-import { Utilities } from 'src/app/Shared/utilities';
+import { Distance, Utilities } from 'src/app/Shared/utilities';
 import { PokemonType } from 'src/app/Shared/pokemonTypes';
 import { TypeEffectiveness } from 'src/app/Shared/typeEffectiveness';
 import { TypeChart } from 'src/app/Shared/typeChart';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-pokemon-info',
@@ -19,6 +20,8 @@ export class PokemonInfoComponent {
   @ViewChild(MatAccordion)
   accordion!: MatAccordion;
 
+  enabled = new FormControl(false);
+
   pokemonId = 0;
   pokemon: Pokemon = {} as Pokemon;
   evolutions: Evolution[] = [];
@@ -28,6 +31,8 @@ export class PokemonInfoComponent {
   audioUrl = '';
   totalStats = 0;
   pokemonLoaded!: Promise<boolean>;
+  pokemonWeightLbs = 0;
+  pokemonHeightFeet:Distance = {} as Distance;
 
   typeEffectiveness:TypeChart = {} as TypeChart;
 
@@ -48,6 +53,9 @@ export class PokemonInfoComponent {
         .subscribe((pokemon) => {
           this.pokemon = pokemon;
           this.pokemonLoaded = Promise.resolve(true);
+
+          this.pokemonWeightLbs = Math.round(pokemon.weight/10*2.20462262185*10)/10;
+          this.pokemonHeightFeet = this.utilities.convertMetersToFeetAndInches(pokemon.height/10)
 
           this.pokeCry = document.getElementById(
             'audioElement'

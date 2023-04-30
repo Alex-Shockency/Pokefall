@@ -1,3 +1,5 @@
+import { Ability } from "./ability";
+
 export interface Pokemon {
     id:number;
     evolutionChainId:number;
@@ -5,9 +7,9 @@ export interface Pokemon {
     name:string;
     type1:string;
     type2:string;
-    ability1Id:number;
-    ability2Id:number;
-    hiddenAbilityId:number;
+    ability1:Ability;
+    ability2:Ability;
+    hiddenAbility:Ability;
     // Stored as cms and converted later
     height:number;
     // Stored as gs and converted later

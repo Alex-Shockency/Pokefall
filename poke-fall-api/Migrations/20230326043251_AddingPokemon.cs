@@ -3,6 +3,7 @@ using CsvHelper;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using poke_fall_api.Models;
+using poke_fall_api.Utils;
 
 #nullable disable
 
@@ -206,8 +207,8 @@ namespace pokefallapi.Migrations
                                             PokedexNumber = pokemon.species_id,
                                             Name = pokemonName,
                                             EvolutionChainId = chainId == 0 ? null : chainId,
-                                            Type1 = type1,
-                                            Type2 = type2,
+                                            Type1 =  StringUtils.FirstCharToUpper(type1),
+                                            Type2 =  type2.Equals("") ? "":StringUtils.FirstCharToUpper(type2),
                                             Ability1Id = ability1Id,
                                             Ability2Id = ability2Id == 0 ? null : ability2Id,
                                             HiddenAbilityId = hiddenAbilityId,
