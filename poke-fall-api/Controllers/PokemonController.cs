@@ -32,8 +32,31 @@ public class PokemonController : ControllerBase
         var Ability1 = await _context.Abilities.FindAsync(Pokemon.Ability1Id);
         var Ability2 = await _context.Abilities.FindAsync(Pokemon.Ability2Id);
         var HiddenAbility = await _context.Abilities.FindAsync(Pokemon.HiddenAbilityId);
+        var Moves = _context.PokemonMoves.Where(pm => pm.PokemonId == Pokemon.Id && (pm.VersionId>=18&&pm.VersionId<=25)).Join(_context.Moves, pm => pm.MoveId, move=> move.Id,(pm,move) => new FullMoveInfo{
+            PokemonId = pm.PokemonId,
+            MoveId = pm.MoveId,
+            VersionId = pm.VersionId,
+            LevelUpLearnable =  pm.LevelUpLearnable,
+            LevelLearned = pm.LevelLearned,
+            TMLearnable = pm.TMLearnable,
+            TutorLearnable = pm.TutorLearnable,
+            EggMoveLearnable = pm.EggMoveLearnable,
+            Name = move.Name,
+            Description = move.Description,
+            Type = move.Type,
+            Category = move.Category,
+            PP = move.PP,
+            Power = move.Power,
+            Accuracy = move.Accuracy,
+            Contact = move.Contact,
+            AffectedProtect = move.AffectedProtect,
+            AffectedSnatch = move.AffectedSnatch,
+            AffectedMirrorMove = move.AffectedMirrorMove,
+        }).ToArray();
 
-        PokemonDTO result = ToPokemonDTO(Pokemon,Ability1,Ability2,HiddenAbility);
+        
+
+        PokemonDTO result = ToPokemonDTO(Pokemon, Ability1, Ability2, HiddenAbility,Moves);
         return Ok(result);
     }
 
@@ -132,7 +155,7 @@ public class PokemonController : ControllerBase
         return await Task.FromResult(Ok(result));
     }
 
-    private PokemonDTO ToPokemonDTO(Pokemon item, Ability ability1, Ability ability2, Ability hiddenAbility)
+    private PokemonDTO ToPokemonDTO(Pokemon item, Ability ability1, Ability ability2, Ability hiddenAbility,FullMoveInfo[] moves)
     {
         return new PokemonDTO
         {
@@ -145,6 +168,7 @@ public class PokemonController : ControllerBase
             Ability1 = ability1,
             Ability2 = ability2,
             HiddenAbility = hiddenAbility,
+            Moves = moves,
             Height = item.Height,
             Weight = item.Weight,
             BaseEXPYield = item.BaseEXPYield,

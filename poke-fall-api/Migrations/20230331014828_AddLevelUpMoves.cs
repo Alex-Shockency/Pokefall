@@ -10,12 +10,13 @@ namespace pokefallapi.Migrations
     /// <inheritdoc />
     public partial class AddLevelUpMoves : Migration
     {
-        readonly string[] LEVEL_UP_MOVE_COLUMNS = new string[] 
+        readonly string[] LEVEL_UP_MOVE_COLUMNS = new string[]
         {
             "Id",
             "PokemonId",
             "MoveId",
-            "Level"
+            "Level",
+            "VersionId"
         };
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -28,7 +29,8 @@ namespace pokefallapi.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     PokemonId = table.Column<int>(type: "integer", nullable: false),
                     MoveId = table.Column<int>(type: "integer", nullable: false),
-                    Level = table.Column<int>(type: "integer", nullable: false)
+                    Level = table.Column<int>(type: "integer", nullable: false),
+                    VersionId = table.Column<int>(type: "integer", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -54,7 +56,7 @@ namespace pokefallapi.Migrations
                 var moves = moveCsv.GetRecords<PokeApiPokemonMove>().ToArray();
                 foreach (PokeApiPokemonMove move in moves)
                 {
-                    if (move.version_group_id == 20 && move.pokemon_move_method_id == 1)
+                    if (move.pokemon_move_method_id == 1)
                     {
                         migrationbuilder.InsertData(
                             table: "LevelUpMoves",
@@ -64,11 +66,13 @@ namespace pokefallapi.Migrations
                                 moveId,
                                 move.pokemon_id,
                                 move.move_id,
-                                move.level
+                                move.level,
+                                move.version_group_id
                             }
                         );
                         moveId++;
                     }
+
                 }
             }
         }

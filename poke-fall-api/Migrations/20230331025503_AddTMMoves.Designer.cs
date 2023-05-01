@@ -213,6 +213,8 @@ namespace pokefallapi.Migrations
 
                     b.Property<int>("PokemonId")
                         .HasColumnType("integer");
+                    b.Property<int>("VersionId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

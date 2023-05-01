@@ -10,11 +10,12 @@ namespace pokefallapi.Migrations
     /// <inheritdoc />
     public partial class AddEggMoves : Migration
     {
-        readonly string[] EGG_MOVE_COLUMNS = new string[] 
+        readonly string[] EGG_MOVE_COLUMNS = new string[]
         {
             "Id",
             "PokemonId",
-            "MoveId"
+            "MoveId",
+            "VersionId"
         };
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -26,14 +27,15 @@ namespace pokefallapi.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     PokemonId = table.Column<int>(type: "integer", nullable: false),
-                    MoveId = table.Column<int>(type: "integer", nullable: false)
+                    MoveId = table.Column<int>(type: "integer", nullable: false),
+                    VersionId = table.Column<int>(type: "integer", nullable: false),
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_EggMoves", x => x.Id);
                 });
 
-                seedEggMoves(migrationBuilder);
+            seedEggMoves(migrationBuilder);
         }
 
         /// <inheritdoc />
@@ -42,7 +44,7 @@ namespace pokefallapi.Migrations
             migrationBuilder.DropTable(
                 name: "EggMoves");
         }
-private void seedEggMoves(MigrationBuilder migrationbuilder)
+        private void seedEggMoves(MigrationBuilder migrationbuilder)
         {
             var insertMoves = new List<EggMove>();
             var moveId = 1;
@@ -52,16 +54,17 @@ private void seedEggMoves(MigrationBuilder migrationbuilder)
                 var moves = moveCsv.GetRecords<PokeApiPokemonMove>().ToArray();
                 foreach (PokeApiPokemonMove move in moves)
                 {
-                    if (move.version_group_id == 20 && move.pokemon_move_method_id == 2)
+                    if (move.pokemon_move_method_id == 2)
                     {
                         migrationbuilder.InsertData(
                             table: "EggMoves",
                             columns: EGG_MOVE_COLUMNS,
                             values: new object[]
                             {
-                                moveId,
-                                move.pokemon_id,
-                                move.move_id
+                            moveId,
+                            move.pokemon_id,
+                            move.move_id,
+                            move.version_group_id
                             }
                         );
                         moveId++;

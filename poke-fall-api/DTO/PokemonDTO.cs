@@ -15,6 +15,7 @@ namespace poke_fall_api.DTO
         public Ability Ability1 { get; set; }
         public Ability Ability2 { get; set; }
         public Ability HiddenAbility { get; set; }
+        public FullMoveInfo[] Moves { get; set; }
         // Stored as cms and converted later
         public int Height { get; set; }
         // Stored as gs and converted later

@@ -7,134 +7,311 @@
     <source src="" type="audio/ogg">
 </audio>
 <div *ngIf="pokemonLoaded | async" class="inner-flex">
-    <div style="width: 75%; padding: 1em;">
-        <mat-accordion class="example-headers-align" multi>
-            <mat-expansion-panel *ngIf="evolutions.length>1" [expanded]="true">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h1>Evoltutions</h1>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <mat-grid-list cols="{{evolutions.length}}" rowHeight="3:1">
-                    <mat-grid-tile *ngFor="let evolution of evolutions;let i = index"
-                        style="justify-content: space-between;">
-                        <div
-                            style="display: flex;width:100%;height: 100%;justify-content: space-between;align-items: center;">
-                            <span></span>
-                            <img (click)="utilities.navigateToPokemon(evolution.id)"
-                                style="cursor: pointer;height: 100%;" mat-card-image id="{{evolution.id}}"
-                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{evolution.id}}.png"
+    <div class="pokemon-info">
+        <div style="margin: 1em;" *ngIf="screenWidth<1500" id="{{pokemon.type1}}-Card">
+            <mat-card style="border-radius: 1em;">
+                <mat-card-header>
+                    <span style="font-size: xx-large;">{{pokemon.name}}</span>
+                    <div style="width: 100%;display: flex;justify-content: end;align-items: center;">
+                        #{{utilities.padId(pokemon.pokedexNumber)}}
+                    </div>
+                </mat-card-header>
+                <mat-card-content>
+                    <div style="display: flex;justify-content: center;">
+                        <div style="max-width: 475px;max-height: 475px;display: flex;">
+                            <img style="width: 100%;height: 100%;cursor: pointer;" mat-card-image id="{{pokemonId}}"
+                                (click)="playCry(pokemon.id)"
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemonId}}.png"
                                 alt="">
-                            <mat-icon *ngIf="i == 0" aria-hidden="false" aria-label="Example home icon"
-                                fontIcon="arrow_forward"></mat-icon>
-                            <span *ngIf="i == evolutions.length-1"></span>
-                            <mat-icon
-                                *ngIf="i>0 && i != evolutions.length-1 && evolutions[i+1].evolvedFromPokedexNumber != evolutions[i].evolvedFromPokedexNumber"
-                                aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_forward"></mat-icon>
                         </div>
-                    </mat-grid-tile>
-                </mat-grid-list>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel [expanded]="true">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h1>Stats</h1>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <app-pokemon-stat-charts [pokemon]="pokemon"></app-pokemon-stat-charts>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel [expanded]="true">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h1>Type Effect</h1>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div>
-                    <mat-card style="padding: 1em;" *ngIf="typeEffectiveness.typeNormals.length > 0">
-                        <mat-card-header>
-                            <mat-card-title> Normal: </mat-card-title>
-                        </mat-card-header>
-
-                        <mat-card-content style="flex-wrap: wrap;display: inline-flex;">
-                            <div style="padding-top: 1em;" *ngFor="let normal of typeEffectiveness.typeNormals">
-                                <button matSufix style="min-width: 150px;" mat-flat-button class="button"
-                                    color="primary" value="{{ normal.toString() }}">
-                                    {{normal}} <span
-                                        style="background: gray;border-radius: 2em;padding: .35em;">1x</span>
-                                </button>
+                    </div>
+                    <div style="margin: .5em;" *ngIf="pokemon.type1" id="{{pokemon.type1}}-Card">
+                        <mat-card style="border-radius: 1em;">
+                            <div>
+                                <mat-card-header style="justify-content: center;">Type</mat-card-header>
                             </div>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-                <div>
-                    <mat-card style="padding: 1em;" *ngIf="typeEffectiveness.typeWeaknesses.length > 0">
-                        <mat-card-header>
-                            <mat-card-title> Super Effective: </mat-card-title>
-                        </mat-card-header>
-
-                        <mat-card-content style="flex-wrap: wrap;display: inline-flex;">
-                            <div style="padding-top: 1em;" *ngFor="let weakness of typeEffectiveness.typeWeaknesses">
-                                <button matSufix style="min-width: 150px;" mat-flat-button class="button"
-                                    color="primary" value="{{ weakness.type.toString() }}">
-                                    {{weakness.type}} <span
-                                        style="background: gray;border-radius: 2em;padding: .35em;">{{weakness.severity}}x</span>
-                                </button>
+                            <mat-divider></mat-divider>
+                            <div>
+                                <button *ngIf="!pokemon.type2"
+                                    style="min-width: 100%; border-bottom-left-radius: 1em;border-bottom-right-radius: 1em;border-top-right-radius: 0em; border-top-left-radius: 0em;"
+                                    mat-flat-button color="primary" value="{{ pokemon.type1 }}">
+                                    {{pokemon.type1 }}</button>
+                                <button *ngIf="pokemon.type1 && pokemon.type2"
+                                    style="min-width: 50%; border-bottom-left-radius: 1em; border-bottom-right-radius: 0em;border-top-right-radius: 0em; border-top-left-radius: 0em;"
+                                    mat-flat-button color="primary" value="{{ pokemon.type1 }}">
+                                    {{pokemon.type1 }}</button>
+                                <button
+                                    style="min-width: 50%; border-bottom-right-radius: 1em; border-bottom-left-radius: 0em;border-top-right-radius: 0em; border-top-left-radius: 0em;"
+                                    mat-flat-button color="primary" *ngIf="pokemon.type2" value="{{ pokemon.type2 }}">
+                                    {{ pokemon.type2 }}</button>
                             </div>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-                <div>
-                    <mat-card style="padding: 1em;" *ngIf="typeEffectiveness.typeResistances.length > 0">
-                        <mat-card-header>
-                            <mat-card-title> Not Very Effective: </mat-card-title>
-                        </mat-card-header>
-
-                        <mat-card-content style="flex-wrap: wrap;display: inline-flex;">
-                            <div style="padding-top: 1em;" *ngFor="let resistance of typeEffectiveness.typeResistances">
-                                <button style="min-width: 150px;" mat-flat-button class="button" color="primary"
-                                    value="{{ resistance.type.toString() }}">
-                                    {{resistance.type}} <span
-                                        style="background: gray;border-radius: 2em;padding: .35em;">{{resistance.severity}}x</span>
-                                </button>
+                        </mat-card>
+                    </div>
+                    <div style="margin: .5em;" *ngIf="pokemon.ability1" id="{{pokemon.type1}}-Card">
+                        <mat-card style="border-radius: 1em;">
+                            <div>
+                                <mat-card-header style="justify-content: center;">Abilities</mat-card-header>
                             </div>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-                <div>
-                    <mat-card style="padding: 1em;" *ngIf="typeEffectiveness.typeImmunities.length > 0">
-                        <mat-card-header>
-                            <mat-card-title> Immune: </mat-card-title>
-                        </mat-card-header>
-
-                        <mat-card-content style="flex-wrap: wrap;display: inline-flex;">
-                            <div style="padding-top: 1em;" *ngFor="let immunity of typeEffectiveness.typeImmunities">
-                                <button style="min-width: 150px;" mat-flat-button class="button" color="primary"
-                                    value="{{ immunity.toString() }}">
-                                    {{immunity}} <span
-                                        style="background: gray;border-radius: 2em;padding: .35em;">0x</span>
+                            <mat-divider></mat-divider>
+                            <div style="display: flex;justify-content: space-between;">
+                                <button *ngIf="pokemon.ability1 && !pokemon.ability2 && pokemon.hiddenAbility"
+                                    style="min-width: 100%;" mat-flat-button
+                                    matTooltip="{{pokemon.ability1.description}}"
+                                    [matTooltipPositionAtOrigin]="enabled.value">
+                                    {{pokemon.ability1.name }}
                                 </button>
+                                <button *ngIf="pokemon.ability1 && !pokemon.ability2 && !pokemon.hiddenAbility"
+                                    style="min-width: 100%;border-bottom-left-radius: 1em;border-bottom-right-radius: 1em;"
+                                    mat-flat-button matTooltip="{{pokemon.ability1.description}}"
+                                    [matTooltipPositionAtOrigin]="enabled.value">
+                                    {{pokemon.ability1.name }}</button>
+                                <button *ngIf="pokemon.ability2" style="min-width: 50%;" mat-flat-button
+                                    matTooltip="{{pokemon.ability1.description}}">
+                                    {{pokemon.ability1.name }}</button>
+                                <button style="min-width: 50%;" mat-flat-button
+                                    matTooltip="{{pokemon.ability2.description}}" *ngIf="pokemon.ability2">
+                                    {{ pokemon.ability2.name }}</button>
                             </div>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-                <mat-card class="chart-container">
-                </mat-card>
-            </mat-expansion-panel>
+                            <div *ngIf="pokemon.hiddenAbility">
+                                <div>
+                                    <span style="display: flex;justify-content: center;">Hidden Ability</span>
+                                </div>
+                                <mat-divider></mat-divider>
+                                <button
+                                    style="min-width: 100%; border-bottom-right-radius: 1em;border-bottom-left-radius: 1em;"
+                                    mat-flat-button matTooltip="{{pokemon.hiddenAbility.description}}"
+                                    [matTooltipPositionAtOrigin]="enabled.value">
+                                    {{ pokemon.hiddenAbility.name }}</button>
+                            </div>
+                        </mat-card>
+                    </div>
+                    <div style="margin: .5em;" *ngIf="pokemon.type1" id="{{pokemon.type1}}-Card">
+                        <mat-card style="border-radius: 1em;">
+                            <div>
+                                <mat-card-header style="justify-content: center;">Physical Attributes</mat-card-header>
+                            </div>
+                            <mat-divider></mat-divider>
+                            <div
+                                style="display: grid; grid-template-columns: auto auto auto;justify-content: space-around;">
+                                <span>Weight:</span>
+                                <span> {{pokemon.weight/10}} kg</span>
+                                <span> {{pokemonWeightLbs}} lbs</span>
+                                <span>Height:</span>
+                                <span> {{pokemon.height/10}} m</span>
+                                <span> {{pokemonHeightFeet.feet}}'{{pokemonHeightFeet.inches}}" </span>
+                            </div>
+                        </mat-card>
+                    </div>
+                    <div style="margin: .5em;" *ngIf="pokemon.type1" id="{{pokemon.type1}}-Card">
+                        <mat-card style="border-radius: 1em;">
+                            <div>
+                                <mat-card-header style="justify-content: center;">Base Exp Yield</mat-card-header>
+                            </div>
+                            <mat-divider></mat-divider>
+                            <div style="display: grid; grid-template-columns: auto auto auto;justify-content: center;">
+                                <span>{{pokemon.baseEXPYield}}</span>
+                            </div>
+                        </mat-card>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div style="margin: 1em;">
+            <mat-accordion class="example-headers-align" multi>
+                <mat-expansion-panel *ngIf="evolutions.length>1" [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h1>Evoltutions</h1>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-grid-list cols="{{evolutions.length}}" rowHeight="3:1">
+                        <mat-grid-tile *ngFor="let evolution of evolutions;let i = index"
+                            style="justify-content: space-between;">
+                            <div
+                                style="display: flex;width:100%;height: 100%;justify-content: space-between;align-items: center;">
+                                <span></span>
+                                <img (click)="utilities.navigateToPokemon(evolution.id)"
+                                    style="cursor: pointer;height: 100%;" mat-card-image id="{{evolution.id}}"
+                                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{evolution.id}}.png"
+                                    alt="">
+                                <mat-icon *ngIf="i == 0" aria-hidden="false" aria-label="Example home icon"
+                                    fontIcon="arrow_forward"></mat-icon>
+                                <span *ngIf="i == evolutions.length-1"></span>
+                                <mat-icon
+                                    *ngIf="i>0 && i != evolutions.length-1 && evolutions[i+1].evolvedFromPokedexNumber != evolutions[i].evolvedFromPokedexNumber"
+                                    aria-hidden="false" aria-label="Example home icon"
+                                    fontIcon="arrow_forward"></mat-icon>
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </mat-expansion-panel>
 
-            <mat-expansion-panel [expanded]="true">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <h1>Moves</h1>
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <mat-card class="chart-container">
-                </mat-card>
-            </mat-expansion-panel>
-        </mat-accordion>
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h1>Stats</h1>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <app-pokemon-stat-charts [pokemon]="pokemon"></app-pokemon-stat-charts>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h1>Moves</h1>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div>
+                        <mat-form-field color="primary" style="width: 100%;">
+                            <mat-label>Filter</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Tackle" #input>
+                        </mat-form-field>
+
+                        <mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+                            <ng-container matColumnDef="method">
+                                <mat-header-cell *matHeaderCellDef> Method </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> <span
+                                        *ngIf="element.levelUpLearnable">Level</span><span
+                                        *ngIf="element.eggMoveLearnable">Egg</span><span
+                                        *ngIf="element.tmLearnable">TM</span><span
+                                        *ngIf="element.tutorLearnable">Tutor</span>
+                                </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="levelLearned">
+                                <mat-header-cell *matHeaderCellDef> Level </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.levelLearned}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="name">
+                                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> <span matTooltip="{{element.description}}" style="cursor: pointer;text-decoration: underline;">{{element.name}}</span> </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="description">
+                                <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="type">
+                                <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="category">
+                                <mat-header-cell *matHeaderCellDef> Cat. </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="power">
+                                <mat-header-cell *matHeaderCellDef> Power </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.power}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="accuracy">
+                                <mat-header-cell *matHeaderCellDef> Acc. </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.accuracy}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="pp">
+                                <mat-header-cell *matHeaderCellDef> PP </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.pp}} </mat-cell>
+                            </ng-container>
+
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                        </mat-table>
+                        <mat-paginator [pageSizeOptions]="[15,5,10]" showFirstLastButtons aria-label="blah">
+                        </mat-paginator>
+                    </div>
+                    <mat-card class="chart-container">
+                    </mat-card>
+                </mat-expansion-panel>
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h1>Type Effect</h1>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div>
+                        <mat-card style="padding: 1em;" *ngIf="typeEffectiveness.typeNormals.length > 0">
+                            <mat-card-header>
+                                <mat-card-title> Normal: </mat-card-title>
+                            </mat-card-header>
+
+                            <mat-card-content style="flex-wrap: wrap;display: inline-flex;">
+                                <div style="padding-top: 1em;" *ngFor="let normal of typeEffectiveness.typeNormals">
+                                    <button matSufix style="min-width: 150px;" mat-flat-button class="button"
+                                        color="primary" value="{{ normal.toString() }}">
+                                        {{normal}} <span
+                                            style="background: gray;border-radius: 2em;padding: .35em;">1x</span>
+                                    </button>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <div>
+                        <mat-card style="padding: 1em;" *ngIf="typeEffectiveness.typeWeaknesses.length > 0">
+                            <mat-card-header>
+                                <mat-card-title> Super Effective: </mat-card-title>
+                            </mat-card-header>
+
+                            <mat-card-content style="flex-wrap: wrap;display: inline-flex;">
+                                <div style="padding-top: 1em;"
+                                    *ngFor="let weakness of typeEffectiveness.typeWeaknesses">
+                                    <button matSufix style="min-width: 150px;" mat-flat-button class="button"
+                                        color="primary" value="{{ weakness.type.toString() }}">
+                                        {{weakness.type}} <span
+                                            style="background: gray;border-radius: 2em;padding: .35em;">{{weakness.severity}}x</span>
+                                    </button>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <div>
+                        <mat-card style="padding: 1em;" *ngIf="typeEffectiveness.typeResistances.length > 0">
+                            <mat-card-header>
+                                <mat-card-title> Not Very Effective: </mat-card-title>
+                            </mat-card-header>
+
+                            <mat-card-content style="flex-wrap: wrap;display: inline-flex;">
+                                <div style="padding-top: 1em;"
+                                    *ngFor="let resistance of typeEffectiveness.typeResistances">
+                                    <button style="min-width: 150px;" mat-flat-button class="button" color="primary"
+                                        value="{{ resistance.type.toString() }}">
+                                        {{resistance.type}} <span
+                                            style="background: gray;border-radius: 2em;padding: .35em;">{{resistance.severity}}x</span>
+                                    </button>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <div>
+                        <mat-card style="padding: 1em;" *ngIf="typeEffectiveness.typeImmunities.length > 0">
+                            <mat-card-header>
+                                <mat-card-title> Immune: </mat-card-title>
+                            </mat-card-header>
+
+                            <mat-card-content style="flex-wrap: wrap;display: inline-flex;">
+                                <div style="padding-top: 1em;"
+                                    *ngFor="let immunity of typeEffectiveness.typeImmunities">
+                                    <button style="min-width: 150px;" mat-flat-button class="button" color="primary"
+                                        value="{{ immunity.toString() }}">
+                                        {{immunity}} <span
+                                            style="background: gray;border-radius: 2em;padding: .35em;">0x</span>
+                                    </button>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <mat-card class="chart-container">
+                    </mat-card>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
     </div>
-    <div id="{{pokemon.type1}}-Card" style="width: 25%; height: 100%; margin-top: 1em;border-radius: 1em;">
+    <div *ngIf="screenWidth>=1500" id="{{pokemon.type1}}-Card"
+        style="width: 25%; height: 100%;margin-top: 1em;border-radius: 1em;">
         <mat-card style="border-radius: 1em;">
             <mat-card-header>
                 <span style="font-size: xx-large;">{{pokemon.name}}</span>
@@ -147,7 +324,8 @@
             </mat-card-header>
             <mat-card-content>
                 <div style="max-width: 475px;max-height: 475px;display: flex;">
-                    <img style="width: 100%;height: 100%;cursor: pointer;" mat-card-image id="{{pokemonId}}" (click)="playCry(pokemon.id)"
+                    <img style="width: 100%;height: 100%;cursor: pointer;" mat-card-image id="{{pokemonId}}"
+                        (click)="playCry(pokemon.id)"
                         src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemonId}}.png"
                         alt="">
                 </div>

@@ -1,4 +1,5 @@
 import { Ability } from "./ability";
+import { Move } from "./move";
 
 export interface Pokemon {
     id:number;
@@ -10,6 +11,7 @@ export interface Pokemon {
     ability1:Ability;
     ability2:Ability;
     hiddenAbility:Ability;
+    moves:Move[];
     // Stored as cms and converted later
     height:number;
     // Stored as gs and converted later

@@ -10,11 +10,12 @@ namespace pokefallapi.Migrations
     /// <inheritdoc />
     public partial class AddTutorMoves : Migration
     {
-        readonly string[] TUTOR_MOVE_COLUMNS = new string[] 
+        readonly string[] TUTOR_MOVE_COLUMNS = new string[]
         {
             "Id",
             "PokemonId",
-            "MoveId"
+            "MoveId",
+            "VersionId"
         };
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -26,7 +27,8 @@ namespace pokefallapi.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     PokemonId = table.Column<int>(type: "integer", nullable: false),
-                    MoveId = table.Column<int>(type: "integer", nullable: false)
+                    MoveId = table.Column<int>(type: "integer", nullable: false),
+                    VersionId = table.Column<int>(type: "integer", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -53,19 +55,20 @@ namespace pokefallapi.Migrations
                 var moves = moveCsv.GetRecords<PokeApiPokemonMove>().ToArray();
                 foreach (PokeApiPokemonMove move in moves)
                 {
-                    if (move.version_group_id == 20 && move.pokemon_move_method_id == 3)
+                    if (move.pokemon_move_method_id == 3)
                     {
-                        migrationbuilder.InsertData(
-                            table: "TutorMoves",
-                            columns: TUTOR_MOVE_COLUMNS,
-                            values: new object[]
-                            {
-                                moveId,
-                                move.pokemon_id,
-                                move.move_id
-                            }
-                        );
-                        moveId++;
+                    migrationbuilder.InsertData(
+                        table: "TutorMoves",
+                        columns: TUTOR_MOVE_COLUMNS,
+                        values: new object[]
+                        {
+                            moveId,
+                            move.pokemon_id,
+                            move.move_id,
+                            move.version_group_id
+                        }
+                    );
+                    moveId++;
                     }
                 }
             }

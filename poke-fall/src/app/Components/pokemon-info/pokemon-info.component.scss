@@ -16,6 +16,22 @@
   padding-top: 5em;
 }
 
+table {
+  width: 100%;
+}
+
+.pokemon-info{
+  width: 75%;
+}
+
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 1500px) {
+  .pokemon-info{
+    width: 100%;
+  }
+}
+
 mat-divider{
 
 }

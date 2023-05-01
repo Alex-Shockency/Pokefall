@@ -10,5 +10,7 @@ namespace poke_fall_api.Models
         public int PokemonId { get; set; }
         [Required]
         public int MoveId { get; set; }
+        [Required]
+        public int VersionId { get; set; }
     }
 }

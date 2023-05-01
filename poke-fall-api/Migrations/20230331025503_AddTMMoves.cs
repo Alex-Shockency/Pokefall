@@ -10,11 +10,12 @@ namespace pokefallapi.Migrations
     /// <inheritdoc />
     public partial class AddTMMoves : Migration
     {
-        readonly string[] TM_MOVE_COLUMNS = new string[] 
+        readonly string[] TM_MOVE_COLUMNS = new string[]
         {
             "Id",
             "PokemonId",
-            "MoveId"
+            "MoveId",
+            "VersionId"
         };
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -26,12 +27,14 @@ namespace pokefallapi.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     PokemonId = table.Column<int>(type: "integer", nullable: false),
-                    MoveId = table.Column<int>(type: "integer", nullable: false)
+                    MoveId = table.Column<int>(type: "integer", nullable: false),
+                    VersionId = table.Column<int>(type: "integer", nullable: false),
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TMMoves", x => x.Id);
                 });
+                seedTMMoves(migrationBuilder);
         }
 
         /// <inheritdoc />
@@ -51,7 +54,7 @@ namespace pokefallapi.Migrations
                 var moves = moveCsv.GetRecords<PokeApiPokemonMove>().ToArray();
                 foreach (PokeApiPokemonMove move in moves)
                 {
-                    if (move.version_group_id == 20 && move.pokemon_move_method_id == 4)
+                    if (move.pokemon_move_method_id == 4)
                     {
                         migrationbuilder.InsertData(
                             table: "TMMoves",
@@ -60,7 +63,8 @@ namespace pokefallapi.Migrations
                             {
                                 moveId,
                                 move.pokemon_id,
-                                move.move_id
+                                move.move_id,
+                                move.version_group_id
                             }
                         );
                         moveId++;

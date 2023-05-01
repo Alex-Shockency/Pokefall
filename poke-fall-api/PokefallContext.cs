@@ -13,6 +13,7 @@ namespace poke_fall_api.Models
         public DbSet<Evolution> Evolutions { get; set; }
         public DbSet<Ability> Abilities { get; set; }
         public DbSet<Move> Moves { get; set; }
+        public DbSet<PokemonMove> PokemonMoves { get; set; }
         public DbSet<LevelUpMove> LevelUpMoves { get; set; } 
         public DbSet<EggMove> EggMoves { get; set; }
         public DbSet<TutorMove> TutorMoves { get; set; }
