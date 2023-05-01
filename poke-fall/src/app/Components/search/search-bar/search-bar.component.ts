@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pokemon } from 'src/app/Entities/pokemon';
 import { PokemonService } from 'src/app/Services/pokemon-service';
@@ -15,10 +15,21 @@ export class SearchBarComponent {
 
   title = 'poke-fall';
   queryString: string = '';
-
+  screenHeight = 0;
+  screenWidth = 0;
+  
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.screenHeight = window.innerHeight;
+    this.screenWidth = window.innerWidth;
+  }
   constructor(private router:Router, private utilities:Utilities) {
   }
   
+  ngOnInit(){
+    this.screenWidth = window.innerWidth;
+  }
+
   async randomSearch(): Promise<void>{
       this.router.navigate(
         ['../pokemon'],
