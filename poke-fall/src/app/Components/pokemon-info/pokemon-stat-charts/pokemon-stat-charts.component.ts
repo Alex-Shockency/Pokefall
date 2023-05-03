@@ -77,7 +77,8 @@ export class PokemonStatChartsComponent {
         ],
       },
       options: {
-        maintainAspectRatio: true,
+        maintainAspectRatio:false,
+        responsive:true,
         plugins: {
           legend: {
             display: false,
@@ -92,7 +93,7 @@ export class PokemonStatChartsComponent {
             beginAtZero: true,
           },
         },
-        aspectRatio: 2.5,
+        aspectRatio: 1.0,
       },
     });
   }
@@ -108,8 +109,8 @@ export class PokemonStatChartsComponent {
           'HP',
           'Attack',
           'Defense',
-          'Sp. Attack',
-          'Sp. Defense',
+          'Sp. Att.',
+          'Sp. Def.',
           'Speed',
         ],
         datasets: [
@@ -134,6 +135,8 @@ export class PokemonStatChartsComponent {
         ],
       },
       options: {
+        maintainAspectRatio:false,
+        responsive:true,
         plugins: {
           legend: {
             display: false,
@@ -143,6 +146,9 @@ export class PokemonStatChartsComponent {
           x: {
             max: 255,
             beginAtZero: true,
+            ticks: {
+              color: darkmode.matches ? 'white' : 'black',
+            },
           },
           y: {
             ticks: {
@@ -151,7 +157,7 @@ export class PokemonStatChartsComponent {
           },
         },
         indexAxis: 'y',
-        aspectRatio: 2.5,
+        aspectRatio: 2.0,
       },
     });
   }

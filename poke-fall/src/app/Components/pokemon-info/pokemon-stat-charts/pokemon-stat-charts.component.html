@@ -3,12 +3,10 @@
     <mat-radio-button [checked]="showRadarChart" (click)="toggleOnRadar()"
         value="2">Radar</mat-radio-button>
 </mat-radio-group>
-
-<mat-card [style.display]="showBarChart? '': 'none'" class="chart-container">
+<h3>Total: {{totalStats}}</h3>
+<div [style.display]="showBarChart? '': 'none'" class="chart-container">
     <canvas id="barChart" width="400" height="400">{{barChart}}</canvas>
-    <h3 style="padding: 1em;">Total: {{totalStats}}</h3>
-</mat-card>
-<mat-card [style.display]="showRadarChart? '': 'none'" class="chart-container">
+</div>
+<div [style.display]="showRadarChart? '': 'none'" class="chart-container">
     <canvas id="radarChart" width="400" height="400">{{radarChart}}</canvas>
-    <h3 style="padding: 1em;">Total: {{totalStats}}</h3>
-</mat-card>
+</div>
