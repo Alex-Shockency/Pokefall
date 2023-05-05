@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Text.RegularExpressions;
 using poke_fall_api.Controllers.QueryHelpers;
 
@@ -23,10 +24,16 @@ public static class QueryStringUtils
                             .Cast<Match>()
                             .Select(match => match.Value)
                             .ToHashSet();
-                            
-        Dictionary<string, string> stringFieldMap = new Dictionary<string, string>();
+        Dictionary<string, HashSet<string>> stringFieldMap = new Dictionary<string, HashSet<string>>();
         HashSet<string> nameEntries = new HashSet<string>();
+        HashSet<string> typeEntries = new HashSet<string>();
+        HashSet<string> abilityEntries = new HashSet<string>();
+        stringFieldMap.Add(NAME, nameEntries);
+        stringFieldMap.Add(TYPE, typeEntries);
+        stringFieldMap.Add(ABILITY, abilityEntries);
+
         Dictionary<string, Tuple<string, int>> intFieldMap = new Dictionary<string, Tuple<string, int>>();
+        intFieldMap.Add(BASE_STAT_TOTAL, null);
         foreach (string entry in entries) {
             if (entry.Contains(":"))
             {
@@ -45,7 +52,7 @@ public static class QueryStringUtils
 
                     if (isSearchField(parts[0]))
                     {
-                        intFieldMap.Add(_searchTermMap[parts[0]], new Tuple<string, int>(op, Int32.Parse(parts[1])));
+                        intFieldMap[parts[0]] = new Tuple<string, int>(op, Int32.Parse(parts[1]));
                     }
                 }
                 
@@ -59,19 +66,23 @@ public static class QueryStringUtils
         // TODO(aaron): make name return an array to chain like statements
         return new PokemonQueryFields 
         {
-            Name = nameEntries.Count() > 0 ? String.Join(" ", nameEntries) : String.Empty,
-            Type = stringFieldMap.ContainsKey(TYPE) ? stringFieldMap[TYPE] : String.Empty,
-            Ability = stringFieldMap.ContainsKey(ABILITY) ? stringFieldMap[ABILITY] : String.Empty,
-            BaseStatTotal = intFieldMap.ContainsKey(BASE_STAT_TOTAL) ? intFieldMap[BASE_STAT_TOTAL] : null
+            Name = stringFieldMap[NAME],
+            Type = stringFieldMap[TYPE],
+            Ability = stringFieldMap[ABILITY],
+            BaseStatTotal = intFieldMap[BASE_STAT_TOTAL]
         };
     }
 
-    private static void addQueryTerm(Dictionary<string, string> fieldMap, string[] pair)
+    private static void addQueryTerm(Dictionary<string, HashSet<string>> fieldMap, string[] pair)
     {
         // TODO(akmindt): What happens if we want to search for Pokemon with multiple types or abilities etc etc
         if (isSearchField(pair[0]))
         {
-            fieldMap.Add(_searchTermMap[pair[0]], pair[1]);
+
+            if(TYPE.Equals(_searchTermMap[pair[0]]) && fieldMap[TYPE].Count() > 2) {
+                return;
+            }
+            fieldMap[_searchTermMap[pair[0]]].Add(pair[1]);
         }
     }
 
