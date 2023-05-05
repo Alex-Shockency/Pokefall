@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using poke_fall_api.Enums;
 using poke_fall_api.Models;
+using poke_fall_api.Utils;
 
 #nullable disable
 
@@ -82,7 +83,7 @@ namespace pokefallapi.Migrations
                                         Id = move.id,
                                         Name = moveName,
                                         Description = text.flavor_text,
-                                        Type = typeMap[move.type_id],
+                                        Type = StringUtils.FirstCharToUpper(typeMap[move.type_id]),
                                         Category = damageTypeMap[move.damage_class_id],
                                         PP = move.pp,
                                         Power = move.power,
