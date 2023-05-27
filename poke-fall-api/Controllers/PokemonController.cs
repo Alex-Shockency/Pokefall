@@ -127,36 +127,40 @@ public class PokemonController : ControllerBase
     {
         var searchTerms = QueryStringUtils.readQueryString(queryString);
 
-        IQueryable<Pokemon> pokemonQuery = _context.Pokemon.Where(p => p.Id < 10000);
+        IQueryable<Pokemon> pokemonQuery = _context.Pokemon
+                                            .Where(p => p.Id < 10000);
 
-        if (!String.IsNullOrEmpty(searchTerms.Name))
+
+        if (searchTerms.Name.Any())
         {
-            pokemonQuery = pokemonQuery.Where(
-                p => p.Name.ToLower().Contains(searchTerms.Name.ToLower())
-            );
+            if (searchTerms.Name.Count() > 1) {
+                return await Task.FromResult(Ok(new List<SearchResultPokemonDTO>()));
+            }
+            pokemonQuery = pokemonQuery.Where(p => p.Name.ToLower().Contains(searchTerms.Name.First().ToLower()));
         }
 
-        if (!String.IsNullOrEmpty(searchTerms.Type))
+        if (searchTerms.Type.Any())
         {
-            pokemonQuery = pokemonQuery.Where(
-                p =>
-                    p.Type1.ToLower() == searchTerms.Type.ToLower()
-                    || p.Type2.ToLower() == searchTerms.Type.ToLower()
-            );
+            string firstType = searchTerms.Type.First().ToLower();
+            if(searchTerms.Type.Count() == 2) {
+                searchTerms.Type.Remove(firstType);
+                string secondType = searchTerms.Type.First().ToLower();
+                pokemonQuery = pokemonQuery.Where(p => (p.Type1.ToLower() == firstType && p.Type2.ToLower() == secondType) ||
+                                                    (p.Type1.ToLower() == secondType && p.Type2.ToLower() == firstType));
+            } else {
+                pokemonQuery = pokemonQuery.Where(p => p.Type1.ToLower() == firstType || p.Type2.ToLower() == firstType);
+            }
         }
 
-        if (!String.IsNullOrEmpty(searchTerms.Ability))
+        if (searchTerms.Ability.Any())
         {
             List<int> abilityIds = _context.Abilities
-                .Where(a => a.Name.ToLower().Equals(searchTerms.Ability.ToLower()))
-                .Select(a => a.Id)
-                .ToList();
-            pokemonQuery = pokemonQuery.Where(
-                p =>
-                    abilityIds.Contains(p.Ability1Id)
-                    || (p.Ability2Id.HasValue && abilityIds.Contains(p.Ability2Id.Value))
-                    || abilityIds.Contains(p.HiddenAbilityId)
-            );
+                                    .Where(a => searchTerms.Ability.Contains(a.Name.ToLower()))
+                                    .Select(a => a.Id)
+                                    .ToList();
+            pokemonQuery = pokemonQuery.Where(p => abilityIds.Contains(p.Ability1Id) ||
+                                                (p.Ability2Id.HasValue && abilityIds.Contains(p.Ability2Id.Value)) ||
+                                                abilityIds.Contains(p.HiddenAbilityId));
         }
 
         List<Pokemon> queryResult = pokemonQuery.OrderBy(p => p.Id).ToList();
@@ -176,14 +180,7 @@ public class PokemonController : ControllerBase
 
         return await Task.FromResult(Ok(result));
     }
-
-    private PokemonDTO ToPokemonDTO(
-        Pokemon item,
-        Ability ability1,
-        Ability ability2,
-        Ability hiddenAbility,
-        FullMoveInfo[] moves
-    )
+    private PokemonDTO ToPokemonDTO(Pokemon item, Ability ability1, Ability ability2, Ability hiddenAbility,FullMoveInfo[] moves)
     {
         return new PokemonDTO
         {
