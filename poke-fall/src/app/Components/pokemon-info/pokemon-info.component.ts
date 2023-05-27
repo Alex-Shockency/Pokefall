@@ -29,7 +29,6 @@ export class PokemonInfoComponent {
   pokemonId = 0;
   pokemon: Pokemon = {} as Pokemon;
   evolutions: Evolution[] = [];
-  branchingEvolution: boolean = false;
   showBarChart = true;
   showRadarChart = false;
   audioUrl = '';

@@ -1,5 +1,6 @@
 export interface Evolution {
     id: number;
+    children:Evolution[];
     pokedexNumber: number;
     evolvedFromPokedexNumber: number;
     evolutionTrigger: string;
