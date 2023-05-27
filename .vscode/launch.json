@@ -14,12 +14,16 @@
             "cwd": "${workspaceFolder}/poke-fall-api",
             "console": "internalConsole",
             "stopAtEntry": false,
-            "requireExactSource": false
+            "requireExactSource": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT":"Development",
+                "ASPNETCORE_URLS":"http://localhost:5028"
+            }
         },
         {
             "name": ".NET Core Attach",
             "type": "coreclr",
-            "request": "attach"
+            "request": "attach",
         }
     ]
 }

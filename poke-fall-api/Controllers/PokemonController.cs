@@ -32,31 +32,39 @@ public class PokemonController : ControllerBase
         var Ability1 = await _context.Abilities.FindAsync(Pokemon.Ability1Id);
         var Ability2 = await _context.Abilities.FindAsync(Pokemon.Ability2Id);
         var HiddenAbility = await _context.Abilities.FindAsync(Pokemon.HiddenAbilityId);
-        var Moves = _context.PokemonMoves.Where(pm => pm.PokemonId == Pokemon.Id && (pm.VersionId>=18&&pm.VersionId<=25)).Join(_context.Moves, pm => pm.MoveId, move=> move.Id,(pm,move) => new FullMoveInfo{
-            PokemonId = pm.PokemonId,
-            MoveId = pm.MoveId,
-            VersionId = pm.VersionId,
-            LevelUpLearnable =  pm.LevelUpLearnable,
-            LevelLearned = pm.LevelLearned,
-            TMLearnable = pm.TMLearnable,
-            TutorLearnable = pm.TutorLearnable,
-            EggMoveLearnable = pm.EggMoveLearnable,
-            Name = move.Name,
-            Description = move.Description,
-            Type = move.Type,
-            Category = move.Category,
-            PP = move.PP,
-            Power = move.Power,
-            Accuracy = move.Accuracy,
-            Contact = move.Contact,
-            AffectedProtect = move.AffectedProtect,
-            AffectedSnatch = move.AffectedSnatch,
-            AffectedMirrorMove = move.AffectedMirrorMove,
-        }).ToArray();
+        var Moves = _context.PokemonMoves
+            .Where(pm => pm.PokemonId == Pokemon.Id && (pm.VersionId >= 18 && pm.VersionId <= 25))
+            .Join(
+                _context.Moves,
+                pm => pm.MoveId,
+                move => move.Id,
+                (pm, move) =>
+                    new FullMoveInfo
+                    {
+                        PokemonId = pm.PokemonId,
+                        MoveId = pm.MoveId,
+                        VersionId = pm.VersionId,
+                        LevelUpLearnable = pm.LevelUpLearnable,
+                        LevelLearned = pm.LevelLearned,
+                        TMLearnable = pm.TMLearnable,
+                        TutorLearnable = pm.TutorLearnable,
+                        EggMoveLearnable = pm.EggMoveLearnable,
+                        Name = move.Name,
+                        Description = move.Description,
+                        Type = move.Type,
+                        Category = move.Category,
+                        PP = move.PP,
+                        Power = move.Power,
+                        Accuracy = move.Accuracy,
+                        Contact = move.Contact,
+                        AffectedProtect = move.AffectedProtect,
+                        AffectedSnatch = move.AffectedSnatch,
+                        AffectedMirrorMove = move.AffectedMirrorMove,
+                    }
+            )
+            .ToArray();
 
-        
-
-        PokemonDTO result = ToPokemonDTO(Pokemon, Ability1, Ability2, HiddenAbility,Moves);
+        PokemonDTO result = ToPokemonDTO(Pokemon, Ability1, Ability2, HiddenAbility, Moves);
         return Ok(result);
     }
 
@@ -65,36 +73,34 @@ public class PokemonController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult<Evolution>> GetEvolutionChain(int chainId)
     {
-        var pokemonList = _context.Pokemon
+        List<Pokemon> pokemonList = _context.Pokemon
             .Where(p => p.EvolutionChainId == chainId)
             .OrderBy(p => p.PokedexNumber)
             .ToList();
+
         var evolutionList = _context.Evolutions.Where(e => e.EvolutionChainId == chainId).ToList();
         List<EvolutionDTO> evolutionDtos = new List<EvolutionDTO>();
-        var index = 0;
         foreach (Pokemon pokemon in pokemonList)
         {
             var tempEvolution = evolutionList.Find(
                 e => e.EvolvedPokedexNumber == pokemon.PokedexNumber
             );
-            if (tempEvolution != null && !pokemon.IsBaby)
+
+            if (tempEvolution != null)
             {
                 evolutionDtos.Add(ToEvolutionDTO(tempEvolution, pokemon));
             }
-            else if (index == 0 && !pokemon.IsBaby)
+            else
             {
                 evolutionDtos.Add(ToEvolutionDTO(new Evolution(), pokemon));
             }
-            index++;
         }
 
-        var babyPoke = pokemonList.Find(
-                p => p.IsBaby == true
-            );
-
-        if (babyPoke != null)
+        foreach (EvolutionDTO evo in evolutionDtos)
         {
-            evolutionDtos.Insert(0, ToEvolutionDTO(new Evolution(), babyPoke));
+            evo.Children = evolutionDtos.FindAll(
+                evolution => evolution.EvolvedFromPokedexNumber == evo.PokedexNumber
+            );
         }
 
         if (pokemonList == null)
@@ -115,7 +121,9 @@ public class PokemonController : ControllerBase
     [HttpGet("search/{queryString}")]
     [ProducesResponseType(typeof(IEnumerable<SearchResultPokemonDTO>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<IEnumerable<SearchResultPokemonDTO>>> ListPokemon(string queryString)
+    public async Task<ActionResult<IEnumerable<SearchResultPokemonDTO>>> ListPokemon(
+        string queryString
+    )
     {
         var searchTerms = QueryStringUtils.readQueryString(queryString);
 
@@ -158,7 +166,14 @@ public class PokemonController : ControllerBase
         List<Pokemon> queryResult = pokemonQuery.OrderBy(p => p.Id).ToList();
         if (searchTerms.BaseStatTotal != null)
         {
-            queryResult = queryResult.FindAll(p => applyBaseStatSearchTerm(searchTerms.BaseStatTotal.Item1, searchTerms.BaseStatTotal.Item2, p));
+            queryResult = queryResult.FindAll(
+                p =>
+                    applyBaseStatSearchTerm(
+                        searchTerms.BaseStatTotal.Item1,
+                        searchTerms.BaseStatTotal.Item2,
+                        p
+                    )
+            );
         }
 
         if (searchTerms.HP != null)
@@ -236,11 +251,16 @@ public class PokemonController : ControllerBase
         };
     }
 
-    private EvolutionDTO ToEvolutionDTO(Evolution evolution, Pokemon pokemon)
+    private EvolutionDTO ToEvolutionDTO(
+        Evolution evolution,
+        Pokemon pokemon,
+        List<EvolutionDTO>? children = null
+    )
     {
         return new EvolutionDTO
         {
             Id = pokemon.Id,
+            Children = children,
             PokedexNumber = pokemon.PokedexNumber,
             EvolvedFromPokedexNumber = evolution.EvolvedFromPokedexNumber,
             EvolutionTrigger = evolution.EvolutionTrigger,
@@ -264,11 +284,6 @@ public class PokemonController : ControllerBase
         };
     }
 
-    // private List<PokemonDTO> ListToPokemonDTO(List<Pokemon> items)
-    // {
-    //     return items.Select(p => ToPokemonDTO(p)).ToList();
-    // }
-
     private List<SearchResultPokemonDTO> ListToSearchResultPokemonDTO(List<Pokemon> results)
     {
         return results.Select(p => ToSearchResultPokemonDTO(p)).ToList();
@@ -276,7 +291,15 @@ public class PokemonController : ControllerBase
 
     private bool applyBaseStatSearchTerm(string op, int searchNumber, Pokemon p)
     {
-        int baseStatTotal = new int[] { p.Attack, p.Defense, p.SpecAttack, p.SpecDefense, p.Speed, p.HP }.Sum();
+        int baseStatTotal = new int[]
+        {
+            p.Attack,
+            p.Defense,
+            p.SpecAttack,
+            p.SpecDefense,
+            p.Speed,
+            p.HP
+        }.Sum();
         return applyIntegerSearchTerm(op, searchNumber, baseStatTotal);
     }
 

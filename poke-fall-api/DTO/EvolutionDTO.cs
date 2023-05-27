@@ -6,7 +6,8 @@ namespace poke_fall_api.DTO
     [Keyless]
     public class EvolutionDTO
     {
-        public int Id { get; set; }
+        public int Id { get; set;}
+        public List<EvolutionDTO> Children {get; set;}
         public int PokedexNumber { get; set; }
        public int EvolvedFromPokedexNumber { get; set; }
         public string EvolutionTrigger { get; set; }
