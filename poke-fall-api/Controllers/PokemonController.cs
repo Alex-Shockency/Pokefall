@@ -176,10 +176,43 @@ public class PokemonController : ControllerBase
             );
         }
 
+        if (searchTerms.HP != null)
+        {
+            queryResult = queryResult.FindAll(p => applyIntegerSearchTerm(searchTerms.HP.Item1, searchTerms.HP.Item2, p.HP));
+        }
+
+        if (searchTerms.Attack != null)
+        {
+            queryResult = queryResult.FindAll(p => applyIntegerSearchTerm(searchTerms.Attack.Item1, searchTerms.Attack.Item2, p.Attack));
+        }
+
+        if (searchTerms.Defense != null)
+        {
+            queryResult = queryResult.FindAll(p => applyIntegerSearchTerm(searchTerms.Defense.Item1, searchTerms.Defense.Item2, p.Defense));
+        }
+
+        if (searchTerms.SpecialAttack != null)
+        {
+            queryResult = queryResult.FindAll(p => applyIntegerSearchTerm(searchTerms.SpecialAttack.Item1, searchTerms.SpecialAttack.Item2, p.SpecAttack));
+        }
+
+        if (searchTerms.SpecialDefense != null)
+        {
+            queryResult = queryResult.FindAll(p => applyIntegerSearchTerm(searchTerms.SpecialDefense.Item1, searchTerms.SpecialDefense.Item2, p.SpecDefense));
+        }
+
+        if (searchTerms.Speed != null)
+        {
+            queryResult = queryResult.FindAll(p => applyIntegerSearchTerm(searchTerms.Speed.Item1, searchTerms.Speed.Item2, p.Speed));
+        }
+
+
+
         List<SearchResultPokemonDTO> result = ListToSearchResultPokemonDTO(queryResult);
 
         return await Task.FromResult(Ok(result));
     }
+
     private PokemonDTO ToPokemonDTO(Pokemon item, Ability ability1, Ability ability2, Ability hiddenAbility,FullMoveInfo[] moves)
     {
         return new PokemonDTO
@@ -256,7 +289,7 @@ public class PokemonController : ControllerBase
         return results.Select(p => ToSearchResultPokemonDTO(p)).ToList();
     }
 
-    private Boolean applyBaseStatSearchTerm(string op, int number, Pokemon p)
+    private bool applyBaseStatSearchTerm(string op, int searchNumber, Pokemon p)
     {
         int baseStatTotal = new int[]
         {
@@ -267,18 +300,23 @@ public class PokemonController : ControllerBase
             p.Speed,
             p.HP
         }.Sum();
+        return applyIntegerSearchTerm(op, searchNumber, baseStatTotal);
+    }
+
+    private Boolean applyIntegerSearchTerm(string op, int searchNumber, int actualNumber)
+    {
         switch (op)
         {
             case "<":
-                return baseStatTotal < number;
+                return actualNumber < searchNumber;
             case ">":
-                return baseStatTotal > number;
+                return actualNumber > searchNumber;
             case "<=":
-                return baseStatTotal <= number;
+                return actualNumber <= searchNumber;
             case ">=":
-                return baseStatTotal >= number;
+                return actualNumber >= searchNumber;
             case "=":
-                return baseStatTotal == number;
+                return actualNumber == searchNumber;
             default:
                 throw new ArgumentException("Invalid operator for numerical comparison");
         }

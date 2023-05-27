@@ -6,14 +6,33 @@ namespace poke_fall_api.Utils;
 
 public static class QueryStringUtils
 {
+    // STRING TERMS
     private const string NAME = "Name";
     private const string TYPE = "Type";
-    private const string BASE_STAT_TOTAL = "BaseStatTotal";
     private const string ABILITY = "Ability";
+
+    // INTEGER TERMS
+    private const string BASE_STAT_TOTAL = "BaseStatTotal";
+    private const string HP = "HP";
+    private const string ATTACK = "Attack";
+    private const string DEFENSE = "Defense";
+    private const string SPECIAL_ATTACK = "SpecialAttack";
+    private const string SPECIAL_DEFENSE = "SPecialDefense";
+    private const string SPEED = "Speed";
+    
     private static readonly Dictionary<string, string> _searchTermMap = new Dictionary<string, string> {
+        // STRING TERMS
         {"t", TYPE},
+        {"a", ABILITY},
+
+        // INTEGER TERMS
         {"bst", BASE_STAT_TOTAL},
-        {"a", ABILITY}
+        {"hp", HP},
+        {"atk", ATTACK},
+        {"def", DEFENSE},
+        {"spa", SPECIAL_ATTACK},
+        {"spdef", SPECIAL_DEFENSE},
+        {"spd", SPEED}
     };
 
     public static PokemonQueryFields readQueryString(string queryString) {
@@ -32,31 +51,26 @@ public static class QueryStringUtils
         stringFieldMap.Add(TYPE, typeEntries);
         stringFieldMap.Add(ABILITY, abilityEntries);
 
-        Dictionary<string, Tuple<string, int>> intFieldMap = new Dictionary<string, Tuple<string, int>>();
-        intFieldMap.Add(BASE_STAT_TOTAL, null);
+        Dictionary<string, Tuple<string, int>> intFieldMap = new Dictionary<string, Tuple<string, int>>{
+            {BASE_STAT_TOTAL, null},
+            {HP, null},
+            {ATTACK, null},
+            {DEFENSE, null},
+            {SPECIAL_ATTACK, null},
+            {SPECIAL_DEFENSE, null},
+            {SPEED, null}
+        };
         foreach (string entry in entries) {
             if (entry.Contains(":"))
             {
                 string[] pair = entry.Split(":");
                 addQueryTerm(stringFieldMap, pair);
             }
-            else if (entry.Contains("<") || entry.Contains(">") || entry.Contains("=")) 
+            else if (entry.Contains("<") || entry.Contains(">") || entry.Contains("="))
             {
-                string pattern = @"[><=]=?"; // Matches >, <, >=, or <=
-
-                Match match = Regex.Match(entry, pattern);
-                if (match.Success && !entry.Contains("=="))
-                {
-                    string op = match.Value;
-                    string[] parts = entry.Split(new string[] { op }, StringSplitOptions.None);
-
-                    if (isSearchField(parts[0]))
-                    {
-                        intFieldMap[parts[0]] = new Tuple<string, int>(op, Int32.Parse(parts[1]));
-                    }
-                }
-                
-            } else {
+                addIntegerField(intFieldMap, entry);
+            }
+            else {
                 // lazily assume this is looking for a name
                 nameEntries.Add(entry);
             }
@@ -69,8 +83,31 @@ public static class QueryStringUtils
             Name = stringFieldMap[NAME],
             Type = stringFieldMap[TYPE],
             Ability = stringFieldMap[ABILITY],
-            BaseStatTotal = intFieldMap[BASE_STAT_TOTAL]
+            BaseStatTotal = intFieldMap[BASE_STAT_TOTAL],
+            HP = intFieldMap[HP],
+            Attack = intFieldMap[ATTACK],
+            Defense = intFieldMap[DEFENSE],
+            SpecialAttack = intFieldMap[SPECIAL_ATTACK],
+            SpecialDefense = intFieldMap[SPECIAL_DEFENSE],
+            Speed = intFieldMap[SPEED]
         };
+    }
+
+    private static void addIntegerField(Dictionary<string, Tuple<string, int>> intFieldMap, string entry)
+    {
+        string pattern = @"[><=]=?"; // Matches >, <, >=, or <=
+
+        Match match = Regex.Match(entry, pattern);
+        if (match.Success && !entry.Contains("=="))
+        {
+            string op = match.Value;
+            string[] parts = entry.Split(new string[] { op }, StringSplitOptions.None);
+
+            if (isSearchField(parts[0]))
+            {
+                intFieldMap[_searchTermMap[parts[0]]] = new Tuple<string, int>(op, Int32.Parse(parts[1]));
+            }
+        }
     }
 
     private static void addQueryTerm(Dictionary<string, HashSet<string>> fieldMap, string[] pair)
