@@ -29,6 +29,7 @@ export class PokemonInfoComponent {
   pokemonId = 0;
   pokemon: Pokemon = {} as Pokemon;
   evolutions: Evolution[] = [];
+  evoCount = 0;
   showBarChart = true;
   showRadarChart = false;
   audioUrl = '';
@@ -175,8 +176,9 @@ export class PokemonInfoComponent {
 
           this.pokemonService
             .getEvolutionByChainId(pokemon.evolutionChainId)
-            .subscribe((evolutions: Evolution[]) => {
-              this.evolutions = evolutions;
+            .subscribe((result) => {
+              this.evolutions = result.evolutions;
+              this.evoCount = result.evoCount;
             });
         });
     });

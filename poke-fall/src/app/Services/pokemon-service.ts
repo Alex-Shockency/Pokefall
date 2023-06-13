@@ -24,7 +24,7 @@ export class PokemonService {
     return this.http.get<Pokemon>(this.api + '/' + id);
   }
 
-  getEvolutionByChainId(chainId: number): Observable<Evolution[]> {
+  getEvolutionByChainId(chainId: number): Observable<any> {
     return this.http.get<Evolution[]>(this.api + '/evolution/' + chainId);
   }
 

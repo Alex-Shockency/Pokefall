@@ -80,19 +80,33 @@ public class PokemonController : ControllerBase
 
         var evolutionList = _context.Evolutions.Where(e => e.EvolutionChainId == chainId).ToList();
         List<EvolutionDTO> evolutionDtos = new List<EvolutionDTO>();
+        int evoCount = 1;
+
         foreach (Pokemon pokemon in pokemonList)
         {
             var tempEvolution = evolutionList.Find(
                 e => e.EvolvedPokedexNumber == pokemon.PokedexNumber
             );
 
-            if (tempEvolution != null)
+            if (pokemon.IsBaby)
             {
-                evolutionDtos.Add(ToEvolutionDTO(tempEvolution, pokemon));
-            }
-            else
-            {
-                evolutionDtos.Add(ToEvolutionDTO(new Evolution(), pokemon));
+                if (tempEvolution != null)
+                {
+                    evolutionDtos.Insert(0,ToEvolutionDTO(tempEvolution, pokemon));
+                }
+                else
+                {
+                    evolutionDtos.Insert(0,ToEvolutionDTO(new Evolution(), pokemon));
+                }
+            } else{
+                 if (tempEvolution != null)
+                {
+                    evolutionDtos.Add(ToEvolutionDTO(tempEvolution, pokemon));
+                }
+                else
+                {
+                    evolutionDtos.Add(ToEvolutionDTO(new Evolution(), pokemon));
+                }
             }
         }
 
@@ -101,13 +115,18 @@ public class PokemonController : ControllerBase
             evo.Children = evolutionDtos.FindAll(
                 evolution => evolution.EvolvedFromPokedexNumber == evo.PokedexNumber
             );
+            if (evo.Children.Count > 0)
+            {
+                evoCount++;
+            }
         }
 
-        if (pokemonList == null)
+        if (evolutionDtos.Count == 0)
         {
             return NotFound();
         }
-        return Ok(evolutionDtos);
+
+        return Ok(new {evolutions = evolutionDtos, evoCount =evoCount});
     }
 
     [HttpGet]
@@ -127,40 +146,52 @@ public class PokemonController : ControllerBase
     {
         var searchTerms = QueryStringUtils.readQueryString(queryString);
 
-        IQueryable<Pokemon> pokemonQuery = _context.Pokemon
-                                            .Where(p => p.Id < 10000);
-
+        IQueryable<Pokemon> pokemonQuery = _context.Pokemon.Where(p => p.Id < 10000);
 
         if (searchTerms.Name.Any())
         {
-            if (searchTerms.Name.Count() > 1) {
+            if (searchTerms.Name.Count() > 1)
+            {
                 return await Task.FromResult(Ok(new List<SearchResultPokemonDTO>()));
             }
-            pokemonQuery = pokemonQuery.Where(p => p.Name.ToLower().Contains(searchTerms.Name.First().ToLower()));
+            pokemonQuery = pokemonQuery.Where(
+                p => p.Name.ToLower().Contains(searchTerms.Name.First().ToLower())
+            );
         }
 
         if (searchTerms.Type.Any())
         {
             string firstType = searchTerms.Type.First().ToLower();
-            if(searchTerms.Type.Count() == 2) {
+            if (searchTerms.Type.Count() == 2)
+            {
                 searchTerms.Type.Remove(firstType);
                 string secondType = searchTerms.Type.First().ToLower();
-                pokemonQuery = pokemonQuery.Where(p => (p.Type1.ToLower() == firstType && p.Type2.ToLower() == secondType) ||
-                                                    (p.Type1.ToLower() == secondType && p.Type2.ToLower() == firstType));
-            } else {
-                pokemonQuery = pokemonQuery.Where(p => p.Type1.ToLower() == firstType || p.Type2.ToLower() == firstType);
+                pokemonQuery = pokemonQuery.Where(
+                    p =>
+                        (p.Type1.ToLower() == firstType && p.Type2.ToLower() == secondType)
+                        || (p.Type1.ToLower() == secondType && p.Type2.ToLower() == firstType)
+                );
+            }
+            else
+            {
+                pokemonQuery = pokemonQuery.Where(
+                    p => p.Type1.ToLower() == firstType || p.Type2.ToLower() == firstType
+                );
             }
         }
 
         if (searchTerms.Ability.Any())
         {
             List<int> abilityIds = _context.Abilities
-                                    .Where(a => searchTerms.Ability.Contains(a.Name.ToLower()))
-                                    .Select(a => a.Id)
-                                    .ToList();
-            pokemonQuery = pokemonQuery.Where(p => abilityIds.Contains(p.Ability1Id) ||
-                                                (p.Ability2Id.HasValue && abilityIds.Contains(p.Ability2Id.Value)) ||
-                                                abilityIds.Contains(p.HiddenAbilityId));
+                .Where(a => searchTerms.Ability.Contains(a.Name.ToLower()))
+                .Select(a => a.Id)
+                .ToList();
+            pokemonQuery = pokemonQuery.Where(
+                p =>
+                    abilityIds.Contains(p.Ability1Id)
+                    || (p.Ability2Id.HasValue && abilityIds.Contains(p.Ability2Id.Value))
+                    || abilityIds.Contains(p.HiddenAbilityId)
+            );
         }
 
         List<Pokemon> queryResult = pokemonQuery.OrderBy(p => p.Id).ToList();
@@ -178,42 +209,83 @@ public class PokemonController : ControllerBase
 
         if (searchTerms.HP != null)
         {
-            queryResult = queryResult.FindAll(p => applyIntegerSearchTerm(searchTerms.HP.Item1, searchTerms.HP.Item2, p.HP));
+            queryResult = queryResult.FindAll(
+                p => applyIntegerSearchTerm(searchTerms.HP.Item1, searchTerms.HP.Item2, p.HP)
+            );
         }
 
         if (searchTerms.Attack != null)
         {
-            queryResult = queryResult.FindAll(p => applyIntegerSearchTerm(searchTerms.Attack.Item1, searchTerms.Attack.Item2, p.Attack));
+            queryResult = queryResult.FindAll(
+                p =>
+                    applyIntegerSearchTerm(
+                        searchTerms.Attack.Item1,
+                        searchTerms.Attack.Item2,
+                        p.Attack
+                    )
+            );
         }
 
         if (searchTerms.Defense != null)
         {
-            queryResult = queryResult.FindAll(p => applyIntegerSearchTerm(searchTerms.Defense.Item1, searchTerms.Defense.Item2, p.Defense));
+            queryResult = queryResult.FindAll(
+                p =>
+                    applyIntegerSearchTerm(
+                        searchTerms.Defense.Item1,
+                        searchTerms.Defense.Item2,
+                        p.Defense
+                    )
+            );
         }
 
         if (searchTerms.SpecialAttack != null)
         {
-            queryResult = queryResult.FindAll(p => applyIntegerSearchTerm(searchTerms.SpecialAttack.Item1, searchTerms.SpecialAttack.Item2, p.SpecAttack));
+            queryResult = queryResult.FindAll(
+                p =>
+                    applyIntegerSearchTerm(
+                        searchTerms.SpecialAttack.Item1,
+                        searchTerms.SpecialAttack.Item2,
+                        p.SpecAttack
+                    )
+            );
         }
 
         if (searchTerms.SpecialDefense != null)
         {
-            queryResult = queryResult.FindAll(p => applyIntegerSearchTerm(searchTerms.SpecialDefense.Item1, searchTerms.SpecialDefense.Item2, p.SpecDefense));
+            queryResult = queryResult.FindAll(
+                p =>
+                    applyIntegerSearchTerm(
+                        searchTerms.SpecialDefense.Item1,
+                        searchTerms.SpecialDefense.Item2,
+                        p.SpecDefense
+                    )
+            );
         }
 
         if (searchTerms.Speed != null)
         {
-            queryResult = queryResult.FindAll(p => applyIntegerSearchTerm(searchTerms.Speed.Item1, searchTerms.Speed.Item2, p.Speed));
+            queryResult = queryResult.FindAll(
+                p =>
+                    applyIntegerSearchTerm(
+                        searchTerms.Speed.Item1,
+                        searchTerms.Speed.Item2,
+                        p.Speed
+                    )
+            );
         }
-
-
 
         List<SearchResultPokemonDTO> result = ListToSearchResultPokemonDTO(queryResult);
 
         return await Task.FromResult(Ok(result));
     }
 
-    private PokemonDTO ToPokemonDTO(Pokemon item, Ability ability1, Ability ability2, Ability hiddenAbility,FullMoveInfo[] moves)
+    private PokemonDTO ToPokemonDTO(
+        Pokemon item,
+        Ability ability1,
+        Ability ability2,
+        Ability hiddenAbility,
+        FullMoveInfo[] moves
+    )
     {
         return new PokemonDTO
         {
@@ -300,6 +372,7 @@ public class PokemonController : ControllerBase
             p.Speed,
             p.HP
         }.Sum();
+
         return applyIntegerSearchTerm(op, searchNumber, baseStatTotal);
     }
 
