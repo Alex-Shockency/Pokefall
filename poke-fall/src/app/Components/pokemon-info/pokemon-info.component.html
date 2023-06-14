@@ -135,37 +135,62 @@
                                 </mat-grid-tile>
                             </div>
                             <mat-grid-tile *ngIf="evolution.children.length > 0">
-                                <img *ngIf="evolution.children.length == 1"
-                                    (click)="utilities.navigateToPokemon(evolution.children[0].id)"
-                                    style="cursor: pointer;" mat-card-image id="{{evolution.children[0].id}}"
-                                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{evolution.children[0].id}}.png"
-                                    alt="" height="100%">
+                                <div *ngIf="evolution.children.length == 1"
+                                    style="display: flex; align-items: center; width: 100%; height: 100%; justify-content: space-around;">
+                                    <div style="transform: scale(1.5);" *ngIf="i!=evolutions.length-1">
+                                        <mat-icon>arrow_forward</mat-icon>
+                                    </div>
+                                    <img (click)="utilities.navigateToPokemon(evolution.children[0].id)"
+                                        style="cursor: pointer;" mat-card-image id="{{evolution.children[0].id}}"
+                                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{evolution.children[0].id}}.png"
+                                        alt="" height="100%">
 
-                                <div style="display: flex;flex-direction: column; align-items: center;"
+                                </div>
+                                <div style="display: flex; align-items: center; width: 100%; height: 100%; justify-content: space-around;"
                                     *ngIf="evolution.children.length == 2">
-                                    <div [style.width.%]="100/evolution.children.length"
-                                        [style.height.%]="100/evolution.children.length"
-                                        style="display: flex; justify-content: center;"
-                                        *ngFor="let childEvolution of evolution.children">
-                                        <span></span>
-                                        <img (click)="utilities.navigateToPokemon(childEvolution.id)"
-                                            style="cursor: pointer;" mat-card-image id="{{childEvolution.id}}"
-                                            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{childEvolution.id}}.png"
-                                            alt="" width="50%" height="50%">
-
+                                    <div style="align-items: center;display: flex;transform: rotate(90deg) scale(1.5);"
+                                        *ngIf="i!=evolutions.length-1">
+                                        <mat-icon>alt_route</mat-icon>
+                                    </div>
+                                    <div style="height:100%; width: 50%; display: flex;flex-direction: column; align-items:
+                                            center;">
+                                        <div [style.width.%]="100/evolution.children.length"
+                                            [style.height.%]="100/evolution.children.length"
+                                            style="display: flex; justify-content: center;"
+                                            *ngFor="let childEvolution of evolution.children">
+                                            <img (click)="utilities.navigateToPokemon(childEvolution.id)"
+                                                style="cursor: pointer;" mat-card-image id="{{childEvolution.id}}"
+                                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{childEvolution.id}}.png"
+                                                alt="" height="100%">
+                                        </div>
                                     </div>
                                 </div>
-                                <div style="display: inline-flex; flex-wrap: wrap;"
-                                    *ngIf="evolution.children.length > 2">
-                                    <div [style.width.%]="200/evolution.children.length"
-                                        [style.height.%]="200/evolution.children.length"
-                                        *ngFor="let childEvolution of evolution.children">
-                                        <span></span>
-                                        <img (click)="utilities.navigateToPokemon(childEvolution.id)"
+                                <div style="display: contents;" *ngIf="evolution.children.length == 3">
+                                    <div style="align-items: center;display: flex;transform: rotate(90deg) scale(1.5);width: 20%;flex-direction: column;"
+                                        *ngIf="i!=evolutions.length-1">
+                                        <mat-icon>alt_route</mat-icon>
+                                    </div>
+                                    <div
+                                        style="display: grid; width: 80%; height: 100%; grid-template-columns: 1fr 1fr;">
+                                        <img *ngFor="let childEvolution of evolution.children" style="max-width: 100%;"
+                                            (click)="utilities.navigateToPokemon(childEvolution.id)"
                                             style="cursor: pointer;" mat-card-image id="{{childEvolution.id}}"
                                             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{childEvolution.id}}.png"
-                                            alt="" width="50%" height="50%">
-
+                                            alt="" width="60%" height="100%">
+                                    </div>
+                                </div>
+                                <div style="display: contents;" *ngIf="evolution.children.length > 3">
+                                    <div style="align-items: center;display: flex;transform: rotate(90deg) scale(1.5);width: 20%;flex-direction: column;"
+                                        *ngIf="i!=evolutions.length-1">
+                                        <mat-icon>alt_route</mat-icon>
+                                    </div>
+                                    <div
+                                        style="display: grid; width: 80%; height: 100%; grid-template-columns: 1fr 1fr 1fr;">
+                                        <img *ngFor="let childEvolution of evolution.children" style="max-width: 100%;"
+                                            (click)="utilities.navigateToPokemon(childEvolution.id)"
+                                            style="cursor: pointer;" mat-card-image id="{{childEvolution.id}}"
+                                            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{childEvolution.id}}.png"
+                                            alt="" width="60%" height="100%">
                                     </div>
                                 </div>
                             </mat-grid-tile>

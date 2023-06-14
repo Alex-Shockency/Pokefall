@@ -92,14 +92,16 @@ public class PokemonController : ControllerBase
             {
                 if (tempEvolution != null)
                 {
-                    evolutionDtos.Insert(0,ToEvolutionDTO(tempEvolution, pokemon));
+                    evolutionDtos.Insert(0, ToEvolutionDTO(tempEvolution, pokemon));
                 }
                 else
                 {
-                    evolutionDtos.Insert(0,ToEvolutionDTO(new Evolution(), pokemon));
+                    evolutionDtos.Insert(0, ToEvolutionDTO(new Evolution(), pokemon));
                 }
-            } else{
-                 if (tempEvolution != null)
+            }
+            else
+            {
+                if (tempEvolution != null)
                 {
                     evolutionDtos.Add(ToEvolutionDTO(tempEvolution, pokemon));
                 }
@@ -109,16 +111,33 @@ public class PokemonController : ControllerBase
                 }
             }
         }
-
+        var index = 0;
         foreach (EvolutionDTO evo in evolutionDtos)
         {
-            evo.Children = evolutionDtos.FindAll(
-                evolution => evolution.EvolvedFromPokedexNumber == evo.PokedexNumber
-            );
+            evo.Children = new List<EvolutionDTO>();
+            //Base Poke
+            if (index == 0)
+            {
+                evo.Children = evolutionDtos.FindAll(
+                    evolution => evolution.EvolvedFromPokedexNumber == evo.PokedexNumber
+                );
+            }
+            else
+            {
+                //Not a form evolution
+                if (!(evo.Id >= 10000))
+                {
+                    evo.Children = evolutionDtos.FindAll(
+                         evolution => evolution.EvolvedFromPokedexNumber == evo.PokedexNumber
+                     );
+                }
+            }
+
             if (evo.Children.Count > 0)
             {
                 evoCount++;
             }
+            index++;
         }
 
         if (evolutionDtos.Count == 0)
@@ -126,7 +145,7 @@ public class PokemonController : ControllerBase
             return NotFound();
         }
 
-        return Ok(new {evolutions = evolutionDtos, evoCount =evoCount});
+        return Ok(new { evolutions = evolutionDtos, evoCount = evoCount });
     }
 
     [HttpGet]

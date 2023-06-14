@@ -25,7 +25,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          policy.AllowAnyOrigin().WithMethods("GET");
+                          policy.WithOrigins("*").WithMethods("GET");
                       });
 });
 var app = builder.Build();
