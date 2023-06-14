@@ -20,105 +20,127 @@ table {
   width: 100%;
 }
 
-.pokemon-info{
+.pokemon-info {
   width: 75%;
 }
 
-@media only screen 
-and (min-width : 320px) 
-and (max-width : 1500px) {
-  .pokemon-info{
+@media only screen and (min-width: 320px) and (max-width: 1500px) {
+  .pokemon-info {
     width: 100%;
   }
 }
 
-mat-divider{
+.mat-column-levelLearned {
+  max-width: 32px;
+}
 
+.mat-column-power {
+  max-width: 32px;
+}
+
+.mat-column-accuracy {
+  max-width: 32px;
+}
+
+.mat-column-type {
+  max-width: 48px;
+}
+
+.mat-column-category {
+  max-width: 48px;
+}
+
+.mat-column-name {
+  max-width: 48px;
+}
+
+div.mat-expansion-panel-body {
+  padding: 0 !important;
 }
 
 div[id="Grass-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #78C850 !important;
+  border-color: #78c850 !important;
 }
 
 div[id="Poison-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #A040A0 !important;
+  border-color: #a040a0 !important;
 }
 
 div[id="Normal-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #A8A878 !important;
-  background-color: #A8A878 !important;
+  border-color: #a8a878 !important;
+  background-color: #a8a878 !important;
 }
 
 div[id="Fire-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #F08030 !important;
+  border-color: #f08030 !important;
 }
 
 div[id="Fighting-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #C03028 !important;
+  border-color: #c03028 !important;
 }
 
 div[id="Water-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #6890F0 !important;
+  border-color: #6890f0 !important;
 }
 
 div[id="Flying-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #A890F0 !important;
+  border-color: #a890f0 !important;
 }
 
 div[id="Electric-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #F8D030 !important;
+  border-color: #f8d030 !important;
 }
 
 div[id="Ground-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #E0C068 !important;
+  border-color: #e0c068 !important;
 }
 
 div[id="Psychic-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #F85888 !important;
+  border-color: #f85888 !important;
 }
 
 div[id="Rock-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #B8A038 !important;
+  border-color: #b8a038 !important;
 }
 
 div[id="Ice-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #98D8D8 !important;
+  border-color: #98d8d8 !important;
 }
 
 div[id="Bug-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #A8B820 !important;
+  border-color: #a8b820 !important;
 }
 
 div[id="Dragon-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #7038F8 !important;
+  border-color: #7038f8 !important;
 }
 
 div[id="Ghost-Card"] {
@@ -136,69 +158,69 @@ div[id="Dark-Card"] {
 div[id="Steel-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #B8B8D0 !important;
+  border-color: #b8b8d0 !important;
 }
 
 div[id="Fairy-Card"] {
   border: solid;
   border-radius: 1em;
-  border-color: #EE99AC !important;
+  border-color: #ee99ac !important;
 }
 
 button[value="Grass"] {
-  background-color: #78C850 !important;
+  background-color: #78c850 !important;
 }
 
 button[value="Poison"] {
-  background-color: #A040A0 !important;
+  background-color: #a040a0 !important;
 }
 
 button[value="Normal"] {
-  background-color: #A8A878 !important;
+  background-color: #a8a878 !important;
 }
 
 button[value="Fire"] {
-  background-color: #F08030 !important;
+  background-color: #f08030 !important;
 }
 
 button[value="Fighting"] {
-  background-color: #C03028 !important;
+  background-color: #c03028 !important;
 }
 
 button[value="Water"] {
-  background-color: #6890F0 !important;
+  background-color: #6890f0 !important;
 }
 
 button[value="Flying"] {
-  background-color: #A890F0 !important;
+  background-color: #a890f0 !important;
 }
 
 button[value="Electric"] {
-  background-color: #F8D030 !important;
+  background-color: #f8d030 !important;
 }
 
 button[value="Ground"] {
-  background-color: #E0C068 !important;
+  background-color: #e0c068 !important;
 }
 
 button[value="Psychic"] {
-  background-color: #F85888 !important;
+  background-color: #f85888 !important;
 }
 
 button[value="Rock"] {
-  background-color: #B8A038 !important;
+  background-color: #b8a038 !important;
 }
 
 button[value="Ice"] {
-  background-color: #98D8D8 !important;
+  background-color: #98d8d8 !important;
 }
 
 button[value="Bug"] {
-  background-color: #A8B820 !important;
+  background-color: #a8b820 !important;
 }
 
 button[value="Dragon"] {
-  background-color: #7038F8 !important;
+  background-color: #7038f8 !important;
 }
 
 button[value="Ghost"] {
@@ -210,9 +232,9 @@ button[value="Dark"] {
 }
 
 button[value="Steel"] {
-  background-color: #B8B8D0 !important;
+  background-color: #b8b8d0 !important;
 }
 
 button[value="Fairy"] {
-  background-color: #EE99AC !important;
+  background-color: #ee99ac !important;
 }

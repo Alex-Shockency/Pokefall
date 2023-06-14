@@ -54,13 +54,13 @@ export class PokemonInfoComponent {
     this.screenHeight = window.innerHeight;
     this.screenWidth = window.innerWidth;
   }
-  
+
   dataSource = new MatTableDataSource<Move>();
   displayedColumns: string[] = [
     // "pokemonId",
     // "moveId",
     // "levelUpLearnable",
-    'method',
+    //'method',
     'levelLearned',
     // "tmLearnable",
     // "tutorLearnable",
@@ -69,7 +69,7 @@ export class PokemonInfoComponent {
     //"description",
     'type',
     'category',
-    'pp',
+    //'pp',
     'power',
     'accuracy',
     // "contact",
@@ -94,8 +94,8 @@ export class PokemonInfoComponent {
     protected utilities: Utilities
   ) {
     router.events.subscribe((val) => {
-      window.scroll(0,0)
-    })
+      window.scroll(0, 0);
+    });
   }
 
   ngOnInit() {
@@ -108,10 +108,7 @@ export class PokemonInfoComponent {
           this.pokemon = pokemon;
           this.pokemonLoaded = Promise.resolve(true);
 
-
-          this.gen7moves = pokemon.moves.filter(
-            (move) => move.versionId == 18
-          );
+          this.gen7moves = pokemon.moves.filter((move) => move.versionId == 18);
           this.gen8moves = pokemon.moves.filter(
             (move) => move.versionId >= 20 && move.versionId <= 24
           );
@@ -128,7 +125,7 @@ export class PokemonInfoComponent {
                 return a.levelLearned - b.levelLearned;
               })
             );
-          } else if(this.gen8moves.length != 0){
+          } else if (this.gen8moves.length != 0) {
             this.dataSource = new MatTableDataSource<Move>(
               this.gen8moves.sort((a, b) => {
                 if (a.levelLearned == null) {
@@ -140,7 +137,7 @@ export class PokemonInfoComponent {
                 return a.levelLearned - b.levelLearned;
               })
             );
-          } else{
+          } else {
             this.dataSource = new MatTableDataSource<Move>(
               this.gen7moves.sort((a, b) => {
                 if (a.levelLearned == null) {
@@ -183,7 +180,7 @@ export class PokemonInfoComponent {
         });
     });
   }
-  
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
