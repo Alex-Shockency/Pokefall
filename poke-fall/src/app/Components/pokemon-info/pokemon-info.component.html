@@ -165,8 +165,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div style="display: contents;" *ngIf="evolution.children.length == 3">
-                                    <div style="align-items: center;display: flex;transform: rotate(90deg) scale(1.5);width: 20%;flex-direction: column;"
+                                <div style="width: 100%; height: 100%; display: flex; justify-content: space-between;"
+                                    *ngIf="evolution.children.length == 3">
+                                    <div style="align-items: center;display: flex;transform: rotate(90deg) scale(1.5);"
                                         *ngIf="i!=evolutions.length-1">
                                         <mat-icon>alt_route</mat-icon>
                                     </div>
