@@ -124,7 +124,7 @@
                             <h1>Evoltutions</h1>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <mat-grid-list cols="{{evoCount}}" rowHeight="2:1">
+                    <mat-grid-list cols="{{evoCount}}" [rowHeight]="rowHeight">
                         <div *ngFor="let evolution of evolutions;let i=index">
                             <div *ngIf="i==0">
                                 <mat-grid-tile style="justify-content: space-between;">
@@ -192,7 +192,7 @@
                                             (click)="utilities.navigateToPokemon(childEvolution.id)"
                                             style="cursor: pointer;" mat-card-image id="{{childEvolution.id}}"
                                             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{childEvolution.id}}.png"
-                                            alt="" width="60%" height="100%">
+                                            alt="" width="50%" height="100%">
                                     </div>
                                 </div>
                             </mat-grid-tile>

@@ -118,6 +118,10 @@ export class SearchResultsComponent implements AfterViewInit {
     )
   }
 
+  async advancedSearch(): Promise<void>{
+    this.router.navigate(['advancedSearch'], { queryParams: {} });
+  } 
+
   protected playCry(id: number) {
     let audio: HTMLAudioElement = <HTMLAudioElement>(
       document.getElementById('audio-' + id.toString())

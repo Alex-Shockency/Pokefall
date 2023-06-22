@@ -11,7 +11,7 @@
     <input matInput type="text" [(ngModel)]="queryString" (keydown.enter)="search()" placeholder="Ex. Pikachu" />
   </mat-form-field>
   <div *ngIf="screenWidth>=800">
-    <button mat-button class="icon-button"> <mat-icon>list</mat-icon>Advanced</button>
+    <button mat-button class="icon-button" (click)="advancedSearch()"> <mat-icon>list</mat-icon>Advanced</button>
     <button mat-button class="icon-button"> <mat-icon>help</mat-icon>Syntax</button>
     <button mat-button class="icon-button" (click)="randomSearch()"> <mat-icon>shuffle</mat-icon>Random</button>
   </div>
@@ -20,7 +20,7 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
+      <button (click)="advancedSearch()" mat-menu-item>
         <mat-icon>list</mat-icon>
         <span>Advanced</span>
       </button>

@@ -1,0 +1,75 @@
+<app-search-bar></app-search-bar>
+<div class="main">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form">
+        <div>
+            <div style="padding: 1em;">
+                <span style="font-size: xx-large;"> <mat-icon>badge</mat-icon> Pokemon Name</span>
+            </div>
+            <div style="display: flex;">
+                <mat-form-field color="accent" class="full-width">
+                    <mat-label>Name</mat-label>
+                    <input formControlName="pokemonName" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <div style="padding: 1em;">
+                <span style="font-size: xx-large;"> <mat-icon>bolt</mat-icon> Ability</span>
+            </div>
+            <div style="display: flex;">
+                <mat-form-field color="accent" class="full-width">
+                    <mat-label>Ability Name</mat-label>
+                    <input formControlName="ability" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div>
+            <div style="padding: 1em;">
+                <span style="font-size: xx-large;"><mat-icon>fingerprint</mat-icon> Type(s)</span>
+            </div>
+            <div style="display: flex;">
+                <mat-form-field color="accent" class="full-width">
+                    <mat-label>Type(s)</mat-label>
+                    <mat-select formControlName="types" multiple>
+                        <mat-option *ngFor="let type of typeList" [value]="type">{{type}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div>
+            <div style="padding: 1em;display: flex;justify-content: space-between;">
+                <span style="font-size: xx-large;"> <mat-icon>bar_charts</mat-icon> Stats</span>
+                <button type="button" (click)="addField()" mat-raised-button>Add Field</button>
+            </div>
+            <div formArrayName="stats">
+                <div *ngFor="let stat of stats.controls;let i=index" style="display: flex;width: 100%;"
+                    [formGroupName]="i">
+                    <mat-form-field color="accent" class="full-width">
+                        <mat-select formControlName="statType{{i}}">
+                            <mat-option *ngFor="let statType of statTypes"
+                                value="{{statType}}">{{statType}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field color="accent" class="full-width">
+                        <mat-select formControlName="statMode{{i}}">
+                            <mat-option *ngFor="let statMode of statModes"
+                                value="{{statMode}}">{{statMode}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field color="accent" class="full-width">
+                        <input formControlName="statValue{{i}}" matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </div>
+        <mat-divider></mat-divider>
+        <div
+            style="position: sticky;bottom: 0;width: 100%; padding-top: 0px;display: flex;justify-content: center;background-color: #303030;padding: 1em;">
+            <button type="submit" [disabled]="!myForm.valid" mat-raised-button color="primary">Search With
+                Options</button>
+        </div>
+    </form>
+</div>

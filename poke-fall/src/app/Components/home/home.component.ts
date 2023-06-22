@@ -26,6 +26,10 @@ export class HomeComponent {
       )
   }  
 
+  async advancedSearch(): Promise<void>{
+    this.router.navigate(['advancedSearch'], { queryParams: {} });
+  } 
+
   async search(): Promise<void> {
     this.router.navigate(
       ['search'],

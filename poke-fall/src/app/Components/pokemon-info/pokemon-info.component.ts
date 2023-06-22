@@ -30,6 +30,7 @@ export class PokemonInfoComponent {
   pokemon: Pokemon = {} as Pokemon;
   evolutions: Evolution[] = [];
   evoCount = 0;
+  rowHeight = '2:1';
   showBarChart = true;
   showRadarChart = false;
   audioUrl = '';
@@ -176,6 +177,9 @@ export class PokemonInfoComponent {
             .subscribe((result) => {
               this.evolutions = result.evolutions;
               this.evoCount = result.evoCount;
+              if (this.evoCount == 2) {
+                this.rowHeight = '3:1';
+              }
             });
         });
     });
