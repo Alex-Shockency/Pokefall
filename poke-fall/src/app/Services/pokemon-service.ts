@@ -17,7 +17,9 @@ export class PokemonService {
   }
 
   searchPokemon(queryString: string): Observable<SearchResultPokemon[]> {
-    return this.http.get<SearchResultPokemon[]>(this.api+'/search/'+queryString);
+    return this.http.get<SearchResultPokemon[]>(
+      this.api + '/search/' + queryString
+    );
   }
 
   getPokemonById(id: number): Observable<Pokemon> {
@@ -26,6 +28,12 @@ export class PokemonService {
 
   getEvolutionByChainId(chainId: number): Observable<any> {
     return this.http.get<Evolution[]>(this.api + '/evolution/' + chainId);
+  }
+
+  getPokemonForms(id: number, pokedexNumber: number): Observable<any> {
+    return this.http.get<SearchResultPokemon[]>(
+      this.api + '/forms/' + id + '/' + pokedexNumber
+    );
   }
 
   // getPokemon(queryString: string): Observable<Pokemon> {

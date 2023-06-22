@@ -14,6 +14,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { Move } from 'src/app/Entities/move';
+import { SearchResultPokemon } from 'src/app/Entities/searchResultPokemon';
 
 @Component({
   selector: 'app-pokemon-info',
@@ -29,7 +30,9 @@ export class PokemonInfoComponent {
   pokemonId = 0;
   pokemon: Pokemon = {} as Pokemon;
   evolutions: Evolution[] = [];
+  forms: SearchResultPokemon[] = [];
   evoCount = 0;
+  formColumns = 2;
   rowHeight = '2:1';
   showBarChart = true;
   showRadarChart = false;
@@ -179,6 +182,15 @@ export class PokemonInfoComponent {
               this.evoCount = result.evoCount;
               if (this.evoCount == 2) {
                 this.rowHeight = '3:1';
+              }
+            });
+
+          this.pokemonService
+            .getPokemonForms(pokemon.id,pokemon.pokedexNumber)
+            .subscribe((result) => {
+              this.forms = result;
+              if(this.forms.length==1){
+                this.formColumns=1
               }
             });
         });

@@ -362,10 +362,7 @@
             <mat-card-header>
                 <span style="font-size: xx-large;">{{pokemon.name}}</span>
                 <div style="width: 100%;display: flex;justify-content: end;align-items: center;">
-
                     #{{utilities.padId(pokemon.pokedexNumber)}}
-
-
                 </div>
             </mat-card-header>
             <mat-card-content>
@@ -374,6 +371,23 @@
                         (click)="playCry(pokemon.id)"
                         src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemonId}}.png"
                         alt="">
+                </div>
+                <div *ngIf="forms.length > 0">
+                    <h2 style="font-size: x-large;text-align: center;">Forms</h2>
+                    <mat-grid-list [cols]="formColumns" rowHeight="1:1">
+                        <mat-grid-tile *ngFor="let form of forms;let i=index">
+                            <div style="display: flex;flex-direction: column;align-items: center;">
+                                <img style="cursor: pointer;" mat-card-image id="{{form.id}}"
+                                    (click)="utilities.navigateToPokemon(form.id)"
+                                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{form.id}}.png"
+                                    alt="" width="80%" height="80%">
+                                <div style="display: flex;">
+                                    {{form.name}}
+                                </div>
+                            </div>
+
+                        </mat-grid-tile>
+                    </mat-grid-list>
                 </div>
                 <div style="margin: .5em;" *ngIf="pokemon.type1" id="{{pokemon.type1}}-Card">
                     <mat-card style="border-radius: 1em;">

@@ -68,6 +68,21 @@ public class PokemonController : ControllerBase
         return Ok(result);
     }
 
+    [HttpGet("forms/{id}/{pokedexNumber}")]
+    [ProducesResponseType(typeof(IEnumerable<PokemonDTO>), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<ActionResult<IEnumerable<SearchResultPokemonDTO>>> GetPokemonForms(int id, int pokedexNumber)
+    {
+        List<Pokemon> pokemonList = _context.Pokemon
+          .Where(p => p.PokedexNumber == pokedexNumber && p.Id != id)
+          .OrderBy(p => p.PokedexNumber)
+          .ToList();
+
+        List<SearchResultPokemonDTO> result = ListToSearchResultPokemonDTO(pokemonList);
+
+        return Ok(result);
+    }
+
     [HttpGet("evolution/{chainId}")]
     [ProducesResponseType(typeof(IEnumerable<EvolutionDTO>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
